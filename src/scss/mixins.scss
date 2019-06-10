@@ -1,0 +1,18 @@
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@mixin font ($maxSize, $minSize, $maxWidth, $minWidth) {
+    font-size: $minSize;
+    @media (min-width: $minWidth) {
+        font-size: calc(
+            #{$minSize} + #{strip-unit($maxSize - $minSize)} * ((100vw - #{$minWidth}) / #{strip-unit(
+                    $maxWidth - $minWidth
+                )})
+        );
+    }
+    @media (min-width: $maxWidth) {
+        font-size: $maxSize;
+    }
+}
