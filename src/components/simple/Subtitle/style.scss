@@ -1,0 +1,17 @@
+@import '../../../scss/variables.scss';
+
+.subtitle{
+    letter-spacing: -0.4px;
+    position: relative;
+    font-weight: 400;
+    font-size: 16px;
+    &:after{
+        content: "";
+        width: 55px;
+        height: 1px;
+        background: $black;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+    }
+}

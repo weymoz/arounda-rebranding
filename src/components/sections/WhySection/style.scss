@@ -1,0 +1,76 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+.section{
+    min-height: 100vh;
+    margin: 0 0 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: $maxTablet){
+        margin: 0 0  260px;
+    }
+    @media (max-width: $maxMobile){
+        margin: 0 0  160px;
+    }
+}
+.image{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    @media (max-width: $minTablet){
+        position: relative;
+        width: 100%;
+        padding: 0 0 0 66px;
+    }
+    @media (max-width: $maxMobile){
+        padding: 0 0 0 28px;
+    }
+    img{
+        object-fit: cover;
+    }
+}
+
+.content{
+    grid-column: span 5;
+    transform: translateY(-50px);
+    @media (max-width: $minTablet){
+        transform: translateY(0);
+        grid-column: 2/span 9;
+        margin: 110px 0 0;
+    }
+    @media (max-width: $maxMobile){
+        grid-column: 1/-1;
+        margin: 70px 0 0;
+    }
+}
+
+.subtitle{
+    @include font(29px, 21px, $minDesktop, $minTablet);
+    font-weight: 300;
+}
+.datas{
+    margin: 120px 0 0;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $minTablet){
+        margin: 70px 0 0;
+    }
+}
+.datas .name{
+    font-size: 12px;
+    color: $gray;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+    @media (max-width: $minTablet){
+        font-size: 11px;
+        margin: 0 0 4px;
+    }
+}
+.datas .number {
+    @include font(34px, 26px, $minDesktop, $maxMobile);
+    letter-spacing: 1px;
+    font-weight: 600;
+}

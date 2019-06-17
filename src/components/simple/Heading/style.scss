@@ -1,0 +1,30 @@
+@import "../../../scss/mixins.scss";
+@import "../../../scss/variables.scss";
+
+.wrapper{
+    position: relative;
+    display: inline-block;
+    cursor: none;
+}
+.wrapper h1{
+    font-weight: 400;
+    background:#fff;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.6px;
+    @include font(67px, 36px, 1440px, 767px);
+    line-height: 1.5;   
+    max-width: 700px;
+}
+
+.mask{
+    color: #00FFEA;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transform: translateZ(0);
+}
+
+
+

@@ -24,15 +24,6 @@ img{
     max-width: 100%;
 }
 
-@keyframes  :global(cursor-anim) {
-    0%{
-        transform: rotate(0);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-
 :global{
     #app{
         min-height: inherit;
@@ -51,33 +42,8 @@ img{
         grid-template-columns: repeat(12, 1fr);
         grid-gap: 34px;
         grid-auto-rows: auto;
-    }
-    .wrapper{
-        min-height: 100vh;
-        height: 100%;
-    }
-    .cursor{
-        width: 40px;
-        height: 40px;
-        display: inline-block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        animation: cursor-anim 2s infinite linear ;
-        z-index: 100;
-        transform-origin: center center;
-        margin-left: -16px;
-        margin-top: -16px;
-        pointer-events: none;
-        transition: width .3s ease-in-out, 
-                    height .3s ease-in-out;
-        &.slow{
-            animation: cursor-anim 6s infinite linear ;
-            width: 50px;
-            height: 50px;
-        }
-        &.stop{
-            animation-play-state: paused;
+        @media (max-width: $maxMobile){
+            grid-gap: 20px;
         }
     }
 }

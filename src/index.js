@@ -1,52 +1,51 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { render, findDOMNode } from 'react-dom';
 import "./style.scss"
-import Cursor from "./components/Cursor";
+import Cursor from "@simple/Cursor";
 
-import Header from "./components/Header";
-import HeadingSection from "./components/HeadingSection";
-import WorkSection from "./components/WorkSection";
-import AgencySection from "./components/AgencySection";
-import WhySection from "./components/WhySection";
-import WhatSection from "./components/WhatSection";
-import HowSection from "./components/HowSection";
-import BlogSection from "./components/BlogSection";
-import StartSection from "./components/StartSection";
-import Footer from "./components/Footer";
+import Header from "@sections/Header";
+
+import WorkSection from "@sections/WorkSection";
+import HeadingSection from "@sections/HeadingSection";
+import AgencySection from "@sections/AgencySection";
+import WhySection from "@sections/WhySection";
+import WhatSection from "@sections/WhatSection";
+import HowSection from "@sections/HowSection";
+import BlogSection from "@sections/BlogSection";
+import StartSection from "@sections/StartSection";
+import Footer from "@sections/Footer";
+import Aside from "@sections/Aside";
 
 class App extends Component {
 	state = {
 		slowCursor: false,
 		stopCursor: false,
-		top: 0,
-		left: 0,
+
 	}
 
-	cursorMove = (e) => {
+	// cursorMove = (e) => {
 
-		// const cursor = findDOMNode(this.cursor);
-		let x = e.nativeEvent.clientX;
-		let y = e.nativeEvent.clientY;
+	// 	// const cursor = findDOMNode(this.cursor);
+	// 	let x = e.nativeEvent.clientX;
+	// 	let y = e.nativeEvent.clientY;
 
-		console.log('variables', x,y)
-		console.log('native', e.nativeEvent.clientX, e.nativeEvent.clientY)
 
-		this.setState({
-			top: y,
-			left: x
-		})
+	// 	this.setState({
+	// 		top: y,
+	// 		left: x
+	// 	})
 		
 
 
 	
-		// this.tween.to(cursor, .3, {autoAlpha: 1, top: `${y}`, left: `${x}`})
+	// 	// this.tween.to(cursor, .3, {autoAlpha: 1, top: `${y}`, left: `${x}`})
 		
 
-		e.target.classList[1] === 'slowCursor' ? this.setState({slowCursor: true}) : this.setState({slowCursor: false})
-		e.target.parentElement.classList[1] === 'stopCursor' ? this.setState({stopCursor: true}) : this.setState({stopCursor: false})
+	// 	e.target.classList[1] === 'slowCursor' ? this.setState({slowCursor: true}) : this.setState({slowCursor: false})
+	// 	e.target.parentElement.classList[1] === 'stopCursor' ? this.setState({stopCursor: true}) : this.setState({stopCursor: false})
 
 
-	}
+	// }
 
 
 	componentDidMount() {
@@ -58,16 +57,15 @@ class App extends Component {
 
 
 	render() {
-		const {slowCursor, stopCursor, top, left } = this.state;
+		const {slowCursor, stopCursor} = this.state;
 		return (
-			<div className="wrapper" onMouseMove={this.cursorMove} onMouseEnter={this.cursorAnimate}>
-				<Cursor 
+				<Fragment>
+					<Cursor 
 					slowCursor={slowCursor}
 					stopCursor={stopCursor}
-					top={top}
-					left={left}
 				/>
-				<Header />
+				<Aside/>
+				<Header/>
 				<HeadingSection/>
 				<WorkSection/>
 				<AgencySection/>
@@ -77,7 +75,7 @@ class App extends Component {
 				<BlogSection/>
 				<StartSection/>
 				<Footer/>
-			</div>
+				</Fragment>
 		);
 	}
 }

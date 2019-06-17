@@ -18,7 +18,13 @@ module.exports = {
 			path.resolve(__dirname, 'src')
 		],
 		alias: {
-			'@': "src",
+			'@': path.join(__dirname, 'src/components'),
+			'@sections': path.join(__dirname, 'src/components/sections'),
+			'@assets': path.join(__dirname, 'src/assets/'),
+			'@simple': path.join(__dirname, 'src/components/simple'),
+			'@pages': path.join(__dirname, 'src/components/pages'),
+			
+
 		},
 	},
 	mode: NODE_ENV,

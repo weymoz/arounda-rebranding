@@ -1,0 +1,35 @@
+.cursor{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: cursor-anim 1.5s infinite linear ;
+    z-index: 1000;
+    transform-origin: center center;
+    margin-left: -16px;
+    margin-top: -16px;
+    pointer-events: none;
+    will-change: transform;
+    transform: rotateZ(0);
+    transition: width .3s ease-in-out, 
+                height .3s ease-in-out;
+    &.slow{
+        animation: cursor-anim 6s infinite linear ;
+        width: 50px;
+        height: 50px;
+    }
+    &.stop{
+        animation-play-state: paused;
+    }
+}
+
+@keyframes  cursor-anim {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

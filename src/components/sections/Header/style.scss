@@ -1,0 +1,20 @@
+@import '../../../scss/variables.scss';
+
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 55px 0;
+    z-index: 600;
+    background: #fff;
+    @media (max-width: $minTablet){
+        padding: 25px 0;
+    }
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
