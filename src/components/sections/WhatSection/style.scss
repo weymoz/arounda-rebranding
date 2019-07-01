@@ -59,31 +59,41 @@
         margin: 80px 0 0;
     }
 }
-.products .item{
-    margin: 0 0 46px;
-    letter-spacing: 0.39px;
-    @include font(21px, 18px, $minDesktop, $minTablet);
-    padding: 0 30px 0 0;
-    transition: all .3s $cubic; 
-    position: relative;
-    .hover{
+.products{
+    li{
+        margin: 0 0 46px;
+    }
+    .item{
+        letter-spacing: 0.39px;
+        @include font(21px, 18px, $minDesktop, $minTablet);
+        padding: 0 30px 0 0;
+        transition: all .3s $cubic; 
         position: relative;
-        &:before{
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -20px;
-            height: 100%;
-            width: 0;
-            background: $lightGreen;
-            transition: all .3s $cubic; 
-            z-index: -1;
+        display: inline-block;
+        .hover{
+            position: relative;
+            &:before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -20px;
+                height: 100%;
+                width: 0;
+                background: $lightGreen;
+                transition: all .3s $cubic; 
+                z-index: -1;
+                opacity: .7;
+            }
+        }
+        span{
+            display: inline-block;
+            transition: transform .3s $cubic;
+        }
+        &:hover{
+            span{transform: translateX(35px)}
+            .hover:before{
+                width: 50px;
+            }
         }
     }
-    &:hover{
-        transform: translateX(35px);
-        .hover:before{
-            width: 50px;
-        }
-    }
-}
+} 

@@ -9,6 +9,7 @@ const HowSection = (props) => {
         'UX Design',
         'UI Design',
         'Branding',
+        'Development'
     ]
     return (
         <section className={style.section}>

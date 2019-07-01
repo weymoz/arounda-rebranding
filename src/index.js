@@ -1,80 +1,74 @@
-import React, { Component, Fragment } from "react";
-import { render, findDOMNode } from 'react-dom';
+
+import React, { Component, Fragment, Suspense } from "react";
+
+import { TweenMax, TimelineMax } from 'gsap';
+import { render } from 'react-dom';
 import "./style.scss"
 import Cursor from "@simple/Cursor";
 
 import Header from "@sections/Header";
-
-import WorkSection from "@sections/WorkSection";
-import HeadingSection from "@sections/HeadingSection";
-import AgencySection from "@sections/AgencySection";
-import WhySection from "@sections/WhySection";
-import WhatSection from "@sections/WhatSection";
-import HowSection from "@sections/HowSection";
-import BlogSection from "@sections/BlogSection";
-import StartSection from "@sections/StartSection";
+import Main from '@pages/Main'
 import Footer from "@sections/Footer";
 import Aside from "@sections/Aside";
+import Preloader from '@simple/Preloader';
 
 class App extends Component {
 	state = {
-		slowCursor: false,
-		stopCursor: false,
-
+		openMenu: false,
+		preloader: true, 
 	}
-
-	// cursorMove = (e) => {
-
-	// 	// const cursor = findDOMNode(this.cursor);
-	// 	let x = e.nativeEvent.clientX;
-	// 	let y = e.nativeEvent.clientY;
-
-
-	// 	this.setState({
-	// 		top: y,
-	// 		left: x
-	// 	})
-		
-
-
-	
-	// 	// this.tween.to(cursor, .3, {autoAlpha: 1, top: `${y}`, left: `${x}`})
-		
-
-	// 	e.target.classList[1] === 'slowCursor' ? this.setState({slowCursor: true}) : this.setState({slowCursor: false})
-	// 	e.target.parentElement.classList[1] === 'stopCursor' ? this.setState({stopCursor: true}) : this.setState({stopCursor: false})
-
-
-	// }
-
 
 	componentDidMount() {
-		// const cursor = findDOMNode(this.cursor);
+		this.setState({
+			preloader: !this.state.preloader,
+		})
 
-		// this.tween.set(cursor, {autoAlpha: 0})
-
+		setTimeout(() => {
+			this.tl();
+		}, 100)
 	}
+
+	tl = () => {
+			const mainTl = new TimelineMax();
+			const headerTl = new TimelineMax();
+			const mainSection = new TimelineMax();
+
+
+
+			headerTl.add(this.header.tl);
+			mainSection.add(this.main.tl)
+
+			mainTl.add(mainSection, 'start').add(headerTl, '-=3.6')
+		
+    }
+
+	toggleMenu = () => {
+    const {openMenu} = this.state;
+		this.setState({
+			openMenu: !openMenu,
+		})
+
+		document.documentElement.classList.toggle('no-scroll')
+    }	
 
 
 	render() {
-		const {slowCursor, stopCursor} = this.state;
+		const {openMenu, preloader} = this.state;
+
+		
 		return (
-				<Fragment>
-					<Cursor 
-					slowCursor={slowCursor}
-					stopCursor={stopCursor}
-				/>
-				<Aside/>
-				<Header/>
-				<HeadingSection/>
-				<WorkSection/>
-				<AgencySection/>
-				<WhySection/>
-				<WhatSection/>
-				<HowSection/>
-				<BlogSection/>
-				<StartSection/>
-				<Footer/>
+				preloader ? <Preloader/>
+					:
+				<Fragment>	
+					<Cursor/>
+					<Header 
+						ref={el => {this.header = el}}
+						toggleMenu={this.toggleMenu}
+						openMenu={openMenu}
+					/>
+					<Aside openMenu={openMenu}/>
+					<Main ref={el => this.main = el}/>
+					<Footer/>
 				</Fragment>
 		);
 	}

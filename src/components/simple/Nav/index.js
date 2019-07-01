@@ -2,12 +2,10 @@ import React, { Component } from 'react'
 import Burger from '@assets/svg/menu.svg';
 import style from './style.scss'
 
-export default class Nav extends Component {
-
-    render() {
+const Nav = ({toggleMenu, openMenu})  => {
         return (
             <nav>
-                <ul className={style.menu}>
+                <ul className={`${style.menu} ${openMenu ? style.active : ""}`}>
                     <li>
                         <a href="#">
                             Works
@@ -18,13 +16,14 @@ export default class Nav extends Component {
                             Contact
                         </a>   
                     </li>
-                    <li>
-                        <button>
+                    <li className={style.btnWrapper}>
+                        <button className={style.btn} onClick={toggleMenu}>
                             <Burger/>
                         </button>
                     </li>
                 </ul>
             </nav>
         )
-    }
 }
+
+export default Nav;

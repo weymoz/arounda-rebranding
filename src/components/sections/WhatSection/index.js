@@ -22,15 +22,18 @@ const WhatSection = (props) => {
                             <TitleSecondary text={'What?'}/>
                         </div>
                         <div className={style.subtitle}>We build only digital products and services</div>
-                        <div className={style.products}>
+                        <ul className={style.products}>
                             {products.map((el, i) => {
                                 return (
-                                    <div key={i} className={style.item}>
-                                        <span className={style.hover}>{el[0]}</span><br/><span>{el[1]}</span>
-                                    </div>
+                                    <li key={i}>
+                                        <span className={style.item}>
+                                            <span className={style.hover}>{el[0]}</span><br/>
+                                            <span>{el[1]}</span>
+                                        </span>
+                                    </li>
                                 )
                             })}
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </div>

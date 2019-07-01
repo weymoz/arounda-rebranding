@@ -4,13 +4,7 @@
 
 .section{
     min-height: 100vh;
-    margin: 0 0 300px;
-    @media (max-width: $maxTablet){
-        margin: 0 0  260px;
-    }
-    @media (max-width: $maxMobile){
-        margin: 0 0  160px;
-    }
+    padding: 100px 0 0;
 }
 
 .content{
@@ -64,6 +58,7 @@
             background: $lightGreen;
             transition: all .3s $cubic;
             z-index: -1;
+            opacity: .7;
         }
         &:hover{
             &:after{
@@ -74,7 +69,7 @@
 }
 .more{  
     grid-row: 3/4;
-    grid-column: 2/span 3;
+    grid-column: 2/span 7;
     font-weight: bold;
     font-size: 18px;
     @media (max-width: $maxMobile){

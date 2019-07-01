@@ -5,9 +5,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 55px 0;
+    padding: 35px 0 25px;
     z-index: 600;
-    background: #fff;
     @media (max-width: $minTablet){
         padding: 25px 0;
     }
@@ -17,4 +16,54 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+.menu{
+    li{
+        margin: 0 0 0 60px;
+        transition: all .3s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        @media (max-width: $maxMobile){
+            &:nth-child(1),  &:nth-child(2){
+                display: none;
+            }
+        }
+    } 
+    .btn{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        transition: all .5s $cubic;
+        transform-origin: center;
+    }  
+    &.active{
+        @media (max-width: $maxTablet){
+            transform: translateY(-6px);
+        }
+        li:not(.btnWrapper){
+            opacity: 0!important;
+            pointer-events: none;
+        }
+        .btn{
+            background: $lightGreen;
+            transform: rotate(90deg);
+            svg{
+                margin-top: 5px;
+            }
+        }
+
+
+    }
+}
+.menu li a{
+    font-weight: normal;
+}
+.logo {
+    opacity: 0;
+    visibility: hidden;
 }
