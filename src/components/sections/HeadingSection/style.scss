@@ -7,17 +7,12 @@
 }
 .headingWrapper{
     grid-column: span 8;
-    opacity: 0;
-    visibility: hidden;
     transform-origin: center;
 }
 .subtitleWrapper{
     grid-column: span 10;
     grid-row: 2/3;
     margin: 80px 0 0;
-    visibility: hidden;
-    opacity: 0;
-    
 }
 .subtitle{
     letter-spacing: -0.4px;

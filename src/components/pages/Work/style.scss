@@ -1,0 +1,28 @@
+.sliderSection{
+    min-height: 100vh;
+    margin: 100px 0;
+    padding: 110px 0 160px;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.titleWrapper{
+    margin: 0 0 100px;
+}
+.title{
+    grid-column: 2/8;
+    margin: 0 0 170px;
+    font-size: 38px;
+}
+.list{
+    grid-column: 2/11;
+    grid-row: 2/3;
+    ul{
+        display: flex;
+        justify-content: space-around;
+    }
+    li{
+        font-size: 29px;
+    }
+}

@@ -1,5 +1,6 @@
 
 import React, { Component, Fragment, Suspense } from "react";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 import { TweenMax, TimelineMax } from 'gsap';
 import { render } from 'react-dom';
@@ -7,7 +8,8 @@ import "./style.scss"
 import Cursor from "@simple/Cursor";
 
 import Header from "@sections/Header";
-import Main from '@pages/Main'
+import Main from '@pages/Main';
+import Work from '@pages/Work';
 import Footer from "@sections/Footer";
 import Aside from "@sections/Aside";
 import Preloader from '@simple/Preloader';
@@ -36,7 +38,9 @@ class App extends Component {
 
 
 			headerTl.add(this.header.tl);
-			mainSection.add(this.main.tl)
+
+			this.main && mainSection.add(this.main.tl);
+			
 
 			mainTl.add(mainSection, 'start').add(headerTl, '-=3.6')
 		
@@ -59,17 +63,20 @@ class App extends Component {
 		return (
 				preloader ? <Preloader/>
 					:
-				<Fragment>	
-					<Cursor/>
-					<Header 
-						ref={el => {this.header = el}}
-						toggleMenu={this.toggleMenu}
-						openMenu={openMenu}
-					/>
-					<Aside openMenu={openMenu}/>
-					<Main ref={el => this.main = el}/>
-					<Footer/>
-				</Fragment>
+				<Router>
+					<Fragment>	
+						<Cursor/>
+						<Header 
+							ref={el => {this.header = el}}
+							toggleMenu={this.toggleMenu}
+							openMenu={openMenu}
+						/>
+						<Aside openMenu={openMenu}/>
+						<Route path='/' exact component={() =>  <Main ref={el => this.main = el}/>} />
+						<Route path='/work' exact component={Work} />
+						<Footer/>
+					</Fragment>	
+				</Router>
 		);
 	}
 }

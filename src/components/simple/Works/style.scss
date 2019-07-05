@@ -1,0 +1,80 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 64px 1fr;
+    grid-column-gap: 34px;
+    @media (max-width: $maxTablet){
+        grid-column-gap: 32px;
+    }
+    @media (max-width: $maxMobile){
+        grid-column-gap: 20px;
+    }
+}
+
+.item{
+    margin: 0 0 50px;
+    font-family: "PT Sans", sans-serif;
+}
+.item .image{
+    position: relative;
+    padding: 67% 0 0;
+    @media (max-width: $maxTablet){
+        padding: 88% 0 0;
+    }
+}
+.item{
+    grid-column: span 7;
+    @media (max-width: $maxTablet){
+        grid-column: span 6;
+    }
+}
+.item:first-child{
+    order: 1;
+}
+.item:nth-child(2n){
+    grid-row: span 2;
+    grid-column: 8/-1;
+    @media (max-width: $maxTablet){
+        grid-column: 7/-1;
+    }
+}
+.item:nth-child(2n) .image{
+    padding: 88% 0 0;
+    
+}
+.item img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.item .title{
+    @include font(28px, 18px, $minDesktop, $maxMobile);
+    font-weight: 400;
+    @media (max-width: $maxMobile){
+        text-align: center;
+    }
+}
+.item .desc{
+    opacity: .4;
+    letter-spacing: .4px;
+    font-size: 14px;
+    @media (max-width: $maxMobile){
+        display: none;
+    }
+}
+.item .wrapper{
+    padding: 30px 0 0 15%;
+    @media (max-width: $maxTablet){
+        padding: 28px 0 0 24px;
+    }
+    @media (max-width: $maxMobile){
+        padding: 15px 0 0 0;
+    }
+}
+

@@ -1,0 +1,74 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+.image{
+    grid-column: 1/span 4;
+    @media (max-width: $maxMobile){
+        grid-column: 1/span 12;
+        margin: 0 0 40px;
+    }
+}
+.slideWrapper{
+    position: relative;
+}
+.text{
+    grid-column: 6/ span 6;
+    @include font(38px, 21px, $minDesktop, $maxMobile);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    transform: translateY(-10%);
+    @media (max-width: $maxMobile){
+        grid-column: 1/span 12;
+        grid-row: 2/3;
+        margin: 0 0 70px;
+        text-align: center;
+    }
+}
+.name{
+    @include font(21px, 16px, $minDesktop, $maxMobile);
+}
+
+:global {
+    .nameWrapper{
+        background: $lightGreen;
+        position: absolute;
+        max-width: 760px;
+        width: 70%;
+        padding: 70px 70px 20px;
+        bottom: 16%;
+        right: 10%;
+        transform: translateX(120%);
+        transition: all .6s $cubic; 
+        // &:before{
+        //     content: "";
+        //     width: 30px;
+        //     height: 100%;
+        //     position: absolute;
+        //     background: $black;
+        //     left: -30px;
+        //     top: 0;
+        // }
+        @media (max-width: $maxTablet){
+            padding: 28px 56px 20px;
+            right: 0;
+            bottom: 9%;
+        }
+        @media (max-width: $minTablet){
+            width: 76%;
+        }
+        @media (max-width: $maxMobile){
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 28px 20px 20px;
+        }
+    }
+    .slick-current .nameWrapper{
+        transform: translateX(0);
+    }
+    .slick-track div{
+        outline: none;
+    }
+}
