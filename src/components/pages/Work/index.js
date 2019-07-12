@@ -3,9 +3,7 @@ import SortSection from '@sections/SortSection';
 import InnovationSection from '@sections/InnovationSection';
 import StartSection from '@sections/StartSection';
 import Works from '@simple/Works';
-import Title from '@simple/Title';
-import SliderSingle from '@simple/Slider';
-import style from './style.scss';
+import SliderSection from '@sections/SliderSection';
 
 
 export default class Work extends Component {
@@ -15,14 +13,7 @@ export default class Work extends Component {
                 <SortSection/>
                 <Works/>
                 <InnovationSection/>
-                <section className={style.sliderSection}>
-                    <div className="container">
-                        <div className={style.titleWrapper}>
-                            <Title text={'Reviews'}/>
-                        </div>
-                        <SliderSingle/>
-                    </div>
-                </section>
+                <SliderSection/>
                 <StartSection/>
             </Fragment>
         )

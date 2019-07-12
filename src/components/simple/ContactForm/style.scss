@@ -1,0 +1,238 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+:global{
+    .select {
+        & .select__control{
+            border: none;
+            border-bottom: 1px solid $lightGray;
+            transition: all .3s $cubic;
+            border-radius: 0;
+            @include font(21px, 18px, $maxTablet, $maxMobile);
+            cursor: pointer;
+        }
+        & .select__indicator-separator{
+            display: none;
+        }   
+        & .select__control--is-focused, & .select__control:hover{
+            box-shadow: none;
+            border-color: $lightGreen;
+            label{
+                opacity: 1;
+            }
+        }
+        & .select__indicators svg{
+            color: $black;
+        }     
+        & .select__placeholder{
+            color: $gray;
+            font-weight: 300;
+        }  
+        & .select__single-value{
+            color: $black;
+            font-weight: 300;
+        }
+        & .select__value-container{
+            padding-left: 0;
+        }                               
+    }
+}
+.input{
+    min-height: 42px;
+    border: none;
+    border-bottom:  1px solid $lightGray;
+    transition: all .3s $cubic;
+    width: 100%;
+    box-shadow: none;
+    @include font(21px, 18px, $maxTablet, $maxMobile);
+    font-weight: 300;
+    &:focus{
+        outline: none;
+        border-color: $lightGreen;
+    }
+    &:focus + label{
+        opacity: 1;
+    }
+    &::placeholder{
+        font-weight: 300;
+        color: $gray;
+    }
+}      
+.inputWrapper{
+    position: relative;
+    grid-column-end: span 4;
+    @media (max-width: $maxTablet){
+        grid-column: 2/span 10;
+        margin: 0 0 30px;
+    }
+    @media (max-width: $maxMobile){
+        grid-column: 1/span 12;
+        margin: 0 0 25px;
+    }
+    label{
+        position: absolute;
+        top: -25px;
+        left: 0;
+        letter-spacing: 0.46px;
+        font-size: 14px;
+        opacity: 0;
+        transition: all .3s $cubic;
+        color: $gray;
+        font-family: 'PT Sans',sans-serif;
+        @media (max-width: $maxMobile){
+            font-size: 12px;
+        }
+    }
+}    
+.selectWrapper{
+    grid-column-end: span 4;
+    position: relative;
+    @media (max-width: $maxTablet){
+        grid-column: 2/span 10;
+        margin: 0 0 30px;
+    }
+    @media (max-width: $maxMobile){
+        grid-column: 1/span 12;
+        margin: 0 0 25px;
+    }
+    label{
+        position: absolute;
+        top: -25px;
+        left: 0;
+        letter-spacing: 0.46px;
+        font-size: 14px;
+        transition: all .3s $cubic;
+        color: $gray;
+        opacity: 0;
+        font-family: 'PT Sans',sans-serif;
+        @media (max-width: $maxMobile){
+            font-size: 12px;
+        }
+    }
+    &:nth-child(2n){
+        margin: 40px 0 0;
+        @media (max-width: $maxTablet){
+            margin: 0 0 30px;
+        }
+        @media (max-width: $maxMobile){
+            margin: 0 0 25px;
+        }
+    }
+}  
+.textareaWrapper{
+    grid-column: 1/ span 8;
+    grid-row: 3/4;
+    position: relative;
+    padding: 40px 0 0 ;
+    @media (max-width: $maxTablet){
+        grid-column: 2/span 10;
+        grid-row: 6/7;
+        padding: 24px 0 0;
+    }
+    @media (max-width: $maxMobile){
+        grid-column: 1/span 12;
+    }
+
+}  
+.textarea{
+    width: 100%;
+    border: none;
+    border-bottom:  1px solid $lightGray;
+    resize: none;
+    padding: 5px 30px 5px 0 ;
+    @include font(21px, 18px, $maxTablet, $maxMobile);
+    line-height: 1.4;
+    transition: all .3s $cubic;
+    font-weight: 300;
+    &::placeholder{
+        font-weight: 300;
+        color: $gray;
+    }
+    &:focus{
+        outline: none;
+        border-color: $lightGreen;
+
+    }
+}
+.inputFile{
+    font-size: 0;
+    border: 0;
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+}               
+.labelFile{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+    cursor: pointer;
+}
+.btnWrapper{
+    grid-column: 11/ span 2;
+    grid-row: 3/ 4;
+    align-self: end;
+    justify-self: end;
+    @media (max-width: $maxTablet){
+        grid-column: 4/ span 8;
+        grid-row: 7/8;
+    }
+    @media (max-width: $maxMobile){
+        grid-column: 1/span 12;
+    }
+}
+.btn{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'PT Sans',sans-serif;
+}
+.includeWrapper{
+    grid-column: 5/-1;
+    grid-row: 2 / 3;
+    position: relative;
+    min-height: 42px;
+    align-self: end;
+    @media (max-width: $maxTablet){
+        grid-column: 2/span 10;
+        grid-row: 5 / 6;
+    }
+    @media (max-width: $maxMobile){
+        grid-column: 1/span 12;
+    }
+    label{
+        position: absolute;
+        top: -25px;
+        left: 0;
+        letter-spacing: 0.46px;
+        font-size: 14px;
+        transition: all .3s $cubic;
+        color: $gray;
+        font-family: 'PT Sans',sans-serif;
+        @media (max-width: $maxMobile){
+            font-size: 12px;
+        }
+    }
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+    align-items: flex-end;
+    min-height: 42px;
+    .item{
+        margin-bottom: 7px;
+        &.active{
+            button{
+                background: $lightGreen;
+            }
+        }
+        button{
+            padding: 3px 0;
+        }
+    }
+    .item:not(:last-child){
+        margin-right: 20px;
+    }
+}

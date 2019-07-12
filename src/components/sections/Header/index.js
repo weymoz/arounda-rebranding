@@ -46,14 +46,14 @@ export default class Header extends Component {
                         <nav>
                             <ul ref={el => this.menu = el} className={`${style.menu} ${openMenu ? style.active : ""}`}>
                                 <li>
-                                    <Link to="/work/">
+                                    <Link to='/works/'>
                                         Works
                                     </Link>   
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <Link to='/contacts/'>
                                         Contact
-                                    </a>   
+                                    </Link>   
                                 </li>
                                 <li className={style.btnWrapper}>
                                     <button className={style.btn} onClick={toggleMenu}>

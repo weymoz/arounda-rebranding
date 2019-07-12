@@ -23,8 +23,6 @@ module.exports = {
 			'@assets': path.join(__dirname, 'src/assets/'),
 			'@simple': path.join(__dirname, 'src/components/simple'),
 			'@pages': path.join(__dirname, 'src/components/pages'),
-			
-
 		},
 	},
 	mode: NODE_ENV,

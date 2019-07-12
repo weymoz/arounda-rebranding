@@ -10,6 +10,7 @@ import Cursor from "@simple/Cursor";
 import Header from "@sections/Header";
 import Main from '@pages/Main';
 import Work from '@pages/Work';
+import Contacts from '@pages/Contacts';
 import Footer from "@sections/Footer";
 import Aside from "@sections/Aside";
 import Preloader from '@simple/Preloader';
@@ -73,7 +74,8 @@ class App extends Component {
 						/>
 						<Aside openMenu={openMenu}/>
 						<Route path='/' exact component={() =>  <Main ref={el => this.main = el}/>} />
-						<Route path='/work' exact component={Work} />
+						<Route path='/works' exact component={Work} />
+						<Route path='/contacts' exact component={Contacts} />
 						<Footer/>
 					</Fragment>	
 				</Router>

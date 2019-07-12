@@ -56,6 +56,9 @@
 .image{
     grid-column: 9 / span 3;
     align-self: center;
+    @media (max-width: $maxTablet){
+        grid-column: 10 / span 3;
+    }
     @media (max-width: $maxMobile){
         display: none;
     }
