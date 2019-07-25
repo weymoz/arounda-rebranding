@@ -20,10 +20,7 @@ export default class Cursor extends Component {
             let x = e.clientX;
             let y = e.clientY;
 
-            console.log(x,y)
-            const t = TweenMax;
-
-            t.to(this.cursor, .6, {y: `${y}`, x: `${x}`});
+            TweenMax.to(this.cursor, .6, {y: `${y}`, x: `${x}`});
 
             e.target.classList.contains('slowCursor') ? this.setState({slowCursor: true}) : this.setState({slowCursor: false})
 		    e.target.classList.contains('stopCursor') ? this.setState({stopCursor: true}) : this.setState({stopCursor: false})

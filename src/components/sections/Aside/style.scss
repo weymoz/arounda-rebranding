@@ -32,6 +32,7 @@
     position: absolute;
     padding: 180px 0 0;
     opacity: 0;
+
     transition: opacity .3s 0s ease-in-out; 
     @media (max-width: $maxMobile){
         padding: 130px 0 0;
@@ -39,13 +40,13 @@
 }
 
 .menu{
-    grid-column: 1/span 6;
     overflow-y: scroll;
     display: flex;
     justify-content: flex-end;
     transition: all .3s $cubic;
+    grid-column: 7 / span 18;
     @media (max-width: $maxTablet){
-        grid-column: 1/span 7;
+        grid-column: 3/span 20;
     }
     @media (max-width: $maxMobile){
         justify-content: flex-start;
@@ -127,7 +128,7 @@
     }
 }
 .socials{
-    grid-column: 9/span 2;
+    grid-column: -20/-10;
     padding: 16px 0 0;
     li{
         margin: 0 0 24px;

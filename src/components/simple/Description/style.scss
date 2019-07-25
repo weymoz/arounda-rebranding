@@ -1,0 +1,7 @@
+@import '../../../scss/mixins.scss';
+@import '../../../scss/variables.scss';
+
+.desc{
+    @include font(29px, 21px, $minDesktop, $minTablet);
+    font-weight: 300;
+}

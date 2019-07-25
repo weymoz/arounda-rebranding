@@ -15,13 +15,13 @@ const Footer = (props) => {
         'facebook'
     ]
     return (
-        <footer>
-            <div className="container">
+        <footer className={style.footer}>
+            <div className={style.row}>
                 <div className={style.footerTop}>
                     <div className={style.adress}>
                         <div className={style.title}>Odessa</div>
                         <div className={style.text}>
-                            Gagarina Stret,<br/>
+                            Gagarina Stret,<br />
                             5/3, 65000
                         </div>
                     </div>
@@ -43,18 +43,18 @@ const Footer = (props) => {
                     </div>
                     <div className={style.socials}>
                         <ul>
-                        {socials.map((el,i) => {
-                            return (
-                                <li key={i}>
-                                    <a href="#" className={style.link}>{el}</a>
-                                </li>
-                            )
-                        })}
+                            {socials.map((el, i) => {
+                                return (
+                                    <li key={i}>
+                                        <a href="#" className={style.link}>{el}</a>
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </div>
                 </div>
                 <div className={style.footerBottom}>
-                    <Logo/>
+                    <Logo />
                     <div className={style.links}>
                         <a href="#">
                             Terms and Conditions

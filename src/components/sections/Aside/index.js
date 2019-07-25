@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {TimelineMax, Power0} from 'gsap';
+import {TimelineLite, Power0} from 'gsap';
 import style from './style.scss';
 
 class Aside extends Component{
@@ -8,16 +8,14 @@ class Aside extends Component{
     componentWillReceiveProps(nextProps) {
         if(nextProps.openMenu){
             this.timeline();
-            console.log(nextProps.openMenu)
         }else{
             this.clearStyles();
-            console.log(nextProps.openMenu)
         }
         
     }
     
     timeline = () => {
-        const tl = new TimelineMax();
+        const tl = new TimelineLite();
 
         tl 
             .staggerTo(this.menu.childNodes, .3, {y: 0, autoAlpha: 1, ease: Power0.easeNone}, .1, '+=.5')
@@ -25,7 +23,7 @@ class Aside extends Component{
     }
 
     clearStyles = () => {
-        const tl = new TimelineMax();
+        const tl = new TimelineLite();
 
         tl
             .set(this.menu.childNodes, {clearProps:"all"})
@@ -51,7 +49,6 @@ class Aside extends Component{
         return (
             <aside className={`${style.aside} ${openMenu ? style.active : ""}`}>
                 <div className={style.wrapper}>
-                <div className="container">
                     <div className="grid">
                         <div className={style.menu}>
                             <ul ref={el => this.menu = el}>
@@ -77,7 +74,6 @@ class Aside extends Component{
                             </ul>
                         </div>
                     </div>
-                </div>
                 </div>
             </aside>
         )

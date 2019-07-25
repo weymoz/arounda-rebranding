@@ -5,7 +5,8 @@
   "main": "./src/index.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base dist --debug --port 9090 --open",
-    "build": "rm -rf dist && cross-env NODE_ENV=production webpack -p"
+    "build": "rm -rf dist && cross-env NODE_ENV=production webpack -p",
+    "deploy": "npm run build && firebase deploy"
   },
   "author": "Vlad Tsugulskiy",
   "license": "ISC",
@@ -36,8 +37,11 @@
   },
   "dependencies": {
     "gsap": "^2.1.2",
+    "lodash": "^4.17.15",
     "react": "^16.8.0",
     "react-dom": "^16.8.6",
+    "react-intersection-observer": "^8.24.1",
+    "react-responsive": "^7.0.0",
     "react-router-dom": "^5.0.1",
     "react-slick": "^0.24.0",
     "react-transition-group": "^4.1.1"

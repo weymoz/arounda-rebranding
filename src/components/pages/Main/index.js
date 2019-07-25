@@ -33,7 +33,11 @@ class Main extends Component {
                 <HeadingSection ref={el => this.heading = el}/>
                 <BackgroundAnimate ref={el => this.bg = el}/>
                 <WorkSection/>
-                <AgencySection/>
+                <AgencySection
+                    desc='Our team consists strategists, designers, developers, and business analysts'
+                    title='Digital product agency'
+                    subtitle='We`re smart partner for startup founders and enterprice'
+                />
                 <WhySection/>
                 <WhatSection/>
                 <HowSection/>

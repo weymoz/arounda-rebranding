@@ -4,6 +4,15 @@
 @import "./scss/mixins.scss";
 
 
+:root{
+    --cells: 48;
+    --cellSize: calc(100vw / var(--cells));
+    --spacing: calc(var(--cellSize) * 6);
+    --desktopWidth: 8 / -8;
+    --laptopWidth: 5 / -5;
+    --tabletWidth: 4 / -4;
+}
+
 
 body {
     background-color: #fff;
@@ -20,7 +29,7 @@ button{
     cursor: pointer;
 }
 
-img{
+img, video{
     max-width: 100%;
 }
 
@@ -42,23 +51,10 @@ img{
         z-index: 500;
         clip-path: polygon(0 21%, 100% 0, 100% 79%, 0% 100%);
     }
-    .container{
-        width: 100%;
-        max-width: 1292px;
-        padding: 0 66px;
-        margin: auto;
-        @media (max-width: 767px){
-            padding: 0 28px;
-        }
-    }
     .grid{
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-gap: 34px;
+        grid-template-columns: repeat(var(--cells), 1fr);
         grid-auto-rows: auto;
-        @media (max-width: $maxMobile){
-            grid-gap: 20px;
-        }
     }
 }
 

@@ -4,27 +4,23 @@ import Subtitle from '@simple/Subtitle';
 import style from './style.scss';
 import LineSvg from '@assets/svg/line.svg';
 
-const AgencySection = (props) => {
+const AgencySection = ({title, titleThink, subtitle, desc, dark}) => {
     return (
-        <section className={style.section}>
-            <div className="container">
-                <div className='grid'>
+        <section className={`${style.section} ${dark ? style.darkBg : ''}`}>
                     <div className={style.content}>
                         <div className={style.titleWrapper}>
-                            <Title text="Digital product agency"/>
+                            <Title text={title} textThink={titleThink}/>
                         </div>
                         <div className={style.desc}>
-                            Our team consists strategists, designers, developers, and business analysts
+                            {desc}
                         </div>
                         <div className={style.subtitleWrapper}>
-                            <Subtitle text={"We`re smart partner for startup founders and enterprice"}/>
+                            <Subtitle text={subtitle}/>
                         </div>   
                     </div>
                     <div className={style.image}>
                         <LineSvg/>
                     </div>
-                </div>
-            </div>
         </section>
     )
 };

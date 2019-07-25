@@ -10,6 +10,7 @@ import Cursor from "@simple/Cursor";
 import Header from "@sections/Header";
 import Main from '@pages/Main';
 import Work from '@pages/Work';
+import Services from '@pages/Services';
 import Contacts from '@pages/Contacts';
 import Footer from "@sections/Footer";
 import Aside from "@sections/Aside";
@@ -65,7 +66,7 @@ class App extends Component {
 				preloader ? <Preloader/>
 					:
 				<Router>
-					<Fragment>	
+					<div className='grid'>	
 						<Cursor/>
 						<Header 
 							ref={el => {this.header = el}}
@@ -76,8 +77,9 @@ class App extends Component {
 						<Route path='/' exact component={() =>  <Main ref={el => this.main = el}/>} />
 						<Route path='/works' exact component={Work} />
 						<Route path='/contacts' exact component={Contacts} />
+						<Route path='/services' exact component={Services} />
 						<Footer/>
-					</Fragment>	
+					</div>	
 				</Router>
 		);
 	}

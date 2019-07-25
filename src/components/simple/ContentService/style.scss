@@ -1,0 +1,23 @@
+@import '../../../scss/variables.scss';
+
+.content{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 23 / span 18;
+    @media (max-width: $maxLaptop){
+        grid-column: 25 / -4;
+    }
+    .text{
+        font-size: 18px;
+        font-weight: 300;
+        margin: 40px 0 60px;
+    }
+    .list{
+        li{
+            font-size: 18px;
+            margin: 0 0 20px;
+        }
+    }
+}

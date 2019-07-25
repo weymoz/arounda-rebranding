@@ -1,0 +1,58 @@
+@import '../../../scss/variables.scss';
+
+.contentWrapper{
+    grid-column: 1 / -1;
+    display: inherit;
+    grid-template-columns: inherit;
+}
+.image{
+    grid-column: 1 / -4;
+    padding: 56% 0 0;
+    position: relative;
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.content{
+    grid-column: var(--desktopWidth);
+    padding: 120px 0 160px;
+    @media (max-width: $maxMobile){
+        grid-column: var(--tabletWidth);
+    }
+}
+.title{
+    font-size: 38px;
+    margin: 0 0 16px;
+    font-weight: 500;
+    @media (max-width: $maxMobile){
+        font-size: 30px;
+    }
+
+}
+.desc{
+    font-size: 19px;
+    color: $gray;
+    margin: 0 0 80px;
+    font-weight: 500;
+    @media (max-width: $maxMobile){
+        font-size: 16px;
+        margin: 0 0 48px;
+    }
+}
+.list{
+    li{
+        font-size: 21px;
+        margin: 0 0 15px;
+        font-weight: 500;
+        overflow: auto;
+        @media (max-width: $maxMobile){
+            font-size: 19px;
+            margin: 0 0 10px;
+        }
+    }
+}

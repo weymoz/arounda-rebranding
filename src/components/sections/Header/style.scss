@@ -7,6 +7,8 @@
     width: 100%;
     padding: 35px 0 25px;
     z-index: 600;
+    display: inherit;
+    grid-template-columns: inherit;
     @media (max-width: $minTablet){
         padding: 25px 0;
     }
@@ -16,6 +18,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    grid-column: var(--desktopWidth);
+    @media (max-width: $maxLaptop){
+        grid-column: var(--tabletWidth);
+    }
 }
 
 .menu{

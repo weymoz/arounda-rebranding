@@ -2,34 +2,32 @@
 @import '../../../scss/mixins.scss';
 
 .section{
-    min-height: 100vh;
-    display: flex;
-    margin: 0 0  300px;
-    @media (max-width: $maxTablet){
-        margin: 0 0  260px;
-    }
-    @media (max-width: $maxMobile){
-        margin: 0 0  160px;
+    display: inherit;
+    grid-template-columns: inherit;
+    padding: calc(var(--spacing) * 2) 0;
+    grid-column: 1/-1;
+    margin: 0 0 calc(var(--spacing) * 2);
+    &.darkBg{
+        background: #FBFBFB;
     }
 }
 .content{
-    grid-column: 2/span 6;
+    grid-column: 11/span 15;
     @media (max-width: $maxTablet){
-        grid-column: 1/span 7;
+        grid-column: 7/span 17;
     }
     @media (max-width: $maxMobile){
-        grid-column: 1/span 12;
+        grid-column: 3/ -3;
         grid-row: 2/3;
     }
 }
 .image{
-    padding: 50px 0 0;
-    grid-column: 9/span 3;
+    grid-column: -19/span 8;
     @media (max-width: $maxTablet){
-        grid-column: 9/span 4;
+        grid-column: -20/-7;
     }
     @media (max-width: $maxMobile){
-        grid-column: 1/span 5;
+        grid-column: 3/span 16;
         padding: 0 0 45px;
     }
 }
