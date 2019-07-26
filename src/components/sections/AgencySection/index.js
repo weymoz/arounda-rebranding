@@ -1,6 +1,7 @@
 import React from 'react';
 import Title from '@simple/Title';
 import Subtitle from '@simple/Subtitle';
+import Description from '@simple/Description';
 import style from './style.scss';
 import LineSvg from '@assets/svg/line.svg';
 
@@ -12,7 +13,7 @@ const AgencySection = ({title, titleThink, subtitle, desc, dark}) => {
                             <Title text={title} textThink={titleThink}/>
                         </div>
                         <div className={style.desc}>
-                            {desc}
+                            <Description text={desc} light={true}/>
                         </div>
                         <div className={style.subtitleWrapper}>
                             <Subtitle text={subtitle}/>

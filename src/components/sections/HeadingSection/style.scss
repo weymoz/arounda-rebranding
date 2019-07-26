@@ -1,31 +1,49 @@
-.headingSection{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 90px 0 0;
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+
+.section{
+    padding: 260px 0 100px;
+    display: inherit;
+    grid-template-columns: inherit;
+    grid-column: 1 / -1;
+    @media (max-width: $maxTablet){
+        padding: 170px 0 60px;
+    }
+}
+.container{
+    grid-column: var(--desktopWidth);
+    display: inherit;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    @media(max-width: $maxLaptop){
+        grid-column: var(--tabletWidth);
+        align-items: start;
+    }
+}
+.titleWrapper{
+    padding: 0 10% 0 0;
+    @media (max-width: $maxMobile){
+        grid-column: span 2;
+        margin: 0 0 24px;
+    }
 }
 .headingWrapper{
-    grid-column: span 8;
     transform-origin: center;
 }
-.subtitleWrapper{
-    grid-column: span 10;
-    grid-row: 2/3;
-    margin: 80px 0 0;
+.textWrapper{
+    @include font(19px, 16px, $maxLaptop, $maxTablet);
+    font-weight: 500;
+    @media (max-width: $maxMobile){
+        grid-column: span 2;
+    }
 }
-.subtitle{
-    letter-spacing: -0.4px;
-    position: relative;
-    font-weight: 400;
-    font-size: 16px;
-    &:after{
-        content: "";
-        width: 55px;
-        height: 1px;
-        background: #212121;
-        position: absolute;
-        bottom: -2px;
-        left: 0;
+.text{
+    margin: 0 0 30px;
+}
+.link{
+    color: $gray;
+    a{
+        color: $black;
     }
 }

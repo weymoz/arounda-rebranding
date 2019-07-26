@@ -6,59 +6,45 @@ export default class Works extends Component {
         const data = [
             {
                 id: 0,
-                image: './assets/images/bold.png',
-                title: 'Feel bold',
-                desc: 'Strategy, UX Design, UI Design'
+                image: './assets/images/bold.jpg',
+                title: 'Bold',
+                desc: 'UX Design, UI Design'
             },
             {
                 id: 1,
-                image: './assets/images/gigzi.png',
+                image: './assets/images/gigzi.jpg',
                 title: 'Gigzi',
                 desc: 'Strategy, UX Design, UI Design, Development'
             },
             {
                 id: 2,
-                image: './assets/images/Lustery.png',
-                title: 'Lustery',
-                desc: 'UX Design, UI Design'
-            },
-            {
-                id: 3,
-                image: './assets/images/bold.png',
+                image: './assets/images/velonto.jpg',
                 title: 'Velonto',
                 desc: 'Strategy, UX Design, UI Design'
             },
             {
-                id: 4,
-                image: './assets/images/metricly.png',
+                id: 3,
+                image: './assets/images/metricly.jpg',
                 title: 'Metricly',
-                desc: 'UX Design, UI Design'
-            },
-            {
-                id: 5,
-                image: './assets/images/Lustery.png',
-                title: 'Feel bold',
-                desc: 'UX Design, UI Design'
+                desc: 'Strategy, UX Design, UI Design'
             },
         ]
         return (
-            <div className="container">
-                <div className={style.grid}>
-                    {
-                        data.map(el => {
-                            return (
-                                <div key={el.id} className={style.item}>
-                                    <div className={style.image}> <img src={el.image} alt=""/></div>
-                                    <div className={style.wrapper}>
-                                        <h3 className={style.title}>{el.title}</h3>
-                                        <div className={style.desc}>{el.desc}</div>
-                                    </div>
+            <div className={style.row}>
+                {
+                    data.map(el => {
+                        return (
+                            <div key={el.id} className={style.item}>
+                                <div className={style.image}> <img src={el.image} alt=""/></div>
+                                <div className={style.wrapper}>
+                                    <h3 className={style.title}>{el.title}</h3>
+                                    <div className={style.desc}>{el.desc}</div>
                                 </div>
-                            )
-                        })
-                    }
-                    
-                </div>
+                            </div>
+                        )
+                    })
+                }
+                
             </div>
         )
     }

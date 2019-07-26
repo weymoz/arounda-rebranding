@@ -4,58 +4,51 @@
 
 .section{
     min-height: 100vh;
-    margin: 0 0 300px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    @media (max-width: $maxTablet){
-        margin: 0 0  260px;
-    }
-    @media (max-width: $maxMobile){
-        margin: 0 0  160px;
-    }
+    margin: 0 0 var(--spacing);
+    grid-column: 1 / -1;
+    display: inherit;
+    grid-template-columns: inherit;
+    align-items: center;
 }
 .image{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 40%;
-    min-height: 100%;
-    @media (max-width: $minTablet){
-        position: relative;
-        width: 100%;
-        padding: 0 66px 0 0;
-    }
-    @media (max-width: $maxMobile){
-        padding: 0 28px 0 0;
+    grid-column: 1 / span 19;
+    position: relative;
+    height: 100%;
+    @media (max-width: $maxTablet){
+        padding: 56% 0 0;
+        grid-column: 1 / -4;
     }
     img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
         object-fit: cover;
     }
 }
 .content{
-    grid-column: 7/span 6;
+    grid-column: 24 / -8;
     transform: translateY(-50px);
-    @media (max-width: $minTablet){
+    @media (max-width: $maxTablet){
+        grid-column: 8 / -8;
         transform: translateY(0);
-        grid-column: 2/span 9;
+        grid-row: 2 / 3;
         margin: 110px 0 0;
     }
     @media (max-width: $maxMobile){
-        grid-column: 1/-1;
-        margin: 70px 0 0;
+        grid-column: var(--tabletWidth);
     }
 }
-
-.subtitle{
-    @include font(29px, 21px, $minDesktop, $minTablet);
-    font-weight: 300;
+.titleWrapper{
+    margin: 0 0 16px;
 }
+
 .products{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     margin: 150px 0 0;
-    @media (max-width: $minTablet){
+    @media (max-width: $maxTablet){
         margin: 80px 0 0;
     }
 }
@@ -65,7 +58,7 @@
     }
     .item{
         letter-spacing: 0.39px;
-        @include font(21px, 18px, $minDesktop, $minTablet);
+        @include font(21px, 18px, $minTablet, $maxMobile);
         padding: 0 30px 0 0;
         transition: all .3s $cubic; 
         position: relative;

@@ -6,60 +6,81 @@
     min-height: 100vh;
     padding: 100px 0 100px;
     margin: 0 0 100px;
+    grid-column: 1 / -1;
+    display: inherit;
+    grid-template-columns: inherit; 
 }
 
 .content{
-    grid-column: 2/span 8;
-    padding: 0 0 100px;
-    @media (max-width: $maxMobile){
-        grid-column: 1/span 10;
+    grid-column: 11/span 16;
+    @media (max-width: $maxLaptop){
+        grid-column: 8/span 18;
         padding: 0 0 76px;
     }
+    @media (max-width: $maxTablet){
+        grid-column: 4/ -8;
+        padding: 0 0 86px;
+    }
 }
+.titleWrapper{
+    margin: 0 0 16px;
+}
+
 .image{
-    grid-column: 8/span 3;
+    grid-column: -20 /span 11;
     grid-row: 2/3;
     display: grid;
     justify-items: center;
+    @media (max-width: $maxLaptop){
+        grid-column: -18/ -8;
+        padding: 0 0 76px;
+    }
+    @media (max-width: $maxTablet){
+        grid-column: 4/ span 11;
+    }
     @media (max-width: $maxMobile){
-        grid-column: 1/span 5;
-        padding: 0 0 52px;
+        grid-column: 4/ span 20;
     }
     img{
         max-height: 177px;
-        @media (max-width: $maxMobile){
-            max-height: 107px;
-        }
     }
 }
 .services{
     grid-row: 2/3;
-    grid-column: 2/span 5;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 10% 0 0;
-    @media (max-width: $maxMobile){
-        grid-column: 1/span 12;
+    grid-column: 11/span 16;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    @media (max-width: $maxLaptop){
+        grid-column: 8/span 18;
+        padding: 0 0 76px;
+    }
+    @media (max-width: $maxTablet){
+        grid-column: 4/ -4;
         grid-row: 3/4;
         padding: 0 0 82px;
     }
+    @media (max-width: $maxMobile){
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
     .item{
-        @include font(29px, 21px, $minDesktop, $minTablet);
-        margin: 0 40px 40px 0;
+        @include font(29px, 19px, $minTablet, $minMobile);
+        margin: 0 40px 40px 0  ;
+        padding: 0 0 0 35px ;
         position: relative;
         letter-spacing: 0.54px;
         max-height: 40px;
-        &:after{
+        white-space: nowrap;
+        &:before{
             content: "";
             position: absolute;
-            bottom:0;
+            top:50%;
             left: 0;
-            width: 100%;
+            transform: translateY(-50%);
+            width: 13px;
             height: 2px;
             background: $lightGreen;
             transition: all .3s $cubic;
             z-index: -1;
-            opacity: .7;
         }
         &:hover{
             &:after{
@@ -70,17 +91,16 @@
 }
 .more{  
     grid-row: 3/4;
-    grid-column: 2/span 7;
+    grid-column: 11/span 16;
     font-weight: bold;
     font-size: 18px;
-    @media (max-width: $maxMobile){
-        grid-column: 1/span 10;
+    margin: 80px 0 0;
+    @media (max-width: $maxLaptop){
+        grid-column: 8/span 18;
+    }
+    @media (max-width: $maxTablet){
+        grid-column: 4/ -4;
         grid-row: 4/5;
     }
 
-}
-
-.subtitle{
-    @include font(29px, 21px, $minDesktop, $minTablet);
-    font-weight: 300;
 }

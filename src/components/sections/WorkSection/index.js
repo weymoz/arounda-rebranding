@@ -8,11 +8,9 @@ const WorkSection = (props) => {
     
     return (
         <section className={style.workSection}>
-            <div className="container">
                 <div className={style.titleWrapper}>
                     <Title text={"Recent work"}/>
                 </div>
-            </div>
             <Works/>
         </section>
     )

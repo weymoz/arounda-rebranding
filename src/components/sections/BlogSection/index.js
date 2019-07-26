@@ -27,34 +27,30 @@ const BlogSection = (props) => {
 
     return (
         <section className={style.section}>
-            <div className="container">
-                <div className='grid'>
-                    <div className={style.titleWrapper}>
-                        <Title text={'Blog and news'}/>
-                    </div>
-                    <div className={style.posts}>
-                        <ul>
-                            {posts.map(el => {
-                                return (
-                                    <li key={el.id} className={style.post}>
-                                        <div className={style.date}>
-                                            <span>{el.date}</span>
-                                            <span className={style.dash}>/</span>
-                                            <span>{el.category}</span>
-                                        </div>
-                                        <div className={style.title}>
-                                            {el.title}
-                                        </div> 
-                                    </li>
-                                )
-                                })
-                            }
-                        </ul>
-                    </div>
-                    <div className={style.image}>
-                        <img src="./assets/images/img-4.png" alt="image"/>
-                    </div>
-                </div>
+            <div className={style.titleWrapper}>
+                <Title text={'Blog and news'} />
+            </div>
+            <div className={style.posts}>
+                <ul>
+                    {posts.map(el => {
+                        return (
+                            <li key={el.id} className={style.post}>
+                                <div className={style.date}>
+                                    <span>{el.date}</span>
+                                    <span className={style.dash}>/</span>
+                                    <span>{el.category}</span>
+                                </div>
+                                <div className={style.title}>
+                                    {el.title}
+                                </div>
+                            </li>
+                        )
+                    })
+                    }
+                </ul>
+            </div>
+            <div className={style.image}>
+                <img src="./assets/images/img-4.png" alt="image" />
             </div>
         </section>
     )

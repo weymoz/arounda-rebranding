@@ -3,60 +3,65 @@
 
 .section{
     min-height: 100vh;
-    margin: 0 0 300px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    margin: 0 0 260px;
+    display: inherit;
+    grid-template-columns: inherit;
+    grid-column: 1 / -1;
+    grid-auto-rows: auto;
+    align-items: center;
     @media (max-width: $maxTablet){
-        margin: 0 0  260px;
+        margin: 0 0  180px;
     }
     @media (max-width: $maxMobile){
         margin: 0 0  160px;
     }
 }
 .image{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 40%;
+    grid-column: -20 / -1;
+    position: relative;
     height: 100%;
-    @media (max-width: $minTablet){
-        position: relative;
-        width: 100%;
-        padding: 0 0 0 66px;
-    }
-    @media (max-width: $maxMobile){
-        padding: 0 0 0 28px;
+    padding: 56% 0 0;
+    @media (max-width: $maxTablet){
+        grid-column: 4 / -1;
     }
     img{
         object-fit: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 }
 
 .content{
-    grid-column: span 5;
+    grid-column: 8 / span 14;
     transform: translateY(-50px);
-    @media (max-width: $minTablet){
+    grid-row: 1 / 2;
+    @media (max-width: $maxLaptop){
+        grid-column: 8 / span 17;
+    }
+    @media (max-width: $maxTablet){
+        grid-column: 8 / -8;
         transform: translateY(0);
-        grid-column: 2/span 9;
+        grid-row: 2 / 3;
         margin: 110px 0 0;
     }
     @media (max-width: $maxMobile){
-        grid-column: 1/-1;
+        grid-column: var(--tabletWidth);
         margin: 70px 0 0;
     }
 }
-
-.subtitle{
-    @include font(29px, 21px, $minDesktop, $minTablet);
-    font-weight: 300;
+.titleWrapper{
+    margin: 0 0 16px;
 }
 .datas{
     margin: 120px 0 0;
     display: flex;
     justify-content: space-between;
-    @media (max-width: $minTablet){
-        margin: 70px 0 0;
+    max-width: 430px;
+    @media (max-width: $maxTablet){
+        margin: 80px 0 0;
     }
 }
 .datas .name{

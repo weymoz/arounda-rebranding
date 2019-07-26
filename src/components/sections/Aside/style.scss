@@ -46,10 +46,11 @@
     transition: all .3s $cubic;
     grid-column: 7 / span 18;
     @media (max-width: $maxTablet){
-        grid-column: 3/span 20;
+        grid-column: 4/span 20;
     }
     @media (max-width: $maxMobile){
         justify-content: flex-start;
+        grid-column: var(--tabletWidth);
     }
     li{
         margin: 0 0 30px;

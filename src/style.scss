@@ -7,9 +7,8 @@
 :root{
     --cells: 48;
     --cellSize: calc(100vw / var(--cells));
-    --spacing: calc(var(--cellSize) * 6);
+    --spacing: calc(var(--cellSize) * 8);
     --desktopWidth: 8 / -8;
-    --laptopWidth: 5 / -5;
     --tabletWidth: 4 / -4;
 }
 

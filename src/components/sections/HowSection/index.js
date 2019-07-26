@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './style.scss';
-import TitleSecondary from '@simple/TitleSecondary';
+import Title from '@simple/Title';
+import Description from '@simple/Description';
 
 
 const HowSection = (props) => {
@@ -13,11 +14,16 @@ const HowSection = (props) => {
     ]
     return (
         <section className={style.section}>
-            <div className="container">
-                <div className='grid'>
                     <div className={style.content}>
-                        <TitleSecondary text={'How?'}/>
-                        <div className={style.subtitle}>Everything you need to make a successful digital product or service</div>
+                        <div className={style.titleWrapper}>
+                            <Title text={'How?'}/>
+                        </div>
+                        <div className={style.descWrapper}>
+                            <Description 
+                                text='We use our capabilities to make successful digital products using our own user-oriented methods that create the results'
+                                light={true}
+                                />
+                        </div>
                     </div>
                     <div className={style.image}>
                         <img src="assets/images/img-3.png" alt=""/>
@@ -34,8 +40,6 @@ const HowSection = (props) => {
                             More about services
                         </a>
                     </div>
-                </div>
-            </div>
         </section>
     )
 };

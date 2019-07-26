@@ -8,6 +8,8 @@ import WhatSection from "@sections/WhatSection";
 import HowSection from "@sections/HowSection";
 import BlogSection from "@sections/BlogSection";
 import StartSection from "@sections/StartSection";
+import PartnerSection from "@sections/PartnerSection";
+import VideoSection from "@sections/VideoSection";
 import BackgroundAnimate from "@simple/BackgroundAnimate";
 
 class Main extends Component {
@@ -32,11 +34,13 @@ class Main extends Component {
             <Fragment>
                 <HeadingSection ref={el => this.heading = el}/>
                 <BackgroundAnimate ref={el => this.bg = el}/>
+                <VideoSection/>
+                <PartnerSection />
                 <WorkSection/>
                 <AgencySection
-                    desc='Our team consists strategists, designers, developers, and business analysts'
-                    title='Digital product agency'
-                    subtitle='We`re smart partner for startup founders and enterprice'
+                    desc='We are a team of digital product experts consisting of the experienced product managers, designers, developers, and business analysts. '
+                    title='Who?'
+                    subtitle='Expertise in fintech and food delivery niches'
                 />
                 <WhySection/>
                 <WhatSection/>
