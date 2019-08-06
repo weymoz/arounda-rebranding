@@ -41,16 +41,16 @@ const BlogSection = (props) => {
                                     <span>{el.category}</span>
                                 </div>
                                 <div className={style.title}>
-                                    {el.title}
+                                    <span>{el.title}</span>
+                                </div>
+                                <div className={style.image}>
+                                    <img src="./assets/images/img-4.png" alt="image" />
                                 </div>
                             </li>
                         )
                     })
                     }
                 </ul>
-            </div>
-            <div className={style.image}>
-                <img src="./assets/images/img-4.png" alt="image" />
             </div>
         </section>
     )

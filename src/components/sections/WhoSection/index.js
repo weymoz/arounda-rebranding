@@ -1,22 +1,22 @@
 import React from 'react';
-import Title from '@simple/Title';
+import TitleSecondary from '@simple/TitleSecondary';
 import Subtitle from '@simple/Subtitle';
 import Description from '@simple/Description';
 import style from './style.scss';
 import LineSvg from '@assets/svg/line.svg';
 
-const AgencySection = ({title, titleThink, subtitle, desc, dark}) => {
+const WhoSection = ({title, titleThink, subtitle, desc, dark}) => {
     return (
         <section className={`${style.section} ${dark ? style.darkBg : ''}`}>
                     <div className={style.content}>
                         <div className={style.titleWrapper}>
-                            <Title text={title} textThink={titleThink}/>
+                            <TitleSecondary text='Who?'/>
                         </div>
                         <div className={style.desc}>
-                            <Description text={desc} light={true}/>
+                            <Description text='We are a team of digital product experts consisting of the experienced product managers, designers, developers, and business analysts. ' light={true}/>
                         </div>
                         <div className={style.subtitleWrapper}>
-                            {<Subtitle text={subtitle}/>}
+                            <p>Expertise in <span>fintech</span> and <span>food delivery</span> niches</p>
                         </div>   
                     </div>
                     <div className={style.image}>
@@ -25,4 +25,4 @@ const AgencySection = ({title, titleThink, subtitle, desc, dark}) => {
         </section>
     )
 };
-export default AgencySection;
+export default WhoSection;

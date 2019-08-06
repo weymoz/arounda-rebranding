@@ -7,7 +7,7 @@ export default class SliderSection extends Component {
     render() {
         return (
             <section className={style.sliderSection}>
-                <div className="container">
+                <div className={style.container}>
                     <div className={style.titleWrapper}>
                         <Title text={'Reviews'}/>
                     </div>

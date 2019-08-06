@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {TimelineLite, Power0} from 'gsap';
+import { Link } from "react-router-dom";
 import style from './style.scss';
 
 class Aside extends Component{
@@ -30,13 +31,15 @@ class Aside extends Component{
             .set(this.socials.childNodes, {clearProps:"all"})
     }
 
+    
+
     render () {
         const menu = [
-            ['Work', 'Our amazing works'],
-            ['Methods','Our amazing works'],
-            ['Services', 'Our amazing works'],
-            ['Blog', 'Our amazing works'],
-            ['Contact', 'Our amazing works']
+            ['Work', 'Our amazing works', '/works'],
+            ['Methods','Our process', '/works'],
+            ['Services', 'Our capabilities', '/services'],
+            ['Blog', 'Our thoughts', '/works'],
+            ['Contact', 'Let`s chat', '/contacts']
         ]
         const socials = [
             'dribbble',
@@ -45,7 +48,7 @@ class Aside extends Component{
             'facebook'
         ]
 
-        const {openMenu} = this.props;
+        const {openMenu, handleCloseMenu} = this.props;
         return (
             <aside className={`${style.aside} ${openMenu ? style.active : ""}`}>
                 <div className={style.wrapper}>
@@ -55,7 +58,7 @@ class Aside extends Component{
                                 {menu.map((el,i) => {
                                     return (
                                         <li key={i}>
-                                            <a className={style.link} href="#">{el[0]}</a>
+                                            <Link className={`${style.link} menu-link`} onClick={handleCloseMenu} to={el[2]}>{el[0]}</Link>
                                             <div className={style.desc}>{el[1]}</div>
                                         </li>
                                     )
@@ -67,7 +70,7 @@ class Aside extends Component{
                                 {socials.map((el,i) => {
                                     return (
                                         <li key={i}>
-                                            <a href="#">{el}</a>
+                                            <a target='_blank' href="#">{el}</a>
                                         </li>
                                     )
                                 })}

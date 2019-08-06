@@ -10,8 +10,8 @@ const PartnerSection = (props) => {
                     <TitleSecondary  text='Smart partner for'/>
                 </div>
                 <div className={s.textWrapper}>
-                    <p>Create and launch new web & mobile digital products for b2c/b2b</p>
-                    <p>Evolve existing digital products to meet new challenging goals </p>
+                    <p><span>Create and launch new web & mobile digital</span> <span>products for b2c/b2b</span></p>
+                    <p><span>Evolve existing digital products to meet new</span> <span>challenging goals </span></p>
                 </div>
                 <div className={s.partnersWrapper}>
                     <img src="/assets/images/gigziP.png" alt="gigzi"/>

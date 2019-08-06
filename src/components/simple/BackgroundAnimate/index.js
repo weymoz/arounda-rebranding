@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { TimelineMax } from 'gsap';
+import {  TimelineMax } from 'gsap';
 
 
 
@@ -8,8 +8,7 @@ export default class BackgroundAnimate  extends Component {
     get tween () {
         const t = new TimelineMax();
 
-        t   
-            .to(this.bg, 1.8,  {y: '-300%',  ease: SlowMo.ease.config(0.7, 0.7, false)})
+        t.fromTo(this.bg, 1.8,{y: '300%'}, {y: '-300%',  ease: SlowMo.ease.config(0.7, 0.7, false)})
 
         return t;
     }

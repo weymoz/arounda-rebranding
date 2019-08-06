@@ -59,7 +59,7 @@ class SliderSingle extends Component{
                         sliders.map(el => {
                             return (
                                 <div key={el.id} >
-                                    <div className={`grid ${style.slideWrapper}`} >
+                                    <div className={`${style.slideWrapper}`} >
                                         <div className={style.image}>
                                             <img src={el.src} alt={el.name}/>
                                         </div>

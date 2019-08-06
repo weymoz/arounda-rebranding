@@ -1,22 +1,40 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import style from './style.scss';
-import Title from '@simple/Title';
+import TitleSecondary from '@simple/TitleSecondary';
 import Description from '@simple/Description';
+
 
 
 const HowSection = (props) => {
     const services = [
-        'Strategy',
-        'UX Design',
-        'UI Design',
-        'Branding',
-        'Development'
+        {
+            title: 'Strategy',
+            desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
+        },
+        {
+            title: 'UX Design',
+            desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
+        },
+        {
+            title: 'UI Design',
+            desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
+        },
+        {
+            title: 'Branding',
+            desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
+        },
+        {
+            title: 'Development',
+            desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
+        },
+        
     ]
     return (
         <section className={style.section}>
                     <div className={style.content}>
                         <div className={style.titleWrapper}>
-                            <Title text={'How?'}/>
+                            <TitleSecondary text={'How?'}/>
                         </div>
                         <div className={style.descWrapper}>
                             <Description 
@@ -31,14 +49,19 @@ const HowSection = (props) => {
                     <div className={style.services}>
                         {services.map((el,i) => {
                             return (
-                                <div className={style.item} key={i}>{el}</div>
+                                <div className={style.item} key={i}>
+                                    <div className={style.title}>{el.title}</div>
+                                    <div className={style.desc}>
+                                        {el.desc}
+                                    </div>
+                                </div>
                             )
                         })}
                     </div>
                     <div className={style.more}>
-                        <a href="#" className={style.link}>
+                        <Link to={'/services/'} className={style.link}>
                             More about services
-                        </a>
+                        </Link>
                     </div>
         </section>
     )

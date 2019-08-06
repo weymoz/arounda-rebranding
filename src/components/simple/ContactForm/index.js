@@ -4,23 +4,26 @@ import style from './style.scss';
 import Textarea from 'react-textarea-autosize'; 
 
 const budget = [
-    { value: '1000', label: '1000$'},
-    { value: '2000', label: '2000$'},
-    { value: '3000', label: '3000$'},
-    { value: '5000', label: '5000$'},
+    { value: '1000', label: '1000$', name:'budget'},
+    { value: '2000', label: '2000$', name:'budget'},
+    { value: '3000', label: '3000$', name:'budget'},
+    { value: '5000', label: '5000$', name:'budget'},
 ];
 
 const project = [
-    {value: 'custom', label: 'Custom'},
-    {value: 'complex services', label: 'Complex services'},
+    {value: 'custom', label: 'Custom', name:'project'},
+    {value: 'complex services', label: 'Complex services', name:'project'},
 ]
 
 const include = [
     {
-        name: 'custom',
-        include: ['Complex platform', 'Mobile App', 'Web App', 'Marketing website', 'Landing page']
+        'custom': ['Complex platform', 'Mobile App', 'Web App', 'Marketing website', 'Landing page'],
+    },
+    {
+        'complex services': ['Complex platform', 'Mobile App']
     }
 ]
+    
 
 
 const DropdownIndicator = (props) => {
@@ -33,30 +36,89 @@ const DropdownIndicator = (props) => {
 
 export default class ContactForm extends Component {
 
+    state={
+        name: null,
+        email: null,
+        budget: null,
+        project: 'custom',
+        idea: null,
+        include: [],
+        includeList: [],
+    }
+
 
     handlerSubmit = (e) => {
         e.preventDefault();
     }
 
+    handleInput = (e) => {
+        const label = e.target.parentElement.querySelector('label');
+
+        if(e.target.value){
+            label.classList.add(style.active);
+        }else{
+            label.classList.remove(style.active);
+        }
+
+        this.setState({
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    handleChange = (option) => {
+        
+        this.setState({
+            [option.name]: option.value,
+        })
+        
+        // if(option.name === 'project'){
+        //     console.log(include)
+        //     this.setState({
+        //         includeList: [...include[option.name]]
+        //     })
+        // }
+        
+
+    }
+
+    handleChoose = (e) => {
+        const parent = e.target.parentElement;
+        if(!parent.classList.contains(style.active)){
+            this.setState({
+                include: [...this.state.include, e.target.innerHTML]
+            })
+
+            parent.classList.add(style.active)
+        }else{
+            this.setState({
+                include: this.state.include.filter(item => e.target.innerHTML!==item)
+            })
+            parent.classList.remove(style.active)
+        }
+    }
 
 
     render() {
 
         return (
-            <form className='grid' onSubmit={this.handlerSubmit}>
+            <form className={style.grid} onSubmit={this.handlerSubmit}>
                 <div className={style.inputWrapper}>
                     <input 
                         className={style.input} 
                         type="text"
                         placeholder="What’s your name"
+                        onChange={this.handleInput}
+                        name='name'
                     />
                     <label>Your name</label>
                 </div>
                 <div className={style.inputWrapper}>
                     <input 
+                        onChange={this.handleInput}
                         className={style.input} 
                         type="email"
                         placeholder="What’s your email"   
+                        name='email'
                     />
                     <label>Your email</label>
                 </div>
@@ -65,8 +127,10 @@ export default class ContactForm extends Component {
                         className="select"
                         classNamePrefix="select"
                         options={budget}
+                        onChange={this.handleChange}
                         components={{DropdownIndicator}}
                         placeholder={'Project budget'}
+                        name='budget'
                     />
                     <label>Project budget</label>
                 </div>
@@ -75,8 +139,10 @@ export default class ContactForm extends Component {
                         className="select"
                         classNamePrefix="select"
                         options={project}
+                        onChange={this.handleChange}
                         components={{DropdownIndicator}}
                         placeholder={'Project type'}
+                        name='project'
                     />
                     <label>Project’s type</label>
                 </div>
@@ -85,6 +151,8 @@ export default class ContactForm extends Component {
                         className={style.textarea}
                         style={{height: '42px'}}
                         placeholder={'Tell us more about your idea'}
+                        name='idea'
+                        onChange={this.handleInput}
                     />
                     <div className={style.inputFileWrapper}>
                         <input id='file' className={style.inputFile} type='file'/>
@@ -97,17 +165,15 @@ export default class ContactForm extends Component {
                     <label>What to include?</label>
                     <ul className={style.list}>
                         {
-                            include.map((el, i ) => {
+                            include[0]['custom'].map((el, i) => {
                                 return (
-                                    el.include.map((el, i) => {
-                                        return(
-                                            <li key={i} className={`${style.item} ${style.active}`}>
-                                                <button>{el}</button>
-                                            </li>
-                                        )
-                                    })
-                                )
+                                                (<li onClick={this.handleChoose} key={i} className={`${style.item}`}>
+                                                    <button>{el}</button>
+                                                </li>)
+                                            )
+                                
                             })
+                        
                         }
                     </ul>
                 </div>

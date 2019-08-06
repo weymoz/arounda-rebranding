@@ -57,7 +57,7 @@ export default class Services extends Component {
                 <AgencySection
                     title='Get in touch.'
                     titleThink='And be excited'
-                    subtitle='Get in touch. And be excited'
+                    subtitle='We`re always open for new connections'
                     dark={true}
                 />
             </Fragment>

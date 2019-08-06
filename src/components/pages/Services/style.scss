@@ -5,7 +5,6 @@
 .serviceBg{
     max-height: 85vh;
     grid-column: 1/-7;
-    margin: 0 0 calc(var(--spacing));
     @media (max-width: $maxLaptop){
         grid-column: 1 / -4;
     }

@@ -79,7 +79,7 @@
     }
 }
 .item .desc{
-    opacity: .4;
+    color: $gray;
     letter-spacing: .4px;
     @media (max-width: $maxMobile){
         display: none;

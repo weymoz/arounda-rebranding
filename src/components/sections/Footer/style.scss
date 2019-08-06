@@ -20,6 +20,7 @@
 
 .contact,.positions, .adress{
     margin: 0 30px 60px 0;
+    
 }
 .socials{
     @media (max-width: $maxMobile){
@@ -32,14 +33,23 @@
 .title{
     letter-spacing: -0.4px;
     margin: 0 0 11px;
+    @media (max-width: $maxMobile){
+        margin: 0 0 5px;
+    }
 }
 .contact .title{
     color: $gray;
     margin: 0 0 17px;
+    @media (max-width: $maxMobile){
+        margin: 0 0 5px;
+    }
 }
 .contact .mail{
     font-size: 18px;
     position: relative;
+    @media (max-width: $maxMobile){
+        font-size: 16px;
+    }
     &:after{
         content: '';
         position: absolute;
@@ -61,6 +71,7 @@
 .text{
     color: $gray;
     letter-spacing: -0.4px;
+    line-height: 1.5;
 }
 .footerBottom{
     display: flex;
@@ -68,17 +79,20 @@
     align-items: center;
     border-top: 1px solid rgba(151,151,151,.1);
     padding: 40px 0;
+    @media (max-width: $maxTablet){
+        padding: 20px 0;
+
+    }
     @media (max-width: $maxMobile){
         flex-direction: column;
         align-items: flex-start;
-        padding: 25px 0;
 
     }
 }
 .links{
-    color: $gray;
+    color: #000;
     @media (max-width: $maxMobile){
-        margin: 10px 0 0;
+        margin: 8px 0 0;
 
     }
     a{

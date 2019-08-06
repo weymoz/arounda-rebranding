@@ -5,8 +5,8 @@ const StartSection = (props) => {
     return (
         <section className={style.section}>
                     <div className={style.title}>
-                        Got a project?
-                        <div>let's start.</div>
+                        Got a project?<br/>
+                        <div>Let's start.</div>
                     </div>
         </section>
     )

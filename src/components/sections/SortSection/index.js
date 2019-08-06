@@ -53,10 +53,8 @@ export default class SortSection extends Component {
         const {sortList, selectedItem, showDropdown} = this.state;
 
         return (
-            <Fragment>
+            <section className={style.section}>
                 <section className={style.sortSection}>
-                    <div className="container">
-                        <div className="grid">
                             <div className={style.sortWrapper}>
                                 <div className={style.sort}>
                                     <span>Sort by</span>
@@ -92,23 +90,19 @@ export default class SortSection extends Component {
                                         }
                                     </ul>
                             </div>
-                        </div>
-                    </div>
                 </section>
                 <section className={style.categorySection}>
-                    <div className="container">
-                        <div className="grid">
+                        <div className={style.row}>
                             <div className={style.content}>
-                                <h3 className={style.title}>Complex platforms</h3>
-                                <p className={style.text}>We have expertise working on the ecosystem of the products, and we are ready to provide non-standard solutions. Our team concern about your business to step into the market is fully equipped. </p>
-                            </div>
-                            <div className={style.image}>
-                                <img src="assets/images/img-3.png" alt="image"/>
-                            </div>
+                                    <h3 className={style.title}>Complex platforms</h3>
+                                    <p className={style.text}>We have expertise working on the ecosystem of the products, and we are ready to provide non-standard solutions. Our team concern about your business to step into the market is fully equipped. </p>
+                                </div>
+                                <div className={style.image}>
+                                    <img src="assets/images/img-3.png" alt="image"/>
+                                </div>
                         </div>
-                    </div>
                 </section>
-            </Fragment>
+            </section>
         )
     }
 }

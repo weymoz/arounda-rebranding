@@ -2,7 +2,7 @@ const data = [
     {
         id: 'itemA',
         title: 'Branding',
-        description: 'A system of actions aimed at identifying a digital product in a digital environment. Creating a variety of graphic media based on the mental shell of the product.',
+        description: 'The system of the actions aimed at the identification of the digital product in the digital area. Creating different graphic media on the basis of the mental image of the product.',
         image: 'assets/images/dev.jpg',
         background: 'rgba(190,87,255,1)',
         video:  {
@@ -14,7 +14,7 @@ const data = [
     {
         id: 'itemB',
         title: 'Strategy',
-        description: 'Выявление исходной точки идеи для формирования плана развития. Работа с идеей, тестирование гипотез, изучение ЦА. Определение ценности продукта на ранних этапах.',
+        description: 'Defining the initial point of the idea to work out the development plan. Working on the initial idea, testing the hypothesis, researching the target audience. Measuring the value of the product of the initial stages.    ',
         image: 'assets/images/ui.jpg',
         background: 'rgba(255,247,113,1)',
         video: {
@@ -26,7 +26,7 @@ const data = [
     {
         id: 'itemC',
         title: 'UX Design',
-        description: 'Создание системы эффективного взаимодействия пользователя с продуктом. Стремление к созданию условий для интуитивного путешествия пользователя внутри цифрового продукта.',
+        description: 'Creating the system of the efficient interaction between the customer and the product. Aiming at providing the conditions for the customer’s intuitive navigation inside the digital product.Creating the system of the efficient interaction between the customer and the product. Aiming at providing the conditions for the customer’s intuitive navigation inside the digital product.',
         image: 'assets/images/dev.jpg',
         background: 'rgb(56,187,250)',
         video: {
@@ -38,7 +38,7 @@ const data = [
     {
         id: 'itemD',
         title: 'UI Design',
-        description: 'Создание системы эффективного взаимодействия пользователя с продуктом. Стремление к созданию условий для интуитивного путешествия пользователя внутри цифрового продукта.',
+        description: 'Process of developing of the user interface. Working on the content, setting the elements and placing the accents. Creating the visual atmosphere and the mood to interact with the product.',
         image: 'assets/images/ui.jpg',
         background: 'rgb(236, 89, 104)',
         video: {
@@ -50,7 +50,7 @@ const data = [
     {
         id: 'itemE',
         title: 'Development',
-        description: 'Разработка, направленная на оживление дизайна пользовательского интерфейса. Внедрение современных технологий в цифровой продукт, отвечая основным целям продукта и потребностям рынка.',
+        description: 'Developing aimed at making the user interface design look lively. Implementing the modern technology into the digital product corresponding to the main product goals and the market demand.',
         image: 'assets/images/dev.jpg',
         background: 'rgb(0,0,0)',
         video: {

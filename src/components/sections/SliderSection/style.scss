@@ -6,11 +6,18 @@
     margin: 100px 0;
     padding: 110px 0 160px;
     background: #fafafa;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: inherit;
+    grid-template-columns: inherit;
+    grid-column:  1 / -1;
+    overflow-x: hidden;
     @media (max-width: $maxTablet){
         padding: 70px 0 0;
+    }
+}
+.container{
+    grid-column: var(--desktopWidth);
+    @media (max-width: $maxLaptop){
+        grid-column: var(--tabletWidth);
     }
 }
 .titleWrapper{

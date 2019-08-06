@@ -6,12 +6,13 @@
     grid-column: 1 / -1;
     grid-template-columns: inherit;
     padding: var(--spacing) 0;
+    grid-auto-rows: min-content;
+
     .content{
         grid-column: 11 / span 18;
-        padding: 10% 0 calc(var(--spacing));
+        padding: 10% 0 90px;
         @media (max-width: $maxLaptop){
             grid-column: 8 / span 24 ;
-            padding: 30px 0 40px;
         }
         @media (max-width: $maxTablet){
             grid-column: var(--tabletWidth);
@@ -41,15 +42,21 @@
         @media (max-width: $maxLaptop){
             grid-column: 8 / span 30 ;
         }
-        @media (max-width: $minTablet){
+        @media (max-width: $maxTablet){
             grid-column: var(--tabletWidth);
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         }
+        @media (max-width: $maxMobile){
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        }
         & > div{
             margin: 0 0 30px;
+            @media (max-width: $maxMobile){
+                margin: 0 0 14px;
+            }
         }
         .item{
-            @include font(29px, 16px, $maxTablet, $maxMobile);
+            @include font(29px, 18px, $minTablet, $maxMobile);
             display: inline-block;
             letter-spacing: 0.54px;
             transition: all .3s $cubic;
@@ -59,7 +66,7 @@
                 width: 0;
                 height: 100%;
                 position: absolute;
-                top: 0;
+                top: -2px;
                 left: -40px;
                 background: $lightGreen;
                 transition: all .3s $cubic;
@@ -73,4 +80,7 @@
             }
         }
     }
+}
+.titleWrapper{
+    margin: 0  0 16px;
 }

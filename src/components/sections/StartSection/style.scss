@@ -18,6 +18,19 @@
         grid-column: var(--tabletWidth);
     }
     div{
-        font-weight: 500;
+        font-weight: 400;
+        position: relative;
+        transform: translateX(35px);
+        display: inline-block;
+        &:before{
+            content: '';
+            width: 70px;
+            height: 60%;
+            background: $lightGreen;
+            z-index: -1;
+            position: absolute;
+            top: 6px;
+            left: -35px;
+        }
     }
 }

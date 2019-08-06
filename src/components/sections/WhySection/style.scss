@@ -7,13 +7,12 @@
     display: inherit;
     grid-template-columns: inherit;
     grid-column: 1 / -1;
-    grid-auto-rows: auto;
     align-items: center;
     @media (max-width: $maxTablet){
         margin: 0 0  180px;
     }
     @media (max-width: $maxMobile){
-        margin: 0 0  160px;
+        margin: 0 0  150px;
     }
 }
 .image{
@@ -54,6 +53,9 @@
 }
 .titleWrapper{
     margin: 0 0 16px;
+    @media (max-width: $maxMobile){
+        margin: 0 0 12px;
+    }
 }
 .datas{
     margin: 120px 0 0;
@@ -65,9 +67,10 @@
     }
 }
 .datas .name{
-    font-size: 12px;
+    font-size: 13px;
     color: $gray;
-    margin: 0 0 12px;
+    margin: 0 0 16px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     @media (max-width: $minTablet){
         font-size: 11px;
@@ -77,5 +80,6 @@
 .datas .number {
     @include font(34px, 26px, $minDesktop, $maxMobile);
     letter-spacing: 1px;
-    font-weight: 600;
+    font-weight: 500;
+    
 }

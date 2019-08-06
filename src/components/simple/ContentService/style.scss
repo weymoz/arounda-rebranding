@@ -1,23 +1,55 @@
 @import '../../../scss/variables.scss';
 
 .content{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    grid-column: 23 / span 18;
+    grid-column: 23 / -10;
     @media (max-width: $maxLaptop){
         grid-column: 25 / -4;
     }
     .text{
-        font-size: 18px;
-        font-weight: 300;
-        margin: 40px 0 60px;
+        font-size: 19px;
+        font-weight: 400;
+        margin: 16px 0 70px;
+        color: $darkGray;
+        line-height: 1.68;
     }
     .list{
         li{
-            font-size: 18px;
-            margin: 0 0 20px;
+            font-size: 21px;
+            margin: 0 0 22px;
+            position: relative;
+            line-height: 1;
+            span{
+                z-index: 2;
+                transition:all .3s $cubic;
+                position: relative;
+                display: inline-block;
+                line-height: inherit;
+            }
+            &:before{
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: 0;
+                background: $lightGreen;
+                width: 70px;
+                height: 100%;
+                z-index: 1;
+                transform: scaleX(0);
+                transform-origin: left center;
+                transition: all .3s $cubic;
+            }
+            &:hover{
+                span{
+                    transform: translateX(35px);
+                }
+                &:before{
+                    transform: scaleX(1);
+                }
+            }
         }
     }
 }

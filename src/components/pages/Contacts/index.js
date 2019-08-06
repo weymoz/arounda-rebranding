@@ -7,15 +7,13 @@ import Title from '@simple/Title';
 const Contacts = (props) => {
     return (
         <section className={style.sectionContacts}>
-            <div className="container">
-                <div className="grid">
+                <div className={style.grid}>
                     <div className={style.titleWrapper}>
                         <Title text={'Hey, let`s talk!'}/>
                         <p>Fill in the form, or if you prefer <a href="#">send us an email</a></p>
                     </div>
                 </div>
                 <ContactForm/>
-            </div>
         </section>
     )
 };

@@ -20,6 +20,7 @@ class App extends Component {
 	state = {
 		openMenu: false,
 		preloader: true, 
+		hideFooter: false,
 	}
 
 	componentDidMount() {
@@ -31,6 +32,7 @@ class App extends Component {
 			this.tl();
 		}, 100)
 	}
+
 
 	tl = () => {
 			const mainTl = new TimelineMax();
@@ -55,12 +57,22 @@ class App extends Component {
 		})
 
 		document.documentElement.classList.toggle('no-scroll')
-    }	
+	}	
+	handleCloseMenu = (e) => {
+		const {openMenu} = this.state;
+        if(e.target.matches('.menu-link')){
+            this.setState({
+                openMenu: !openMenu
+			})
+			document.documentElement.classList.remove('no-scroll')
+        }
+    }
 
 
 	render() {
 		const {openMenu, preloader} = this.state;
 
+		
 		
 		return (
 				preloader ? <Preloader/>
@@ -73,7 +85,7 @@ class App extends Component {
 							toggleMenu={this.toggleMenu}
 							openMenu={openMenu}
 						/>
-						<Aside openMenu={openMenu}/>
+						<Aside openMenu={openMenu} handleCloseMenu={this.handleCloseMenu}/>
 						<Route path='/' exact component={() =>  <Main ref={el => this.main = el}/>} />
 						<Route path='/works' exact component={Work} />
 						<Route path='/contacts' exact component={Contacts} />

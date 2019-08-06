@@ -55,7 +55,7 @@
     li{
         margin: 0 0 30px;
         position: relative;
-        padding: 0 20px 0 0;
+        padding: 4px 20px 0 0;
         transform: translateY(20px);
         opacity: 0;
         visibility: hidden;
@@ -70,6 +70,7 @@
             @include font(16px, 14px, $minDesktop, $maxTablet);
             display: inline;
             opacity: 0;
+            transform: translateY(-50%);
             transition: all .3s $cubic;
             @media (max-width: $maxTablet){
                 left: -110%;
@@ -111,17 +112,18 @@
     }
 }
 .link{
-    @include font(44px, 31px, $minDesktop, $maxMobile);
+    @include font(44px, 30px, $minDesktop, $maxMobile);
     transition: all .3s $cubic;
     position: relative;
     z-index: 10;
+    line-height: 1;
     &:before{
         content: "";
         left: -20px;
-        top: -4px;
+        top: -2px;
         background: $lightGreen;
         width: 0;
-        height: 100%;
+        height: 90%;
         transition: all .3s $cubic;
         z-index: -1;
         position: absolute;

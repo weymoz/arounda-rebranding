@@ -6,18 +6,8 @@
     grid-template-columns: inherit;
     padding: var(--spacing) 0;
     grid-column: 1/-1;
-    grid-auto-rows: min-content;
-    min-height: 100vh;
-    align-content: center;
     @media (max-width: $maxMobile){
-        padding: calc(var(--spacing) * 2) 0 calc(var(--spacing) * 2);
-    }
-    &.darkBg{
-        background: #FBFBFB;
-        margin: 0 0 var(--spacing);
-        @media (max-width: $maxMobile){
-            margin: 0 0 calc(var(--spacing) * 2);
-        }
+        padding: var(--spacing) 0 calc(var(--spacing) * 2);
     }
 }
 .content{
@@ -35,6 +25,7 @@
 }
 .image{
     grid-column: -19/span 8;
+    padding: 15% 0 0 ;
     @media (max-width: $maxLaptop){
         grid-column: -16 / -8;
     }
@@ -43,16 +34,33 @@
     }
     @media (max-width: $maxMobile){
         grid-column: 3/span 16;
-        padding: 0 0 45px;
+        padding: 0 0 40px;
     }
 }
 .titleWrapper{
     max-width: 400px;
-    margin: 0 0 30px;
+    margin: 0 0 16px;
+    @media (max-width: $maxMobile){
+        margin: 0 0 12px;
+    }
 }
-.desc{
-    font-weight: 300;
-    @include font(29px, 21px, $maxTablet, $maxMobile);
-    margin: 0 0 40px;
-    
+
+.subtitleWrapper{
+    color: #313233;
+    padding: 32px 0 0;
+    @include font(19px, 16px, $maxTablet, $maxMobile);
+    span{
+        position: relative;
+        &:before{
+            content: '';
+            bottom: 0;
+            left: 0;
+            padding: 0 3px;
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            background: $lightGreen;
+            z-index: -1;
+        }
+    }
 }

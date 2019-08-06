@@ -2,7 +2,7 @@ import React, {Component,Fragment} from 'react';
 import {TimelineMax} from 'gsap';
 import WorkSection from "@sections/WorkSection";
 import HeadingSection from "@sections/HeadingSection";
-import AgencySection from "@sections/AgencySection";
+import WhoSection from "@sections/WhoSection";
 import WhySection from "@sections/WhySection";
 import WhatSection from "@sections/WhatSection";
 import HowSection from "@sections/HowSection";
@@ -37,11 +37,7 @@ class Main extends Component {
                 <VideoSection/>
                 <PartnerSection />
                 <WorkSection/>
-                <AgencySection
-                    desc='We are a team of digital product experts consisting of the experienced product managers, designers, developers, and business analysts. '
-                    title='Who?'
-                    subtitle='Expertise in fintech and food delivery niches'
-                />
+                <WhoSection/>
                 <WhySection/>
                 <WhatSection/>
                 <HowSection/>

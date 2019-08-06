@@ -16,6 +16,9 @@
 .titleWrapper{
     max-width: 620px;
     margin: 0 0 50px;
+    @media (max-width: $minTablet){
+        max-width: 420px;
+    }
 }
 .serviceSection{
     grid-column: 11 / -4;
@@ -30,25 +33,36 @@
         grid-column: var(--tabletWidth);
     }
     .item{
-        padding: 140px 30px 86px;
+        padding: 160px calc(var(--cellSize)  * 2) 56px;
         transition: all .3s ease-in-out;
         position: relative;
         @media (max-width: $maxTablet){
-            padding: 140px 25px 50px;
+            padding-top: 140px;
         }
         &:hover{
             background: #61FFDA;
         }
         .icon{
             position: absolute;
-            top: 50px;
-            left: 35px;
+            top: 80px;
+            left: calc(var(--cellSize)  * 2);
+            @media (max-width: $maxTablet){
+                top: 70px;
+            }
+            @media (max-width: $maxMobile){
+                top: 60px;
+            }
         }
         .title{
             font-size: 21px;
+            margin: 0 0 8px;
         }
         .desc{
-            font-weight: 300;
+            font-weight: 400;
+            letter-spacing: -0.4px;
+            opacity: .9;
+            max-width: 300px;
+            line-height: 1.5;
         }
     }
     .item:last-child{
@@ -59,6 +73,9 @@
         }
         &:hover{
             background: #fafafa;
+            .desc{
+                opacity: 1;
+            }
         }
         &:after{
             content: '';

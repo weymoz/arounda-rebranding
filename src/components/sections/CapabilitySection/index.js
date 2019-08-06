@@ -11,7 +11,7 @@ const CapabilitySection = (props) => {
                     <TitleSecondary text='Capabilities' />
                 </div>
                 <div className={style.descWrapper}>
-                    <Description text='We use our skills to make a successful digital product' />
+                    <Description light={true} text='A system of actions aimed at identifying a digital product in a digital environment. Creating a variety of graphic media based on the mental shell of the product.' />
                 </div>
             </div>
             <div className={style.image}>

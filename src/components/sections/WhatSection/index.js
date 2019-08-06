@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './style.scss';
-import Title from '@simple/Title';
+import TitleSecondary from '@simple/TitleSecondary';
 import Description from '@simple/Description';
 
 const WhatSection = (props) => {
@@ -18,7 +18,7 @@ const WhatSection = (props) => {
             </div>
             <div className={style.content}>
                 <div className={style.titleWrapper}>
-                    <Title text={'Why?'}/>
+                    <TitleSecondary text={'What?'}/>
                 </div>
                 <div className={style.descWrapper }>
                     <Description light={true} text='We love craft digital products with fresh branding and the best user experience that people will use every day'/>

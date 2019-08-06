@@ -37,6 +37,22 @@
         }                               
     }
 }
+.grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: calc(var(--cellSize ) * 2);
+    grid-column: var(--desktopWidth);
+    grid-auto-rows: min-content;
+    @media (max-width: $maxLaptop){
+        grid-column: var(--tabletWidth);
+    }
+    @media (max-width: $maxTablet){
+        grid-column: var(--desktopWidth);
+    }
+    @media (max-width: $maxMobile){
+        grid-column: var(--tabletWidth);
+    }
+}
 .input{
     min-height: 42px;
     border: none;
@@ -62,11 +78,10 @@
     position: relative;
     grid-column-end: span 4;
     @media (max-width: $maxTablet){
-        grid-column: 2/span 10;
+        grid-column: 1/ -1;
         margin: 0 0 30px;
     }
     @media (max-width: $maxMobile){
-        grid-column: 1/span 12;
         margin: 0 0 25px;
     }
     label{
@@ -79,20 +94,23 @@
         transition: all .3s $cubic;
         color: $gray;
         font-family: 'PT Sans',sans-serif;
+        &.active{
+            opacity: 1;
+        }
         @media (max-width: $maxMobile){
             font-size: 12px;
         }
     }
+    
 }    
 .selectWrapper{
     grid-column-end: span 4;
     position: relative;
     @media (max-width: $maxTablet){
-        grid-column: 2/span 10;
+        grid-column: 1 / -1;
         margin: 0 0 30px;
     }
     @media (max-width: $maxMobile){
-        grid-column: 1/span 12;
         margin: 0 0 25px;
     }
     label{
@@ -103,7 +121,7 @@
         font-size: 14px;
         transition: all .3s $cubic;
         color: $gray;
-        opacity: 0;
+        opacity: 1;
         font-family: 'PT Sans',sans-serif;
         @media (max-width: $maxMobile){
             font-size: 12px;
@@ -125,14 +143,10 @@
     position: relative;
     padding: 40px 0 0 ;
     @media (max-width: $maxTablet){
-        grid-column: 2/span 10;
+        grid-column: 1 / -1;
         grid-row: 6/7;
         padding: 24px 0 0;
     }
-    @media (max-width: $maxMobile){
-        grid-column: 1/span 12;
-    }
-
 }  
 .textarea{
     width: 100%;
@@ -176,11 +190,8 @@
     align-self: end;
     justify-self: end;
     @media (max-width: $maxTablet){
-        grid-column: 4/ span 8;
+        grid-column: 1 / -1;
         grid-row: 7/8;
-    }
-    @media (max-width: $maxMobile){
-        grid-column: 1/span 12;
     }
 }
 .btn{
@@ -195,11 +206,8 @@
     min-height: 42px;
     align-self: end;
     @media (max-width: $maxTablet){
-        grid-column: 2/span 10;
+        grid-column: 1 / -1;
         grid-row: 5 / 6;
-    }
-    @media (max-width: $maxMobile){
-        grid-column: 1/span 12;
     }
     label{
         position: absolute;
@@ -218,14 +226,18 @@
 .list{
     display: flex;
     flex-wrap: wrap;
-    font-size: 18px;
+    font-size: 19px;
     align-items: flex-end;
     min-height: 42px;
+    @media (max-width: $maxLaptop){
+        font-size: 16px;
+    }
     .item{
         margin-bottom: 7px;
         &.active{
             button{
                 background: $lightGreen;
+                cursor: pointer;
             }
         }
         button{

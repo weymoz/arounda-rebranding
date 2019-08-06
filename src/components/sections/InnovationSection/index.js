@@ -45,8 +45,8 @@ const InnovationSection = ({btn, link}) => {
                                             <div className={style.image}>
                                                 <img src={el.image} alt=""/>
                                             </div>
-                                            <div className={style.text}>{el.text}</div>
-                                            <div className={style.number}>{el.number}</div>
+                                            <div className={style.text}> <span className={style.number}>{el.number}</span>{el.text}</div>
+                                           
                                         </li>
                                     )
                                 })
