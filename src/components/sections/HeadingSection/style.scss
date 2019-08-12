@@ -15,7 +15,8 @@
     grid-column: var(--desktopWidth);
     display: inherit;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: calc(var(--cellSize) * 2);
+    // grid-column-gap: calc(var(--cellSize) * 2);
+    grid-column-gap: 0;
     align-items: center;
     @media(max-width: $maxLaptop){
         grid-column: var(--tabletWidth);
@@ -25,7 +26,8 @@
     }
 }
 .titleWrapper{
-    padding: 0 var(--cellSize) 0 0;
+    // padding: 0 var(--cellSize) 0 0;
+    padding: 0 calc(var(--cellSize) * 2) 0 0;
     @media (max-width: $maxMobile){
         grid-column: span 2;
         margin: 0 0 24px;
@@ -37,7 +39,7 @@
 }
 .textWrapper{
     @include font(19px, 16px, $maxLaptop, $maxTablet);
-    padding: 0 calc(var(--cellSize) * 2) 0 0;
+    padding: 0 calc(var(--cellSize) * 3) 0 0;
     font-weight: 400;
     @media (max-width: $maxMobile){
         grid-column: span 2;

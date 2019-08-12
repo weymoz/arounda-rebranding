@@ -9,6 +9,9 @@
 }
 .titleWrapper{
     grid-column: 8 / span 20;
+    h2 {
+        margin-bottom: -21px;
+    }
     @media (max-width: $maxLaptop){
         grid-column: 4 / -4;
     }
