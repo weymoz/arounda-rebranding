@@ -57,9 +57,6 @@ const Footer = (props) => {
                     <Logo />
                     <div className={style.links}>
                         <a href="#">
-                            Terms and Conditions
-                        </a>
-                        <a href="#">
                             Privacy
                         </a>
                     </div>

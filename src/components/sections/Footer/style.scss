@@ -78,23 +78,13 @@
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid rgba(151,151,151,.1);
-    padding: 40px 0;
+    padding: 36px 0 44px;
     @media (max-width: $maxTablet){
-        padding: 20px 0;
-
-    }
-    @media (max-width: $maxMobile){
-        flex-direction: column;
-        align-items: flex-start;
-
+        padding: 18px 0;
     }
 }
 .links{
     color: #000;
-    @media (max-width: $maxMobile){
-        margin: 8px 0 0;
-
-    }
     a{
         margin: 0 0 0 50px;
         display: inline-block;
@@ -102,7 +92,6 @@
             width: 100%;
             font-size: 14px;
             margin: 0 0 5px;
-
         }
     }
 }
