@@ -6,6 +6,7 @@
   grid-template-columns: inherit;
   padding: var(--spacing) 0;
   grid-column: 1/-1;
+  margin-bottom: 178px;
   @media (max-width: $maxMobile) {
     padding: var(--spacing) 0 calc(var(--spacing) * 2);
   }

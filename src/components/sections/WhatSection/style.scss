@@ -28,8 +28,8 @@
     }
 }
 .content{
-    grid-column: 24 / -8;
-    transform: translateY(-50px);
+    grid-column: 25 / -8;
+    transform: translateY(-26px);
     @media (max-width: $maxLaptop){
         grid-column: 24 / -6;
     }
@@ -50,7 +50,7 @@
     }
 }
 .descWrapper{
-    padding: 0 calc(var(--cellSize) * 4) 0 0;
+    padding: 0 calc(var(--cellSize) * 3) 0 0;
     @media (max-width: $maxTablet){
         padding: 0;
     }
