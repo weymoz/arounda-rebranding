@@ -1,66 +1,66 @@
 @import '../../../scss/variables.scss';
 @import '../../../scss/mixins.scss';
 
-.section{
-    display: inherit;
-    grid-template-columns: inherit;
-    padding: var(--spacing) 0;
-    grid-column: 1/-1;
-    @media (max-width: $maxMobile){
-        padding: var(--spacing) 0 calc(var(--spacing) * 2);
-    }
+.section {
+  display: inherit;
+  grid-template-columns: inherit;
+  padding: var(--spacing) 0;
+  grid-column: 1/-1;
+  @media (max-width: $maxMobile) {
+    padding: var(--spacing) 0 calc(var(--spacing) * 2);
+  }
 }
-.content{
-    grid-column: 11/span 15;
-    @media (max-width: $maxLaptop){
-        grid-column: 8/span 18;
-    }
-    @media (max-width: $maxTablet){
-        grid-column: 4/span 23;
-    }
-    @media (max-width: $maxMobile){
-        grid-column: 3/ -3;
-        grid-row: 2/3;
-    }
+.content {
+  grid-column: 11 / span 15;
+  @media (max-width: $maxLaptop) {
+    grid-column: 8 / span 18;
+  }
+  @media (max-width: $maxTablet) {
+    grid-column: 4 / span 23;
+  }
+  @media (max-width: $maxMobile) {
+    grid-column: 3/ -3;
+    grid-row: 2/3;
+  }
 }
-.image{
-    grid-column: -19/span 8;
-    padding: 15% 0 0 ;
-    @media (max-width: $maxLaptop){
-        grid-column: -16 / -8;
-    }
-    @media (max-width: $maxTablet){
-        grid-column: -16/-4;
-    }
-    @media (max-width: $maxMobile){
-        grid-column: 3/span 16;
-        padding: 0 0 40px;
-    }
+.image {
+  grid-column: -18 / span 7;
+  padding: 3% 0 0;
+  @media (max-width: $maxLaptop) {
+    grid-column: -16 / -8;
+  }
+  @media (max-width: $maxTablet) {
+    grid-column: -16/-4;
+  }
+  @media (max-width: $maxMobile) {
+    grid-column: 3 / span 16;
+    padding: 0 0 40px;
+  }
 }
-.titleWrapper{
-    max-width: 400px;
-    margin: 0 0 16px;
-    @media (max-width: $maxMobile){
-        margin: 0 0 12px;
-    }
+.titleWrapper {
+  max-width: 400px;
+  margin: 0 0 16px;
+  @media (max-width: $maxMobile) {
+    margin: 0 0 12px;
+  }
 }
 
-.subtitleWrapper{
-    color: #313233;
-    padding: 32px 0 0;
-    @include font(19px, 16px, $maxTablet, $maxMobile);
-    span{
-        position: relative;
-        &:before{
-            content: '';
-            bottom: 0;
-            left: 0;
-            padding: 0 3px;
-            width: 100%;
-            height: 50%;
-            position: absolute;
-            background: $lightGreen;
-            z-index: -1;
-        }
+.subtitleWrapper {
+  color: #313233;
+  padding: 32px 0 0;
+  @include font(19px, 16px, $maxTablet, $maxMobile);
+  span {
+    position: relative;
+    &:before {
+      content: '';
+      bottom: 0;
+      left: 0;
+      padding: 0 3px;
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      background: $lightGreen;
+      z-index: -1;
     }
+  }
 }

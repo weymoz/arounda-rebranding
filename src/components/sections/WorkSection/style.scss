@@ -2,7 +2,7 @@
 @import '../../../scss/variables.scss';
 
 .workSection {
-  padding: 100px 0 60px;
+  padding: 79px 0 73px;
   grid-column: 1 / -1;
   display: inherit;
   grid-template-columns: inherit;
@@ -10,7 +10,7 @@
 .titleWrapper {
   grid-column: 8 / span 20;
   h2 {
-    transform: translateY(-21px);
+    transform: translateY(21px);
   }
   @media (max-width: $maxLaptop) {
     grid-column: 4 / -4;
