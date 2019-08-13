@@ -1,22 +1,22 @@
-@import "../../../scss/mixins.scss";
-@import "../../../scss/variables.scss";
+@import '../../../scss/mixins.scss';
+@import '../../../scss/variables.scss';
 
-.workSection{
-    padding: 100px 0 60px;
-    grid-column: 1 / -1;
-    display: inherit;
-    grid-template-columns: inherit; 
+.workSection {
+  padding: 100px 0 60px;
+  grid-column: 1 / -1;
+  display: inherit;
+  grid-template-columns: inherit;
 }
-.titleWrapper{
-    grid-column: 8 / span 20;
-    h2 {
-        margin-bottom: -21px;
-    }
-    @media (max-width: $maxLaptop){
-        grid-column: 4 / -4;
-    }
-    @media (max-width: $maxMobile){
-        grid-column: 3 / -3;
-        padding: 0 0 20px;
-    }
+.titleWrapper {
+  grid-column: 8 / span 20;
+  h2 {
+    transform: translateY(-21px);
+  }
+  @media (max-width: $maxLaptop) {
+    grid-column: 4 / -4;
+  }
+  @media (max-width: $maxMobile) {
+    grid-column: 3 / -3;
+    padding: 0 0 20px;
+  }
 }
