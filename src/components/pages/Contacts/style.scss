@@ -1,42 +1,57 @@
 @import '../../../scss/variables.scss';
 
-.sectionContacts{
-    padding: 200px 0;
-    min-height: 100vh;
-    display: inherit;
-    grid-template-columns: inherit;
-    grid-column: 1 / -1;
+.sectionContacts {
+  padding: 195px 0 200px;
+  min-height: 100vh;
+  display: inherit;
+  grid-template-columns: inherit;
+  grid-column: 1 / -1;
 
-    @media (max-width: $maxMobile){
-        padding: 160px 0;
-    }
+  @media (max-width: $maxMobile) {
+    padding: 160px 0;
+  }
 }
-.grid{
+.grid {
+  grid-column: var(--desktopWidth);
+  @media (max-width: $maxLaptop) {
+    grid-column: var(--tabletWidth);
+  }
+  @media (max-width: $maxTablet) {
     grid-column: var(--desktopWidth);
-    @media(max-width: $maxLaptop){
-        grid-column: var(--tabletWidth);
-    }
-    @media(max-width: $maxTablet){
-        grid-column: var(--desktopWidth);
-    }
-    @media(max-width: $maxMobile){
-        grid-column: var(--tabletWidth);
-    }
+  }
+  @media (max-width: $maxMobile) {
+    grid-column: var(--tabletWidth);
+  }
 }
-.titleWrapper{
-    margin: 0 0 100px;
-    grid-column-end: span 10;
-    p{
-        margin: 10px 0 0;
-        font-weight: 300;
-        a{
-            text-decoration: underline;
-        }
+.titleWrapper {
+  margin: 0 0 105px;
+  grid-column-end: span 10;
+  p {
+    margin: 15px 0 0;
+    font-weight: 300;
+    letter-spacing: 1.4px;
+    a {
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: rgba(151, 151, 151, 0.1);
+        z-index: -1;
+        width: 100%;
+        height: 50%;
+        transition: all 0.3s ease-in-out;
+      }
     }
-        @media(max-width: $maxTablet){
-            grid-column: 2/span 10;
-        }
-        @media (max-width: $maxMobile){
-            grid-column: 1/span 10;
-        }
+  }
+  h2 {
+    font-size: 38px;
+  }
+  @media (max-width: $maxTablet) {
+    grid-column: 2 / span 10;
+  }
+  @media (max-width: $maxMobile) {
+    grid-column: 1 / span 10;
+  }
 }

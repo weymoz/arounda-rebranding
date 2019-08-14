@@ -1,250 +1,250 @@
 @import '../../../scss/variables.scss';
 @import '../../../scss/mixins.scss';
 
-:global{
-    .select {
-        & .select__control{
-            border: none;
-            border-bottom: 1px solid $lightGray;
-            transition: all .3s $cubic;
-            border-radius: 0;
-            @include font(21px, 18px, $maxTablet, $maxMobile);
-            cursor: pointer;
-        }
-        & .select__indicator-separator{
-            display: none;
-        }   
-        & .select__control--is-focused, & .select__control:hover{
-            box-shadow: none;
-            border-color: $lightGreen;
-            label{
-                opacity: 1;
-            }
-        }
-        & .select__indicators svg{
-            color: $black;
-        }     
-        & .select__placeholder{
-            color: $gray;
-            font-weight: 300;
-        }  
-        & .select__single-value{
-            color: $black;
-            font-weight: 300;
-        }
-        & .select__value-container{
-            padding-left: 0;
-        }                               
+:global {
+  .select {
+    & .select__control {
+      border: none;
+      border-bottom: 1px solid $lightGray;
+      transition: all 0.3s $cubic;
+      border-radius: 0;
+      @include font(21px, 18px, $maxTablet, $maxMobile);
+      cursor: pointer;
     }
+    & .select__indicator-separator {
+      display: none;
+    }
+    & .select__control--is-focused,
+    & .select__control:hover {
+      box-shadow: none;
+      border-color: $lightGreen;
+      label {
+        opacity: 1;
+      }
+    }
+    & .select__indicators svg {
+      color: $black;
+    }
+    & .select__placeholder {
+      color: $gray;
+      font-weight: 300;
+    }
+    & .select__single-value {
+      color: $black;
+      font-weight: 300;
+    }
+    & .select__value-container {
+      padding-left: 0;
+    }
+  }
 }
-.grid{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: calc(var(--cellSize ) * 2);
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: calc(var(--cellSize) * 2);
+  grid-column: var(--desktopWidth);
+  grid-auto-rows: min-content;
+  @media (max-width: $maxLaptop) {
+    grid-column: var(--tabletWidth);
+  }
+  @media (max-width: $maxTablet) {
     grid-column: var(--desktopWidth);
-    grid-auto-rows: min-content;
-    @media (max-width: $maxLaptop){
-        grid-column: var(--tabletWidth);
-    }
-    @media (max-width: $maxTablet){
-        grid-column: var(--desktopWidth);
-    }
-    @media (max-width: $maxMobile){
-        grid-column: var(--tabletWidth);
-    }
+  }
+  @media (max-width: $maxMobile) {
+    grid-column: var(--tabletWidth);
+  }
 }
-.input{
-    min-height: 42px;
-    border: none;
-    border-bottom:  1px solid $lightGray;
-    transition: all .3s $cubic;
-    width: 100%;
-    box-shadow: none;
-    @include font(21px, 18px, $maxTablet, $maxMobile);
+.input {
+  min-height: 42px;
+  border: none;
+  border-bottom: 1px solid $lightGray;
+  transition: all 0.3s $cubic;
+  width: 100%;
+  box-shadow: none;
+  @include font(21px, 18px, $maxTablet, $maxMobile);
+  font-weight: 300;
+  &:focus {
+    outline: none;
+    border-color: $lightGreen;
+  }
+  &:focus + label {
+    opacity: 1;
+  }
+  &::placeholder {
     font-weight: 300;
-    &:focus{
-        outline: none;
-        border-color: $lightGreen;
-    }
-    &:focus + label{
-        opacity: 1;
-    }
-    &::placeholder{
-        font-weight: 300;
-        color: $gray;
-    }
-}      
-.inputWrapper{
-    position: relative;
-    grid-column-end: span 4;
-    @media (max-width: $maxTablet){
-        grid-column: 1/ -1;
-        margin: 0 0 30px;
-    }
-    @media (max-width: $maxMobile){
-        margin: 0 0 25px;
-    }
-    label{
-        position: absolute;
-        top: -25px;
-        left: 0;
-        letter-spacing: 0.46px;
-        font-size: 14px;
-        opacity: 0;
-        transition: all .3s $cubic;
-        color: $gray;
-        font-family: 'PT Sans',sans-serif;
-        &.active{
-            opacity: 1;
-        }
-        @media (max-width: $maxMobile){
-            font-size: 12px;
-        }
-    }
-    
-}    
-.selectWrapper{
-    grid-column-end: span 4;
-    position: relative;
-    @media (max-width: $maxTablet){
-        grid-column: 1 / -1;
-        margin: 0 0 30px;
-    }
-    @media (max-width: $maxMobile){
-        margin: 0 0 25px;
-    }
-    label{
-        position: absolute;
-        top: -25px;
-        left: 0;
-        letter-spacing: 0.46px;
-        font-size: 14px;
-        transition: all .3s $cubic;
-        color: $gray;
-        opacity: 1;
-        font-family: 'PT Sans',sans-serif;
-        @media (max-width: $maxMobile){
-            font-size: 12px;
-        }
-    }
-    &:nth-child(2n){
-        margin: 40px 0 0;
-        @media (max-width: $maxTablet){
-            margin: 0 0 30px;
-        }
-        @media (max-width: $maxMobile){
-            margin: 0 0 25px;
-        }
-    }
-}  
-.textareaWrapper{
-    grid-column: 1/ span 8;
-    grid-row: 3/4;
-    position: relative;
-    padding: 40px 0 0 ;
-    @media (max-width: $maxTablet){
-        grid-column: 1 / -1;
-        grid-row: 6/7;
-        padding: 24px 0 0;
-    }
-}  
-.textarea{
-    width: 100%;
-    border: none;
-    border-bottom:  1px solid $lightGray;
-    resize: none;
-    padding: 5px 30px 5px 0 ;
-    @include font(21px, 18px, $maxTablet, $maxMobile);
-    line-height: 1.4;
-    transition: all .3s $cubic;
-    font-weight: 300;
-    &::placeholder{
-        font-weight: 300;
-        color: $gray;
-    }
-    &:focus{
-        outline: none;
-        border-color: $lightGreen;
-
-    }
+    color: $gray;
+  }
 }
-.inputFile{
-    font-size: 0;
-    border: 0;
+.inputWrapper {
+  position: relative;
+  grid-column-end: span 4;
+  @media (max-width: $maxTablet) {
+    grid-column: 1/ -1;
+    margin: 0 0 30px;
+  }
+  @media (max-width: $maxMobile) {
+    margin: 0 0 25px;
+  }
+  label {
     position: absolute;
-    z-index: -1;
-    pointer-events: none;
+    top: -25px;
+    left: 0;
+    letter-spacing: 0.46px;
+    font-size: 14px;
     opacity: 0;
-    visibility: hidden;
-}               
-.labelFile{
+    transition: all 0.3s $cubic;
+    color: $gray;
+    font-family: 'PT Sans', sans-serif;
+    &.active {
+      opacity: 1;
+    }
+    @media (max-width: $maxMobile) {
+      font-size: 12px;
+    }
+  }
+}
+.selectWrapper {
+  grid-column-end: span 4;
+  position: relative;
+  @media (max-width: $maxTablet) {
+    grid-column: 1 / -1;
+    margin: 0 0 30px;
+  }
+  @media (max-width: $maxMobile) {
+    margin: 0 0 25px;
+  }
+  label {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    z-index: 10;
-    cursor: pointer;
+    top: -25px;
+    left: 0;
+    letter-spacing: 0.46px;
+    font-size: 14px;
+    transition: all 0.3s $cubic;
+    color: $gray;
+    opacity: 1;
+    font-family: 'PT Sans', sans-serif;
+    @media (max-width: $maxMobile) {
+      font-size: 12px;
+    }
+  }
+  &:nth-child(2n) {
+    margin: 8px 0 0;
+    @media (max-width: $maxTablet) {
+      margin: 0 0 30px;
+    }
+    @media (max-width: $maxMobile) {
+      margin: 0 0 25px;
+    }
+  }
 }
-.btnWrapper{
-    grid-column: 11/ span 2;
-    grid-row: 3/ 4;
-    align-self: end;
-    justify-self: end;
-    @media (max-width: $maxTablet){
-        grid-column: 1 / -1;
-        grid-row: 7/8;
-    }
+.textareaWrapper {
+  grid-column: 1 / span 8;
+  grid-row: 3/4;
+  position: relative;
+  padding: 10px 0 0;
+  @media (max-width: $maxTablet) {
+    grid-column: 1 / -1;
+    grid-row: 6/7;
+    padding: 24px 0 0;
+  }
 }
-.btn{
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'PT Sans',sans-serif;
+.textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $lightGray;
+  resize: none;
+  padding: 5px 30px 5px 0;
+  @include font(21px, 18px, $maxTablet, $maxMobile);
+  line-height: 1.4;
+  transition: all 0.3s $cubic;
+  font-weight: 300;
+  &::placeholder {
+    font-weight: 300;
+    color: $gray;
+  }
+  &:focus {
+    outline: none;
+    border-color: $lightGreen;
+  }
 }
-.includeWrapper{
-    grid-column: 5/-1;
-    grid-row: 2 / 3;
-    position: relative;
-    min-height: 42px;
-    align-self: end;
-    @media (max-width: $maxTablet){
-        grid-column: 1 / -1;
-        grid-row: 5 / 6;
-    }
-    label{
-        position: absolute;
-        top: -25px;
-        left: 0;
-        letter-spacing: 0.46px;
-        font-size: 14px;
-        transition: all .3s $cubic;
-        color: $gray;
-        font-family: 'PT Sans',sans-serif;
-        @media (max-width: $maxMobile){
-            font-size: 12px;
-        }
-    }
+.inputFile {
+  font-size: 0;
+  border: 0;
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
 }
-.list{
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 19px;
-    align-items: flex-end;
-    min-height: 42px;
-    @media (max-width: $maxLaptop){
-        font-size: 16px;
+.labelFile {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10;
+  cursor: pointer;
+}
+.btnWrapper {
+  grid-column: 11 / span 2;
+  grid-row: 3/ 4;
+  align-self: end;
+  justify-self: end;
+  @media (max-width: $maxTablet) {
+    grid-column: 1 / -1;
+    grid-row: 7/8;
+  }
+}
+.btn {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'PT Sans', sans-serif;
+}
+.includeWrapper {
+  grid-column: 5/-1;
+  grid-row: 2 / 3;
+  position: relative;
+  min-height: 42px;
+  align-self: end;
+  @media (max-width: $maxTablet) {
+    grid-column: 1 / -1;
+    grid-row: 5 / 6;
+  }
+  label {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    letter-spacing: 0.46px;
+    font-size: 14px;
+    transition: all 0.3s $cubic;
+    color: $gray;
+    font-family: 'PT Sans', sans-serif;
+    @media (max-width: $maxMobile) {
+      font-size: 12px;
     }
-    .item{
-        margin-bottom: 7px;
-        &.active{
-            button{
-                background: $lightGreen;
-                cursor: pointer;
-            }
-        }
-        button{
-            padding: 3px 0;
-        }
+  }
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 19px;
+  align-items: flex-end;
+  min-height: 42px;
+  @media (max-width: $maxLaptop) {
+    font-size: 16px;
+  }
+  .item {
+    margin-bottom: 7px;
+    border-bottom: solid 1px $lightGreen;
+    &.active {
+      button {
+        background: $lightGreen;
+        cursor: pointer;
+      }
     }
-    .item:not(:last-child){
-        margin-right: 20px;
+    button {
+      padding: 3px 0;
     }
+  }
+  .item:not(:last-child) {
+    margin-right: 20px;
+  }
 }

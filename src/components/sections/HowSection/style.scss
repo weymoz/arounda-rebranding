@@ -13,7 +13,7 @@
 
 .content {
   grid-column: 11 / span 16;
-  padding: 0 0 86px;
+  padding: 0 0 100px;
   @media (max-width: $maxLaptop) {
     grid-column: 8 / span 18;
   }
@@ -31,7 +31,7 @@
 }
 
 .image {
-  grid-column: -20 / span 11;
+  grid-column: -21 / span 11;
   grid-row: 2/3;
   display: grid;
   justify-items: center;
@@ -46,7 +46,8 @@
     grid-column: 4 / span 20;
   }
   img {
-    max-height: 177px;
+    max-height: 187px;
+    transform: translate(6px, 21px);
   }
 }
 .services {
@@ -54,6 +55,7 @@
   grid-column: 11 / span 16;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  padding-left: 14px;
   @media (max-width: $maxLaptop) {
     grid-column: 8 / span 18;
     padding: 0 0 76px;
@@ -70,7 +72,7 @@
   }
 
   .item {
-    margin: 0 40px 40px 0;
+    margin: 0 40px 24px 0;
     padding: 0 0 0 20px;
     position: relative;
     max-height: 40px;
@@ -149,12 +151,12 @@
   font-weight: bold;
   line-height: 0.8;
   @include font(19px, 16px, $maxLaptop, $minTablet);
-  margin: 129px 0 0;
+  margin: 159px 0 0;
   a {
     position: relative;
     display: inline-block;
     line-height: 24px;
-    transform: translateX(20px);
+    letter-spacing: 0.6px;
     border-bottom: 1px solid #60FED9;
   }
   @media (max-width: $maxLaptop) {
