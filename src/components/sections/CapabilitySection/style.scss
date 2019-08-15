@@ -1,86 +1,89 @@
 @import '../../../scss/variables.scss';
 @import '../../../scss/mixins.scss';
 
-.capability{
-    display: inherit;
-    grid-column: 1 / -1;
-    grid-template-columns: inherit;
-    padding: var(--spacing) 0;
-    grid-auto-rows: min-content;
+.capability {
+  display: inherit;
+  grid-column: 1 / -1;
+  grid-template-columns: inherit;
+  padding: 110px 0 315px;
+  grid-auto-rows: min-content;
 
-    .content{
-        grid-column: 11 / span 18;
-        padding: 10% 0 90px;
-        @media (max-width: $maxLaptop){
-            grid-column: 8 / span 24 ;
-        }
-        @media (max-width: $maxTablet){
-            grid-column: var(--tabletWidth);
-            padding: 30px 0 40px;
-        }
+  .content {
+    grid-column: 11 / span 18;
+    padding: 10% 0 90px;
+    @media (max-width: $maxLaptop) {
+      grid-column: 8 / span 24;
     }
-    .image{
-        grid-column: -16 / span 10;
-        display: flex;
-        justify-content: center;
-        img{
-            max-height: 200px;
-        }
-        @media (max-width: $maxTablet){
-            grid-column: var(--tabletWidth);
-            justify-content: start;
-            padding: 0 0 40px;
-            img{
-                max-height: 160px;
-            }
-        }
+    @media (max-width: $maxTablet) {
+      grid-column: var(--tabletWidth);
+      padding: 30px 0 40px;
     }
-    .list{
-        grid-column: 11 / span 26;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        @media (max-width: $maxLaptop){
-            grid-column: 8 / span 30 ;
-        }
-        @media (max-width: $maxTablet){
-            grid-column: var(--tabletWidth);
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        }
-        @media (max-width: $maxMobile){
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        }
-        & > div{
-            margin: 0 0 30px;
-            @media (max-width: $maxMobile){
-                margin: 0 0 14px;
-            }
-        }
-        .item{
-            @include font(29px, 18px, $minTablet, $maxMobile);
-            display: inline-block;
-            letter-spacing: 0.54px;
-            transition: all .3s $cubic;
-            position: relative;
-            &:before{
-                content: '';
-                width: 0;
-                height: 100%;
-                position: absolute;
-                top: -2px;
-                left: -40px;
-                background: $lightGreen;
-                transition: all .3s $cubic;
-                z-index: -1;
-            }
-            &:hover{
-                transform: translateX(40px);
-                &:before{
-                    width: 60%;
-                }
-            }
-        }
+  }
+  .image {
+    grid-column: -19 / span 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-10px, 11px);
+    img {
+      max-height: 160px;
     }
+    @media (max-width: $maxTablet) {
+      grid-column: var(--tabletWidth);
+      justify-content: start;
+      padding: 0 0 40px;
+      img {
+        max-height: 160px;
+      }
+    }
+  }
+  .list {
+    grid-column: 11 / span 24;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding-top: 10px;
+    @media (max-width: $maxLaptop) {
+      grid-column: 8 / span 30;
+    }
+    @media (max-width: $maxTablet) {
+      grid-column: var(--tabletWidth);
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    @media (max-width: $maxMobile) {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+    & > div {
+      margin: 0 0 30px;
+      @media (max-width: $maxMobile) {
+        margin: 0 0 14px;
+      }
+    }
+    .item {
+      @include font(29px, 18px, $minTablet, $maxMobile);
+      display: inline-block;
+      letter-spacing: 0.54px;
+      transition: all 0.3s $cubic;
+      position: relative;
+      &:before {
+        content: '';
+        width: 0;
+        height: 100%;
+        position: absolute;
+        top: -2px;
+        left: -40px;
+        background: $lightGreen;
+        transition: all 0.3s $cubic;
+        z-index: -1;
+      }
+      &:hover {
+        transform: translateX(40px);
+        &:before {
+          width: 60%;
+        }
+      }
+    }
+  }
 }
-.titleWrapper{
-    margin: 0  0 16px;
+.titleWrapper {
+  margin: 0 0 16px;
 }

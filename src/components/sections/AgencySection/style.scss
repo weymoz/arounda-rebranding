@@ -14,7 +14,7 @@
     }
     &.darkBg{
         background: #FBFBFB;
-        margin: 0 0 var(--spacing);
+        margin: 0 0 200px;
         @media (max-width: $maxMobile){
             margin: 0 0 calc(var(--spacing) * 2);
         }

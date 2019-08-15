@@ -5,14 +5,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    grid-column: 23 / -10;
+    grid-column: 25 / -10;
+    transform: translateY(-13px);
+    h2 {
+        font-size: 38px;
+    }
     @media (max-width: $maxLaptop){
         grid-column: 25 / -4;
     }
     .text{
         font-size: 19px;
         font-weight: 400;
-        margin: 16px 0 70px;
+        margin: 16px 0 40px;
         color: $darkGray;
         line-height: 1.68;
     }

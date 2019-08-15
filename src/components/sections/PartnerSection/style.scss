@@ -82,17 +82,17 @@
     max-height: 31px;
     justify-self: center;
     padding: 0 15px 0 0;
-    &:first-of-type {
-        max-height: 26px;
-    }
-    &:nth-of-type(2) {
-        max-height: 28px;
-    }
-    &:nth-of-type(3) {
-        max-height: 26px;
-    }
+    // &:first-of-type {
+    //     max-height: 26px;
+    // }
+    // &:nth-of-type(2) {
+    //     max-height: 28px;
+    // }
+    // &:nth-of-type(3) {
+    //     max-height: 26px;
+    // }
     &:last-child {
-      max-height: 46px;
+      // max-height: 46px;
       padding: 0 0 0 0;
       @media (max-width: $maxMobile) {
         display: none;

@@ -53,12 +53,14 @@
     grid-column: var(--tabletWidth);
   }
   li {
-    margin: 0 0 58px;
     position: relative;
     padding: 4px 23px 0 0;
     transform: translateY(20px);
     opacity: 0;
     visibility: hidden;
+    &:not(:last-of-type) {
+      margin: 0 0 58px;
+    }
     @media (max-width: $maxTablet) {
       margin: 0 0 24px;
     }
