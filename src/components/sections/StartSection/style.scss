@@ -1,36 +1,30 @@
 @import '../../../scss/variables.scss';
 @import '../../../scss/mixins.scss';
 
-.section{
-    padding: var(--spacing) 0 calc(var(--spacing) / 2);
-    grid-column: 1 / -1;
-    display: inherit;
-    grid-template-columns: inherit;
-    @media (max-width: $maxMobile){
-        padding: calc(var(--spacing) * 2) 0 var(--spacing) ;
-    }
+.section {
 }
-.title{
-    @include font(38px, 30px, $minDesktop, $maxMobile);
-    font-weight: 300;
-    grid-column: var(--desktopWidth);
-    @media (max-width: $maxLaptop){
-        grid-column: var(--tabletWidth);
+.title {
+  @include font(38px, 30px, $minDesktop, $maxMobile);
+  font-weight: 300;
+  grid-column: var(--desktopWidth);
+  @media (max-width: $maxLaptop) {
+    grid-column: var(--tabletWidth);
+  }
+  div {
+    padding-top: 10px;
+    font-weight: 400;
+    position: relative;
+    transform: translateX(35px);
+    display: inline-block;
+    &:before {
+      content: '';
+      width: 70px;
+      height: 60%;
+      background: $lightGreen;
+      z-index: -1;
+      position: absolute;
+      top: 6px;
+      left: -35px;
     }
-    div{
-        font-weight: 400;
-        position: relative;
-        transform: translateX(35px);
-        display: inline-block;
-        &:before{
-            content: '';
-            width: 70px;
-            height: 60%;
-            background: $lightGreen;
-            z-index: -1;
-            position: absolute;
-            top: 6px;
-            left: -35px;
-        }
-    }
+  }
 }

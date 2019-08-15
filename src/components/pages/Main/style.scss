@@ -1,0 +1,20 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
+.wrapWorkSection {
+  grid-column: 1 / -1;
+  display: inherit;
+  grid-template-columns: inherit;
+  padding: 94px 0 73px;
+}
+
+.wrapStartSection {
+  padding: 208px 0 calc(var(--spacing) / 2);
+  grid-column: 1 / -1;
+  display: inherit;
+  grid-template-columns: inherit;
+  margin-bottom: 10px;
+  @media (max-width: $maxMobile) {
+    padding: calc(var(--spacing) * 2) 0 var(--spacing);
+  }
+}

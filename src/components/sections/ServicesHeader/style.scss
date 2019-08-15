@@ -5,26 +5,30 @@
 
 .headingSection{
     grid-column: 11 / -11;
-    padding: 200px 0 114px;
+    padding: 221px 0 98px;
     @media (max-width: $maxLaptop){
         grid-column: 7 / -7;
     }
     @media (max-width: $maxTablet){
         grid-column: var(--tabletWidth);
     }
+
+    h3 {
+        letter-spacing: 0px;
+    }
 }
 .titleWrapper{
     max-width: 620px;
-    margin: 0 0 50px;
+    margin: 0 0 35px;
     @media (max-width: $minTablet){
         max-width: 420px;
     }
 }
 .serviceSection{
-    grid-column: 11 / -4;
+    grid-column: 11 / -3;
     display: inherit;
     grid-template-columns: repeat(3, 1fr);
-    padding: 0 0 130px;
+    padding: 0 0 147px;
     @media (max-width: $maxLaptop){
         grid-column: 7 / -4;
     }
@@ -33,7 +37,7 @@
         grid-column: var(--tabletWidth);
     }
     .item{
-        padding: 160px calc(var(--cellSize)  * 2) 56px;
+        padding: 160px calc(var(--cellSize)  * 2) 61px;
         transition: all .3s ease-in-out;
         position: relative;
         @media (max-width: $maxTablet){
@@ -69,7 +73,7 @@
         position: relative;
         background: #fafafa;
         .icon{
-            top: 75px;
+            top: 97px;
         }
         &:hover{
             background: #fafafa;

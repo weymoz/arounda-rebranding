@@ -29,7 +29,7 @@
 }
 .content{
     grid-column: 25 / -8;
-    transform: translateY(-117px);
+    transform: translateY(-26px);
     @media (max-width: $maxLaptop){
         grid-column: 24 / -6;
     }

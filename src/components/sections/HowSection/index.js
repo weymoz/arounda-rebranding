@@ -4,8 +4,6 @@ import style from './style.scss';
 import TitleSecondary from '@simple/TitleSecondary';
 import Description from '@simple/Description';
 
-
-
 const HowSection = (props) => {
     const services = [
         {

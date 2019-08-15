@@ -3,7 +3,7 @@
 
 .section {
   min-height: 100vh;
-  padding: 2px 0 100px;
+  padding: 183px 0 100px;
   margin: 0 0 100px;
   grid-column: 1 / -1;
   display: inherit;
@@ -13,7 +13,7 @@
 
 .content {
   grid-column: 11 / span 16;
-  padding: 0 0 86px;
+  padding: 0 0 100px;
   @media (max-width: $maxLaptop) {
     grid-column: 8 / span 18;
   }
@@ -31,7 +31,7 @@
 }
 
 .image {
-  grid-column: -20 / span 11;
+  grid-column: -21 / span 11;
   grid-row: 2/3;
   display: grid;
   justify-items: center;
@@ -46,14 +46,16 @@
     grid-column: 4 / span 20;
   }
   img {
-    max-height: 177px;
+    max-height: 187px;
+    transform: translate(6px, 21px);
   }
 }
 .services {
   grid-row: 2/3;
-  grid-column: 11/span 16;
+  grid-column: 11 / span 16;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  padding-left: 14px;
   @media (max-width: $maxLaptop) {
     grid-column: 8 / span 18;
     padding: 0 0 76px;
@@ -70,8 +72,8 @@
   }
 
   .item {
-    margin: 0 40px 40px 0;
-    padding: 0 0 0 34px;
+    margin: 0 40px 24px 0;
+    padding: 0 0 0 20px;
     position: relative;
     max-height: 40px;
     white-space: nowrap;
@@ -149,21 +151,13 @@
   font-weight: bold;
   line-height: 0.8;
   @include font(19px, 16px, $maxLaptop, $minTablet);
-  margin: 80px 0 0;
+  margin: 159px 0 0;
   a {
     position: relative;
     display: inline-block;
-    transform: translateX(20px);
-    &:before {
-      content: '';
-      left: -20px;
-      top: 0;
-      width: 24%;
-      height: 100%;
-      position: absolute;
-      background: $lightGreen;
-      z-index: -1;
-    }
+    line-height: 24px;
+    letter-spacing: 0.6px;
+    border-bottom: 1px solid #60FED9;
   }
   @media (max-width: $maxLaptop) {
     grid-column: 8 / span 18;

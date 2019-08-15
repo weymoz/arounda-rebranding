@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import style from './style.scss';
 import TitleSecondary from '@simple/TitleSecondary';
 
@@ -31,7 +31,7 @@ const InnovationSection = ({btn, link}) => {
         },
     ]
     return (
-        <section className={style.innovationSection}>
+        <Fragment>
             <div className={style.container}>
                     <div className={style.titleWrapper}>
                         <TitleSecondary text='User-centered innovation based on human insights'/>
@@ -55,7 +55,7 @@ const InnovationSection = ({btn, link}) => {
                     </div>
                     {btn ? <span className={style.link}><a href={link}>{btn}</a></span> : null}
             </div>
-        </section>
+        </Fragment>
     )
 };
 export default InnovationSection;
