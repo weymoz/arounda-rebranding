@@ -92,7 +92,7 @@
     //     max-height: 26px;
     // }
     &:last-child {
-      // max-height: 46px;
+      max-height: 46px;
       padding: 0 0 0 0;
       @media (max-width: $maxMobile) {
         display: none;
