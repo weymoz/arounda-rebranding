@@ -6,6 +6,13 @@
   display: inherit;
   grid-template-columns: inherit;
   padding: 94px 0 73px;
+  @media (max-width: $maxLaptop) {
+    grid-column: 2 / -1;
+    padding: 56px 0 73px;
+  }
+  @media (max-width: $minTablet) {
+    padding-top: 49px;
+  }
 }
 
 .wrapStartSection {
@@ -14,7 +21,14 @@
   display: inherit;
   grid-template-columns: inherit;
   margin-bottom: 10px;
+  @media (max-width: $maxLaptop) {
+    grid-column: 2 / -1;
+    padding: 287px 0 140px;
+  }
   @media (max-width: $maxMobile) {
     padding: calc(var(--spacing) * 2) 0 var(--spacing);
+  }
+  @media (max-width: $minTablet) {
+    padding: 30px 0 81px;
   }
 }

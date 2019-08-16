@@ -5,10 +5,13 @@
   display: inherit;
   grid-template-columns: inherit;
   grid-column: 1 / -1;
-//   padding: 120px 0 240px;
+  //   padding: 120px 0 240px;
   padding: 120px 0 150px;
+  @media (max-width: $maxLaptop) {
+    padding: 110px 0 150px;
+  }
   @media (max-width: $maxTablet) {
-    padding: 60px 0 80px;
+    padding: 74px 0 80px;
   }
   @media (max-width: $maxMobile) {
     padding: 50px 0 60px;
@@ -19,6 +22,10 @@
   display: inherit;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: calc(var(--cellSize) * 2);
+  @media (max-width: $maxLaptop) {
+    grid-column: 8 / -7;
+    grid-column-gap: calc(var(--cellSize) * 0);
+  }
   @media (max-width: $maxTablet) {
     grid-column: var(--tabletWidth);
   }
@@ -51,9 +58,15 @@
     &:not(:last-child) {
       margin: 0 0 36px;
     }
+    @media (max-width: $maxLaptop) {
+      padding-right: 0;
+    }
   }
   @media (max-width: $maxMobile) {
     grid-column: span 2;
+  }
+  @media (max-width: $minTablet) {
+    padding-left: 47px;
   }
   span {
     position: relative;
@@ -73,8 +86,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-//   padding: 120px 120px 0 40px;
+  //   padding: 120px 120px 0 40px;
   padding: 120px 120px 0 40px;
+  @media (max-width: $maxLaptop) {
+    padding: 120px 0px 0 0px;
+  }
   @media (max-width: $maxTablet) {
     padding: 50px 0 0;
   }

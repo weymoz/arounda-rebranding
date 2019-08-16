@@ -7,13 +7,17 @@
   grid-auto-rows: 64px 1fr;
   grid-column: 1 /-1;
   grid-row: 2/3;
-  @media (max-width: $maxTablet) {
-    grid-auto-rows: 48px 1fr;
+  @media (max-width: $maxLaptop) {
+    grid-auto-rows: 49px 1fr;
   }
+  @media (max-width: $maxTablet) {
+    grid-auto-rows: 30px 1fr;
+  }
+  
 }
 
 .item {
-  margin: 0 0 50px;
+  margin: 0 0 36px;
   font-family: 'PT Sans', sans-serif;
 }
 
@@ -26,6 +30,9 @@
   @media (max-width: $maxTablet) {
     padding: 88% 0 0;
   }
+  @media (max-width: $minTablet) {
+    padding: 96% 0 0;
+  }
   @media (max-width: $maxMobile) {
     padding: 120% 0 0;
   }
@@ -33,7 +40,11 @@
 .item {
   grid-column: 8 / span 18;
   @media (max-width: $maxLaptop) {
-    grid-column: 4 / span 22;
+    grid-column: 4 / span 23;
+  }
+  @media (max-width: $minTablet) {
+    grid-column: 3 / span 22;
+    padding-top: 18px;
   }
   @media (max-width: $maxMobile) {
     grid-column: 1 / span 23;
@@ -46,7 +57,11 @@
   grid-row: span 2;
   grid-column: 28 / -8;
   @media (max-width: $maxLaptop) {
-    grid-column: 28/-4;
+    grid-column: 29/-4;
+  }
+  @media (max-width: $minTablet) {
+    grid-column: 27/-4;
+    padding-top: 0;
   }
   @media (max-width: $maxMobile) {
     grid-column: 26 / -1;

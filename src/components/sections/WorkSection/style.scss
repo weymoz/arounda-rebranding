@@ -7,9 +7,16 @@
   grid-column: 8 / span 20;
   h2 {
     transform: translateY(21px);
+    @media (max-width: $maxLaptop) {
+      font-size: 38px;
+    }
+  }
+  @media (max-width: $minTablet) {
+    margin-bottom: 4px;
+    grid-column: 4 / -4;
   }
   @media (max-width: $maxLaptop) {
-    grid-column: 4 / -4;
+    grid-column: 3 / -4;
   }
   @media (max-width: $maxMobile) {
     grid-column: 3 / -3;

@@ -10,7 +10,7 @@
     display: inherit;
     grid-template-columns: inherit;
     @media (max-width: $minTablet){
-        padding: 25px 0;
+        padding: 11px 0 25px;
     }
 }
 
@@ -34,6 +34,9 @@
         transition: all .3s ease-in-out;
         opacity: 0;
         visibility: hidden;
+        @media (max-width: $minTablet) {
+            margin: 0 0 0 23px;
+        }
         @media (max-width: $maxMobile){
             &:nth-child(1),  &:nth-child(2){
                 display: none;

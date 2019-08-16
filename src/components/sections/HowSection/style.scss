@@ -9,6 +9,13 @@
   display: inherit;
   grid-template-columns: inherit;
   grid-auto-rows: min-content;
+
+  @media (max-width: $maxLaptop) {
+    padding: 173px 0 100px;
+  }
+  @media (max-width: $minTablet) {
+    padding: 99px 0 100px;
+  }
 }
 
 .content {
@@ -36,11 +43,15 @@
   display: grid;
   justify-items: center;
   @media (max-width: $maxLaptop) {
-    grid-column: -18/ -8;
+    grid-column: -15/ -7;
     padding: 0 0 76px;
   }
   @media (max-width: $maxTablet) {
     grid-column: 4 / span 11;
+  }
+  @media (max-width: $minTablet) {
+    grid-column: 5 / span 12;
+    padding: 0 0 116px;
   }
   @media (max-width: $maxMobile) {
     grid-column: 4 / span 20;
@@ -48,6 +59,12 @@
   img {
     max-height: 187px;
     transform: translate(6px, 21px);
+    @media (max-width: $maxLaptop) {
+      transform: translate(10px, 26px);
+    }
+    @media (max-width: $minTablet) {
+      transform: translate(-16px, 55px);
+    }
   }
 }
 .services {
@@ -57,7 +74,7 @@
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   padding-left: 14px;
   @media (max-width: $maxLaptop) {
-    grid-column: 8 / span 18;
+    grid-column: 8 / span 24;
     padding: 0 0 76px;
   }
   @media (max-width: $maxTablet) {
@@ -152,12 +169,15 @@
   line-height: 0.8;
   @include font(19px, 16px, $maxLaptop, $minTablet);
   margin: 159px 0 0;
+  @media (max-width: $maxLaptop) {
+    margin: 80px 0 0;
+  }
   a {
     position: relative;
     display: inline-block;
     line-height: 24px;
     letter-spacing: 0.6px;
-    border-bottom: 1px solid #60FED9;
+    border-bottom: 1px solid #60fed9;
   }
   @media (max-width: $maxLaptop) {
     grid-column: 8 / span 18;
@@ -166,6 +186,9 @@
     grid-column: 4/ -4;
     grid-row: 4/5;
     margin: 40px 0 0;
+  }
+  @media (max-width: $minTablet) {
+    margin: 53px 0 0;
   }
   @media (max-width: $maxMobile) {
     margin: 0;

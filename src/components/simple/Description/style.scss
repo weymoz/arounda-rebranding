@@ -8,4 +8,6 @@
     &.light{
         color: $darkGray;
     }
+    @media (max-width: $minTablet) {
+    }
 }
