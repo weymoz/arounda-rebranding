@@ -25,6 +25,14 @@
       position: absolute;
       top: 6px;
       left: -35px;
+      transform-origin: 0 0;
+      transform: scaleX(0);
+      transition: transform 0.2s ease-in-out;
+    }
+    &:hover {
+      &:before {
+        transform: scaleX(1);
+      }
     }
   }
 }
