@@ -22,6 +22,9 @@
     @media (max-width: $maxLaptop){
         grid-column: var(--tabletWidth);
     }
+    @media (max-width: $minMobile) {
+        grid-column: 4 / -2;
+    }
 }
 
 .menu{

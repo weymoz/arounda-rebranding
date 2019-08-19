@@ -16,10 +16,12 @@
     margin: 0 0 180px;
   }
   @media (max-width: $minTablet) {
-    margin: 0 0 193px;
+    padding-top: 31px;
+    margin: 0 0 179px;
   }
   @media (max-width: $maxMobile) {
     margin: 0 0 150px;
+    min-height: 89vh;
   }
 }
 .image {
@@ -36,6 +38,9 @@
   @media (max-width: $minTablet) {
     height: 100%;
     padding: 44% 0 0;
+  }
+  @media (max-width: $minMobile) {
+    padding: 55% 0 0;
   }
   img {
     object-fit: cover;
@@ -62,11 +67,16 @@
   }
   @media (max-width: $minTablet) {
     margin: 0 0 0;
-    transform: translateY(22%);
+    transform: translateY(18%);
+    
   }
   @media (max-width: $maxMobile) {
     grid-column: var(--tabletWidth);
     margin: 70px 0 0;
+  }
+  @media (max-width: $minMobile) {
+    margin: 0;
+    transform: translateY(16%);
   }
 }
 .titleWrapper {
@@ -79,6 +89,11 @@
   @media (max-width: $maxMobile) {
     margin: 0 0 12px;
   }
+  @media (max-width: $minMobile) {
+    h3 {
+      font-size: 30px;
+    }
+  }
 }
 .datas {
   margin: 90px 0 0;
@@ -89,7 +104,10 @@
     margin: 80px 0 0;
   }
   @media (max-width: $minTablet) {
-    margin: 130px 0 0;
+    margin: 120px 0 0;
+  }
+  @media (max-width: $minMobile) {
+    margin: 60px 0 0;
   }
 }
 .datas .name {
@@ -99,12 +117,19 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
   @media (max-width: $minTablet) {
-    font-size: 11px;
-    margin: 0 0 4px;
+    font-size: 13px;
+    margin: 0 0 22px;
+  }
+  @media (max-width: $minMobile) {
+    margin: 0 0 6px;
   }
 }
 .datas .number {
-  @include font(34px, 26px, $minDesktop, $maxMobile);
+  @include font(34px, 26px, $minDesktop, $minMobile);
   letter-spacing: 1px;
   font-weight: 500;
+
+  // @media (max-width: $minTablet) {
+  //   font-size: 34px;
+  // }
 }

@@ -17,6 +17,11 @@
   @media (max-width: $maxMobile) {
     padding: var(--spacing) 0 calc(var(--spacing) * 2);
   }
+  @media (max-width: $minMobile) {
+    grid-column: 2/-1;
+    padding-top: 91px;
+    margin-bottom: 7px;
+  }
 }
 .content {
   grid-column: 11 / span 15;
@@ -51,6 +56,9 @@
     grid-column: 3 / span 16;
     padding: 0 0 40px;
   }
+  @media (max-width: $minMobile) {
+    padding: 0 0 31px;
+  }
 }
 .titleWrapper {
   max-width: 400px;
@@ -62,6 +70,12 @@
     margin: 0 0 0;
     h3 {
       font-size: 38px;
+    }
+  }
+  @media (max-width: $minMobile) {
+    margin: 0 0 10px;
+    h3 {
+      font-size: 31px;
     }
   }
 }

@@ -9,12 +9,14 @@
   @media (max-width: $maxTablet) {
     padding: 170px 0 55px;
   }
+  @media (max-width: $minMobile) {
+    padding: 144px 0 44px;
+  }
 }
 .container {
   grid-column: var(--desktopWidth);
   display: inherit;
   grid-template-columns: 1fr 1fr;
-  // grid-column-gap: calc(var(--cellSize) * 2);
   grid-column-gap: 0;
   align-items: center;
   @media (max-width: $maxLaptop) {
@@ -28,11 +30,13 @@
   }
 }
 .titleWrapper {
-  // padding: 0 var(--cellSize) 0 0;
   padding: 0 calc(var(--cellSize) * 2) 0 0;
   @media (max-width: $minTablet) {
     h2 {
       font-size: 38px;
+      @media (max-width: $minMobile) {
+        font-size: 30px;
+      }
     }
   }
   @media (max-width: $maxMobile) {

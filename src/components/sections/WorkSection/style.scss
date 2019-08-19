@@ -10,6 +10,10 @@
     @media (max-width: $maxLaptop) {
       font-size: 38px;
     }
+    @media (max-width: $minMobile) {
+      font-size: 26px;
+      transform: translateY(34px);
+    }
   }
   @media (max-width: $minTablet) {
     margin-bottom: 4px;
@@ -21,5 +25,8 @@
   @media (max-width: $maxMobile) {
     grid-column: 3 / -3;
     padding: 0 0 20px;
+  }
+  @media (max-width: $minMobile) {
+    padding: 0 0 44px;
   }
 }

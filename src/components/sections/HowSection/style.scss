@@ -16,6 +16,9 @@
   @media (max-width: $minTablet) {
     padding: 99px 0 100px;
   }
+  @media (max-width: $minMobile) {
+    padding: 89px 0 100px;
+  }
 }
 
 .content {
@@ -32,9 +35,15 @@
     grid-column: 4/ -8;
     padding: 0 0 56px;
   }
+  @media (max-width: $minMobile) {
+    padding: 0 0 15px;
+  }
 }
 .titleWrapper {
   margin: 0 0 16px;
+  @media (max-width: $minMobile) {
+    margin: 0 0 7px;
+  }
 }
 
 .image {
@@ -51,10 +60,13 @@
   }
   @media (max-width: $minTablet) {
     grid-column: 5 / span 12;
-    padding: 0 0 116px;
+    padding: 0 0 104px;
   }
   @media (max-width: $maxMobile) {
     grid-column: 4 / span 20;
+  }
+  @media (max-width: $minMobile) {
+    padding: 0 0 74px;
   }
   img {
     max-height: 187px;
@@ -63,7 +75,10 @@
       transform: translate(10px, 26px);
     }
     @media (max-width: $minTablet) {
-      transform: translate(-16px, 55px);
+      transform: translate(-16px, 45px);
+    }
+    @media (max-width: $minMobile) {
+      transform: translate(-8px, 43px);
     }
   }
 }
@@ -86,6 +101,9 @@
   @media (max-width: $maxMobile) {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     padding: 0 0 42px;
+  }
+  @media (max-width: $minMobile) {
+    grid-template-columns: 1fr;
   }
 
   .item {
@@ -123,6 +141,11 @@
       transform-origin: center;
       background: $lightGreen;
       transition: all 0.3s $cubic;
+    }
+    @media (max-width: $minMobile) {
+      &:before, &:after {
+        left: -19px;
+      }
     }
 
     &:hover {
@@ -188,7 +211,7 @@
     margin: 40px 0 0;
   }
   @media (max-width: $minTablet) {
-    margin: 53px 0 0;
+    margin: 56px 0 0;
   }
   @media (max-width: $maxMobile) {
     margin: 0;

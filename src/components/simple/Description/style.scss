@@ -2,7 +2,7 @@
 @import '../../../scss/variables.scss';
 
 .desc{
-    @include font(19px, 16px, $maxLaptop, $minTablet);
+    @include font(19px, 16px, $maxLaptop, $minMobile);
     font-weight: 400;
     line-height: 1.68;
     &.light{

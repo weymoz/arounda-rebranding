@@ -16,6 +16,9 @@
   @media (max-width: $maxLaptop) {
     grid-column: 5 / -5;
   }
+  @media (max-width: $minTablet) {
+    grid-column: 4 / -4;
+  }
 }
 
 .contact,

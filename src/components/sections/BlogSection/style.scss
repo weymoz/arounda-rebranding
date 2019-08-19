@@ -16,20 +16,28 @@
   @media (max-width: $minTablet) {
     padding: 59px 0 187px;
   }
+  @media (max-width: $minMobile) {
+    padding: 160px 0 84px;
+  }
 }
 .titleWrapper {
   grid-column: 11 / -11;
   margin: 0 0 25px;
+  h2 {
+    font-size: 38px;
+  }
   @media (max-width: $maxLaptop) {
     grid-column: 8 / -8;
   }
   @media (max-width: $maxTablet) {
     grid-column: var(--tabletWidth);
   }
-
-  h2 {
-    font-size: 38px;
+  @media (max-width: $minMobile) {
+    h2 {
+      font-size: 30px;
+    }
   }
+
 }
 
 .posts {
@@ -52,7 +60,11 @@
     }
     @media (max-width: $minTablet) {
       grid-template-columns: 0.5fr 1fr;
-      margin: 60px 0 0;
+      margin: 50px 0 0;
+    }
+    @media (max-width: $minMobile) {
+      margin: 30px 0 0;
+      grid-template-columns: 0.6fr 1fr;
     }
     &:hover {
       .image {
@@ -72,6 +84,9 @@
     color: $gray;
     font-size: 16px;
     padding: 18px 0 0;
+    @media (max-width: $minTablet) {
+      font-size: 18px;
+    }
     @media (max-width: $maxMobile) {
       font-size: 11px;
     }
@@ -80,7 +95,7 @@
     padding: 0 6px;
   }
   .title {
-    @include font(28px, 19px, $maxDesktop, $maxTablet);
+    @include font(28px, 19px, $maxDesktop, $minMobile);
     letter-spacing: 0.5px;
     color: #000;
     padding: 0 0 0 calc(var(--cellSize) * 0.6);
@@ -88,7 +103,6 @@
     line-height: 40px;
     cursor: pointer;
     @media (max-width: $maxLaptop) {
-      font-size: calc(25px + 9 * ((100vw - 1080px) / 600));
       padding: 0;
     }
     span {

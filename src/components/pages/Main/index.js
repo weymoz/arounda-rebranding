@@ -42,7 +42,6 @@ class Main extends Component {
         <HowSection />
         <BlogSection />
         <section className={style.wrapStartSection}>
-
         <StartSection />
         </section>
       </Fragment>
