@@ -35,7 +35,7 @@
 }
 .content {
   grid-column: 25 / -8;
-  transform: translateY(-26px);
+  transform: translateY(-20px);
   @media (max-width: $maxLaptop) {
     grid-column: 25 / -6;
   }
@@ -56,7 +56,7 @@
   }
 }
 .titleWrapper {
-  margin: 0 0 16px;
+  margin: 0 0 10px;
   @media (max-width: $maxMobile) {
     margin: 0 0 12px;
   }
@@ -77,7 +77,7 @@
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  margin: 90px 0 0;
+  margin: 100px 0 0;
   @media (max-width: $maxTablet) {
     margin: 80px 0 0;
   }

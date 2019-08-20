@@ -53,9 +53,10 @@
 }
 
 .content {
-  grid-column: 8 / span 14;
+  grid-column: 8 / span 15;
   transform: translateY(-55px);
   grid-row: 1 / 2;
+  padding-right: 10px;
   @media (max-width: $maxLaptop) {
     grid-column: 8 / span 17;
   }

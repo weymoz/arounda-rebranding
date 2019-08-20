@@ -98,7 +98,7 @@
     @include font(28px, 19px, $maxDesktop, $minMobile);
     letter-spacing: 0.5px;
     color: #000;
-    padding: 0 0 0 calc(var(--cellSize) * 0.6);
+    padding: 0 0 0 calc(var(--cellSize) * 0.4);
     position: relative;
     line-height: 40px;
     cursor: pointer;

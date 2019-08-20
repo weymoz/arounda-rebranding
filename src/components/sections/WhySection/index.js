@@ -14,7 +14,7 @@ const WhySection = (props) => {
                     <TitleSecondary text={'Why?'} />
                 </div>
                 <div className={style.descWrapper}>
-                    <Description light={true} text='We strive to unfold new values for the humanity and create products for millions of people around the world'/>
+                    <Description light={true} text='We strive to unfold new values for the humanity&nbsp;and create products for millions of people around the world'/>
                 </div>
                 <div className={style.datas}>
                     <div>

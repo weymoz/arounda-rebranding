@@ -17,7 +17,7 @@
 }
 
 .item {
-  margin: 0 0 36px;
+  margin: 0 0 46px;
   font-family: 'PT Sans', sans-serif;
 }
 
@@ -68,7 +68,7 @@
   }
 }
 .item:nth-child(2n) .image {
-  padding: 88% 0 0;
+  padding: 86% 0 0;
   @media (max-width: $maxTablet) {
     padding: 98% 0 0;
   }

@@ -23,6 +23,15 @@
       transition: opacity 0.3s 0.6s ease-in-out;
     }
   }
+  @media (max-width: $maxLaptop) {
+    min-height: 100vh;
+  }
+  @media (max-width: $minTablet) {
+    min-height: 91vh;
+  }
+  @media (max-width: $minMobile) {
+    min-height: 79vh;
+  }
 }
 
 .wrapper {
@@ -36,6 +45,12 @@
   transition: opacity 0.3s 0s ease-in-out;
   @media (max-width: $maxMobile) {
     padding: 130px 0 0;
+  }
+  @media (max-width: $minTablet) {
+    padding: 182px 0 0;
+  }
+  @media (max-width: $maxMobile) {
+    padding: 136px 0 0;
   }
 }
 
@@ -52,6 +67,12 @@
     justify-content: flex-start;
     grid-column: var(--tabletWidth);
   }
+  @media (max-width: $maxLaptop) {
+    grid-column: 6 / span 18;
+  }
+  @media (max-width: $minTablet) {
+    grid-column: 4 / span 23;
+  }
   li {
     position: relative;
     padding: 4px 23px 0 0;
@@ -60,6 +81,15 @@
     visibility: hidden;
     &:not(:last-of-type) {
       margin: 0 0 58px;
+      @media (max-width: $maxLaptop) {
+        margin: 0 0 54px;
+      }
+      @media (max-width: $minTablet) {
+        margin: 0 0 40px;
+      }
+      @media (max-width: $minMobile) {
+        margin: 0 0 30px;
+      }
     }
     @media (max-width: $maxTablet) {
       margin: 0 0 24px;
@@ -76,6 +106,9 @@
       transition: all 0.3s $cubic;
       @media (max-width: $maxTablet) {
         left: -110%;
+      }
+      @media (max-width: $minTablet) {
+        left: -135%;
       }
       @media (max-width: $maxMobile) {
         display: none;
@@ -145,5 +178,11 @@
   }
   @media (max-width: $maxMobile) {
     display: none;
+  }
+  @media (max-width: $maxLaptop) {
+    grid-column: -16/-10;
+  }
+  @media (max-width: $minTablet) {
+    grid-column: -14/-8;
   }
 }

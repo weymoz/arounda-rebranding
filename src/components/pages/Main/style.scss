@@ -5,13 +5,13 @@
   grid-column: 1 / -1;
   display: inherit;
   grid-template-columns: inherit;
-  padding: 94px 0 73px;
+  padding: 81px 0 81px;
   @media (max-width: $maxLaptop) {
     grid-column: 2 / -1;
-    padding: 56px 0 73px;
+    padding: 78px 0 80px;
   }
   @media (max-width: $minTablet) {
-    padding-top: 49px;
+    padding-top: 38px;
   }
 }
 

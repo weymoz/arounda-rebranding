@@ -2,7 +2,7 @@
 @import '../../../scss/mixins.scss';
 
 .section {
-  padding: 260px 0 100px;
+  padding: 263px 0 92px;
   display: inherit;
   grid-template-columns: inherit;
   grid-column: 1 / -1;
@@ -10,7 +10,7 @@
     padding: 170px 0 55px;
   }
   @media (max-width: $minMobile) {
-    padding: 144px 0 44px;
+    padding: 144px 0 40px;
   }
 }
 .container {
@@ -26,7 +26,10 @@
     align-items: start;
   }
   @media (max-width: $minTablet) {
-    grid-column: 4 / -4;
+    grid-column: 4 / -1;
+  }
+  @media (max-width: $minMobile) {
+    padding-right: 70px;
   }
 }
 .titleWrapper {
@@ -49,13 +52,13 @@
 }
 .textWrapper {
   @include font(19px, 16px, $maxLaptop, $maxTablet);
-  padding: 0 calc(var(--cellSize) * 1) 0 35px;
+  // padding: 0 calc(var(--cellSize) * 1) 0 35px;
   font-weight: 400;
   @media (max-width: $maxLaptop) {
     padding: 0 calc(var(--cellSize) * 1) 0 21px;
   }
   @media (max-width: $maxLaptop) {
-    padding: 6px 0 0 46px;
+    // padding: 6px 0 0 46px;
   }
   @media (max-width: $maxMobile) {
     grid-column: span 2;
@@ -63,8 +66,12 @@
   }
 }
 .text {
-  margin: 0 0 30px;
+  margin: 0 0 33px;
   line-height: 1.68;
+  padding: 0 88px 0 0;
+  @media (max-width: $maxLaptop) {
+    padding: 0;
+  }
 }
 .link {
   color: $gray;

@@ -36,7 +36,7 @@ const HowSection = (props) => {
                         </div>
                         <div className={style.descWrapper}>
                             <Description 
-                                text='We use our capabilities to make successful digital products using our own user-oriented methods that create the results'
+                                text='We use our capabilities to make successful digital products using our own user-oriented methods that create the&nbsp;results'
                                 light={true}
                                 />
                         </div>

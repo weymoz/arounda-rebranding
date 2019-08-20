@@ -6,20 +6,20 @@
   grid-template-columns: inherit;
   padding: var(--spacing) 0;
   grid-column: 1/-1;
-  margin-bottom: 178px;
+  margin-bottom: 173px;
   @media (max-width: $maxLaptop) {
     padding-top: 292px;
   }
   @media (max-width: $minTablet) {
-    padding-top: 170px;
-    margin-bottom: 97px;
+    padding-top: 162px;
+    margin-bottom: 111px;
   }
   @media (max-width: $maxMobile) {
     padding: var(--spacing) 0 calc(var(--spacing) * 2);
   }
   @media (max-width: $minMobile) {
     grid-column: 2/-1;
-    padding-top: 91px;
+    padding-top: 80px;
     margin-bottom: 7px;
   }
 }
@@ -80,9 +80,16 @@
   }
 }
 
+.desc {
+  padding-right: 20px;
+  @media (max-width: $minMobile) {
+    padding-bottom: 14px;
+  }
+}
+
 .subtitleWrapper {
   color: #313233;
-  padding: 32px 0 0;
+  padding: 36px 0 0;
   @include font(19px, 16px, $maxTablet, $maxMobile);
   span {
     position: relative;
@@ -97,5 +104,8 @@
       background: $lightGreen;
       z-index: -1;
     }
+  }
+  @media (max-width: $minTablet) {
+    padding: 18px 0 0;
   }
 }

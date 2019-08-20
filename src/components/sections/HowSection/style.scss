@@ -36,6 +36,7 @@
     padding: 0 0 56px;
   }
   @media (max-width: $minMobile) {
+    grid-column: 4/ -6;
     padding: 0 0 15px;
   }
 }
@@ -84,7 +85,7 @@
 }
 .services {
   grid-row: 2/3;
-  grid-column: 11 / span 16;
+  grid-column: 11 / span 17;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   padding-left: 14px;
