@@ -18,28 +18,30 @@
     letter-spacing: 0px;
   }
   div {
-    padding-top: 10px;
+    padding-top: 12px;
     font-weight: 400;
     position: relative;
-    transform: translateX(35px);
+    transform: translateX(0);
     display: inline-block;
+    transition: transform .2s ease-in-out;
     @media (max-width: $minTablet) {
       transform: translateX(0);
     }
     &:before {
       content: '';
       width: 70px;
-      height: 60%;
+      height: 50%;
       background: $lightGreen;
       z-index: -1;
       position: absolute;
-      top: 6px;
+      top: 19px;
       left: -35px;
       transform-origin: 0 0;
       transform: scaleX(0);
       transition: transform 0.2s ease-in-out;
     }
     &:hover {
+      transform: translateX(35px);
       &:before {
         transform: scaleX(1);
       }

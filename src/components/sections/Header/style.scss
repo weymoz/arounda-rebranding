@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 37px 0 25px;
+  padding: 39px 0 25px;
   z-index: 600;
   display: inherit;
   grid-template-columns: inherit;
@@ -19,6 +19,9 @@
   justify-content: space-between;
   align-items: center;
   grid-column: var(--desktopWidth);
+  a {
+    transform: translate(0px, -2px);
+  }
   @media (max-width: $maxLaptop) {
     grid-column: 5 / -4;
   }
@@ -33,6 +36,7 @@
 .menu {
   display: flex;
   align-items: center;
+  transform: translateY(-1px);
 }
 .menu {
   li {
@@ -53,7 +57,6 @@
   .btn {
     width: 60px;
     height: 60px;
-    padding-right: 10px;
     border-radius: 50%;
     transition: all 0.5s $cubic;
     transform-origin: center;

@@ -11,6 +11,10 @@ const HowSection = (props) => {
             desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
         },
         {
+            title: 'Branding',
+            desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
+        },
+        {
             title: 'UX Design',
             desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
         },
@@ -19,14 +23,9 @@ const HowSection = (props) => {
             desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
         },
         {
-            title: 'Branding',
-            desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
-        },
-        {
             title: 'Development',
             desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
         },
-        
     ]
     return (
         <section className={style.section}>
@@ -58,7 +57,7 @@ const HowSection = (props) => {
                     </div>
                     <div className={style.more}>
                         <Link to={'/services/'} className={style.link}>
-                            More about services
+                            More about expertise
                         </Link>
                     </div>
         </section>

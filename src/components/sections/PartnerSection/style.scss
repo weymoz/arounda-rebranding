@@ -5,8 +5,7 @@
   display: inherit;
   grid-template-columns: inherit;
   grid-column: 1 / -1;
-  //   padding: 120px 0 240px;
-  padding: 123px 0 150px;
+  padding: 122px 0 150px;
   @media (max-width: $maxLaptop) {
     padding: 110px 0 150px;
   }
@@ -37,7 +36,7 @@
   }
 }
 .titleWrapper {
-  padding: 0 0 34px 30px;
+  padding: 0 0 34px 34px;
   h3 {
     font-size: 28px;
     position: relative;
@@ -48,10 +47,10 @@
       content: '';
       position: absolute;
       top: 1px;
-      left: -30px;
+      left: -34px;
       background: $lightGreen;
-      height: 80%;
-      width: 25%;
+      height: 68%;
+      width: 18%;
       z-index: -1;
     }
   }
@@ -66,6 +65,7 @@
 .textWrapper {
   @include font(19px, 16px, $maxLaptop, $minTablet);
   line-height: 1.68;
+  padding-top: 3px;
   p {
     padding-right: var(--cellSize);
     &:not(:last-child) {
@@ -108,7 +108,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 120px 118px 0 40px;
+  padding: 119px 118px 0 40px;
   @media (max-width: $maxLaptop) {
     padding: 120px 0px 0 0px;
   }
@@ -129,16 +129,17 @@
       max-height: 26px;
     }
     &:nth-of-type(2) {
-      transform: translateX(26px);
+      transform: translate(20px, -2px);
       max-height: 28px;
     }
     &:nth-of-type(3) {
       max-height: 25px;
-      transform: translateX(38px);
+      transform: translate(25px, 1px);
     }
     &:last-child {
       max-height: 46px;
       padding: 0 0 0 0;
+      transform: translateY(5px);
       @media (max-width: $maxMobile) {
         display: none;
       }

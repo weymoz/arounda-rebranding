@@ -3,7 +3,7 @@
 
 .section {
   min-height: 100vh;
-  padding: 219px 0 208px;
+  padding: 167px 0 164px;
   background: #fafafa;
   grid-column: 1 / -1;
   display: inherit;
@@ -51,8 +51,14 @@
   .post {
     display: grid;
     grid-template-columns: 0.4fr 1fr;
-    margin: 80px 0 0;
+    min-height: 80px;
     position: relative;
+    &:first-of-type {
+      margin-top: 80px;
+    }
+    &:not(:first-of-type) {
+      margin: 85px 0 0;
+    }
     @media (max-width: $maxMobile) {
       grid-template-columns: 110px 1fr;
       margin: 40px 0 0;
@@ -83,7 +89,7 @@
   .date {
     color: $gray;
     font-size: 16px;
-    padding: 18px 0 0;
+    padding: 12px 0 0;
     @media (max-width: $minTablet) {
       font-size: 18px;
     }
@@ -92,7 +98,7 @@
     }
   }
   .dash {
-    padding: 0 6px;
+    padding: 0 12px;
   }
   .title {
     @include font(28px, 19px, $maxDesktop, $minMobile);

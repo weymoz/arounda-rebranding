@@ -6,7 +6,7 @@
 .titleWrapper {
   grid-column: 8 / span 20;
   h2 {
-    transform: translateY(21px);
+    transform: translateY(22px);
     @media (max-width: $maxLaptop) {
       transform: translate(0);
     }

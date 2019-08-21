@@ -34,8 +34,8 @@
   }
 }
 .content {
-  grid-column: 25 / -8;
-  transform: translateY(-20px);
+  grid-column: 25 / -7;
+  transform: translateY(-24px);
   @media (max-width: $maxLaptop) {
     grid-column: 25 / -6;
   }
@@ -56,7 +56,7 @@
   }
 }
 .titleWrapper {
-  margin: 0 0 10px;
+  margin: 0 0 15px;
   @media (max-width: $maxMobile) {
     margin: 0 0 12px;
   }
@@ -65,7 +65,7 @@
   }
 }
 .descWrapper {
-  padding: 0 calc(var(--cellSize) * 3) 0 0;
+  padding: 0 calc(var(--cellSize) * 4) 0 0;
   @media (max-width: $maxLaptop) {
     padding: 0 calc(var(--cellSize) * 1) 0 0;
   }

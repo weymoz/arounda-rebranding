@@ -4,7 +4,7 @@
 .section {
   min-height: 100vh;
   padding: 183px 0 100px;
-  margin: 0 0 100px;
+  margin: 0 0 146px;
   grid-column: 1 / -1;
   display: inherit;
   grid-template-columns: inherit;
@@ -200,7 +200,6 @@
     position: relative;
     display: inline-block;
     line-height: 24px;
-    letter-spacing: 0.6px;
     border-bottom: 1px solid #60fed9;
   }
   @media (max-width: $maxLaptop) {
