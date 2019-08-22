@@ -5,10 +5,10 @@
   grid-column: 1 / -1;
   display: inherit;
   grid-template-columns: inherit;
-  padding: 80px 0 81px;
+  padding: 85px 0 80px;
   @media (max-width: $maxLaptop) {
     grid-column: 2 / -1;
-    padding: 78px 0 80px;
+    padding: 85px 0 80px;
   }
   @media (max-width: $minTablet) {
     padding-top: 38px;

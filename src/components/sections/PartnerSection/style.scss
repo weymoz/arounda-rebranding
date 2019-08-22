@@ -7,7 +7,7 @@
   grid-column: 1 / -1;
   padding: 122px 0 150px;
   @media (max-width: $maxLaptop) {
-    padding: 110px 0 150px;
+    padding: 102px 0 150px;
   }
   @media (max-width: $minTablet) {
     padding: 66px 0 91px;
@@ -25,7 +25,7 @@
   grid-template-columns: 1fr 1fr;
   grid-column-gap: calc(var(--cellSize) * 2);
   @media (max-width: $maxLaptop) {
-    grid-column: 8 / -7;
+    grid-column: 8 / -8;
     grid-column-gap: calc(var(--cellSize) * 0);
   }
   @media (max-width: $maxTablet) {
@@ -131,10 +131,16 @@
     &:nth-of-type(2) {
       transform: translate(20px, -2px);
       max-height: 28px;
+      @media (max-width: $maxLaptop) {
+        transform: translate(3px, -2px);
+      }
     }
     &:nth-of-type(3) {
       max-height: 25px;
       transform: translate(25px, 1px);
+        @media (max-width: $maxLaptop) {
+        transform: translate(1px, 1px);
+      }
     }
     &:last-child {
       max-height: 46px;

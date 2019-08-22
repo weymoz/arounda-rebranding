@@ -8,7 +8,7 @@
   h2 {
     transform: translateY(22px);
     @media (max-width: $maxLaptop) {
-      transform: translate(0);
+      transform: translate(0, -6px);
     }
     @media (max-width: $minTablet) {
       font-size: 38px;

@@ -37,6 +37,9 @@
   display: flex;
   align-items: center;
   transform: translateY(-1px);
+  @media (max-width: $maxLaptop) {
+    transform: translate(-27px, -1px);
+  }
 }
 .menu {
   li {
