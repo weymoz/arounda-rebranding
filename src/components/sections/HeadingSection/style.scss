@@ -6,8 +6,8 @@
   display: inherit;
   grid-template-columns: inherit;
   grid-column: 1 / -1;
-  @media (max-width: $maxTablet) {
-    padding: 170px 0 55px;
+  @media (max-width: $minTablet) {
+    padding: 170px 0 52px;
   }
   @media (max-width: $minMobile) {
     padding: 144px 0 40px;
@@ -35,12 +35,7 @@
 .titleWrapper {
   padding: 0 calc(var(--cellSize) * 2) 0 0;
   @media (max-width: $minTablet) {
-    h2 {
-      font-size: 38px;
-      @media (max-width: $minMobile) {
-        font-size: 30px;
-      }
-    }
+ 
   }
   @media (max-width: $maxMobile) {
     grid-column: span 2;
@@ -57,8 +52,8 @@
   @media (max-width: $maxLaptop) {
     padding: 0 calc(var(--cellSize) * 1) 0 13px;
   }
-  @media (max-width: $maxLaptop) {
-    // padding: 6px 0 0 46px;
+  @media (max-width: $minTablet) {
+    padding: 10px calc(var(--cellSize) * 1) 0 23px;
   }
   @media (max-width: $maxMobile) {
     grid-column: span 2;
@@ -72,9 +67,15 @@
   @media (max-width: $maxLaptop) {
     padding: 0;
   }
+  @media (max-width: $minTablet) {
+    margin: 0 0 22px;
+  }
 }
 .link {
   color: $gray;
+  @media (max-width: $minTablet) {
+    padding-right: 40px;
+  }
   a {
     color: $black;
     position: relative;

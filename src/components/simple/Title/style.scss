@@ -2,10 +2,13 @@
 @import "../../../scss/mixins.scss";
 
 .title{
-    @include font(50px, 30px, $maxLaptop, $maxMobile);
+    @include font(50px, 38px, $maxLaptop, $minTablet);
     font-weight: 400;
     line-height: 1.44;
     div{
         font-weight: 300;
+    }
+    @media (max-width: $minTablet) {
+        font-size: font(38px, 30px, $minTablet, $minMobile);
     }
 }

@@ -19,15 +19,12 @@
       transform: translateY(34px);
     }
   }
-  @media (max-width: $minTablet) {
-    margin-bottom: 4px;
-    grid-column: 4 / -4;
-  }
   @media (max-width: $maxLaptop) {
     grid-column: 5 / -4;
   }
   @media (max-width: $minTablet) {
-    grid-column: 3 / -4;
+    margin-bottom: 2px;
+    grid-column: 4 / -4;
   }
   @media (max-width: $maxMobile) {
     grid-column: 3 / -3;

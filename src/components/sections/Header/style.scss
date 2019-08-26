@@ -10,7 +10,7 @@
   display: inherit;
   grid-template-columns: inherit;
   @media (max-width: $minTablet) {
-    padding: 11px 0 25px;
+    padding: 19px 0 25px;
   }
 }
 
@@ -40,6 +40,9 @@
   @media (max-width: $maxLaptop) {
     transform: translate(-27px, -1px);
   }
+  @media (max-width: $minTablet) {
+    transform: translate(0, -2px);
+  }
 }
 .menu {
   li {
@@ -48,7 +51,7 @@
     opacity: 0;
     visibility: hidden;
     @media (max-width: $minTablet) {
-      margin: 0 0 0 23px;
+      margin: 0 0 0 42px;
     }
     @media (max-width: $maxMobile) {
       &:nth-child(1),
