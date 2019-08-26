@@ -4,34 +4,19 @@ import style from './style.scss';
 import Textarea from 'react-textarea-autosize';
 
 const budget = [
-  { value: '1000', label: '1000$', name: 'budget' },
-  { value: '2000', label: '2000$', name: 'budget' },
-  { value: '3000', label: '3000$', name: 'budget' },
-  { value: '5000', label: '5000$', name: 'budget' }
+  { value: '1000', label: '$1000 +', name: 'budget' },
+  { value: '2000', label: '$2000 +', name: 'budget' },
+  { value: '3000', label: '$3000 +', name: 'budget' },
+  { value: '5000', label: '$9000 +', name: 'budget' }
 ];
 
 const project = [{ value: 'custom', label: 'Custom', name: 'project' }, { value: 'complex services', label: 'Complex services', name: 'project' }];
 
-const include = [
-  {
-    custom: ['Strategy', 'UХ Design', 'UI Design', 'Branding', 'Development']
-  },
-  {
-    'complex services': ['Complex platform', 'Mobile App']
-  }
-];
 
 const DropdownIndicator = props => {
   return (
     <components.DropdownIndicator {...props}>
-      <svg height='7' viewBox='0 0 12 7' width='12' xmlns='http://www.w3.org/2000/svg'>
-        <path
-          d='m358.449747 56.1568542-6.292893-6.2928932v6.2928932z'
-          fill='none'
-          stroke='#9f9f9f'
-          transform='matrix(.70710678 -.70710678 .70710678 .70710678 -283.064538 214.910209)'
-        />
-      </svg>
+      <svg height="7" viewBox="0 0 13 7" width="13" xmlns="http://www.w3.org/2000/svg"><path d="m530.656854 52.6568542h-8v-8" fill="none" stroke="#111212" transform="matrix(.70710678 -.70710678 .70710678 .70710678 -400.15137 338.653895)"/></svg>
     </components.DropdownIndicator>
   );
 };
@@ -41,9 +26,12 @@ export default class ContactForm extends Component {
     name: null,
     email: null,
     budget: null,
-    project: 'custom',
+    project: 'complex services',
     idea: null,
-    include: [],
+    include: {
+      'custom': ['Strategy', 'UХ Design', 'UI Design', 'Branding', 'Development'],
+      'complex services': ['Complex platform', 'Mobile App', 'Web App', 'Marketing website', 'Landing page']
+    },
     includeList: []
   };
 
@@ -69,26 +57,19 @@ export default class ContactForm extends Component {
     this.setState({
       [option.name]: option.value
     });
-
-    // if(option.name === 'project'){
-    //     console.log(include)
-    //     this.setState({
-    //         includeList: [...include[option.name]]
-    //     })
-    // }
   };
 
   handleChoose = e => {
     const parent = e.target.parentElement;
     if (!parent.classList.contains(style.active)) {
       this.setState({
-        include: [...this.state.include, e.target.innerHTML]
+        includeList: [...this.state.includeList, e.target.innerHTML]
       });
 
       parent.classList.add(style.active);
     } else {
       this.setState({
-        include: this.state.include.filter(item => e.target.innerHTML !== item)
+        includeList: this.state.includeList.filter(item => e.target.innerHTML !== item)
       });
       parent.classList.remove(style.active);
     }
@@ -114,6 +95,7 @@ export default class ContactForm extends Component {
             components={{ DropdownIndicator }}
             placeholder={'Project budget'}
             name='budget'
+            isSearchable={false}
           />
           <label>Project budget</label>
         </div>
@@ -126,11 +108,12 @@ export default class ContactForm extends Component {
             components={{ DropdownIndicator }}
             placeholder={'Project type'}
             name='project'
+            isSearchable={false}
           />
           <label>Project’s type</label>
         </div>
         <div className={style.textareaWrapper}>
-          <Textarea className={style.textarea} style={{ height: '42px' }} placeholder={'Tell us more about your idea'} name='idea' onChange={this.handleInput} />
+          <Textarea className={style.textarea} style={{ height: '41px' }} placeholder={'Tell us more about your idea'} name='idea' onChange={this.handleInput} />
           <div className={style.inputFileWrapper}>
             <input id='file' className={style.inputFile} type='file' />
             <label className={style.labelFile} htmlFor='file'>
@@ -149,7 +132,7 @@ export default class ContactForm extends Component {
         <div className={style.includeWrapper}>
           <label>What to include?</label>
           <ul className={style.list}>
-            {include[0]['custom'].map((el, i) => {
+            {this.state.include[this.state.project].map((el, i) => {
               return (
                 <li onClick={this.handleChoose} key={i} className={`${style.item}`}>
                   <button>{el}</button>

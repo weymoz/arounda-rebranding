@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './style.scss';
 import ContactForm from '@simple/ContactForm';
-import Title from '@simple/Title';
+import TitleSecondary from '@simple/TitleSecondary';
 
 
 const Contacts = (props) => {
@@ -9,7 +9,7 @@ const Contacts = (props) => {
         <section className={style.sectionContacts}>
                 <div className={style.grid}>
                     <div className={style.titleWrapper}>
-                        <Title text={'Hey, let`s talk!'}/>
+                        <TitleSecondary text={'Hey, let`s talk!'}/>
                         <p>Fill in the form, or if you prefer <a href="#">send us an email</a></p>
                     </div>
                 </div>
