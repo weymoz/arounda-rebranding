@@ -8,7 +8,7 @@
   grid-column: 1/-1;
   margin-bottom: 173px;
   @media (max-width: $maxLaptop) {
-    padding-top: 292px;
+    padding-top: 284px;
   }
   @media (max-width: $minTablet) {
     padding-top: 162px;
@@ -44,7 +44,7 @@
   padding: 3% 0 0;
   @media (max-width: $maxLaptop) {
     grid-column: -16 / -7;
-    padding: 9% 10px 0;
+    padding: 10% 25px 0 0px;
   }
   @media (max-width: $maxTablet) {
     grid-column: -16/-4;
@@ -82,6 +82,9 @@
 
 .desc {
   padding-right: 20px;
+  @media (max-width: $maxLaptop) {
+    padding-right: 0;
+  }
   @media (max-width: $minMobile) {
     padding-bottom: 14px;
   }

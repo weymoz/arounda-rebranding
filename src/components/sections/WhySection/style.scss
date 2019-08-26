@@ -58,7 +58,9 @@
   grid-row: 1 / 2;
   padding-right: 10px;
   @media (max-width: $maxLaptop) {
-    grid-column: 8 / span 17;
+    grid-column: 8 / span 19;
+    transform: translateY(-52px);
+    padding-right: 30px;
   }
   @media (max-width: $maxTablet) {
     grid-column: 8 / -8;
@@ -101,6 +103,9 @@
   display: flex;
   justify-content: space-between;
   max-width: 430px;
+  @media (max-width: $maxLaptop) {
+    margin: 95px 0 0;
+  }
   @media (max-width: $maxTablet) {
     margin: 80px 0 0;
   }

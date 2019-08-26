@@ -18,6 +18,9 @@
 
 .item {
   margin: 0 0 46px;
+  @media (max-width: $maxLaptop) {
+    margin: 0 0 40px
+  }
 }
 
 .item .image {
@@ -42,7 +45,7 @@
 .item {
   grid-column: 8 / span 18;
   @media (max-width: $maxLaptop) {
-    grid-column: 4 / span 22;
+    grid-column: 5 / span 22;
   }
   @media (max-width: $minTablet) {
     grid-column: 3 / span 22;
