@@ -14,7 +14,7 @@
     min-height: auto;
   }
   @media (max-width: $minTablet) {
-    padding: 59px 0 187px;
+    padding: 123px 0 120px;
   }
   @media (max-width: $minMobile) {
     padding: 160px 0 84px;
@@ -55,6 +55,9 @@
     position: relative;
     &:first-of-type {
       margin-top: 80px;
+      @media (max-width: $minTablet) {
+        margin-top: 40px;
+      }
     }
     &:not(:first-of-type) {
       margin: 85px 0 0;
@@ -96,15 +99,15 @@
     color: $gray;
     font-size: 16px;
     padding: 12px 0 0;
-    @media (max-width: $minTablet) {
-      font-size: 18px;
-    }
     @media (max-width: $maxMobile) {
       font-size: 11px;
     }
   }
   .dash {
     padding: 0 12px;
+    @media (max-width: $minTablet) {
+      padding: 0 13px;
+    }
   }
   .title {
     @include font(28px, 28px, $maxDesktop, $maxLaptop);
@@ -134,6 +137,10 @@
         background: rgba(151, 151, 151, 0.1);
         z-index: -1;
         transition: all 0.3s $cubic;
+        @media (max-width: $minTablet) {
+          bottom: -1px;
+          height: 40%;
+        }
       }
     }
     &:before {
@@ -180,5 +187,25 @@
   }
   @media (max-width: $maxTablet) {
     display: none;
+  }
+}
+
+.listForDesktop {
+  display: block;
+  @media (max-width: $minTablet) {
+    display: none;
+  }
+}
+.listForTablet {
+  display: none;
+  .post {
+    .title {
+      span {
+        display: inline;
+      }
+    }
+  }
+  @media (max-width: $minTablet) {
+    display: block;
   }
 }

@@ -3,7 +3,7 @@
 
 .section {
   min-height: 100vh;
-  margin: 0 0 290px;
+  margin: 0 0 291px;
   display: inherit;
   grid-template-columns: inherit;
   grid-column: 1 / -1;
@@ -17,7 +17,7 @@
   }
   @media (max-width: $minTablet) {
     padding-top: 31px;
-    margin: 0 0 179px;
+    margin: 0 0 55px;
   }
   @media (max-width: $maxMobile) {
     margin: 0 0 150px;
@@ -37,7 +37,7 @@
   }
   @media (max-width: $minTablet) {
     height: 100%;
-    padding: 44% 0 0;
+    padding: 27% 0 0;
   }
   @media (max-width: $minMobile) {
     padding: 55% 0 0;
@@ -70,7 +70,7 @@
   }
   @media (max-width: $minTablet) {
     margin: 0 0 0;
-    transform: translateY(18%);
+    transform: translateY(-1%);
     
   }
   @media (max-width: $maxMobile) {
@@ -110,7 +110,7 @@
     margin: 80px 0 0;
   }
   @media (max-width: $minTablet) {
-    margin: 120px 0 0;
+    margin: 76px 0 0;
   }
   @media (max-width: $minMobile) {
     margin: 60px 0 0;
@@ -131,11 +131,7 @@
   }
 }
 .datas .number {
-  @include font(34px, 26px, $minDesktop, $minMobile);
+  font-size: 34px;
   letter-spacing: 1px;
   font-weight: 500;
-
-  // @media (max-width: $minTablet) {
-  //   font-size: 34px;
-  // }
 }

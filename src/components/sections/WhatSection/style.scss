@@ -18,7 +18,7 @@
     grid-column: 1 / -4;
   }
   @media (max-width: $minTablet) {
-    padding: 60% 0 0;
+    padding: 57% 0 0;
   }
   @media (max-width: $minMobile) {
     grid-column: 1 / -2;
@@ -46,7 +46,9 @@
     margin: 110px 0 0;
   }
   @media (max-width: $minTablet) {
+    grid-column: 8 / -9;
     margin: 120px 0 0;
+    transform: translateY(-17px);
   }
   @media (max-width: $maxMobile) {
     grid-column: var(--tabletWidth);
@@ -72,6 +74,9 @@
   @media (max-width: $maxTablet) {
     padding: 0;
   }
+  @media (max-width: $minTablet) {
+    padding-right: 40px;
+  }
 }
 
 .products {
@@ -82,7 +87,7 @@
     margin: 80px 0 0;
   }
   @media (max-width: $minTablet) {
-    margin: 119px 0 0;
+    margin: 80px 0 0;
   }
   @media (max-width: $minMobile) {
     margin: 59px 0 0;

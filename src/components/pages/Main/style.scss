@@ -29,7 +29,8 @@
     padding: calc(var(--spacing) * 2) 0 var(--spacing);
   }
   @media (max-width: $minTablet) {
-    padding: 58px 0 74px;
+    grid-column: 1 / -1;
+    padding: 66px 0 74px;
   }
   @media (max-width: $minMobile) {
     padding: 79px 0 38px;

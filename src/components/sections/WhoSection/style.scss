@@ -11,16 +11,12 @@
     padding-top: 284px;
   }
   @media (max-width: $minTablet) {
-    padding-top: 195px;
-    margin-bottom: 111px;
+    grid-column: 1/-1;
+    padding-top: 56px;
+    margin-bottom: 26px;
   }
   @media (max-width: $maxMobile) {
     padding: var(--spacing) 0 calc(var(--spacing) * 2);
-  }
-  @media (max-width: $minMobile) {
-    grid-column: 2/-1;
-    padding-top: 80px;
-    margin-bottom: 7px;
   }
 }
 .content {
@@ -32,10 +28,7 @@
     grid-column: 4 / span 23;
   }
   @media (max-width: $minTablet) {
-    grid-column: 5 / span 23;
-  }
-  @media (max-width: $maxMobile) {
-    grid-column: 3/ -3;
+    grid-column: 5/ -14;
     grid-row: 2/3;
   }
 }
@@ -50,11 +43,8 @@
     grid-column: -16/-4;
   }
   @media (max-width: $minTablet) {
-    
-  }
-  @media (max-width: $maxMobile) {
-    grid-column: 3 / span 16;
-    padding: 0 0 40px;
+    grid-column: 5 / span 10;
+    padding: 0 0 93px;
   }
   @media (max-width: $minMobile) {
     padding: 0 0 31px;
@@ -67,16 +57,10 @@
     margin: 0 0 12px;
   }
   @media (max-width: $minTablet) {
-    margin: 0 0 0;
-    h3 {
-      font-size: 38px;
-    }
+    margin: 0 0 15px;
   }
   @media (max-width: $minMobile) {
     margin: 0 0 10px;
-    h3 {
-      font-size: 31px;
-    }
   }
 }
 
@@ -84,6 +68,9 @@
   padding-right: 20px;
   @media (max-width: $maxLaptop) {
     padding-right: 0;
+  }
+  @media (max-width: $minTablet) {
+    margin-bottom: 14px;
   }
   @media (max-width: $minMobile) {
     padding-bottom: 14px;
@@ -93,7 +80,7 @@
 .subtitleWrapper {
   color: #313233;
   padding: 36px 0 0;
-  @include font(19px, 16px, $maxTablet, $maxMobile);
+  font-size: 19px;
   span {
     position: relative;
     &:before {

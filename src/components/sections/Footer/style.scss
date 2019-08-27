@@ -5,6 +5,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 0 50px 2px;
+  @media (max-width: $minTablet) {
+    padding: 0 0 46px 2px;
+  }
 }
 .footer {
   display: inherit;
@@ -88,7 +91,7 @@
   border-top: 1px solid rgba(151, 151, 151, 0.1);
   padding: 28px 0 44px;
   @media (max-width: $maxTablet) {
-    padding: 18px 0;
+    padding: 8px 0;
   }
 }
 .links {
@@ -110,12 +113,18 @@
   @media (max-width: $maxLaptop) {
     transform: translateX(-16px);
   }
+  @media (max-width: $minTablet) {
+    transform: translateX(-3px);
+  }
 }
 
 .contact {
   transform: translateX(-7px);
   @media (max-width: $maxLaptop) {
     transform: translateX(-40px);
+  }
+  @media (max-width: $minTablet) {
+    transform: translateX(-9px);
   }
 }
 

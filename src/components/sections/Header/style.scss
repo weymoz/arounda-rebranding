@@ -12,6 +12,9 @@
   @media (max-width: $minTablet) {
     padding: 19px 0 25px;
   }
+  @media (max-width: $minMobile) {
+    padding: 5px 0 25px;
+  }
 }
 
 .row {
@@ -29,7 +32,7 @@
     grid-column: 4 / -4;
   }
   @media (max-width: $minMobile) {
-    grid-column: 4 / -2;
+    grid-column: 4 / -4;
   }
 }
 
@@ -88,6 +91,11 @@
   font-weight: normal;
 }
 .logo {
+  width: 111px;
+  height: 48px;
   opacity: 0;
   visibility: hidden;
+  @media (max-width: $minMobile) {
+    width: 102px;
+  }
 }

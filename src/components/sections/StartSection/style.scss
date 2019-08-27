@@ -4,7 +4,7 @@
 .section {
 }
 .title {
-  @include font(38px, 30px, $minDesktop, $minMobile);
+  font-size: 38px;
   font-weight: 300;
   grid-column: var(--desktopWidth);
   @media (max-width: $maxLaptop) {
@@ -12,11 +12,12 @@
     letter-spacing: .6px;
   }
   @media (max-width: $minTablet) {
-    grid-column: 3 / -4;
-    letter-spacing: 3px;
+    grid-column: 4 / -4;
+    letter-spacing: 0.5px;
   }
   @media (max-width: $minMobile) {
     letter-spacing: 0px;
+    font-size: 30px;
   }
   div {
     padding-top: 12px;
@@ -26,6 +27,7 @@
     display: inline-block;
     transition: transform .2s ease-in-out;
     @media (max-width: $minTablet) {
+      padding-top: 0;
       transform: translateX(0);
     }
     &:before {
