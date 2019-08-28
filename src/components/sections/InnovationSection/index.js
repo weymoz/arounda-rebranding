@@ -8,7 +8,7 @@ const InnovationSection = ({btn, link}) => {
         {
             id: '0',
             image: 'assets/svg/01_discover.svg',
-            text: 'Ideate',
+            text: 'Discover',
             number: '01.',
         },
         {

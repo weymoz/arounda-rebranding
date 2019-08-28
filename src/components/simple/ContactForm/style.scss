@@ -3,10 +3,9 @@
 
 :global {
   .select {
+    transition: all 0.3s $cubic;
     & .select__control {
       border: none;
-      border-bottom: 1px solid $lightGray;
-      transition: all 0.3s $cubic;
       border-radius: 0;
       font-size: 21px;
       cursor: pointer;
@@ -20,10 +19,6 @@
     & .select__control--is-focused,
     & .select__control:hover {
       box-shadow: none;
-      border-color: $lightGreen;
-      label {
-        opacity: 1;
-      }
     }
     & .select__indicators svg {
       color: $black;
@@ -42,6 +37,29 @@
     & .select__value-container {
       padding-left: 0;
       transform: translateY(-2px);
+    }
+    & .select__menu{
+      top:25px;
+      border-radius: 0;
+      box-shadow: 0 2px 28px 0 rgba(0,0,0,0.07);
+      padding: 15px 0;
+    }
+    & .select__option{
+      color: $gray;
+      font-size: 21px;
+      background-color: transparent;
+      cursor: pointer;
+      padding: 7px 26px;
+    }
+    @media (max-width: $maxMobile){
+      & .select__option{
+        font-size: 19px;
+        padding: 7px 26px;
+      }
+    }
+    & .select__option:hover{
+      color: $black;
+      background-color: transparent;
     }
   }
 }
@@ -81,6 +99,9 @@
   &::placeholder {
 
     color: $gray;
+  }
+  &.active{
+    border-color: $lightGreen;
   }
   @media (max-width: $maxMobile){
     font-size: 19px;
@@ -132,8 +153,11 @@
     font-size: 13px;
     transition: all 0.3s $cubic;
     color: $gray;
-    opacity: 1;
     font-family: 'PT Sans', sans-serif;
+    opacity: 0;
+    &.active{
+      opacity: 1;
+    }
     @media (max-width: $maxMobile) {
       top: -22px;
     }
@@ -161,6 +185,23 @@
   @media (max-width: $maxMobile) {
     padding: 12px 0 0;
   }
+  & > label{
+    position: absolute;
+    top: -15px;
+    left: 0;
+    letter-spacing: 0.43px;
+    font-size: 13px;
+    transition: all 0.3s $cubic;
+    color: $gray;
+    font-family: 'PT Sans', sans-serif;
+    opacity: 0;
+    &.active{
+      opacity: 1;
+    }
+    @media (max-width: $maxMobile){
+      top: -10px;
+    }
+  }
 }
 .textarea {
   width: 100%;
@@ -181,6 +222,21 @@
   @media (max-width: $maxMobile) {
     font-size: 19px;
   }
+  &.active{
+    border-color: $lightGreen;
+  }
+}
+.inputFileWrapper{
+  span{
+    color: #9D9D9D;
+    font-size: 14px;
+    display: none;
+    white-space: nowrap;
+    padding-left: 8px;
+    font-family: "PT Sans", sans-serif;
+    letter-spacing: 0.46px;
+    transform: translateY(1px);
+  }
 }
 .inputFile {
   font-size: 0;
@@ -197,8 +253,28 @@
   right: 20px;
   z-index: 10;
   cursor: pointer;
+  display: flex;
+  align-items: center;
   @media (max-width: $maxLaptop){
     right: 10px;
+  }
+}
+.textareaWrapper.filled{
+  .inputFileWrapper{
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    
+  }
+  .labelFile{
+    right: inherit;
+    left: 0;
+    span{
+      display: block;
+    }
+  }
+  textarea{
+    padding-bottom: 50px;
   }
 }
 .btnWrapper {
