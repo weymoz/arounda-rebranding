@@ -16,7 +16,7 @@
     padding: 50px 0 60px;
   }
   @media (max-width: $minMobile) {
-    padding: 55px 0 75px;
+    padding: 52px 0 75px;
   }
 }
 .container {
@@ -43,7 +43,7 @@
     line-height: 1.3;
     font-weight: 400;
     @media (max-width: $minMobile) {
-      font-size: 22px;
+      font-size: 26px;
     }
     &:before {
       content: '';
@@ -73,7 +73,7 @@
   }
 
   @media (max-width: $minMobile) {
-    padding: 0 0 30px 22px;
+    padding: 0 0 27px 22px;
   }
 }
 .textWrapper {
@@ -96,6 +96,9 @@
     }
     @media (max-width: $maxLaptop) {
       padding-right: 0;
+    }
+    @media (max-width: $minMobile) {
+      padding-right: 30px;
     }
   }
   @media (max-width: $maxMobile) {
@@ -136,7 +139,7 @@
     padding: 60px 6px 0 5px;
   }
   @media (max-width: $minMobile) {
-    padding: 50px 0 0 20px;
+    padding: 52px 0 0 23px;
   }
   img {
     max-height: 31px;
@@ -146,6 +149,9 @@
       max-height: 26px;
       @media (max-width: $minTablet) {
         max-height: 19px;
+      }
+      @media (max-width: $minMobile) {
+        max-height: 14px;
       }
     }
     &:nth-of-type(2) {
@@ -158,6 +164,10 @@
         transform: translate(1px, -3px);
         max-height: 21px;
       }
+      @media (max-width: $minMobile) {
+        transform: translate(2px, -2px);
+        max-height: 16px;
+      }
     }
     &:nth-of-type(3) {
       max-height: 25px;
@@ -168,6 +178,10 @@
       @media (max-width: $minTablet) {
         transform: translate(1px, 1px);
         max-height: 18px;
+      }
+      @media (max-width: $minMobile) {
+        transform: translate(1px, 0px);
+        max-height: 14px;
       }
     }
     &:last-child {
@@ -191,7 +205,7 @@
       max-height: 17px;
     }
     @media (max-width: $minMobile) {
-      min-height: 15px;
+      min-height: 13px;
     }
   }
 }

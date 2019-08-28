@@ -13,6 +13,9 @@
   @media (max-width: $minTablet) {
     padding-top: 38px;
   }
+  @media (max-width: $minMobile) {
+    padding-top: 32px;
+  }
 }
 
 .wrapStartSection {

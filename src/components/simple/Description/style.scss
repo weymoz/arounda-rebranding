@@ -8,4 +8,7 @@
     &.light{
         color: $darkGray;
     }
+    @media (max-width: $minMobile) {
+        line-height: 1.48;
+    }
 }

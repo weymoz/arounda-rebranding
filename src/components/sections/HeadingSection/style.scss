@@ -10,7 +10,7 @@
     padding: 170px 0 52px;
   }
   @media (max-width: $minMobile) {
-    padding: 144px 0 40px;
+    padding: 144px 0 43px;
   }
 }
 .container {
@@ -70,11 +70,17 @@
   @media (max-width: $minTablet) {
     margin: 0 0 22px;
   }
+  @media (max-width: $minMobile) {
+    margin: 0 0 26px;
+  }
 }
 .link {
   color: $gray;
   @media (max-width: $minTablet) {
     padding-right: 40px;
+  }
+  @media (max-width: $minMobile) {
+    padding-right: 0;
   }
   a {
     color: $black;

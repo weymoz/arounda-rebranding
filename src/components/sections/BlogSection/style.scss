@@ -17,27 +17,18 @@
     padding: 123px 0 120px;
   }
   @media (max-width: $minMobile) {
-    padding: 160px 0 84px;
+    padding: 84px 0 84px;
   }
 }
 .titleWrapper {
   grid-column: 11 / -11;
   margin: 0 0 25px;
-  h2 {
-    font-size: 38px;
-  }
   @media (max-width: $maxLaptop) {
     grid-column: 8 / -8;
   }
   @media (max-width: $maxTablet) {
     grid-column: var(--tabletWidth);
   }
-  @media (max-width: $minMobile) {
-    h2 {
-      font-size: 30px;
-    }
-  }
-
 }
 
 .posts {
@@ -99,8 +90,9 @@
     color: $gray;
     font-size: 16px;
     padding: 12px 0 0;
-    @media (max-width: $maxMobile) {
+    @media (max-width: $minMobile) {
       font-size: 11px;
+      padding: 7px 0 0;
     }
   }
   .dash {
@@ -108,9 +100,12 @@
     @media (max-width: $minTablet) {
       padding: 0 13px;
     }
+    @media (max-width: $minMobile) {
+      padding: 0 3px;
+    }
   }
   .title {
-    @include font(28px, 28px, $maxDesktop, $maxLaptop);
+    @include font(28px, 19px, $minTablet, $minMobile);
     letter-spacing: 0.5px;
     color: #000;
     padding: 0 0 0 calc(var(--cellSize) * 0.4);

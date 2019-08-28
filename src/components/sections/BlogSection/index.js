@@ -8,8 +8,8 @@ const BlogSection = props => {
       id: 0,
       date: 'May 17',
       category: 'Culture',
-      title1: 'How will technology shape UX Design',
-      title2: 'in 2019'
+      title1: 'How will technology shape ',
+      title2: 'UX Design in 2019'
     },
     {
       id: 1,
