@@ -10,7 +10,7 @@ const Contacts = (props) => {
                 <div className={style.grid}>
                     <div className={style.titleWrapper}>
                         <TitleSecondary text={'Hey, let`s talk!'}/>
-                        <p>Fill in the form, or if you prefer <a href="#">send us an email</a></p>
+                        <p>Fill in the form, or if you prefer <a href="mailto:mail@arounda.agency">send us an email</a></p>
                     </div>
                 </div>
                 <ContactForm/>

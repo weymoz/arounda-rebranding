@@ -13,7 +13,7 @@ const CapabilitySection = props => {
         <div className={style.descWrapper}>
           <Description
             light={true}
-            text='A system of actions aimed at identifying a digital product in a digital environment. Creating a variety of graphic media based on the mental shell of the product.'
+            text='We use our skills to make successful digital products that create results'
           />
         </div>
       </div>

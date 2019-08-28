@@ -24,7 +24,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translate(-10px, 11px);
+    padding: 50px 15px 0 0;
     img {
       max-height: 160px;
     }
@@ -32,16 +32,13 @@
       grid-column: var(--tabletWidth);
       justify-content: start;
       padding: 0 0 40px;
-      img {
-        max-height: 160px;
-      }
     }
   }
   .list {
     grid-column: 11 / span 24;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    padding-top: 10px;
+    padding-top: 42px;
     @media (max-width: $maxLaptop) {
       grid-column: 8 / span 30;
     }
@@ -86,4 +83,7 @@
 }
 .titleWrapper {
   margin: 0 0 16px;
+}
+.descWrapper{
+  max-width: 600px;
 }
