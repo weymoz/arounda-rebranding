@@ -1,7 +1,7 @@
 import React from 'react';
 import Observer from "react-intersection-observer";
 import s from './style.scss';
-import Title from '@simple/Title';
+import TitleSecondary from '@simple/TitleSecondary';
 
 const ContentService = ({id, description, onChange, title, list}) => {
 
@@ -15,8 +15,8 @@ const ContentService = ({id, description, onChange, title, list}) => {
 
     return (
         <div className={s.content} id={id}>
-            <Observer tag='div' onChange={changeItem}>
-                <Title text={title}/>
+            <Observer tag='div' className={s.contentWrapper} onChange={changeItem}>
+                <TitleSecondary text={title}/>
                 <p className={s.text}>
                     {description}
                 </p>

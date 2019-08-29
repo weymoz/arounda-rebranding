@@ -6,21 +6,18 @@
     flex-direction: column;
     justify-content: center;
     grid-column: 25 / -10;
-    transform: translateY(-13px);
-    h2 {
-        font-size: 38px;
-    }
     @media (max-width: $maxLaptop){
         grid-column: 25 / -4;
     }
     .text{
         font-size: 19px;
         font-weight: 400;
-        margin: 16px 0 40px;
+        margin: 12px 0 60px;
         color: $darkGray;
         line-height: 1.68;
     }
     .list{
+        transform: translateY(14px);
         li{
             font-size: 21px;
             margin: 0 0 22px;
