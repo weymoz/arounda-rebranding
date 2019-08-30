@@ -29,7 +29,7 @@
   @media (max-width: $minTablet) {
     min-height: 91vh;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     min-height: 79vh;
   }
 }
@@ -87,7 +87,7 @@
       @media (max-width: $minTablet) {
         margin: 0 0 40px;
       }
-      @media (max-width: $minMobile) {
+      @media (max-width: $maxMobile) {
         margin: 0 0 30px;
       }
     }

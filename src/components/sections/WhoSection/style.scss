@@ -18,7 +18,7 @@
   @media (max-width: $maxMobile) {
     padding: 129px 0 calc(var(--spacing) * 2);
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     margin-bottom: 4px;
   }
 }
@@ -34,7 +34,7 @@
     grid-column: 5/ -14;
     grid-row: 2/3;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     grid-column: 4/ -4;
   }
 }
@@ -52,7 +52,7 @@
     grid-column: 5 / span 10;
     padding: 0 0 93px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 0 0 38px;
     grid-column: 4 / span 15;
   }
@@ -66,7 +66,7 @@
   @media (max-width: $minTablet) {
     margin: 0 0 15px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     margin: 0 0 10px;
   }
 }
@@ -79,7 +79,7 @@
   @media (max-width: $minTablet) {
     margin-bottom: 14px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding-bottom: 14px;
     margin-bottom: 3px;
   }

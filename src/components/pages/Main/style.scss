@@ -13,7 +13,7 @@
   @media (max-width: $minTablet) {
     padding-top: 38px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding-top: 32px;
   }
 }
@@ -35,7 +35,7 @@
     grid-column: 1 / -1;
     padding: 66px 0 74px;
   }
-  @media (max-width: $minMobile) {
-    padding: 79px 0 38px;
+  @media (max-width: $maxMobile) {
+    padding: 56px 0 43px;
   }
 }

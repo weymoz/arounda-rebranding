@@ -15,7 +15,7 @@
     grid-column: 4 / -4;
     letter-spacing: 0.5px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     letter-spacing: 0px;
     font-size: 30px;
   }
