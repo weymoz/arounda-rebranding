@@ -11,10 +11,10 @@
     }
     @media (max-width: $maxTablet){
         grid-column: var(--tabletWidth);
+        padding: 221px 0 138px;
     }
-
-    h3 {
-        letter-spacing: 0px;
+    @media (max-width: $maxMobile){
+        padding: 251px 0 129px;
     }
 }
 .titleWrapper{
@@ -28,37 +28,34 @@
     grid-column: 11 / -3;
     display: inherit;
     grid-template-columns: repeat(3, 1fr);
-    padding: 0 0 168px;
+    padding: 0 0 170px;
     @media (max-width: $maxLaptop){
         grid-column: 7 / -4;
     }
     @media (max-width: $maxTablet){
         grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
         grid-column: var(--tabletWidth);
+        padding: 0 0 148px;
+    }
+    @media (max-width: $maxMobile){
+        padding: 0 0 218px;
     }
     .item{
         padding: 160px calc(var(--cellSize)  * 2) 60px;
         transition: all .3s ease-in-out;
         position: relative;
-        @media (max-width: $maxTablet){
-            padding-top: 140px;
+        @media (max-width: $maxMobile){
+            padding: 160px calc(var(--cellSize)  * 4) 60px;
         }
         &:hover{
             background: #61FFDA;
-            // .icon svg path{
-            //     fill: #61FFDA;
-            //     transition: all .3s ease-in-out;
-            // }
         }
         .icon{
             position: absolute;
             top: 70px;
             left: calc(var(--cellSize)  * 2);
-            @media (max-width: $maxTablet){
-                top: 70px;
-            }
             @media (max-width: $maxMobile){
-                top: 60px;
+                left: calc(var(--cellSize)  * 4);
             }
         }
         .title{

@@ -2,7 +2,6 @@ import React from 'react';
 import s from './style.scss';
 
 const ContentServiceTablet = ({title, desc, id, list, image}) => {
-    console.log(image)
     return (
         <div className={s.contentWrapper} id={id}>
                 <div className={s.image}>

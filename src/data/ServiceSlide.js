@@ -45,7 +45,7 @@ const data = [
                 mp4: '',
                 webm: '',
         },
-        list: ['Frontend (HTML/CSS/JS/GSAP/React/Vue)','Backend (Angular, API integrations, CMS development)','Mobile iOS/Android apps (Swift/Java)'],
+        list: ['Frontend (HTML/CSS/JS/GSAP/React/Vue)','Backend (API integrations, CMS development)','Mobile iOS/Android apps (Swift/Java)'],
     },
     {
         id: 'itemF',

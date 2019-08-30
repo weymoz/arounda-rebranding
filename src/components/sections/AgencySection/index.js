@@ -12,9 +12,11 @@ const AgencySection = ({title, titleThink, subtitle, desc, dark}) => {
                         <div className={style.titleWrapper}>
                             <Title text={title} textThink={titleThink}/>
                         </div>
-                        <div className={style.desc}>
-                            <Description text={desc} light={true}/>
-                        </div>
+                        {
+                            desc ?  (<div className={style.desc}>
+                                        <Description text={desc} light={true}/>
+                                    </div>) : null
+                        }
                         <div className={style.subtitleWrapper}>
                             {<Subtitle text={subtitle}/>}
                         </div>   
