@@ -9,46 +9,56 @@
     grid-auto-rows: min-content;
     min-height: 100vh;
     align-content: center;
-    @media (max-width: $maxMobile){
-        padding: calc(var(--spacing) * 2) 0 calc(var(--spacing) * 2);
+    @media (max-width: $maxTablet){
+        min-height: auto;
+        padding: 156px 0 138px;
     }
     &.darkBg{
         background: #FBFBFB;
         margin: 0 0 200px;
+        @media (max-width: $maxLaptop){
+            margin: 0 0 170px;
+        }
+        @media (max-width: $maxTablet){
+            margin: 0 0 90px;
+        }
         @media (max-width: $maxMobile){
-            margin: 0 0 calc(var(--spacing) * 2);
+            margin: 0 0 165px;
         }
     }
 }
 .content{
     grid-column: 11/span 15;
     @media (max-width: $maxLaptop){
-        grid-column: 8/span 18;
+        grid-column: 7/span 18;
     }
     @media (max-width: $maxTablet){
-        grid-column: 4/span 23;
+        grid-column: 5/span 23;
     }
     @media (max-width: $maxMobile){
-        grid-column: 3/ -3;
+        grid-column: var(--tabletWidth);
         grid-row: 2/3;
     }
 }
 .image{
     grid-column: -19/span 8;
+    padding: 6px 0 0 10px;
     @media (max-width: $maxLaptop){
-        grid-column: -16 / -8;
+        grid-column: -16 / -7;
+        padding: 24px 0 0 10px;
     }
     @media (max-width: $maxTablet){
-        grid-column: -16/-4;
+        grid-column: -18/-5;
+        padding: 18px 0 0 14px;
     }
     @media (max-width: $maxMobile){
-        grid-column: 3/span 16;
-        padding: 0 0 45px;
+        grid-column: 4/span 15;
+        padding: 0 0 65px;
     }
 }
 .titleWrapper{
     max-width: 400px;
-    margin: 0 0 30px;
+    margin: 0 0 36px;
 }
 .desc{
     font-weight: 300;

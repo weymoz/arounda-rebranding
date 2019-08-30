@@ -57,7 +57,7 @@ export default class ServicesHeader extends Component {
           </div>
           <div className={style.item}>
             <div className={style.icon}>
-              <svg height="60" viewBox="0 0 60 60" width="60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><path d="m.5.5h59v59h-59z" fill="#d8d8d8" opacity="0" stroke="#979797"/><path d="m2 39h42l-15.333204-15" stroke="#393939" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2"/></g></svg>
+              <svg height="60" viewBox="0 0 60 60" width="60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><path d="m.5.5h59v59h-59z" fill="#d8d8d8" opacity="0" stroke="#979797"/><path d="m2 39h42l-15.333204-15" stroke="#393939"  strokeWidth="2"/></g></svg>
             </div>
             <div className={style.title}>
               Our method of

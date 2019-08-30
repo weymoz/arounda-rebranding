@@ -7,11 +7,14 @@
   grid-column: 11 / -11;
   position: relative;
   @media (max-width: $maxLaptop) {
-    grid-column: 6 / -6;
+    grid-column: 7 / -7;
   }
   @media (max-width: $maxTablet) {
     grid-column: var(--tabletWidth);
-    padding: 0 0 10%;
+    padding: 0 0 78px;
+  }
+  @media (max-width: $maxMobile) {
+    padding: 0 0 46px;
   }
 }
 .titleWrapper {
@@ -20,8 +23,8 @@
   margin: 0 0 166px;
   @media (max-width: $maxTablet) {
     grid-column: 1/13;
-    margin: 0 0 90px;
-    padding: 0 10% 0 0;
+    margin: 0 0 85px;
+    padding: 0;
   }
 }
 .link {
@@ -30,7 +33,7 @@
   top: 60px;
   @media (max-width: $maxTablet) {
     top: inherit;
-    bottom: 0;
+    bottom: -18px;
     left: 0;
     right: inherit;
   }
@@ -44,18 +47,24 @@
 }
 .list {
   padding: 0 calc(var(--cellSize) * 2) 0;
+  @media (max-width: $maxMobile){
+    padding: 0 ;
+  }
  ul {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    @media (max-width: $maxMobile){
+      align-items: flex-end;
+    }
   }
   li {
     font-size: 29px;
     position: relative;
-    // padding: 0 30px 0;
     margin: 0 0 55px;
-    @media (max-width: $maxTablet) {
-      padding: 0 25px;
+    @media (max-width: $maxMobile){
+      width: 50%;
+      margin: 0 0 85px;
     }
   }
   .number {
@@ -66,6 +75,9 @@
     font-weight: 400;
     color: $gray;
     letter-spacing: 0.24px;
+    @media (max-width: $maxMobile){
+      left: 10px;
+    }
   }
   .image {
     margin: 0 auto 20px;
@@ -74,9 +86,9 @@
       max-height: 112px;
     }
     @media (max-width: $maxTablet) {
-      width: 85px;
-      height: 85px;
-      margin: 0 auto 15px;
+      svg{
+        max-height: 90px;
+      }
     }
   }
   .text {

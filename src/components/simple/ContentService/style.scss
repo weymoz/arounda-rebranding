@@ -5,9 +5,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    grid-column: 25 / -10;
+    grid-column: 25 / -8;
     @media (max-width: $maxLaptop){
-        grid-column: 25 / -4;
+        grid-column: 26 / -4;
     }
     .text{
         font-size: 19px;
@@ -15,6 +15,10 @@
         margin: 12px 0 60px;
         color: $darkGray;
         line-height: 1.68;
+        max-width: 525px;
+        @media (max-width: $maxLaptop){
+            max-width: 460px;
+        }
     }
     .list{
         transform: translateY(14px);

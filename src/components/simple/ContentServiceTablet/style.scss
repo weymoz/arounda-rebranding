@@ -7,8 +7,11 @@
 }
 .image{
     grid-column: 1 / -4;
-    padding: 56% 0 0;
+    padding: 500px 0 0;
     position: relative;
+    @media (max-width: $maxMobile){
+        padding: 320px 0 0;
+    }
     img{
         position: absolute;
         top: 0;
@@ -17,12 +20,14 @@
         width: 100%;
         object-fit: cover;
     }
+
 }
 .content{
-    grid-column: var(--desktopWidth);
-    padding: 120px 0 160px;
+    grid-column: 7 / -8;
+    padding: 120px 0 190px;
     @media (max-width: $maxMobile){
         grid-column: var(--tabletWidth);
+        padding: 80px 0 145px;
     }
 }
 .title{
@@ -31,17 +36,19 @@
     font-weight: 400;
     @media (max-width: $maxMobile){
         font-size: 30px;
+        margin: 0 0 12px;
     }
 
 }
 .desc{
     font-size: 19px;
-    color: $gray;
-    margin: 0 0 80px;
+    color: #797D7E;
+    margin: 0 0 65px;
     font-weight: 400;
+    line-height: 32px;
     @media (max-width: $maxMobile){
-        font-size: 16px;
-        margin: 0 0 60px;
+        margin: 0 0 54px;
+       
     }
 }
 .list{
@@ -53,7 +60,6 @@
         position: relative;
         @media (max-width: $maxMobile){
             font-size: 19px;
-            margin: 0 0 12px;
         }
         span{
             z-index: 2;

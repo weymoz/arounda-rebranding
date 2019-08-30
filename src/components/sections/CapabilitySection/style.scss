@@ -7,16 +7,23 @@
   grid-template-columns: inherit;
   padding: 110px 0 315px;
   grid-auto-rows: min-content;
-
+  @media (max-width: $maxTablet){
+    padding: 125px 0 310px;
+  }
+  @media (max-width: $maxMobile){
+    padding: 120px 0 137px;
+  }
   .content {
     grid-column: 11 / span 18;
     padding: 10% 0 90px;
     @media (max-width: $maxLaptop) {
-      grid-column: 8 / span 24;
+      grid-column: 7 / span 24;
+      padding: 7% 0 90px;
     }
     @media (max-width: $maxTablet) {
       grid-column: var(--tabletWidth);
-      padding: 30px 0 40px;
+      padding: 30px 0 120px;
+      
     }
   }
   .image {
@@ -27,11 +34,23 @@
     padding: 52px 18px 0 0;
     img {
       max-height: 160px;
+      @media (max-width: $maxMobile){
+        max-height: 120px;
+      }
+    }
+    @media (max-width: $maxLaptop) {
+      grid-column: -13 / span 10;
+      padding: 0 55px 0 0;
+      transform: translateY(-20px);
     }
     @media (max-width: $maxTablet) {
       grid-column: var(--tabletWidth);
       justify-content: start;
-      padding: 0 0 40px;
+      padding: 0 0 20px;
+      transform: translate(-15px,0);
+    }
+    @media (max-width: $maxMobile) {
+      transform: translate(-12px,-10px);
     }
   }
   .list {
@@ -40,7 +59,7 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     padding-top: 42px;
     @media (max-width: $maxLaptop) {
-      grid-column: 8 / span 30;
+      grid-column: 7 / span 30;
     }
     @media (max-width: $maxTablet) {
       grid-column: var(--tabletWidth);
@@ -48,6 +67,7 @@
     }
     @media (max-width: $maxMobile) {
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      padding-top: 18px;
     }
     & > div {
       margin: 0 0 30px;
