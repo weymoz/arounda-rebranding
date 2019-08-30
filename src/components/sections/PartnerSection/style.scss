@@ -15,7 +15,7 @@
   @media (max-width: $maxMobile) {
     padding: 50px 0 60px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 52px 0 75px;
   }
 }
@@ -31,7 +31,7 @@
   @media (max-width: $maxTablet) {
     grid-column: var(--tabletWidth);
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     grid-column: 4 / -1;
   }
 }
@@ -42,7 +42,7 @@
     font-size: 28px;
     line-height: 1.3;
     font-weight: 400;
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
       font-size: 26px;
     }
     &:before {
@@ -72,7 +72,7 @@
     grid-column: span 2;
   }
 
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 0 0 27px 22px;
   }
 }
@@ -90,14 +90,14 @@
       @media (max-width: $minTablet) {
         margin: 0 0 23px;
       }
-      @media (max-width: $minMobile) {
+      @media (max-width: $maxMobile) {
         margin: 0 0 18px;
       }
     }
     @media (max-width: $maxLaptop) {
       padding-right: 0;
     }
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
       padding-right: 30px;
     }
   }
@@ -107,7 +107,7 @@
   @media (max-width: $minTablet) {
     padding-left: 47px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 0 0 0 24px;
   }
   span {
@@ -138,7 +138,7 @@
   @media (max-width: $minTablet) {
     padding: 60px 6px 0 5px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 52px 0 0 23px;
   }
   img {
@@ -150,7 +150,7 @@
       @media (max-width: $minTablet) {
         max-height: 19px;
       }
-      @media (max-width: $minMobile) {
+      @media (max-width: $maxMobile) {
         max-height: 14px;
       }
     }
@@ -164,7 +164,7 @@
         transform: translate(1px, -3px);
         max-height: 21px;
       }
-      @media (max-width: $minMobile) {
+      @media (max-width: $maxMobile) {
         transform: translate(2px, -2px);
         max-height: 16px;
       }
@@ -179,7 +179,7 @@
         transform: translate(1px, 1px);
         max-height: 18px;
       }
-      @media (max-width: $minMobile) {
+      @media (max-width: $maxMobile) {
         transform: translate(1px, 0px);
         max-height: 14px;
       }
@@ -204,7 +204,7 @@
     @media (max-width: $maxMobile) {
       max-height: 17px;
     }
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
       min-height: 13px;
     }
   }

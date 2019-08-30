@@ -13,7 +13,7 @@
     @media (max-width: $minTablet) {
       transform: translateY(20px);
     }
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
       transform: translateY(32px);
     }
   }
@@ -28,7 +28,7 @@
     grid-column: 3 / -3;
     padding: 0 0 20px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 0 0 44px 5px;
   }
 }

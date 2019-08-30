@@ -2,13 +2,13 @@
 @import '../../../scss/variables.scss';
 
 .desc{
-    @include font(19px, 16px, $minTablet, $minMobile);
+    @include font(19px, 16px, $minTablet, $maxMobile);
     font-weight: 400;
     line-height: 1.68;
     &.light{
         color: $darkGray;
     }
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
         line-height: 1.48;
     }
 }

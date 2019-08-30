@@ -117,7 +117,7 @@
     }
   }
   .title {
-    @include font(38px, 26px, $minDesktop, $minMobile);
+    @include font(38px, 26px, $minDesktop, $maxMobile);
     margin: 0 0 22px;
     font-weight: normal;
   }

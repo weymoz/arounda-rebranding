@@ -9,6 +9,6 @@
         font-weight: 300;
     }
     @media (max-width: $minTablet) {
-        @include font(38px, 30px, $minTablet, $minMobile);
+        @include font(38px, 30px, $minTablet, $maxMobile);
     }
 }

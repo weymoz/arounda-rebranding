@@ -8,6 +8,9 @@
   @media (max-width: $minTablet) {
     padding: 0 0 46px 2px;
   }
+  @media (max-width: $maxMobile) {
+    padding: 0 0 78px 2px;
+  }
 }
 .footer {
   display: inherit;
@@ -93,6 +96,9 @@
   @media (max-width: $maxTablet) {
     padding: 8px 0;
   }
+  @media (max-width: $maxMobile) {
+    padding: 1px 0 8px;
+  }
 }
 .links {
   color: #000;
@@ -116,6 +122,9 @@
   @media (max-width: $minTablet) {
     transform: translateX(-3px);
   }
+  @media (max-width: $maxMobile) {
+    margin: 0 15px 60px 0;
+  }
 }
 
 .contact {
@@ -125,6 +134,10 @@
   }
   @media (max-width: $minTablet) {
     transform: translateX(-9px);
+  }
+  @media (max-width: $maxMobile) {
+    transform: translate(-2px, -10px);
+    margin: 0 30px 56px 0;
   }
 }
 
