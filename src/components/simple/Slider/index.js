@@ -61,7 +61,11 @@ class SliderSingle extends Component{
                                 <div key={el.id} >
                                     <div className={`${style.slideWrapper}`} >
                                         <div className={style.image}>
-                                            <img src={el.src} alt={el.name}/>
+                                            <picture>
+                                                <source srcSet={'assets/images/rect.jpg'} media="(max-width: 767px)"/>
+                                                <img src={el.src} alt={el.name}/>
+                                            </picture>
+                                            
                                         </div>
                                         <div className={style.text}>{el.desc}</div>
                                         <div className='nameWrapper'>

@@ -69,7 +69,7 @@
   grid-gap: calc(var(--cellSize) * 2);
   grid-column: var(--desktopWidth);
   grid-auto-rows: min-content;
-  grid-row-gap: 70px;
+  grid-row-gap: 62px;
   @media (max-width: $maxLaptop) {
     grid-column: 5 / -5;
   }

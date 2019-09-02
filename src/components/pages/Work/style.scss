@@ -15,9 +15,6 @@
 }
 .titleWrapper {
   margin: 0 0 100px;
-  @media (max-width: $maxTablet) {
-    margin: 0 0 80px;
-  }
 }
 .list {
   grid-column: 2/11;
@@ -37,7 +34,14 @@
   display: inherit;
   grid-template-columns: inherit;
   align-items: center;
-  padding: 284px 0 200px;
+  padding: 254px 0 200px;
+  @media (max-width: $maxTablet){
+    padding: 0 0 173px;
+    min-height: auto;
+  }
+  @media (max-width: $maxMobile){
+    padding: 0 0 155px;
+  }
 }
 
 .wrapWorkSection {
@@ -45,6 +49,15 @@
   grid-column: 1 / -1;
   display: inherit;
   grid-template-columns: inherit;
+  @media (max-width: $maxLaptop){
+    padding: 110px 0 73px
+  }
+  @media (max-width: $maxTablet){
+    padding: 0 0 185px;
+  }
+  @media (max-width: $maxMobile){
+    padding: 0 0 148px;
+  }
 }
 
 .wrapStartSection {
@@ -53,7 +66,13 @@
   display: inherit;
   grid-template-columns: inherit;
   margin-bottom: 10px;
-  @media (max-width: $maxMobile) {
-    padding: calc(var(--spacing) * 2) 0 var(--spacing);
+  @media (max-width: $maxLaptop){
+    padding: 210px 0 135px;
+  }
+  @media (max-width: $maxTablet){
+    padding: 280px 0 75px;
+  }
+  @media (max-width: $maxMobile){
+    padding: 130px 0 45px;
   }
 }
