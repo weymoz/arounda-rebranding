@@ -147,11 +147,7 @@
     }
   }
   .title {
-<<<<<<< HEAD
     font-size: 38px;
-=======
-    @include font(38px, 26px, $minDesktop, $maxMobile);
->>>>>>> 5b1613091241f3876352bb5bc083bbc0a09b8764
     margin: 0 0 22px;
     font-weight: normal;
     @media(max-width: $maxTablet){
