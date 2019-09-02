@@ -12,13 +12,19 @@
   display: inherit;
   grid-template-columns: inherit;
   @media (max-width: $maxTablet) {
-    padding: 220px 0 100px;
+    padding: 172px 0 57px;
+  }
+  @media (max-width: $maxMobile) {
+    padding: 150px 0 44px;
   }
 }
 .sortWrapper {
   grid-column: var(--desktopWidth);
   @media (max-width: $maxLaptop) {
-    grid-column: var(--tabletWidth);
+    grid-column: 5 / -5;
+  }
+  @media (max-width: $maxTablet) {
+    grid-column: 4 / -4;
   }
 }
 .sort {
@@ -38,16 +44,16 @@
     background: #fff;
     top: 100%;
     right: 0;
-    padding: 19px 32px;
+    padding: 19px 32px 9px;
     box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.07);
     opacity: 0;
     transition: opacity 0.3s $cubic;
     transform: scale(0);
     @media (max-width: $maxMobile) {
-      padding: 16px 22px;
+      padding: 9px 32px 9px;
     }
-    li:not(li:last-child) {
-      margin: 0 0 15px;
+    li{
+      margin: 10px 0;
       cursor: pointer;
     }
     &.show {
@@ -58,7 +64,7 @@
   .arrow {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: 8px;
     line-height: 0;
     transform: translateY(-50%);
   }
@@ -67,23 +73,40 @@
   grid-column: var(--desktopWidth);
   padding: 46px 0 0;
   @media (max-width: $maxLaptop) {
-    grid-column: var(--tabletWidth);
+    grid-column: 5 / -5;
+  }
+  @media (max-width: $maxTablet) {
+    grid-column: 4 / -4;
+  }
+  @media (max-width: $maxMobile){
+    padding: 40px 0 0;
   }
 }
 .categories ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  @media (max-width: $maxTablet){
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  }
 }
 .categories li {
   margin: 0 0 12px;
+  @media (max-width: $maxTablet){
+    margin: 0 0 16px;
+  }
+  @media (max-width: $maxMobile){
+    margin: 0 0 4px;
+  }
   button {
     color: $gray;
-    line-height: 2;
     font-size: 19px;
     letter-spacing: 0.35px;
     line-height: 33px;
+    @media (max-width: $maxMobile){
+      font-size: 16px;
+    }
   }
-  &.active {
+  &.active, &:hover {
     button {
       color: $black;
     }
@@ -91,51 +114,79 @@
 }
 
 .categorySection {
-  padding: 120px 0;
+  padding: 120px 0 160px;
   background: #fafafa;
   grid-column: 1 / -1;
   display: inherit;
   grid-template-columns: inherit;
   // maybe will be needed visible
-  display: none;
-  @media (max-width: $maxMobile) {
-    padding: 76px 0;
+  display: grid;
+  margin: 82px 0 0;
+  @media (max-width: $maxLaptop){
+    padding: 120px 0 130px;
   }
-  .row {
-    grid-column: var(--desktopWidth);
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    @media (max-width: $maxLaptop) {
-      grid-column: var(--tabletWidth);
-    }
+  @media (max-width: $maxTablet){
+    padding: 105px 0 117px;
+    margin: 20px 0 114px;
+  }
+  @media (max-width: $maxMobile) {
+    padding: 112px 0 96px;
+    margin: 20px 0 84px;
   }
   .content {
-    grid-column: 1 / span 7;
+    grid-column: 8 / span 24;
+    @media (max-width: $maxLaptop){
+      grid-column: 5 / span 29;
+    }
+    @media (max-width: $maxLaptop){
+      grid-column: 4 / span 28;
+    }
     @media (max-width: $maxMobile) {
       grid-row: 2/3;
-      grid-column: 1 / span 12;
+      grid-column: 4 / -4;
     }
   }
   .title {
-    @include font(38px, 26px, $minDesktop, $minMobile);
+    font-size: 38px;
     margin: 0 0 22px;
     font-weight: normal;
+    @media(max-width: $maxTablet){
+      margin: 0 0 14px;
+    }
+    @media(max-width: $maxMobile){
+      font-size: 30px;
+      margin: 0 0 8px;
+    }
   }
   .text {
-    @include font(21px, 16px, $minDesktop, $maxMobile);
+    font-size: 19px;
     font-weight: 300;
+    line-height: 32px;
+    @media(max-width: $maxMobile){
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
   .image {
-    grid-column: 10 / span 3;
+    grid-column: -16 / span 7;
     display: flex;
     align-items: center;
     img {
-      max-height: 130px;
+      transform: translateY(20px);
+      @media(max-width: $maxTablet){
+        transform: translateY(0);
+      }
+    }
+    @media(max-width: $maxLaptop){
+      grid-column: -14 / span 9;
+    }
+    @media(max-width: $maxTablet){
+      grid-column: -14 / span 12;
     }
     @media (max-width: $maxMobile) {
       grid-row: 1/2;
-      grid-column: 1 / span 5;
-      margin: 0 0 40px;
+      grid-column: 1/ span 22;
+      margin: 0 0 20px;
     }
   }
 }
