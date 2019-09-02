@@ -10,17 +10,17 @@
     @media (max-width: $maxLaptop) {
       transform: translate(0, -6px);
     }
-    @media (max-width: $minTablet) {
+    @media (max-width: $maxTablet) {
       transform: translateY(20px);
     }
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
       transform: translateY(32px);
     }
   }
   @media (max-width: $maxLaptop) {
     grid-column: 5 / -4;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     margin-bottom: 2px;
     grid-column: 4 / -4;
   }
@@ -28,7 +28,7 @@
     grid-column: 3 / -3;
     padding: 0 0 20px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 0 0 44px 5px;
   }
 }

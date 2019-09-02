@@ -9,13 +9,13 @@
   @media (max-width: $maxLaptop) {
     padding: 102px 0 150px;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding: 66px 0 91px;
   }
   @media (max-width: $maxMobile) {
     padding: 50px 0 60px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 52px 0 75px;
   }
 }
@@ -31,7 +31,7 @@
   @media (max-width: $maxTablet) {
     grid-column: var(--tabletWidth);
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     grid-column: 4 / -1;
   }
 }
@@ -42,7 +42,7 @@
     font-size: 28px;
     line-height: 1.3;
     font-weight: 400;
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
       font-size: 26px;
     }
     &:before {
@@ -60,7 +60,7 @@
         height: 73%;
         width: 19%;
       }
-      @media (max-width: $minTablet) {
+      @media (max-width: $maxTablet) {
         top: 2px;
         left: -34px;
         height: 76%;
@@ -72,12 +72,12 @@
     grid-column: span 2;
   }
 
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 0 0 27px 22px;
   }
 }
 .textWrapper {
-  @include font(19px, 16px, $maxLaptop, $minTablet);
+  @include font(19px, 16px, $maxLaptop, $maxTablet);
   line-height: 1.68;
   padding-top: 3px;
   @media (max-width: $maxLaptop) {
@@ -87,27 +87,27 @@
     padding-right: var(--cellSize);
     &:not(:last-child) {
       margin: 0 0 36px;
-      @media (max-width: $minTablet) {
+      @media (max-width: $maxTablet) {
         margin: 0 0 23px;
       }
-      @media (max-width: $minMobile) {
+      @media (max-width: $maxMobile) {
         margin: 0 0 18px;
       }
     }
     @media (max-width: $maxLaptop) {
       padding-right: 0;
     }
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
       padding-right: 30px;
     }
   }
   @media (max-width: $maxMobile) {
     grid-column: span 2;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding-left: 47px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 0 0 0 24px;
   }
   span {
@@ -135,10 +135,10 @@
   @media (max-width: $maxTablet) {
     padding: 50px 0 0;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding: 60px 6px 0 5px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 52px 0 0 23px;
   }
   img {
@@ -147,10 +147,10 @@
     padding: 0 15px 0 0;
     &:first-of-type {
       max-height: 26px;
-      @media (max-width: $minTablet) {
+      @media (max-width: $maxTablet) {
         max-height: 19px;
       }
-      @media (max-width: $minMobile) {
+      @media (max-width: $maxMobile) {
         max-height: 14px;
       }
     }
@@ -160,11 +160,11 @@
       @media (max-width: $maxLaptop) {
         transform: translate(3px, -2px);
       }
-      @media (max-width: $minTablet) {
+      @media (max-width: $maxTablet) {
         transform: translate(1px, -3px);
         max-height: 21px;
       }
-      @media (max-width: $minMobile) {
+      @media (max-width: $maxMobile) {
         transform: translate(2px, -2px);
         max-height: 16px;
       }
@@ -175,11 +175,11 @@
       @media (max-width: $maxLaptop) {
         transform: translate(1px, 1px);
       }
-      @media (max-width: $minTablet) {
+      @media (max-width: $maxTablet) {
         transform: translate(1px, 1px);
         max-height: 18px;
       }
-      @media (max-width: $minMobile) {
+      @media (max-width: $maxMobile) {
         transform: translate(1px, 0px);
         max-height: 14px;
       }
@@ -188,7 +188,7 @@
       max-height: 46px;
       padding: 0 0 0 0;
       transform: translateY(5px);
-      @media (max-width: $minTablet) {
+      @media (max-width: $maxTablet) {
         transform: translateY(2px);
       }
       @media (max-width: $maxMobile) {
@@ -204,7 +204,7 @@
     @media (max-width: $maxMobile) {
       max-height: 17px;
     }
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
       min-height: 13px;
     }
   }

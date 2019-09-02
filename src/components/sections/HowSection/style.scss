@@ -14,11 +14,11 @@
     margin: 0 0 103px;
     padding: 169px 0 100px;
   }
-  @media (max-width: $minTablet) {
-    padding: 67px 0 100px;
-    margin: 0 0 17px;
+  @media (max-width: $maxTablet) {
+    padding: 71px 0 100px;
+    margin: 0 0 21px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 96px 0 142px;
   }
 }
@@ -29,7 +29,7 @@
   @media (max-width: $maxLaptop) {
     grid-column: 8 / span 19;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     grid-column: 4/ -8;
     padding: 0 0 75px;
   }
@@ -37,7 +37,7 @@
     grid-column: 4/ -8;
     padding: 0 0 56px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     grid-column: 4/ -6;
     padding: 0 0 15px;
   }
@@ -47,7 +47,7 @@
   @media (max-width: $maxLaptop) {
     margin: 0 0 14px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     margin: 0px 0 9px;
   }
 }
@@ -64,14 +64,14 @@
   @media (max-width: $maxTablet) {
     grid-column: 4 / span 11;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     grid-column: 5 / span 12;
     padding: 0 0 104px;
   }
   @media (max-width: $maxMobile) {
     grid-column: 4 / span 20;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 0 0 82px;
   }
   img {
@@ -80,10 +80,10 @@
     @media (max-width: $maxLaptop) {
       transform: translate(-3px, 28px);
     }
-    @media (max-width: $minTablet) {
+    @media (max-width: $maxTablet) {
       transform: translate(-16px, 45px);
     }
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
       transform: translate(-9px, 52px);
     }
   }
@@ -104,14 +104,14 @@
     grid-row: 3/4;
     padding: 0 0 82px;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     grid-column: 4/ -8;
   }
   @media (max-width: $maxMobile) {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     padding: 0 0 42px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     grid-template-columns: 1fr;
     padding: 0 0 25px;
   }
@@ -126,17 +126,17 @@
       margin: 0 40px 26px 0;
       padding: 0 0 0 36px;
     }
-    @media (max-width: $minTablet) {
+    @media (max-width: $maxTablet) {
       padding: 0 0 0 33px;
     }
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
       margin: 1px 40px 23px 0;
       padding: 0 0 0 24px;
       max-height: 100%;
     }
   }
   .title {
-    @include font(28px, 19px, $minTablet, $minMobile);
+    @include font(28px, 19px, $maxTablet, $maxMobile);
     letter-spacing: 0.54px;
     z-index: 2;
     position: relative;
@@ -164,7 +164,7 @@
       background: $lightGreen;
       transition: all 0.3s $cubic;
     }
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
       &:before,
       &:after {
         left: -23px;
@@ -189,7 +189,7 @@
   }
   .desc {
     position: absolute;
-    @include font(19px, 16px, $maxLaptop, $minTablet);
+    @include font(19px, 16px, $maxLaptop, $maxTablet);
     font-family: 'PT Sans', sans-serif;
     background: #fff;
     top: 0;
@@ -207,10 +207,10 @@
     @media (max-width: $maxLaptop) {
       padding: 97px 24px 45px 56px;
     }
-    @media (max-width: $minTablet) {
+    @media (max-width: $maxTablet) {
       padding: 97px 37px 45px 56px;
     }
-    @media (max-width: $minMobile) {
+    @media (max-width: $maxMobile) {
       display: none;
       position: static;
       background: none;
@@ -225,7 +225,7 @@
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
   line-height: 0.8;
-  @include font(19px, 16px, $maxLaptop, $minTablet);
+  @include font(19px, 16px, $maxLaptop, $maxTablet);
   margin: 159px 0 0;
   @media (max-width: $maxLaptop) {
     grid-column: 8 / span 18;
@@ -236,13 +236,13 @@
     grid-row: 4/5;
     margin: 40px 0 0;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     margin: 49px 0 0;
   }
   @media (max-width: $maxMobile) {
     margin: 0;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     grid-column: 6/ -4;
   }
   a {
@@ -254,10 +254,10 @@
 }
 
 .descWrapper {
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding-right: 60px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding-right: 0px;
   }
 }

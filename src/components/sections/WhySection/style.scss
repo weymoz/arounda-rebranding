@@ -3,25 +3,26 @@
 
 .section {
   min-height: 100vh;
-  margin: 0 0 291px;
+  margin: 5px 0 291px;
   display: inherit;
   grid-template-columns: inherit;
   grid-column: 1 / -1;
   align-items: center;
   @media (max-width: $maxLaptop) {
-    padding-top: 43px;
+    padding-top: 47px;
     margin: 0 0 252px;
   }
   @media (max-width: $maxTablet) {
     margin: 0 0 180px;
   }
-  @media (max-width: $minTablet) {
-    padding-top: 31px;
+  @media (max-width: $maxTablet) {
+    padding-top: 35px;
     margin: 0 0 55px;
   }
   @media (max-width: $maxMobile) {
     margin: 0 0 150px;
     min-height: 89vh;
+    padding-top: 31px;
   }
 }
 .image {
@@ -35,11 +36,11 @@
   @media (max-width: $maxTablet) {
     grid-column: 4 / -1;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     height: 100%;
     padding: 27% 0 0;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 54% 0 0;
   }
   img {
@@ -68,7 +69,7 @@
     grid-row: 2 / 3;
     margin: 110px 0 0;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     margin: 0 0 0;
     transform: translateY(-1%);
     
@@ -77,7 +78,7 @@
     grid-column: var(--tabletWidth);
     margin: 70px 0 0;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     grid-column: 4 / -1;
     margin: 0;
     transform: translateY(16%);
@@ -85,12 +86,12 @@
 }
 .titleWrapper {
   margin: 0 0 16px;
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
   }
   @media (max-width: $maxMobile) {
     margin: 0 0 12px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     margin: 0 0 8px;
   }
 }
@@ -105,10 +106,10 @@
   @media (max-width: $maxTablet) {
     margin: 80px 0 0;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     margin: 76px 0 0;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     margin: 74px 0 0;
   }
 }
@@ -118,11 +119,11 @@
   margin: 0 0 16px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     font-size: 13px;
     margin: 0 0 22px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     font-size: 11px;
     margin: 0 0 6px;
   }
@@ -131,7 +132,7 @@
   font-size: 34px;
   letter-spacing: 1px;
   font-weight: 500;
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     font-size: 26px;
   }
 }

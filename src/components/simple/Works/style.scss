@@ -13,7 +13,7 @@
   @media (max-width: $maxTablet) {
     grid-auto-rows: 30px 1fr;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     grid-auto-rows: 20px 1fr;
   }
 }
@@ -23,7 +23,7 @@
   @media (max-width: $maxLaptop) {
     margin: 0 0 40px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     margin: 0 0 11px;
   }
 }
@@ -40,13 +40,13 @@
   @media (max-width: $maxTablet) {
     padding: 88% 0 0;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding: 88% 0 0;
   }
   @media (max-width: $maxMobile) {
     padding: 120% 0 0;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 122% 0 0;
   }
 }
@@ -55,7 +55,7 @@
   @media (max-width: $maxLaptop) {
     grid-column: 5 / span 22;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     grid-column: 4 / span 22;
     padding-top: 18px;
   }
@@ -72,7 +72,7 @@
   @media (max-width: $maxLaptop) {
     grid-column: 29 / -5;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     grid-column: 28 / -4;
     padding-top: 0;
   }
@@ -82,7 +82,7 @@
 }
 .item:nth-child(2n) .image {
   padding: 86% 0 0;
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding: 108% 0 0;
   }
   @media (max-width: $maxMobile) {
@@ -98,11 +98,11 @@
   object-fit: cover;
 }
 .item .title {
-  @include font(28px, 22px, $maxLaptop, $minTablet);
+  @include font(28px, 22px, $maxLaptop, $maxTablet);
   font-weight: 400;
   font-family: 'PT Sans', sans-serif;
-  @media (max-width: $minTablet) {
-    @include font(22px, 18px, $minTablet, $minMobile);
+  @media (max-width: $maxTablet) {
+    @include font(22px, 18px, $maxTablet, $maxMobile);
     padding-bottom: 5px;
   }
   @media (max-width: $maxMobile) {
@@ -112,20 +112,20 @@
 .item .desc {
   color: $gray;
   letter-spacing: 0.46px;
-  @include font(16px, 14px, $maxLaptop, $minTablet);
+  @include font(16px, 14px, $maxLaptop, $maxTablet);
   @media (max-width: $maxMobile) {
     display: none;
   }
 }
 .item .wrapper {
   padding: 30px 0 0 35px;
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding: 27px 0 0 18px;
   }
   @media (max-width: $maxMobile) {
     padding: 15px 0 0 0;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 11px 0 0 0;
   }
 }

@@ -98,9 +98,13 @@
       bottom: 11%;
     }
     @media (max-width: $maxTablet) {
+<<<<<<< HEAD
       padding: 36px 44px 13px;
       bottom: 14%;
       width: calc(var(--cellSize) * 30);
+=======
+      width: 76%;
+>>>>>>> 5b1613091241f3876352bb5bc083bbc0a09b8764
     }
     @media (max-width: $maxMobile) {
       bottom: 0;

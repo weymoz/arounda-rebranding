@@ -9,10 +9,10 @@
   z-index: 600;
   display: inherit;
   grid-template-columns: inherit;
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding: 19px 0 25px;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     padding: 5px 0 25px;
   }
 }
@@ -28,10 +28,10 @@
   @media (max-width: $maxLaptop) {
     grid-column: 5 / -4;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     grid-column: 4 / -4;
   }
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     grid-column: 4 / -4;
   }
 }
@@ -43,7 +43,7 @@
   @media (max-width: $maxLaptop) {
     transform: translate(-27px, -1px);
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     transform: translate(0, -2px);
   }
 }
@@ -53,7 +53,7 @@
     transition: all 0.3s ease-in-out;
     opacity: 0;
     visibility: hidden;
-    @media (max-width: $minTablet) {
+    @media (max-width: $maxTablet) {
       margin: 0 0 0 42px;
     }
     @media (max-width: $maxMobile) {
@@ -69,6 +69,10 @@
     border-radius: 50%;
     transition: all 0.5s $cubic;
     transform-origin: center;
+    @media (max-width: $maxTablet) {
+      width: 40px;
+      height: 40px;
+    }
   }
   &.active {
     @media (max-width: $maxTablet) {
@@ -95,7 +99,7 @@
   height: 48px;
   opacity: 0;
   visibility: hidden;
-  @media (max-width: $minMobile) {
+  @media (max-width: $maxMobile) {
     width: 102px;
   }
 }
