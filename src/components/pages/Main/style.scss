@@ -10,7 +10,7 @@
     grid-column: 1 / -1;
     padding: 82px 0 80px;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding-top: 38px;
   }
   @media (max-width: $maxMobile) {
@@ -31,7 +31,7 @@
   @media (max-width: $maxMobile) {
     padding: calc(var(--spacing) * 2) 0 var(--spacing);
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     grid-column: 1 / -1;
     padding: 66px 0 74px;
   }

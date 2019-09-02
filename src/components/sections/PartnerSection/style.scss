@@ -9,7 +9,7 @@
   @media (max-width: $maxLaptop) {
     padding: 102px 0 150px;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding: 66px 0 91px;
   }
   @media (max-width: $maxMobile) {
@@ -60,7 +60,7 @@
         height: 73%;
         width: 19%;
       }
-      @media (max-width: $minTablet) {
+      @media (max-width: $maxTablet) {
         top: 2px;
         left: -34px;
         height: 76%;
@@ -77,7 +77,7 @@
   }
 }
 .textWrapper {
-  @include font(19px, 16px, $maxLaptop, $minTablet);
+  @include font(19px, 16px, $maxLaptop, $maxTablet);
   line-height: 1.68;
   padding-top: 3px;
   @media (max-width: $maxLaptop) {
@@ -87,7 +87,7 @@
     padding-right: var(--cellSize);
     &:not(:last-child) {
       margin: 0 0 36px;
-      @media (max-width: $minTablet) {
+      @media (max-width: $maxTablet) {
         margin: 0 0 23px;
       }
       @media (max-width: $maxMobile) {
@@ -104,7 +104,7 @@
   @media (max-width: $maxMobile) {
     grid-column: span 2;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding-left: 47px;
   }
   @media (max-width: $maxMobile) {
@@ -135,7 +135,7 @@
   @media (max-width: $maxTablet) {
     padding: 50px 0 0;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding: 60px 6px 0 5px;
   }
   @media (max-width: $maxMobile) {
@@ -147,7 +147,7 @@
     padding: 0 15px 0 0;
     &:first-of-type {
       max-height: 26px;
-      @media (max-width: $minTablet) {
+      @media (max-width: $maxTablet) {
         max-height: 19px;
       }
       @media (max-width: $maxMobile) {
@@ -160,7 +160,7 @@
       @media (max-width: $maxLaptop) {
         transform: translate(3px, -2px);
       }
-      @media (max-width: $minTablet) {
+      @media (max-width: $maxTablet) {
         transform: translate(1px, -3px);
         max-height: 21px;
       }
@@ -175,7 +175,7 @@
       @media (max-width: $maxLaptop) {
         transform: translate(1px, 1px);
       }
-      @media (max-width: $minTablet) {
+      @media (max-width: $maxTablet) {
         transform: translate(1px, 1px);
         max-height: 18px;
       }
@@ -188,7 +188,7 @@
       max-height: 46px;
       padding: 0 0 0 0;
       transform: translateY(5px);
-      @media (max-width: $minTablet) {
+      @media (max-width: $maxTablet) {
         transform: translateY(2px);
       }
       @media (max-width: $maxMobile) {

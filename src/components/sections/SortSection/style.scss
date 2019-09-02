@@ -22,7 +22,7 @@
   }
 }
 .sort {
-  @include font(29px, 21px, $minTablet, $maxMobile);
+  @include font(29px, 21px, $maxTablet, $maxMobile);
   position: relative;
   display: inline-block;
   span {

@@ -5,7 +5,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 0 50px 2px;
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding: 0 0 46px 2px;
   }
   @media (max-width: $maxMobile) {
@@ -22,7 +22,7 @@
   @media (max-width: $maxLaptop) {
     grid-column: 5 / -5;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     grid-column: 4 / -4;
   }
 }
@@ -119,7 +119,7 @@
   @media (max-width: $maxLaptop) {
     transform: translateX(-16px);
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     transform: translateX(-3px);
   }
   @media (max-width: $maxMobile) {
@@ -132,7 +132,7 @@
   @media (max-width: $maxLaptop) {
     transform: translateX(-40px);
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     transform: translateX(-9px);
   }
   @media (max-width: $maxMobile) {

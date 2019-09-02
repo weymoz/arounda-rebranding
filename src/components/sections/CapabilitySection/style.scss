@@ -56,7 +56,7 @@
       }
     }
     .item {
-      @include font(29px, 18px, $minTablet, $maxMobile);
+      @include font(29px, 18px, $maxTablet, $maxMobile);
       display: inline-block;
       letter-spacing: 0.54px;
       transition: all 0.3s $cubic;

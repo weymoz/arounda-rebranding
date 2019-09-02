@@ -20,7 +20,7 @@
 .titleWrapper{
     max-width: 620px;
     margin: 0 0 38px;
-    @media (max-width: $minTablet){
+    @media (max-width: $maxTablet){
         max-width: 420px;
     }
 }

@@ -10,7 +10,7 @@
     @media (max-width: $maxLaptop) {
       transform: translate(0, -6px);
     }
-    @media (max-width: $minTablet) {
+    @media (max-width: $maxTablet) {
       transform: translateY(20px);
     }
     @media (max-width: $maxMobile) {
@@ -20,7 +20,7 @@
   @media (max-width: $maxLaptop) {
     grid-column: 5 / -4;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     margin-bottom: 2px;
     grid-column: 4 / -4;
   }

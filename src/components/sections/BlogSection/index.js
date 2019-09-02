@@ -22,7 +22,7 @@ const BlogSection = props => {
       date: 'May 17',
       category: 'Culture',
       title1: '6 things we learned about',
-      title2: 'animation from Headspacev'
+      title2: 'animation from Headspace'
     }
   ];
   const postsMobile = [
