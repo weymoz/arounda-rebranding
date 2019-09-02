@@ -23,7 +23,7 @@
         top: 0;
         left: 0;
     }
-    @media (max-width: $minTablet) {
+    @media (max-width: $maxTablet) {
         padding-top: 59%;
     }
 }

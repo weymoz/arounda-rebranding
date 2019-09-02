@@ -11,7 +11,7 @@
     grid-column: var(--tabletWidth);
     letter-spacing: .6px;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     grid-column: 4 / -4;
     letter-spacing: 0.5px;
   }
@@ -26,7 +26,7 @@
     transform: translateX(0);
     display: inline-block;
     transition: transform .2s ease-in-out;
-    @media (max-width: $minTablet) {
+    @media (max-width: $maxTablet) {
       padding-top: 0;
       transform: translateX(0);
     }

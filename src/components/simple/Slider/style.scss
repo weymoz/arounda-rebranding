@@ -74,7 +74,7 @@
       right: 0;
       bottom: 9%;
     }
-    @media (max-width: $minTablet) {
+    @media (max-width: $maxTablet) {
       width: 76%;
     }
     @media (max-width: $maxMobile) {

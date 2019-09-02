@@ -10,7 +10,7 @@
   @media (max-width: $maxLaptop) {
     padding-top: 284px;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     grid-column: 1/-1;
     padding-top: 56px;
     margin-bottom: 26px;
@@ -30,7 +30,7 @@
   @media (max-width: $maxTablet) {
     grid-column: 4 / span 23;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     grid-column: 5/ -14;
     grid-row: 2/3;
   }
@@ -48,7 +48,7 @@
   @media (max-width: $maxTablet) {
     grid-column: -16/-4;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     grid-column: 5 / span 10;
     padding: 0 0 93px;
   }
@@ -63,7 +63,7 @@
   @media (max-width: $maxMobile) {
     margin: 0 0 12px;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     margin: 0 0 15px;
   }
   @media (max-width: $maxMobile) {
@@ -76,7 +76,7 @@
   @media (max-width: $maxLaptop) {
     padding-right: 0;
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     margin-bottom: 14px;
   }
   @media (max-width: $maxMobile) {
@@ -102,7 +102,7 @@
       z-index: -1;
     }
   }
-  @media (max-width: $minTablet) {
+  @media (max-width: $maxTablet) {
     padding: 23px 0 0;
   }
 }
