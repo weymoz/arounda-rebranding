@@ -1,5 +1,5 @@
 import React, { Component, Fragment, Suspense } from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import { TweenMax, TimelineMax } from 'gsap';
 import { render } from 'react-dom';

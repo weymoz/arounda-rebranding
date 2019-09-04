@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base dist --debug --port 9090 --open",
     "build": "rm -rf dist && cross-env NODE_ENV=production webpack -p",
-    "deploy": "npm run build && firebase deploy"
+    "deploy": "npm run build && firebase deploy",
+    "server": "node server.js"
   },
+  "proxy": "http://localhost:5000",
   "author": "Vlad Tsugulskiy",
   "license": "ISC",
   "devDependencies": {
@@ -37,6 +39,7 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "gsap": "^2.1.2",
     "lodash": "^4.17.15",
     "react": "^16.8.0",
