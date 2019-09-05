@@ -9,7 +9,7 @@
     "deploy": "npm run build && firebase deploy",
     "server": "node server.js"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:9091",
   "author": "Vlad Tsugulskiy",
   "license": "ISC",
   "devDependencies": {
