@@ -1,7 +1,7 @@
 @import '../../../scss/variables.scss';
 
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,12 +16,37 @@
     padding: 5px 0 25px;
   }
 }
+.fixedLogo{
+  opacity: 1;
+  transition: all .3s .3s $cubic;
+}
+.scrollLogo{
+  position: absolute;
+  left: 0;
+  top: 15px;
+  opacity: 0;
+  transition: all .3s 0s $cubic;
+  svg{
+    width: 24px;
+  }
+}
+.fixed{
+  .fixedLogo{
+    opacity: 0;
+    transition: all .3s 0s $cubic;
+  }
+  .scrollLogo{
+    opacity: 1;
+    transition: all .3s .3s $cubic;
+  }
+}
 
 .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   grid-column: var(--desktopWidth);
+  position: relative;
   a {
     transform: translate(0px, -2px);
   }
@@ -67,26 +92,47 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    transition: all 0.5s $cubic;
+    transition: all .7s $cubic;
     transform-origin: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    span{
+      width: 20px;
+      height: 3px;
+      display: inline-block;
+      background-color: black;
+      transform-origin: center;
+      transition: all .4s $cubic;
+      &:first-child{
+        margin: 0 0 5px;
+      }
+    }
     @media (max-width: $maxTablet) {
       width: 40px;
       height: 40px;
+      transform: translate(0, -3px);
     }
   }
   &.active {
-    @media (max-width: $maxTablet) {
-      transform: translateY(-6px);
-    }
     li:not(.btnWrapper) {
       opacity: 0 !important;
       pointer-events: none;
     }
     .btn {
       background: $lightGreen;
-      transform: rotate(90deg);
-      svg {
-        margin-top: 5px;
+      span:first-child{
+        transform: rotate(135deg) translate(3px, -2px) !important;
+        @media (max-width: $maxTablet){
+          transform: rotate(135deg) translate(3.5px, -3px) !important;
+        }
+      }
+      span:nth-child(2){
+        transform: rotate(45deg) translate(-3.5px, -3px) !important;
+        @media (max-width: $maxTablet){
+          transform: rotate(45deg) translate(-2.5px, -2px) !important;
+        }
       }
     }
   }

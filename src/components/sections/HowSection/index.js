@@ -46,7 +46,7 @@ const HowSection = (props) => {
                     <div className={style.services}>
                         {services.map((el,i) => {
                             return (
-                                <div className={style.item} key={i}>
+                                <div className={style.item} key={i} tabIndex='-1'>
                                     <div className={style.title}>{el.title}</div>
                                     <div className={style.desc}>
                                         {el.desc}
@@ -56,7 +56,7 @@ const HowSection = (props) => {
                         })}
                     </div>
                     <div className={style.more}>
-                        <Link to={'/services/'} className={style.link}>
+                        <Link to={'/works'} className={style.link}>
                             More about expertise
                         </Link>
                     </div>

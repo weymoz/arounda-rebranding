@@ -69,7 +69,7 @@
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       padding-top: 18px;
     }
-    & > div {
+    & > a {
       margin: 0 0 30px;
       @media (max-width: $maxMobile) {
         margin: 0 0 14px;

@@ -11,29 +11,30 @@ export default class Cursor extends Component {
     }
 
     componentDidMount() {   
-        this.cursorMove();
+        document.addEventListener('mousemove', this.cursorMove)
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousemove', this.cursorMove)
     }
 
     cursorMove = (e) => {
+        let x = e.clientX;
+        let y = e.clientY;
 
-        window.addEventListener('mousemove', (e) => {
-            let x = e.clientX;
-            let y = e.clientY;
+        TweenMax.to(this.cursor, .6, {y: `${y}`, x: `${x}`});
 
-            TweenMax.to(this.cursor, .6, {y: `${y}`, x: `${x}`});
+        e.target.classList.contains('slowCursor') ? this.setState({slowCursor: true}) : this.setState({slowCursor: false})
+        e.target.classList.contains('stopCursor') ? this.setState({stopCursor: true}) : this.setState({stopCursor: false})
+    }
 
-            e.target.classList.contains('slowCursor') ? this.setState({slowCursor: true}) : this.setState({slowCursor: false})
-		    e.target.classList.contains('stopCursor') ? this.setState({stopCursor: true}) : this.setState({stopCursor: false})
-        });
-
-	}
     render() {
         const {slowCursor, stopCursor} = this.state;
         return (
             <div ref={el => this.cursor = el}
                 className={`${style.cursor} ${slowCursor ? style.slow : ''} ${stopCursor ? style.stop : ''}`}
             >
-                <svg  viewBox="0 0 214.9 239.9" xmlns="http://www.w3.org/2000/svg">
+                <svg  viewBox="0 0 214.9 239.9">
                     <g fill="none" stroke="#000" >
                         <path d="m123.1 29.7-.3 3.9c2.3.2 4.3.3 6.4.4.7-9.9 1.4-19.7 2-29.5-2.2-.2-4.3-.3-6.5-.4-.1 1.2-.2 2.4-.3 3.8-2.6-3.1-6.3-5.1-10.5-5.4-.8-.1-1.6 0-2.4 0-1.7.1-3.3.6-4.9 1.3-5 2.3-8.6 7.2-9 13.2-.1 1.4 0 2.7.2 3.9.3 1.6.8 3.2 1.6 4.7s1.8 2.8 3.1 4c1.3 1.3 2.9 2.3 4.6 3 .1 0 .2.1.3.1h.1c1.3.5 2.7.8 4.2.9h.5.3c2.4.1 4.6-.4 6.7-1.5 1.5-.5 2.8-1.4 3.9-2.4zm-18.8-12.1c.3-5.4 4.7-9.2 10.2-8.8 5.6.3 9.5 4.7 9 10.2-.4 5.4-4.8 9.1-10.3 8.8-5.4-.5-9.2-4.8-8.9-10.2z"/>
                         <path d="m108.5 232.7-.3 3.9c2.3.2 4.3.3 6.4.4.7-9.9 1.4-19.7 2-29.5-2.2-.2-4.3-.3-6.5-.4-.1 1.2-.2 2.4-.3 3.8-2.6-3.1-6.3-5.1-10.5-5.4-.8-.1-1.6 0-2.4 0-1.7.1-3.3.6-4.9 1.3-5 2.3-8.6 7.2-9 13.2-.1 1.4 0 2.7.2 3.9.3 1.6.8 3.2 1.6 4.7s1.8 2.8 3.1 4c1.3 1.3 2.9 2.3 4.6 3 .1 0 .2.1.3.1h.1c1.3.5 2.7.8 4.2.9h.5.3c2.4.1 4.6-.4 6.7-1.5 1.5-.5 2.8-1.4 3.9-2.4zm-18.8-12.1c.3-5.4 4.7-9.2 10.2-8.8 5.6.3 9.5 4.7 9 10.2-.4 5.4-4.8 9.1-10.3 8.8-5.4-.5-9.2-4.8-8.9-10.2z"/>

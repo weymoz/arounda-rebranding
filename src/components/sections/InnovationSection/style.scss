@@ -50,18 +50,17 @@
   @media (max-width: $maxMobile){
     padding: 0 ;
   }
- ul {
+  ul {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    @media (max-width: $maxMobile){
-      align-items: flex-end;
-    }
+    align-items: flex-end;
   }
   li {
     font-size: 29px;
     position: relative;
     margin: 0 0 55px;
+    outline: none;
     @media (max-width: $maxMobile){
       width: 50%;
       margin: 0 0 85px;

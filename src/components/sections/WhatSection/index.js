@@ -2,6 +2,7 @@ import React from 'react';
 import style from './style.scss';
 import TitleSecondary from '@simple/TitleSecondary';
 import Description from '@simple/Description';
+import {Link} from 'react-router-dom';
 
 const WhatSection = (props) => {
     const products =[
@@ -28,10 +29,10 @@ const WhatSection = (props) => {
                     {products.map((el, i) => {
                         return (
                             <li key={i}>
-                                <span className={style.item}>
+                                <Link to="/works" className={style.item} tabIndex='-1'>
                                     <span className={style.hover}>{el[0]}</span><br/>
                                     <span>{el[1]}</span>
-                                </span>
+                                </Link>
                             </li>
                         )
                     })}
