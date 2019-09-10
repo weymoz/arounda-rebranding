@@ -14,13 +14,13 @@
   box-shadow: 0 2px 42px 0 rgba(99, 98, 98, 0.1);
   opacity: 0.4;
   transform: translateY(-110%);
-  transition: all 0.6s ease-in-out;
+  transition: all 0.4s ease-in-out;
   &.active {
     opacity: 1;
     transform: translateY(0);
     .wrapper {
       opacity: 1;
-      transition: opacity 0.3s 0.6s ease-in-out;
+      transition: opacity 0.3s 0.4s ease-in-out;
     }
   }
   @media (max-width: $maxLaptop) {
@@ -30,7 +30,7 @@
     min-height: 91vh;
   }
   @media (max-width: $maxMobile) {
-    min-height: 79vh;
+    min-height: 100vh;
   }
 }
 
@@ -55,14 +55,10 @@
 }
 
 .menu {
-  overflow-y: scroll;
   display: flex;
   justify-content: flex-end;
   transition: all 0.3s $cubic;
   grid-column: 7 / span 18;
-  @media (max-width: $maxTablet) {
-    grid-column: 4 / span 20;
-  }
   @media (max-width: $maxMobile) {
     justify-content: flex-start;
     grid-column: var(--tabletWidth);
@@ -72,6 +68,9 @@
   }
   @media (max-width: $maxTablet) {
     grid-column: 4 / span 23;
+  }
+  @media (max-width: $maxMobile){
+    margin: 0 0 60px;
   }
   li {
     position: relative;
@@ -104,9 +103,6 @@
       opacity: 0;
       transform: translateY(-50%);
       transition: all 0.3s $cubic;
-      @media (max-width: $maxTablet) {
-        left: -110%;
-      }
       @media (max-width: $maxTablet) {
         left: -135%;
       }
@@ -142,6 +138,10 @@
         }
       }
     }
+    &.disable{
+      pointer-events: none;
+      color: $lightGray;
+    }
   }
 }
 .link {
@@ -150,6 +150,7 @@
   position: relative;
   z-index: 10;
   line-height: 1;
+  color: inherit;
   &:before {
     content: '';
     left: -20px;
@@ -184,5 +185,36 @@
   }
   @media (max-width: $maxTablet) {
     grid-column: -14/-8;
+  }
+}
+
+.socialsMobile{
+  grid-row: 2 / 3;
+  grid-column: var(--tabletWidth);
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $lightGray;
+  justify-content: space-between;
+  padding: 16px 0;
+  .socialText{
+    letter-spacing: -0.4px;
+  }
+  ul{
+    display: flex;
+    a{
+      line-height: 0;
+    }
+    li{
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      background: $lightGray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:not(:last-child){
+        margin: 0 10px 0 0;
+      }
+    }
   }
 }

@@ -43,7 +43,7 @@ const InnovationSection = ({btn, link}) => {
                             {
                                 list.map(el => {
                                     return(
-                                        <li key={el.id}>
+                                        <li key={el.id} tabIndex='-1'>
                                             <div className={style.image}>
                                                 {parse(el.image)}
                                             </div>

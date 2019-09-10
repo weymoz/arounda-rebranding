@@ -75,7 +75,7 @@
             max-width: 240px;
         }
     }
-    .item:last-child{
+    .item:nth-child(6){
         position: relative;
         background: #fafafa;
         &:hover{

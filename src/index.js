@@ -3,6 +3,8 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 import { TweenMax, TimelineMax } from 'gsap';
 import { render } from 'react-dom';
+import MediaQuery from 'react-responsive';
+
 import './style.scss';
 import Cursor from '@simple/Cursor';
 
@@ -14,12 +16,18 @@ import Contacts from '@pages/Contacts';
 import Footer from '@sections/Footer';
 import Aside from '@sections/Aside';
 import Preloader from '@simple/Preloader';
+import ScrollToTop from '@simple/ScrollToTop';
+
+
+const freezeScroll = (e) => {
+  e.preventDefault;
+}
+
 
 class App extends Component {
   state = {
     openMenu: false,
     preloader: true,
-    hideFooter: false
   };
 
   componentDidMount() {
@@ -41,7 +49,7 @@ class App extends Component {
 
     this.main && mainSection.add(this.main.tl);
 
-    mainTl.add(mainSection, 'start').add(headerTl, '-=3.6');
+    mainTl.add(mainSection, 'start').add(headerTl, '-=3');
   };
 
   toggleMenu = () => {
@@ -51,6 +59,12 @@ class App extends Component {
     });
 
     document.documentElement.classList.toggle('no-scroll');
+    if(openMenu){
+      document.body.removeEventListener('touchmove', freezeScroll, false);
+    }else{
+      document.body.addEventListener('touchmove', freezeScroll, false);
+    }
+    
   };
   handleCloseMenu = e => {
     const { openMenu } = this.state;
@@ -59,6 +73,7 @@ class App extends Component {
         openMenu: !openMenu
       });
       document.documentElement.classList.remove('no-scroll');
+      document.body.removeEventListener('touchmove', freezeScroll, false);
     }
   };
 
@@ -69,23 +84,32 @@ class App extends Component {
       <Preloader />
     ) : (
       <Router>
-        <div className='grid'>
-          <Cursor />
-          <Header
-            ref={el => {
-              this.header = el;
-            }}
-            toggleMenu={this.toggleMenu}
-            openMenu={openMenu}
-          />
-          <Aside openMenu={openMenu} handleCloseMenu={this.handleCloseMenu} />
-          <Route path='/' exact component={() => <Main ref={el => (this.main = el)} />} />
-          <Route path='/works' exact component={Work} />
-          <Route path='/contacts' exact component={Contacts} />
-          <Route path='/services' exact component={Services} />
-          <Footer />
-        </div>
+        <ScrollToTop>
+          <div className='grid'>
+            <MediaQuery minDeviceWidth={1081}>
+              {
+                matches => {
+                  return (matches ?  <Cursor /> : null)
+                }
+              }
+            </MediaQuery>
+            <Header
+              ref={el => {
+                this.header = el;
+              }}
+              toggleMenu={this.toggleMenu}
+              openMenu={openMenu}
+            />
+            <Aside openMenu={openMenu} handleCloseMenu={this.handleCloseMenu} />
+            <Route path='/' exact component={() => <Main ref={el => (this.main = el)} />} />
+            <Route path='/works' exact component={Work} />
+            <Route path='/contact' exact component={Contacts} />
+            <Route path='/services' exact component={Services} />
+            <Footer/>
+          </div> 
+          </ScrollToTop>
       </Router>
+      
     );
   }
 }
