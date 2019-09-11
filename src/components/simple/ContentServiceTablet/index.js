@@ -14,7 +14,7 @@ const ContentServiceTablet = ({title, desc, id, list, image}) => {
                         <ul>
                             {
                                 list.map((el,i) => {
-                                    return <li key={i}><span>{el}</span></li>
+                                    return <li tabIndex='-1' key={i}><span>{el}</span></li>
                                 })
                             }
                         </ul>

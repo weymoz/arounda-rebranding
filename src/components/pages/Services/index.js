@@ -46,7 +46,7 @@ export default class Services extends Component {
           }}
         </MediaQuery>
         <section className={style.wrapInnovationSection}>
-          <InnovationSection btn='Learn more about method' link='' />
+          <InnovationSection btn=' ' link='' />
         </section>
         <AgencySection title='Get in touch.' titleThink='And be excited' subtitle='We`re always open for new connections' dark={true} />
       </Fragment>

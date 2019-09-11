@@ -21,7 +21,7 @@ const ContentService = ({id, description, onChange, title, list}) => {
                     {description}
                 </p>
                 <ul className={s.list}>
-                    {list.map((el, i) => <li key={i}><span>{el}</span></li>)}
+                    {list.map((el, i) => <li tabIndex='-1' key={i}><span>{el}</span></li>)}
                 </ul>
             </Observer>
         </div>

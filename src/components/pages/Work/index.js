@@ -15,7 +15,7 @@ export default class Work extends Component {
           <WorkSection />
         </section>
         <section className={style.wrapInnovationSection}>
-          <InnovationSection btn='Learn more about method' />
+          <InnovationSection btn='' />
         </section>
         <SliderSection />
         <section className={style.wrapStartSection}>

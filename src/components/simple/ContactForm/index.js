@@ -11,15 +11,15 @@ const budgets = [
 ];
 
 const projects = [
-    { value: 'custom services', label: 'Custom services', name: 'project' }, 
-    { value: 'complex services', label: 'Complex services', name: 'project' }
+    { value: 'complex services', label: 'Complex services', name: 'project' },
+    { value: 'custom services', label: 'Custom services', name: 'project' }
 ];
 
 
 const DropdownIndicator = props => {
   return (
     <components.DropdownIndicator {...props}>
-      <svg height="7" viewBox="0 0 13 7" width="13" xmlns="http://www.w3.org/2000/svg"><path d="m530.656854 52.6568542h-8v-8" fill="none" stroke="#111212" transform="matrix(.70710678 -.70710678 .70710678 .70710678 -400.15137 338.653895)"/></svg>
+      <svg height="7" viewBox="0 0 13 7" width="13"><path d="m530.656854 52.6568542h-8v-8" fill="none" stroke="#111212" transform="matrix(.70710678 -.70710678 .70710678 .70710678 -400.15137 338.653895)"/></svg>
     </components.DropdownIndicator>
   );
 };
@@ -44,8 +44,8 @@ export default class ContactForm extends Component {
     project: null,
     idea: null,
     include: {
-      'custom services': ['Strategy', 'UХ Design', 'UI Design', 'Branding', 'Development'],
-      'complex services': ['Complex platform', 'Mobile App', 'Web App', 'Marketing website', 'Landing page']
+      'custom services': ['Strategy', 'UХ Design', 'UI Design', 'Development','Branding'],
+      'complex services': ['Platform', 'Mobile App', 'Web App', 'Marketing website', 'Landing page']
     },
     includeList: []
   };

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {TimelineMax, Power4} from 'gsap';
+import {TimelineLite, Power4} from 'gsap';
 import Title from '@simple/Title';
 import Subtitle from '@simple/Subtitle';
 import style from './style.scss';
@@ -8,11 +8,11 @@ import style from './style.scss';
 export default class HeadingSection extends Component {
 
     get tl () {
-        const tl = new TimelineMax();
+        const tl = new TimelineLite();
 
         tl
-            .fromTo(this.heading, 2.2, {scale: 1.1,autoAlpha: 0,}, {scale: 1, autoAlpha: 1,  ease: Power4.easeOut}, '+=1')
-            .fromTo(this.subtitle, .5, {autoAlpha: 0, x: -20}, {autoAlpha: 1, x: 0, ease: Power4.easeInOut}, '-=1.5')
+            .staggerFromTo(this.heading.childNodes, 1.2, {autoAlpha: 0, y: 10, ease: Power4.easeInOut}, { autoAlpha: 1, y: 0,  ease: Power4.easeInOut}, '.3', '=+.6')
+            .staggerFromTo(this.subtitle.childNodes, .8, {autoAlpha: 0, y: 20,ease: Power4.easeInOut}, {autoAlpha: 1, y: 0, ease: Power4.easeInOut}, '.2', '-=1.4')
 
         return tl;
     }
@@ -21,11 +21,15 @@ export default class HeadingSection extends Component {
         return (
             <div className={style.section}>
                 <div className={style.container}>
-                        <div ref={el => this.heading = el} className={style.titleWrapper}>
-                            <Title text='Digital product design agency'/>
+                        <div  className={style.titleWrapper}>
+                            <h1 ref={el => this.heading = el} className={style.title}>
+                                <span>Digital&nbsp;</span>
+                                <span>product&nbsp;</span><br/>
+                                <span>agency </span>
+                            </h1>  
                         </div>
                         <div ref={el => this.subtitle = el} className={style.textWrapper}>
-                            <p className={style.text}>We help create and evolve sensible digital products for startups and enterprice innovators</p>
+                            <p className={style.text}>We help create and evolve sensible digital products for startups and enterprise innovators</p>
                             <p className={style.link}>Modern-day UX/UI product team by <a href="#">Dribbble</a></p>
                         </div>
                 </div>
