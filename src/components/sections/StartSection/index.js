@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import style from './style.scss';
+import { Link } from 'react-router-dom';
 
 const StartSection = props => {
   return (
@@ -7,7 +8,7 @@ const StartSection = props => {
       <div className={style.title}>
         Got a project?
         <br />
-        <div>Let's start.</div>
+        <Link to={'/contact'}>Let's start.</Link>
       </div>
     </Fragment>
   );

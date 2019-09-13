@@ -4,10 +4,11 @@ import style from './style.scss';
 import Textarea from 'react-textarea-autosize';
 
 const budgets = [
-  { value: '1000', label: '$1000 +', name: 'budget' },
-  { value: '2000', label: '$2000 +', name: 'budget' },
-  { value: '3000', label: '$3000 +', name: 'budget' },
-  { value: '5000', label: '$9000 +', name: 'budget' }
+  { value: '$5000 and under', label: '$5,000 and under', name: 'budget' },
+  { value: '$5,000 - 10,000', label: '$5,000 - 10,000', name: 'budget' },
+  { value: '$10,000 - 50,000', label: '$10,000 - 50,000', name: 'budget' },
+  { value: '$50,000 - 100,000', label: '$50,000 - 100,000', name: 'budget' },
+  { value: '$100,000+', label: '$100,000+', name: 'budget' }
 ];
 
 const projects = [
@@ -44,8 +45,8 @@ export default class ContactForm extends Component {
     project: null,
     idea: null,
     include: {
-      'custom services': ['Strategy', 'UХ Design', 'UI Design', 'Development','Branding'],
-      'complex services': ['Platform', 'Mobile App', 'Web App', 'Marketing website', 'Landing page']
+      'custom services': ['Discovery', 'UХ/UI Design', 'Brand Identity', 'Graphic design', 'Animation', 'Development'],
+      'complex services': ['Platform', 'Mobile App', 'Web App', 'Corporate website', 'Landing page']
     },
     includeList: []
   };
