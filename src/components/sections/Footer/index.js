@@ -38,13 +38,16 @@ const Footer = props => {
           <div className={style.positions}>
             <div className={style.title}>Open positions</div>
             <ul>
-              {positions.map((el, i) => {
-                return (
-                  <li key={i} className={style.text}>
-                    {el}
-                  </li>
-                );
-              })}
+              {positions.length !== 0 ? 
+                positions.map((el, i) => {
+                  return (
+                    <li key={i} className={style.text}>
+                      {el}
+                    </li>
+                  );
+                }) : 
+                <li className={style.text}>Not looking now</li>
+              }
             </ul>
           </div>
           <div className={style.contact}>

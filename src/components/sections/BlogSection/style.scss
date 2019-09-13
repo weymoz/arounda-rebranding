@@ -83,7 +83,7 @@
     }
     &:hover {
       .image {
-        transform: scaleY(1);
+        transform: scaleY(1) translateY(-50%);
         opacity: 1;
       }
       .title {
@@ -127,6 +127,9 @@
     @media (max-width: $maxMobile) {
       line-height: 25px;
     }
+    @media (max-width: 365px) {
+        font-size: 15px;
+    }
     span {
       z-index: 2;
       position: relative;
@@ -161,20 +164,16 @@
       background: $lightGreen;
       transition: all 0.3s $cubic;
     }
-    &:hover {
-      span {
-      }
-    }
   }
 }
 .image {
   position: absolute;
-  top: -42px;
+  top: 50%;
   right: calc(var(--cellSize) * (-8));
   width: calc(var(--cellSize) * 6);
   padding-top: 17%;
   opacity: 0;
-  transform: scaleY(0);
+  transform: scaleY(0) translateY(-50%);
   transition: all 0.4s $cubic;
   transform-origin: center bottom;
   img {
@@ -187,7 +186,6 @@
     height: 100%;
   }
   @media (max-width: $maxLaptop) {
-    top: -44px;
     right: calc(var(--cellSize) * (-10) - -3px);
     width: calc(var(--cellSize) * 8 - -3px);
     padding-top: 18%;
@@ -197,12 +195,6 @@
   }
 }
 
-.listForDesktop {
-  display: block;
-  @media (max-width: 569px) { // max-width: 569px
-    display: none;
-  }
-}
 .listForMobile {
   display: none;
   @media (max-width: 568px) { // max-width: 568px

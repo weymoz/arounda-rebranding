@@ -97,7 +97,7 @@
   @media (max-width: $maxMobile){
     margin: 0 0 4px;
   }
-  button {
+  label {
     color: $gray;
     font-size: 19px;
     letter-spacing: 0.35px;
@@ -106,8 +106,13 @@
       font-size: 16px;
     }
   }
+  input{
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+  }
   &.active, &:hover {
-    button {
+    label {
       color: $black;
     }
   }

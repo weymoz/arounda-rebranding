@@ -6,49 +6,22 @@ const BlogSection = props => {
   const postsDesktop = [
     {
       id: 0,
-      date: 'May 17',
-      category: 'Culture',
-      title1: 'How will technology shape ',
-      title2: 'UX Design in 2019'
+      date: 'July 1',
+      category: 'UI Design',
+      title1: '7 free icon sets you',
+      title2: 'can get on Dribbble',
+      link: 'https://dribbble.com/stories/2019/07/01/7-free-icon-sets-to-download-on-dribbble',
+      image: 'https://cdn.dribbble.com/users/509287/screenshots/4247409/airport-set_of_icons.png'
     },
     {
       id: 1,
-      date: 'May 17',
-      category: 'UX Design',
-      title1: 'Six tips for user testing'
+      date: 'Feb 15',
+      category: 'UI Design',
+      title1: 'What defines good ',
+      title2: 'UI Design?',
+      link: 'https://dribbble.com/stories/2019/02/15/what-defines-good-ui-design',
+      image: 'https://cdn.dribbble.com/uploads/809/original/c7e054ce5aeb64f774b3160185b783fb.png?1550088246'
     },
-    {
-      id: 2,
-      date: 'May 17',
-      category: 'Culture',
-      title1: '6 things we learned about',
-      title2: 'animation from Headspace'
-    }
-  ];
-  const postsMobile = [
-    {
-      id: 0,
-      date: 'May 17',
-      category: 'Culture',
-      title1: 'How will technology',
-      title2: 'shape UX Design in',
-      title3: '2019'
-    },
-    {
-      id: 1,
-      date: 'May 17',
-      category: 'Culture',
-      title1: 'Six tips for user',
-      title2: 'testing'
-    },
-    {
-      id: 2,
-      date: 'May 17',
-      category: 'Culture',
-      title1: '6 things we learned',
-      title2: 'about animation from',
-      title3: 'Headspace'
-    }
   ];
 
   return (
@@ -66,36 +39,13 @@ const BlogSection = props => {
                   <span className={style.dash}>/</span>
                   <span>{el.category}</span>
                 </div>
-                <div className={style.title}>
+                <a href={el.link} target="_blank" className={style.title}>
                   <span>{el.title1}</span>
                   {el.title2 ? <br /> : null}
                   <span>{el.title2}</span>
-                </div>
+                </a>
                 <div className={style.image}>
-                  <img src='./assets/images/img-4.png' alt='image' />
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-        <ul className={style.listForMobile}>
-          {postsMobile.map(el => {
-            return (
-              <li key={el.id} className={style.post}>
-                <div className={style.date}>
-                  <span>{el.date}</span>
-                  <span className={style.dash}>/</span>
-                  <span>{el.category}</span>
-                </div>
-                <div className={style.title}>
-                  <span>{el.title1}</span>
-                  <br />
-                  <span>{el.title2}</span>
-                  <br />
-                  <span>{el.title3}</span>
-                </div>
-                <div className={style.image}>
-                  <img src='./assets/images/img-4.png' alt='image' />
+                  <img src={el.image} alt={el.title1} />
                 </div>
               </li>
             );

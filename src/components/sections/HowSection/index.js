@@ -11,15 +11,15 @@ const HowSection = (props) => {
             desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
         },
         {
-            title: 'Branding',
-            desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
-        },
-        {
             title: 'UX Design',
             desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
         },
         {
             title: 'UI Design',
+            desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
+        },
+        {
+            title: 'Content',
             desc: 'It’s practice of designing products, processes, services, events, omnichannel journeys, and environments with a focus placed on the quality of the user experience and culturally relevant solutions.'
         },
         {
@@ -56,7 +56,7 @@ const HowSection = (props) => {
                         })}
                     </div>
                     <div className={style.more}>
-                        <Link to={'/works'} className={style.link}>
+                        <Link to={'/services'} className={style.link}>
                             More about expertise
                         </Link>
                     </div>

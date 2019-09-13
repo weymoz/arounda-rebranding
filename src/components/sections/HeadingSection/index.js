@@ -30,7 +30,7 @@ export default class HeadingSection extends Component {
                         </div>
                         <div ref={el => this.subtitle = el} className={style.textWrapper}>
                             <p className={style.text}>We help create and evolve sensible digital products for startups and enterprise innovators</p>
-                            <p className={style.link}>Modern-day UX/UI product team by <a href="#">Dribbble</a></p>
+                            <p className={style.link}>Modern-day UX/UI product team by <a target='_blank' href="https://dribbble.com/stories/2019/02/15/what-defines-good-ui-design">Dribbble</a></p>
                         </div>
                 </div>
             </div>

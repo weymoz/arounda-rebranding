@@ -31,23 +31,22 @@
 .item .image {
   position: relative;
   padding: 67% 0 0;
-  img {
-    object-fit: cover;
-  }
+  overflow: hidden;
+  transition: all .3s $cubic;
   @media (max-wdith: $maxLaptop) {
     padding: 69% 0 0;
   }
   @media (max-width: $maxTablet) {
     padding: 88% 0 0;
   }
-  @media (max-width: $maxTablet) {
-    padding: 88% 0 0;
-  }
-  @media (max-width: $maxMobile) {
-    padding: 120% 0 0;
-  }
   @media (max-width: $maxMobile) {
     padding: 122% 0 0;
+  }
+  &:hover{
+    transform: scale(.95);
+    img{
+      transform: scale(1.15);
+    }
   }
 }
 .item {
@@ -96,6 +95,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all .3s $cubic;
 }
 .item .title {
   @include font(28px, 22px, $maxLaptop, $maxTablet);

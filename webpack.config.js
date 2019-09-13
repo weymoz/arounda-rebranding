@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PrerenderSPAPlugin = require('prerender-spa-plugin');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const isDev = NODE_ENV === 'development';
@@ -38,7 +39,12 @@ module.exports = {
         test: /\.(scss|css)$/,
         exclude: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader:  MiniCssExtractPlugin.loader,
+            options: {
+              hmr: isDev,
+            }
+          },
           {
             loader: 'css-loader',
             options: {
@@ -93,6 +99,10 @@ module.exports = {
     ]),
     new MiniCssExtractPlugin({
       filename: 'bundle.css'
+    }),
+    new PrerenderSPAPlugin({
+      staticDir: path.join(__dirname, 'dist'),
+      routes: [ '/'],
     })
   ]
 };
