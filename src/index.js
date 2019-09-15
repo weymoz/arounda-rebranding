@@ -13,6 +13,7 @@ import Main from '@pages/Main';
 import Work from '@pages/Work';
 import Services from '@pages/Services';
 import Contacts from '@pages/Contacts';
+import Blog from '@pages/Blog'
 import Footer from '@sections/Footer';
 import Aside from '@sections/Aside';
 import Preloader from '@simple/Preloader';
@@ -105,6 +106,7 @@ class App extends Component {
             <Route path='/works' exact component={Work} />
             <Route path='/contact' exact component={Contacts} />
             <Route path='/services' exact component={Services} />
+            <Route path='/blog' exact component={Blog} />
             <Footer/>
           </div> 
           </ScrollToTop>

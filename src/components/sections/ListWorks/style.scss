@@ -1,0 +1,30 @@
+.ListWorks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 130px;
+  column-gap: 70px;
+  grid-column: 8 / -8;
+  margin-bottom: 189px;
+}
+
+.img {
+  margin-bottom: 24px;
+}
+
+.tag,
+.public {
+  color: #9fa4a6;
+  font-family: 'PT Sans';
+  font-size: 14px;
+  letter-spacing: 0.26px;
+  line-height: 33px;
+}
+
+.title {
+  margin-bottom: 15px;
+  color: #111212;
+  font-size: 29px;
+  font-weight: normal;
+  letter-spacing: 0.54px;
+  line-height: 39px;
+}

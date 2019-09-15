@@ -59,8 +59,8 @@ class Aside extends Component{
             {
                 title: 'Blog',
                 desc: 'Our thoughts',
-                link: '/',
-                disable: true
+                link: '/blog',
+                disable: false
             },
             {
                 title: 'Contact',

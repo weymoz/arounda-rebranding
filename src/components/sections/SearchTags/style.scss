@@ -1,0 +1,26 @@
+.SearchTags {
+  padding: 0 0 70px;
+  grid-column: 8 / -8;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  li {
+    margin-right: 30px;
+    color: #111212;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    line-height: 33px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+.searchIcon {
+
+}

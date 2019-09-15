@@ -1,0 +1,26 @@
+.Hungry {
+  display: inherit;
+  grid-column: 1 / -1;
+  grid-template-columns: inherit;
+  padding: 145px 0 152px;
+  background-color: #fbfbfb;
+}
+
+.wrap {
+  grid-column: 14 / -14;
+}
+
+.title {
+  margin-bottom: 11px;
+  color: #111212;
+  font-size: 38px;
+  line-height: 49px;
+}
+
+.description {
+  margin-bottom: 95px;
+  padding-right: calc(var(--cellSize) * 5);
+  color: #797d7e;
+  font-size: 19px;
+  line-height: 32px;
+}
