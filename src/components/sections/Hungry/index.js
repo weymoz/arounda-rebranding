@@ -12,7 +12,7 @@ const Hungry = props => {
             <p>Email address</p>
             <input type='email' />
           </label>
-          <button type='submit'>Subscribe for our newsletters</button>
+          <button type='submit' className={style.submit}>Subscribe for our newsletters</button>
         </form>
       </div>
     </div>

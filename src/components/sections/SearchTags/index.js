@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from './style.scss';
-import Search from '@/assets/svg/search.svg'
+import Search from '@/assets/svg/search.svg';
 
 const SearchTags = props => {
   const [tags, setTags] = useState([
@@ -41,8 +41,8 @@ const SearchTags = props => {
             <li key={tag.id}>{tag.name}</li>
           ))}
         </ul>
-        <div className={style.searchIcon}>
-            <Search />
+        <div className={style.searchIcon} onClick={() => props.setSearch(true)}>
+          <Search />
         </div>
       </div>
     </div>

@@ -1,0 +1,66 @@
+.PopupSearch {
+  display: inherit;
+  grid-template-columns: inherit;
+  grid-column: 1 / -1;
+  align-items: center;
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  height: 219px;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 42px 0 rgba(99, 98, 98, 0.1);
+  z-index: 1000;
+  transition: all 0.5s ease-in-out;
+
+  input {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: inherit;
+    grid-column: 8 / -8;
+    color: #393939;
+    font-size: 38px;
+    line-height: 45px;
+    padding-left: 6px;
+    border-left: 2px solid #54ffd7;
+    &::placeholder {
+      color: #393939;
+      font-size: 38px;
+      line-height: 49px;
+    }
+  }
+
+  &.active {
+    top: 0;
+  }
+}
+
+.close {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  div {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #000;
+      transform: rotate(45deg);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #000;
+      transform: rotate(-45deg);
+    }
+  }
+}
