@@ -33,9 +33,29 @@ const SearchTags = props => {
       name: 'Tools'
     }
   ]);
+  const [isMobileList, setIsMobileList] = useState(false);
+  const [textMobileEl, setTextMobileEl] = useState('All topics');
   return (
     <div className={style.SearchTags}>
       <div className={style.content}>
+        <div className={style.mobileList}>
+          <p onClick={() => setIsMobileList(!isMobileList)}>{textMobileEl}</p>
+          {isMobileList ? (
+            <ul>
+              {tags.map(tag => (
+                <li
+                  key={tag.id}
+                  onClick={() => {
+                    setIsMobileList(false);
+                    setTextMobileEl(tag.name);
+                  }}
+                >
+                  {tag.name}
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
         <ul className={style.list}>
           {tags.map(tag => (
             <li key={tag.id}>{tag.name}</li>

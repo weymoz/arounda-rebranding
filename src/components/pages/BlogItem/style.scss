@@ -41,6 +41,14 @@
   display: inherit;
   grid-template-columns: inherit;
   grid-column: 1 / -1;
+
+  @media (max-width: $maxTablet) {
+    margin-bottom: 141px;
+  }
+  @media (max-width: $maxMobile) {
+    padding-top: 169px;
+    grid-template-columns: 1fr;
+  }
 }
 
 .img {
@@ -48,11 +56,27 @@
   min-height: 100vh;
   object-fit: cover;
   object-position: 70%;
+
+  @media (max-width: $maxLaptop) {
+    grid-column: 1 / 21;
+  }
+  @media (max-width: $maxMobile) {
+    min-height: 426px;
+    order: 1;
+  }
 }
 
 .wrapTitle {
   grid-column: 25 / -6;
   align-self: center;
+
+  @media (max-width: $maxTablet) {
+    grid-column: 25 / -7;
+  }
+  @media (max-width: $maxMobile) {
+    margin-bottom: 47px;
+    padding-left: calc(var(--cellSize) * 4);
+  }
 
   a {
     position: relative;
@@ -63,6 +87,10 @@
     font-weight: bold;
     line-height: 23px;
     transform: translateY(-158px);
+
+    @media (max-width: $maxTablet) {
+      transform: translateY(-58px);
+    }
 
     &:before {
       content: '';
@@ -83,6 +111,12 @@
     font-size: 38px;
     letter-spacing: 0.7px;
     line-height: 57px;
+
+    @media (max-width: $maxTablet) {
+      font-size: 21px;
+      letter-spacing: 0.39px;
+      line-height: 31px;
+    }
   }
 
   p {
@@ -99,6 +133,17 @@
   grid-column: 14 / -14;
   margin-bottom: 230px;
 
+  @media (max-width: $maxLaptop) {
+    grid-column: 11 / -11;
+  }
+  @media (max-width: $maxTablet) {
+    grid-column: 4 / -4;
+  }
+  @media (max-width: $maxMobile) {
+    grid-column: 5 / -4;
+    margin-bottom: 124px;
+  }
+
   span {
     color: #9fa4a6;
     font-family: 'PT Sans';
@@ -112,11 +157,20 @@
     font-family: 'PT Sans';
     font-size: 21px;
     line-height: 32px;
+
+    @media (max-width: $maxMobile) {
+      font-size: 18px;
+    }
   }
 
   ul {
     padding-left: 51px;
     margin-bottom: 23px;
+
+    @media (max-width: $maxMobile) {
+      padding-left: 31px;
+    }
+
     li {
       position: relative;
       color: #111212;
@@ -157,8 +211,7 @@
     }
     &:hover {
       &:after {
-
-        background: #30FDDC;
+        background: #30fddc;
       }
     }
   }
@@ -169,6 +222,14 @@
   top: 0;
   left: -109px;
   transform: translateX(-50%);
+
+  @media (max-width: $maxTablet) {
+    top: -50px;
+    left: calc(var(--cellSize) * 3);
+  }
+  @media (max-width: $maxMobile) {
+    left: calc(var(--cellSize) * 5);
+  }
 }
 
 .caseText1 {
@@ -185,6 +246,11 @@
   font-size: 38px;
   letter-spacing: 0.7px;
   line-height: 57px;
+
+  @media (max-width: $maxMobile) {
+    font-size: 29px;
+    line-height: 39px;
+  }
 }
 
 .whatText {
@@ -230,6 +296,11 @@
   letter-spacing: 0.52px;
   line-height: 42px;
   font-weight: normal;
+
+  @media (max-width: $maxMobile) {
+    font-size: 29px;
+    line-height: 39px;
+  }
 }
 
 .whatPreverbDescription {
@@ -249,6 +320,11 @@
   font-size: 38px;
   letter-spacing: 0.7px;
   line-height: 57px;
+
+  @media (max-width: $maxMobile) {
+    font-size: 29px;
+    line-height: 39px;
+  }
 }
 
 .conclusionText {

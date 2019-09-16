@@ -1,11 +1,32 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
 .SearchTags {
   padding: 0 0 70px;
   grid-column: 8 / -8;
+
+  @media (max-width: $maxLaptop) {
+    grid-column: 5 / -5;
+  }
+  @media (max-width: $maxTablet) {
+    padding: 0 0 59px;
+  }
+  @media (max-width: $maxMobile) {
+    grid-column: 4 / -4;
+  }
 }
 
 .list {
   display: flex;
   align-items: center;
+
+  @media (max-width: $maxTablet) {
+    flex-flow: row wrap;
+  }
+  @media (max-width: $maxMobile) {
+    display: none;
+  }
+
   li {
     margin-right: 30px;
     color: #111212;
@@ -17,7 +38,48 @@
   }
 }
 
+.mobileList {
+  display: none;
+  position: relative;
+  
+  @media (max-width: $maxMobile) {
+    display: block;
+  }
+  
+  p {
+    color: #111212;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    line-height: 33px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  ul {
+    position: absolute;
+    top: 33px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fff;
+    li {
+      margin-right: 30px;
+      color: #111212;
+      font-size: 16px;
+      letter-spacing: 0.3px;
+      line-height: 33px;
+      text-transform: uppercase;
+      cursor: pointer;
+      &:first-of-type {
+        display: none;
+      }
+    }
+  }
+}
+
 .content {
+  position: relative;
   display: flex;
   justify-content: space-between;
 }

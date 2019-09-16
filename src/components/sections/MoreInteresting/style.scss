@@ -1,3 +1,6 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
 .MoreInteresting {
   display: inherit;
   grid-template-columns: inherit;
@@ -11,16 +14,32 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: $maxLaptop) {
+    grid-column: 5 / -5;
+  }
+  @media (max-width: $maxMobile) {
+    grid-column: 4 / -4;
+    margin-bottom: 49px;
+  }
 }
 
 .title {
   display: inline-block;
   color: #111212;
   font-size: 50px;
+  font-weight: normal;
   line-height: 65px;
+  
+  @media (max-width: $maxTablet) {
+    font-size: 30px;
+  }
+  @media (max-width: $maxMobile) {
+    font-size: 21px;
+  }
 }
 
-.link {
+.link, .linkBottom {
   color: #111212;
   font-family: 'PT Sans';
   font-size: 18px;
@@ -29,14 +48,52 @@
   border-bottom: solid 2px #30fddc;
 }
 
+.link {
+  @media (max-width: $maxMobile) {
+    display: none;
+  }
+}
+
+.linkBottom {
+  display: none;
+  @media (max-width: $maxMobile) {
+    display: block;
+    padding-top: 24px;
+    grid-column: 4 / -35;
+  }
+}
+
 .advices {
   grid-column: 8 / -8;
-  display: flex;
-  justify-content: space-between;
+  display: inherit;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: $maxLaptop) {
+    grid-column: 5 / -4;
+  }
+  @media (max-width: $maxTablet) {
+    grid-column: 4 / -3;
+  }
+  @media (max-width: $maxMobile) {
+    grid-column: 4 / -4;
+    grid-template-columns: 1fr;
+  }
+
   a {
-    width: 50%;
-    padding: 87px 80px 111px 107px;
+    padding: 87px 87px 111px 107px;
     transition: background 0.3s ease-in-out;
+
+    @media (max-width: $maxLaptop) {
+      padding: 87px 72px 111px 81px;
+    }
+    @media (max-width: $maxTablet) {
+      padding: 46px 17px 47px 32px;
+    }
+    &:first-of-type {
+      @media (max-width: $maxTablet) {
+        padding: 46px 48px 47px 32px;
+      }
+    }
       p {
         color: rgba(0, 0, 0, 0.8);
         font-family: 'PT Sans';
@@ -45,6 +102,9 @@
         line-height: 33px;
         &:first-of-type {
           margin-bottom: 10px;
+          @media (max-width: $maxMobile) {
+            margin-bottom: 28px;
+          }
         }
         &:last-of-type {
           margin-bottom: 38px;
@@ -57,6 +117,18 @@
         letter-spacing: 0.7px;
         font-weight: normal;
         line-height: 57px;
+        
+        @media (max-width: $maxTablet) {
+          font-size: 29px;
+          letter-spacing: 0.54px;
+          line-height: 41px;
+        }
+        @media (max-width: $maxMobile) {
+          font-size: 21px;
+          letter-spacing: 0.39px;
+          line-height: 31px;
+          margin-bottom: 35px;
+        }
       }
     &:hover {
       background: #54ffd7;

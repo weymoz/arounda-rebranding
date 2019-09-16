@@ -1,13 +1,30 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins.scss';
+
 .Hungry {
   display: inherit;
   grid-column: 1 / -1;
   grid-template-columns: inherit;
   padding: 145px 0 152px;
   background-color: #fbfbfb;
+
+  @media (max-width: $maxMobile) {
+    padding: 154px 0 171px;
+  }
 }
 
 .wrap {
   grid-column: 14 / -14;
+
+  @media (max-width: $maxLaptop) {
+    grid-column: 11 / -10;
+  }
+  @media (max-width: $maxTablet) {
+    grid-column: 7 / -6;
+  }
+  @media (max-width: $maxMobile) {
+    grid-column: 4 / -4;
+  }
 }
 
 .title {
@@ -16,6 +33,10 @@
   font-weight: normal;
   font-size: 38px;
   line-height: 49px;
+
+  @media (max-width: $maxTablet) {
+    font-size: 30px;
+  }
 }
 
 .description {
@@ -24,6 +45,13 @@
   color: #797d7e;
   font-size: 19px;
   line-height: 32px;
+
+  @media (max-width: $maxTablet) {
+    font-size: 16px;
+  }
+  @media (max-width: $maxMobile) {
+    padding-right: calc(var(--cellSize) * 3);
+  }
 }
 
 .email {
