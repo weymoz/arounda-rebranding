@@ -1,0 +1,64 @@
+.Hungry {
+  display: inherit;
+  grid-column: 1 / -1;
+  grid-template-columns: inherit;
+  padding: 145px 0 152px;
+  background-color: #fbfbfb;
+}
+
+.wrap {
+  grid-column: 14 / -14;
+}
+
+.title {
+  margin-bottom: 11px;
+  color: #111212;
+  font-weight: normal;
+  font-size: 38px;
+  line-height: 49px;
+}
+
+.description {
+  margin-bottom: 95px;
+  padding-right: calc(var(--cellSize) * 5);
+  color: #797d7e;
+  font-size: 19px;
+  line-height: 32px;
+}
+
+.email {
+  display: block;
+  margin-bottom: 63px;
+  p {
+    margin-bottom: 15px;
+    color: #020202;
+    font-family: 'PT Sans';
+    font-size: 14px;
+    letter-spacing: 0.46px;
+    line-height: 33px;
+  }
+  input {
+    box-shadow: none;
+    border: none;
+    min-height: 41px;
+    font-size: 21px;
+    width: 100%;
+    background: transparent;
+    border-bottom: 2px solid #111212;
+    transition: all 0.3s ease-in-out;
+    &:focus {
+      border-color: #54ffd7;
+    }
+  }
+}
+
+.submit {
+  display: block;
+  margin-left: auto;
+  border-bottom: solid #30fddc 2px;
+  color: #111212;
+  font-family: 'PT Sans';
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 22px;
+}
