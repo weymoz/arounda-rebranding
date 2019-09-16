@@ -86,15 +86,171 @@
   }
 
   p {
-      color: #9FA4A6;
-      font-family: "PT Sans";
-      font-size: 16px;
-      letter-spacing: 0.5px;
-      line-height: 33px;
+    color: #9fa4a6;
+    font-family: 'PT Sans';
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 33px;
   }
 }
 
-
 .body {
+  position: relative;
   grid-column: 14 / -14;
+  margin-bottom: 230px;
+
+  span {
+    color: #9fa4a6;
+    font-family: 'PT Sans';
+    font-size: 18px;
+    letter-spacing: 0.56px;
+    line-height: 33px;
+  }
+
+  p {
+    color: #111212;
+    font-family: 'PT Sans';
+    font-size: 21px;
+    line-height: 32px;
+  }
+
+  ul {
+    padding-left: 51px;
+    margin-bottom: 23px;
+    li {
+      position: relative;
+      color: #111212;
+      font-family: 'PT Sans';
+      font-size: 21px;
+      line-height: 32px;
+      padding: 8px 0;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -30px;
+        height: 7px;
+        width: 7px;
+        background-color: #9fa4a6;
+        border-radius: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.touchingList {
+  display: inline-block;
+  li {
+    position: relative;
+    &:after {
+      content: '';
+      bottom: 12px;
+      left: 0;
+      padding: 0 3px;
+      width: 100%;
+      height: 25%;
+      position: absolute;
+      background: rgba(151, 151, 151, 0.1);
+      z-index: -1;
+      transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+      &:after {
+
+        background: #30FDDC;
+      }
+    }
+  }
+}
+
+.case {
+  position: absolute;
+  top: 0;
+  left: -109px;
+  transform: translateX(-50%);
+}
+
+.caseText1 {
+  margin-bottom: 22px;
+}
+
+.caseText2 {
+  margin-bottom: 75px;
+}
+
+.whatTitle {
+  margin-bottom: 14px;
+  color: #111212;
+  font-size: 38px;
+  letter-spacing: 0.7px;
+  line-height: 57px;
+}
+
+.whatText {
+  margin-bottom: 45px;
+}
+
+.whatText2 {
+  margin-bottom: 22px;
+}
+
+.whatText3,
+.whatText4 {
+  margin-bottom: 49px;
+}
+
+.whatText5 {
+  margin-bottom: 57px;
+}
+
+.whatImg {
+  margin-bottom: 17px;
+}
+
+.whatImgDescription {
+  display: block;
+  text-align: center;
+  margin-bottom: 57px;
+}
+
+.whatText6,
+.whatText7,
+.whatText8 {
+  margin-bottom: 49px;
+}
+
+.whatText9 {
+  margin-bottom: 92px;
+}
+
+.whatPreverb {
+  color: #111212;
+  font-size: 28px;
+  letter-spacing: 0.52px;
+  line-height: 42px;
+  font-weight: normal;
+}
+
+.whatPreverbDescription {
+  margin-bottom: 92px;
+  display: block;
+  color: #9fa4a6;
+  font-family: 'PT Sans';
+  font-size: 18px;
+  letter-spacing: 0.56px;
+  line-height: 33px;
+  text-align: right;
+}
+
+.conclusionTitle {
+  margin-bottom: 14px;
+  color: #111212;
+  font-size: 38px;
+  letter-spacing: 0.7px;
+  line-height: 57px;
+}
+
+.conclusionText {
+  margin-bottom: 49px;
 }
