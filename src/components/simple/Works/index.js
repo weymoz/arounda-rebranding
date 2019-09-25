@@ -32,7 +32,7 @@ export default class Works extends Component {
                 image: './assets/images/metricly.jpg',
                 title: 'Metricly',
                 desc: 'UX Design, UI Design, Content, Development',
-                link: 'https://metricly.netlify.com/'
+                link: 'https://metricly.com/'
             },
         ]
         return (
