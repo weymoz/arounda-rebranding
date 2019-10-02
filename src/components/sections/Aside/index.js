@@ -9,13 +9,12 @@ import MediaQuery from 'react-responsive';
 class Aside extends Component{
     
     
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if(nextProps.openMenu){
             this.timeline();
         }else{
             this.clearStyles();
         }
-        
     }
     
     timeline = () => {
@@ -60,7 +59,7 @@ class Aside extends Component{
                 title: 'Blog',
                 desc: 'Our thoughts',
                 link: '/blog',
-                disable: false
+                disable: true
             },
             {
                 title: 'Contact',

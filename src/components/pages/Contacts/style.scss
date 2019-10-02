@@ -48,6 +48,9 @@
         height: 50%;
         transition: all 0.3s ease-in-out;
       }
+      &:hover:before{
+        height: 100%;
+      }
     }
     @media (max-width: $maxMobile){
       max-width: 240px;

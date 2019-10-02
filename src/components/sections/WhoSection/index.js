@@ -20,7 +20,7 @@ const WhoSection = ({title, titleThink, subtitle, desc, dark}) => {
                         </div>   
                     </div>
                     <div className={style.image}>
-                        <LineSvg/>
+                        <img src="assets/images/who.jpg" alt="our team"/>
                     </div>
         </section>
     )

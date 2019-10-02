@@ -48,6 +48,7 @@
         transform: translateY(0);
         video{
             opacity: 1;
+            transform: scaleY(1);
         }
     }
 }
@@ -66,5 +67,8 @@
         max-width: 100%;
         opacity: 0;
         transition: opacity .3s .4s $cubic; 
+        object-fit: cover;
+        min-height: 100%;
+        transform: scaleY(0);
     }
 }

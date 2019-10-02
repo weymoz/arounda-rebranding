@@ -1,0 +1,36 @@
+.inputFileWrapper {
+    span {
+        color: #9D9D9D;
+        font-size: 14px;
+        display: none;
+        white-space: nowrap;
+        padding-left: 8px;
+        font-family: "PT Sans", sans-serif;
+        letter-spacing: 0.46px;
+        transform: translateY(1px);
+    }
+}
+
+.inputFile {
+    font-size: 0;
+    border: 0;
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.labelFile {
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $maxLaptop) {
+        right: 10px;
+    }
+}

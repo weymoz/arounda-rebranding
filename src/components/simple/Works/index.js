@@ -1,44 +1,16 @@
 import React, { Component } from 'react';
 import style from './style.scss';
 
+
 import { Link } from 'react-router-dom';
 
 export default class Works extends Component {
     render() {
-        const data = [
-            {
-                id: 0,
-                image: './assets/images/bold.jpg',
-                title: 'Bold',
-                desc: 'UX Design, UI Design, Development',
-                link: '/'
-            },
-            {
-                id: 1,
-                image: './assets/images/gigzi.jpg',
-                title: 'Gigzi',
-                desc: 'Strategy, UX Design, UI Design, Content, Development',
-                link: 'https://gigzi.com/'
-            },
-            {
-                id: 2,
-                image: './assets/images/velonto.jpg',
-                title: 'Velonto',
-                desc: 'Strategy, UX Design, UI Design, Content, Development',
-                link: 'https://velonto.at/'
-            },
-            {
-                id: 3,
-                image: './assets/images/metricly.jpg',
-                title: 'Metricly',
-                desc: 'UX Design, UI Design, Content, Development',
-                link: 'https://metricly.com/'
-            },
-        ]
+        const { worksData } = this.props;
         return (
             <div className={style.row}>
                 {
-                    data.map(el => {
+                    worksData.map(el => {
                         return (
                             <div key={el.id} className={style.item}>
                                 <a href={el.link} target='_blank'>

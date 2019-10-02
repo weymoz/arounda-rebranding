@@ -11,6 +11,8 @@ import AgencySection from '@sections/AgencySection';
 import ServiceSlideSectionTablet from '@sections/ServiceSlideSectionTablet';
 import data from '@/data/ServiceSlide';
 import MediaQuery from 'react-responsive';
+import Footer from '@sections/Footer';
+
 
 export default class Services extends Component {
   render() {
@@ -19,7 +21,7 @@ export default class Services extends Component {
         <ServicesHeader />
         <section className={style.serviceBg}>
           <div className={style.image}>
-            <img src='assets/images/bg.jpg' alt='background' />
+            <img src='assets/images/bg.jpg' alt='our team' />
           </div>
         </section>
         <CapabilitySection />
@@ -51,6 +53,7 @@ export default class Services extends Component {
           <InnovationSection btn=' ' link='' />
         </section>
         <AgencySection title='Get in touch.' titleThink='And be excited' subtitle='We`re always open for new connections' dark={true} />
+        <Footer/>
       </Fragment>
     );
   }

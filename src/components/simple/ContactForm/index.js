@@ -4,11 +4,11 @@ import style from './style.scss';
 import Textarea from 'react-textarea-autosize';
 
 const budgets = [
-  { value: '$5000 and under', label: '$5,000 and under', name: 'budget' },
-  { value: '$5,000 - 10,000', label: '$5,000 - 10,000', name: 'budget' },
-  { value: '$10,000 - 50,000', label: '$10,000 - 50,000', name: 'budget' },
-  { value: '$50,000 - 100,000', label: '$50,000 - 100,000', name: 'budget' },
-  { value: '$100,000+', label: '$100,000+', name: 'budget' }
+  { value: '1000', label: '$5,000 and under', name: 'budget' },
+  { value: '5000', label: '$5,000 - 10,000', name: 'budget' },
+  { value: '10000', label: '$10,000 - 50,000', name: 'budget' },
+  { value: '50000', label: '$50,000 - 100,000', name: 'budget' },
+  { value: '100000', label: '$100,000+', name: 'budget' }
 ];
 
 const projects = [
@@ -45,15 +45,54 @@ export default class ContactForm extends Component {
     project: null,
     idea: null,
     include: {
-      'custom services': ['Discovery', 'UХ/UI Design', 'Brand Identity', 'Graphic design', 'Animation', 'Development'],
-      'complex services': ['Platform', 'Mobile App', 'Web App', 'Corporate website', 'Landing page']
+      'custom services': [
+          {
+            name: 'Discovery',
+            value: 'Discovery'
+          },
+          {
+            name: 'UX/UI Design',
+            value: 'Design'
+          },
+          {
+            name: 'Brand Identity',
+            value: 'Brand Identity'
+          },
+          {
+            name: 'Graphic design',
+            value: 'Graphic design'
+          },
+          {
+            name: 'Development',
+            value: 'Development'
+          }
+        ],
+      'complex services': [
+        {
+          name: 'Platform',
+          value: 'Platform'
+        },
+        {
+          name: 'Mobile App',
+          value: 'Mobile App'
+        },
+        {
+          name: 'Web App',
+          value: 'Web App'
+        },
+        {
+          name: 'Corporate website',
+          value: 'Corporate website'
+        },
+        {
+          name: 'Landing page',
+          value: 'Landing page'
+        }
+      ]
     },
     includeList: []
   };
 
-  handlerSubmit = e => {
-    e.preventDefault();
-  };
 
   handleInput = e => {
     const label = e.target.parentElement.querySelector('label');
@@ -83,6 +122,7 @@ export default class ContactForm extends Component {
 
   handleChoose = e => {
     const parent = e.target.parentElement;
+    console.log(e.target)
     if (!parent.classList.contains(style.active)) {
       this.setState({
         includeList: [...this.state.includeList, e.target.innerHTML]
@@ -104,11 +144,11 @@ export default class ContactForm extends Component {
     return (
       <form className={style.grid} onSubmit={this.handlerSubmit}>
         <div className={style.inputWrapper}>
-          <input className={style.input} type='text' placeholder='What’s your name' onChange={this.handleInput} name='name' />
+          <input className={style.input} type='text' placeholder='What’s your name' onChange={this.handleInput} name='name'  required/>
           <label>Your name</label>
         </div>
         <div className={style.inputWrapper}>
-          <input onChange={this.handleInput} className={style.input} type='email' placeholder='What’s your email' name='email' />
+          <input onChange={this.handleInput} className={style.input} type='email' placeholder='What’s your email' name='email' required/>
           <label>Your email</label>
         </div>
         <div className={style.selectWrapper}>
@@ -150,21 +190,6 @@ export default class ContactForm extends Component {
                       onChange={this.handleInput} 
                     />
                     <label>Your message</label>
-                    <div className={style.inputFileWrapper}>
-                      <input id='file' className={style.inputFile} type='file' />
-                      <label className={style.labelFile} htmlFor='file'>
-                        <svg height='23' viewBox='0 0 10 23' width='10' xmlns='http://www.w3.org/2000/svg'>
-                          <path
-                            d='m-5.09090909 3.99v12.18s-.17754546 2.5562727 2.4255 2.5562727c2.34722727 0 2.34722727-2.5562727 2.34722727-2.5562727v-12.81s0-3.36-3.34090909-3.36-3.34090909 3.36-3.34090909 3.36v12.81s0 4.83 4.29545455 4.83c4.29545454 0 4.29545454-4.83 4.29545454-4.83v-12.81c0-.525-.95454545-.525-.95454545 0v12.81s.34745454 3.8754545-3.34090909 3.8754545c-3.3409091 0-3.3409091-3.8754545-3.3409091-3.8754545v-12.81s0-2.40545454 2.38636364-2.40545454 2.38636364 2.40545454 2.38636364 2.40545454v12.81s0 1.5062992-1.39268182 1.5062992c-1.3926553 0-1.47095455-1.5062992-1.47095455-1.5062992v-12.18c0-.525-.95454545-.525-.95454545 0z'
-                            fill='#9d9d9d'
-                            stroke='#fff'
-                            strokeWidth='.2'
-                            transform='translate(8 1)'
-                          />
-                        </svg>
-                        <span>Add attachment</span>
-                      </label>
-                    </div>
                   </div>) : null
         }
         {
@@ -174,8 +199,9 @@ export default class ContactForm extends Component {
                   <ul className={style.list}>
                     {include[project].map((el, i) => {
                       return (
-                        <li onClick={this.handleChoose} key={i} className={`${style.item}`}>
-                          <button>{el}</button>
+                        <li key={i} className={`${style.item}`}>
+                          <label htmlFor={el.name}>{el.name}</label>
+                          <input id={el.name} name={el.name} type="checkbox" value={el.value} onChange={this.handleChoose}/>
                         </li>
                       );
                     })}
@@ -183,8 +209,13 @@ export default class ContactForm extends Component {
                 </div>) : null 
         }
         <div className={style.btnWrapper}>
-          <button className={style.btn}>Send a request</button>
+          <button name='source' value='Website' className={style.btn} >Send a request</button>
         </div>
+            <input type='hidden' name='utm_source' value='utm_source'/>
+            <input type='hidden' name='utm_medium' value='utm_medium'/>
+            <input type='hidden' name='utm_campaign' value='utm_campaign'/>
+            <input type='hidden' name='utm_content' value='utm_content'/>
+            <input type='hidden' name='utm_term' value='utm_term'/>
       </form>
     );
   }

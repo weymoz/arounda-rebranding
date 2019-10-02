@@ -46,7 +46,7 @@ const Footer = props => {
                     </li>
                   );
                 }) : 
-                <li className={style.text}>Not looking now</li>
+                <li className={style.text}>Not looking for</li>
               }
             </ul>
           </div>

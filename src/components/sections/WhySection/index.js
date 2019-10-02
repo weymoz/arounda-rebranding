@@ -7,7 +7,7 @@ const WhySection = (props) => {
     return (
         <section className={style.section}>
             <div className={style.image}>
-                <img src="assets/images/img-1.jpg" alt="" />
+                <img src="assets/images/why.jpg" alt="our team" />
             </div>
             <div className={style.content}>
                 <div className={style.titleWrapper}>

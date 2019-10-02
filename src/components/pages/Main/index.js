@@ -12,6 +12,8 @@ import StartSection from '@sections/StartSection';
 import PartnerSection from '@sections/PartnerSection';
 import VideoSection from '@sections/VideoSection';
 import BackgroundAnimate from '@simple/BackgroundAnimate';
+import data from '@/data/Works';
+import Footer from '@sections/Footer';
 
 
 
@@ -38,7 +40,7 @@ class Main extends Component {
         <VideoSection ref={el => this.video = el}/>
         <PartnerSection />
         <section className={style.wrapWorkSection}>
-          <WorkSection />
+          <WorkSection worksData={data}/>
         </section>
         <WhoSection />
         <WhySection />
@@ -47,7 +49,8 @@ class Main extends Component {
         <BlogSection />
         <section className={style.wrapStartSection}>
         <StartSection />
-        </section>        
+        </section>
+        <Footer/>        
       </Fragment>
     );
   }
