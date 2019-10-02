@@ -15,7 +15,7 @@ const WhatSection = (props) => {
     return (
         <section className={style.section}>
             <div className={style.image}>
-                <img src="assets/images/img-2.jpg" alt=""/>
+                <img src="assets/images/what.jpg" alt="our team"/>
             </div>
             <div className={style.content}>
                 <div className={style.titleWrapper}>

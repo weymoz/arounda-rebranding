@@ -30,11 +30,12 @@
   letter-spacing: .39px;
   transform: translateY(-20px);
   @media (max-width: $maxLaptop){
-    grid-column: -17 / -1;
+    grid-column: -16 / -2;
     transform: translateY(-40px);
+    font-size: 29px;
   }
   @media(max-width: $maxTablet){
-    grid-column: -25 / -2;
+    grid-column: -26 / -1;
     font-size: 21px;
     line-height: 32px;
     transform: translateY(-34px);
@@ -81,29 +82,36 @@
     transform: rotate(-90deg);
   }
 }
+.textWrap{
+  position: relative;
+  p{
+    position: relative;
+    z-index: 2;
+  }
+}
 
 :global {
   .nameWrapper {
     background: $lightGreen;
     position: absolute;
-    width: calc(var(--cellSize) * 21);
-    padding: 54px 72px 30px;
-    bottom: 10%;
+    width: calc(var(--cellSize) * 28);
+    padding: 50px 70px 28px;
+    bottom: -112px;
     right: 0;
     transform: translateX(100%);
     transition: all 0.6s $cubic;
     @media (max-width: $maxLaptop){
-      width: calc(var(--cellSize) * 26);
-      padding: 74px 56px 30px;
-      bottom: 11%;
+      width: calc(var(--cellSize) * 28);
+      bottom: -132px;
+      padding: 70px 54px 28px;
     }
     @media (max-width: $maxTablet) {
-      padding: 36px 44px 13px;
-      bottom: 14%;
+      padding: 36px 24px 13px;
+      bottom: -95px;
       width: calc(var(--cellSize) * 30);
     }
     @media (max-width: $maxMobile) {
-      bottom: 0;
+      bottom: -110px;
       width: 100%;
       text-align: center;
       padding: 42px 20px 20px;

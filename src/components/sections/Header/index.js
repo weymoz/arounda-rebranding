@@ -61,12 +61,12 @@ export default class Header extends Component {
                             <li>
                                 <Link to='/works'>
                                     Works
-                                    </Link>
+                                </Link>
                             </li>
                             <li>
                                 <Link to='/contact'>
                                     Contact
-                                    </Link>
+                                </Link>
                             </li>
                             <li className={style.btnWrapper}>
                                 <button ref={el => this.burger = el} className={style.btn} onClick={toggleMenu}>

@@ -4,14 +4,14 @@ import Title from '@simple/Title';
 import Works from '@simple/Works';
 
 
-const WorkSection = (props) => {
-    
+
+const WorkSection = ({worksData}) => {    
     return (
         <Fragment>
                 <div className={style.titleWrapper}>
                     <Title text={"Recent work"}/>
                 </div>
-            <Works/>
+            <Works worksData={worksData}/>
         </Fragment>
     )
 };

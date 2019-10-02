@@ -95,7 +95,7 @@ export default class ServiceSlideSection extends Component {
         const t = new TimelineMax();
 
         // Positioning the item content with gsap scroll to plugin
-        t.to(window, 0.8, {
+        t.to(window, 0.4, {
         scrollTo: scrollTo,
         ease: "Power4.easeInOut"
         }).call(() => {
@@ -124,12 +124,11 @@ export default class ServiceSlideSection extends Component {
             t.set(imageOverlay, { 
                 background: overlayColor,
                 y: this.scrollUp ? "-100%" : "100%"
-               
             })
             .set(activeVideo, {background: overlayColor})
             .fromTo(
                 imageOverlay,
-                0.6,
+                0.3,
                 { y: this.scrollUp ? "-100%" : "100%" },
                 {
                 y: "0%",
@@ -141,7 +140,7 @@ export default class ServiceSlideSection extends Component {
             t.set(allVideos, {zIndex: 0}).set(activeVideo, {zIndex: 2})
 
             t
-            .to(imageOverlay, 0.6, {
+            .to(imageOverlay, 0.3, {
                 y: this.scrollUp ? "100%" : "-100%",
                 ease: "Power4.easeInOut"
             }).call(() => {
