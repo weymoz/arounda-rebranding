@@ -3,6 +3,7 @@ import ServicesHeader from '@sections/ServicesHeader';
 import style from './style.scss';
 
 
+
 import CapabilitySection from '@sections/CapabilitySection';
 import ServiceSlideSection from '@sections/ServiceSlideSection';
 import ContentService from '@simple/ContentService';
@@ -12,6 +13,8 @@ import ServiceSlideSectionTablet from '@sections/ServiceSlideSectionTablet';
 import data from '@/data/ServiceSlide';
 import MediaQuery from 'react-responsive';
 import Footer from '@sections/Footer';
+import MetaTags from 'react-meta-tags';
+
 
 
 export default class Services extends Component {
@@ -54,6 +57,10 @@ export default class Services extends Component {
         </section>
         <AgencySection title='Get in touch.' titleThink='And be excited' subtitle='We`re always open for new connections' dark={true} />
         <Footer/>
+        <MetaTags>
+            <title>Services. What we do at Arounda</title>
+            <meta name="description" content="We create and evolve digital products thought Arounda capabilities." />
+        </MetaTags>
       </Fragment>
     );
   }

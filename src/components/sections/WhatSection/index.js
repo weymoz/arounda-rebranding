@@ -29,7 +29,7 @@ const WhatSection = (props) => {
                     {products.map((el, i) => {
                         return (
                             <li key={i}>
-                                <Link to="/works" className={style.item} tabIndex='-1'>
+                                <Link to="/works" className={`${style.item} stopCursor`} tabIndex='-1'>
                                     <span className={style.hover}>{el[0]}</span><br/>
                                     <span>{el[1]}</span>
                                 </Link>

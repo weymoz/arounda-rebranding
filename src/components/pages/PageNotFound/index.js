@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import TitleSecondary from '@simple/TitleSecondary';
 import Description from '@simple/Description';
 
+
+
+
 export default class PageNotFound extends PureComponent {
     render() {
         return (

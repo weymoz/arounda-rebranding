@@ -103,7 +103,7 @@ class Aside extends Component{
                                     return (
                                         <li key={i} className={`${el.disable ? style.disable : ''}`}>
                                             <Link 
-                                                className={`${style.link} menu-link`} 
+                                                className={`${style.link} menu-link stopCursor`} 
                                                 onClick={handleCloseMenu} 
                                                 to={el.link}
                                             >
@@ -126,7 +126,7 @@ class Aside extends Component{
                                                     {socials.map((el,i) => {
                                                         return (
                                                             <li key={i}>
-                                                                <a target='_blank' href={el.link}>{parse(el.image)}</a>
+                                                                <a target='_blank'  href={el.link}>{parse(el.image)}</a>
                                                             </li>
                                                         )
                                                     })}
@@ -140,7 +140,7 @@ class Aside extends Component{
                                                     {socials.map((el,i) => {
                                                         return (
                                                             <li key={i}>
-                                                                <a target='_blank' href={el.link}>{el.name}</a>
+                                                                <a target='_blank' className='stopCursor' href={el.link}>{el.name}</a>
                                                             </li>
                                                         )
                                                     })}

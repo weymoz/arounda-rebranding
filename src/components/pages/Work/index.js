@@ -8,6 +8,9 @@ import SliderSection from '@sections/SliderSection';
 import categoryContent from '@/data/CategoryContent';
 import data from '@/data/Works';
 import Footer from '@sections/Footer';
+import MetaTags from 'react-meta-tags';
+
+
 
 export default class Work extends Component {
   state = {
@@ -109,6 +112,10 @@ export default class Work extends Component {
           <StartSection />
         </section>
         <Footer/>
+        <MetaTags>
+            <title>Works. Latest cases from Arounda</title>
+            <meta name="description" content="Beautifull and clean Arounda works." />
+        </MetaTags>
       </Fragment>
     );
   }
