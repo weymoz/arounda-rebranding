@@ -4,6 +4,21 @@ import { Link } from 'react-router-dom';
 
 import TitleSecondary from '@simple/TitleSecondary';
 import Description from '@simple/Description';
+import DocumentMeta from 'react-document-meta';
+
+
+
+const meta = {
+    title: 'Page not found | Arounda',
+    description: 'Page not found',
+    canonical: '',
+    meta: {
+        charset: 'utf-8',
+        name: {
+            keywords: ''
+        }
+        }
+    }
 
 export default class PageNotFound extends PureComponent {
     render() {
@@ -28,6 +43,7 @@ export default class PageNotFound extends PureComponent {
                             </div>
                         </div>
                     </div>
+                    <DocumentMeta {...meta} />
             </section>
         )
     }

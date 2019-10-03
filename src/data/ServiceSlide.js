@@ -4,12 +4,12 @@ const data = [
         title: 'Strategy',
         description: 'Defining the initial point of the idea to work out the development plan. Working on the initial idea, testing the hypothesis, researching the target audience.',
         image: 'assets/images/strategy.jpg',
-        background: 'rgba(255,247,113,1)',
+        background: '#00de68',
         video: {
-                    mp4: 'assets/videos/dna.mp4',
-                    webm: 'assets/videos/dna.webm',
+                    mp4: 'assets/videos/elefant.mp4',
+                    webm: '',
         },
-        list: ['Define idea or company value ','Research','Workshop & idea validation for startup','Strategic session for company','Product planning'],
+        list: ['Define idea value','Market & competitors research','Value proposition workshop','Idea validation','Product MVP planning'],
     },
     {
         id: 'itemC',
@@ -21,7 +21,7 @@ const data = [
                     mp4: 'assets/videos/lego.mp4',
                     webm: '',
         },
-        list: ['UX research','Storyboards','User and product flow','Informational architecture','Wireframes', 'Prototyping', 'Real user testing'],
+        list: ['UX research','Storyboards','User flow','Product map / IA','Content сopywriting', 'Wireframes', 'Prototyping', 'User testing'],
     },
     {
         id: 'itemD',
@@ -33,19 +33,19 @@ const data = [
                     mp4: 'assets/videos/icecream.mp4',
                     webm: '',
         },
-        list: ['Concept design','Layouts design','Graphics','Assets','UI style guide'],
+        list: ['Concept design','Layouts design','Graphic design','Assets','UI style guide', 'Motion design'],
     },
     {
         id: 'itemE',
         title: 'Development',
         description: 'Developing aimed at making the user interface design look lively. Implementing the modern technology into the digital product corresponding to the main product goals and the market demand.',
         image: 'assets/images/dev.jpg',
-        background: '#00de68',
+        background: 'rgba(255,247,113,1)',
         video: {
-                mp4: 'assets/videos/elefant.mp4',
+                mp4: 'assets/videos/dna.mp4',
                 webm: '',
         },
-        list: ['Frontend (HTML/CSS/JS/GSAP/React/Vue)','Backend (API integrations, CMS development)','Mobile iOS/Android apps (Swift/Java)'],
+        list: ['Frontend (HTML/CSS/JS/GSAP/React)','Backend (Node.js, MongoDB, CMS)','iOS apps (Swift)', 'Android apps (Java)'],
     },
     {
         id: 'itemF',
@@ -57,7 +57,7 @@ const data = [
                     mp4: 'assets/videos/gasbottle.mp4',
                     webm: '',
         },
-        list: ['Brand identity','Brand guidelines','Brand attributes','Marketing materials','Graphic design','Motion design'],
+        list: ['Brand identity','Brand guidelines','Brand attributes','Marketing materials'],
     }
 ]
 

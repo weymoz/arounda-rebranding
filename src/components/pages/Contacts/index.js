@@ -2,13 +2,26 @@ import React, {Fragment} from 'react';
 import style from './style.scss';
 import ContactForm from '@simple/ContactForm';
 import TitleSecondary from '@simple/TitleSecondary';
-import Footer from '@sections/Footer'
+import Footer from '@sections/Footer';
+import DocumentMeta from 'react-document-meta';
 
 
 const Contacts = (props) => {
+    const meta = {
+        title: 'Conatct Us | Arounda',
+        description: 'Contacts',
+        canonical: '',
+        meta: {
+            charset: 'utf-8',
+            name: {
+                keywords: ''
+            }
+            }
+        }
     return (
         <Fragment>
             <section className={style.sectionContacts}>
+                
                     <div className={style.grid}>
                         <div className={style.titleWrapper}>
                             <TitleSecondary text={'Hey, let`s talk!'}/>
@@ -18,6 +31,7 @@ const Contacts = (props) => {
                     <ContactForm/>
             </section>
             <Footer/>
+            <DocumentMeta {...meta} />
         </Fragment>
     )
 };

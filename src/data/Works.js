@@ -4,7 +4,7 @@ const data = [
         image: './assets/images/bold.jpg',
         title: 'Bold',
         desc: 'UX Design, UI Design, Development',
-        link: 'https://dribbble.com/arounda/projects/1246660-Bold',
+        link: ' https://thebold.app/',
         type: ['health', 'corporate websites', 'mobile applications','landing pages','brand identity']
     },
     {

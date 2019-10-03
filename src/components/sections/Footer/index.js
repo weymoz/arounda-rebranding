@@ -3,7 +3,12 @@ import style from './style.scss';
 import Logo from '@simple/Logo';
 
 const Footer = props => {
-  const positions = [];
+  const positions = [
+    {
+      position: 'Sales manager',
+      link: 'https://rabota.ua/company5249605/vacancy7783466'
+    }
+  ];
 
   const socials = [
       {
@@ -42,7 +47,7 @@ const Footer = props => {
                 positions.map((el, i) => {
                   return (
                     <li key={i} className={style.text}>
-                      {el}
+                      <a target='_blank' href={el.link}>{el.position}</a>
                     </li>
                   );
                 }) : 
@@ -51,7 +56,7 @@ const Footer = props => {
             </ul>
           </div>
           <div className={style.contact}>
-            <div className={style.title}>Conatct us</div>
+            <div className={style.title}>Contact us</div>
             <a href="mailto:info@arounda.agency" className={style.mail}>
               info@arounda.agency
             </a>

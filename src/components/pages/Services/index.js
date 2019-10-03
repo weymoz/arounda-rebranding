@@ -3,6 +3,7 @@ import ServicesHeader from '@sections/ServicesHeader';
 import style from './style.scss';
 
 
+
 import CapabilitySection from '@sections/CapabilitySection';
 import ServiceSlideSection from '@sections/ServiceSlideSection';
 import ContentService from '@simple/ContentService';
@@ -12,7 +13,21 @@ import ServiceSlideSectionTablet from '@sections/ServiceSlideSectionTablet';
 import data from '@/data/ServiceSlide';
 import MediaQuery from 'react-responsive';
 import Footer from '@sections/Footer';
+import DocumentMeta from 'react-document-meta';
 
+
+
+const meta = {
+  title: 'Services | Arounda',
+  description: 'Services',
+  canonical: '',
+  meta: {
+      charset: 'utf-8',
+      name: {
+          keywords: ''
+      }
+      }
+  }
 
 export default class Services extends Component {
   render() {
@@ -54,6 +69,7 @@ export default class Services extends Component {
         </section>
         <AgencySection title='Get in touch.' titleThink='And be excited' subtitle='We`re always open for new connections' dark={true} />
         <Footer/>
+        <DocumentMeta {...meta} />
       </Fragment>
     );
   }
