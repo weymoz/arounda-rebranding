@@ -129,6 +129,7 @@
     span {
       display: inline-block;
       transition: transform 0.3s $cubic;
+      pointer-events: none;
     }
     &:hover {
       span {

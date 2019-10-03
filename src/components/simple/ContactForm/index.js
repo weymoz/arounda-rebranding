@@ -209,7 +209,7 @@ export default class ContactForm extends Component {
                 </div>) : null 
         }
         <div className={style.btnWrapper}>
-          <button name='source' value='Website' className={style.btn} >Send a request</button>
+          <button name='source' value='Website' className={`${style.btn} stopCursor`} >Send a request</button>
         </div>
             <input type='hidden' name='utm_source' value='utm_source'/>
             <input type='hidden' name='utm_medium' value='utm_medium'/>

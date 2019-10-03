@@ -49,6 +49,7 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-intersection-observer": "^8.24.2",
+    "react-meta-tags": "^0.7.4",
     "react-responsive": "^7.0.0",
     "react-router-dom": "^5.1.2",
     "react-slick": "^0.24.0",

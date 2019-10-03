@@ -67,6 +67,9 @@
   @media (max-width: $maxMobile) {
     grid-column: 4 / -4;
   }
+  svg{
+    pointer-events: none;
+  }
 }
 
 .menu {
@@ -132,6 +135,9 @@
     }
     .btn {
       background: $lightGreen;
+      span{
+        pointer-events: none;
+      }
       span:first-child{
         transform: rotate(135deg) translate(3px, -2px) !important;
         @media (max-width: $maxTablet){

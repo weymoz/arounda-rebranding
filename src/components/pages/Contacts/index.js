@@ -3,21 +3,10 @@ import style from './style.scss';
 import ContactForm from '@simple/ContactForm';
 import TitleSecondary from '@simple/TitleSecondary';
 import Footer from '@sections/Footer';
-import DocumentMeta from 'react-document-meta';
+import MetaTags from 'react-meta-tags';
 
 
 const Contacts = (props) => {
-    const meta = {
-        title: 'Conatct Us | Arounda',
-        description: 'Contacts',
-        canonical: '',
-        meta: {
-            charset: 'utf-8',
-            name: {
-                keywords: ''
-            }
-            }
-        }
     return (
         <Fragment>
             <section className={style.sectionContacts}>
@@ -25,13 +14,16 @@ const Contacts = (props) => {
                     <div className={style.grid}>
                         <div className={style.titleWrapper}>
                             <TitleSecondary text={'Hey, let`s talk!'}/>
-                            <p>Fill in the form, or if you prefer <a href="mailto:info@arounda.agency">send us an email</a></p>
+                            <p>Fill in the form, or if you prefer <a className='stopCursor' href="mailto:info@arounda.agency">send us an email</a></p>
                         </div>
                     </div>
                     <ContactForm/>
             </section>
             <Footer/>
-            <DocumentMeta {...meta} />
+            <MetaTags>
+                <title>Contact. Let`s write to Arounda</title>
+                <meta name="description" content="Got a project? Contact the best team at Arounda." />
+            </MetaTags>
         </Fragment>
     )
 };

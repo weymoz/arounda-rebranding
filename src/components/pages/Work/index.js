@@ -8,20 +8,9 @@ import SliderSection from '@sections/SliderSection';
 import categoryContent from '@/data/CategoryContent';
 import data from '@/data/Works';
 import Footer from '@sections/Footer';
-import DocumentMeta from 'react-document-meta';
+import MetaTags from 'react-meta-tags';
 
 
-const meta = {
-  title: 'Works | Arounda',
-  description: 'Works',
-  canonical: '',
-  meta: {
-      charset: 'utf-8',
-      name: {
-          keywords: ''
-      }
-      }
-  }
 
 export default class Work extends Component {
   state = {
@@ -123,7 +112,10 @@ export default class Work extends Component {
           <StartSection />
         </section>
         <Footer/>
-        <DocumentMeta {...meta} />
+        <MetaTags>
+            <title>Works. Latest cases from Arounda</title>
+            <meta name="description" content="Beautifull and clean Arounda works." />
+        </MetaTags>
       </Fragment>
     );
   }

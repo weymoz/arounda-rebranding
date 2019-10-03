@@ -39,7 +39,7 @@ const BlogSection = props => {
                   <span className={style.dash}>/</span>
                   <span>{el.category}</span>
                 </div>
-                <a href={el.link} target="_blank" className={style.title}>
+                <a href={el.link} target="_blank" className={`${style.title} stopCursor`}>
                   <span>{el.title1}</span>
                   {el.title2 ? <br /> : null}
                   <span>{el.title2}</span>

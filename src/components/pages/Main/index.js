@@ -14,6 +14,7 @@ import VideoSection from '@sections/VideoSection';
 import BackgroundAnimate from '@simple/BackgroundAnimate';
 import data from '@/data/Works';
 import Footer from '@sections/Footer';
+import MetaTags from 'react-meta-tags';
 
 
 
@@ -50,7 +51,11 @@ class Main extends Component {
         <section className={style.wrapStartSection}>
         <StartSection />
         </section>
-        <Footer/>        
+        <Footer/>
+        <MetaTags>
+                <title>Arounda. Digital Product Agency</title>
+                <meta name="description" content="Arounda is a Digital Product Agency that create and evolve innovative, mobile and web apps, marketing websites and brand identities for startups and enterprises through strategy, UX/UI design, development & branding." />
+        </MetaTags>        
       </Fragment>
     );
   }

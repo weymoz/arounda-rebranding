@@ -99,10 +99,15 @@
   @media (max-width: $maxMobile) {
     padding: 1px 0 8px;
   }
+  a{
+    svg{
+      pointer-events: none;
+    }
+  }
 }
 .links {
   color: #000;
-  a {
+  a, span {
     margin: 0 0 0 50px;
     display: inline-block;
     transform: translateY(-2px);

@@ -13,7 +13,7 @@ export default class Works extends Component {
                     worksData.map(el => {
                         return (
                             <div key={el.id} className={style.item}>
-                                <a href={el.link} target='_blank'>
+                                <a href={`${el.link}`} className={`${style.link} stopCursor`} target='_blank'>
                                     <div className={style.image}> <img src={el.image} alt=""/></div>
                                     <div className={style.wrapper}>
                                         <h3 className={style.title}>{el.title}</h3>
