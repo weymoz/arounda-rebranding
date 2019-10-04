@@ -1,5 +1,5 @@
 import React, { Component, Fragment, Suspense } from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { TweenMax, TimelineMax } from 'gsap';
 import { render } from 'react-dom';
@@ -19,16 +19,14 @@ import Preloader from '@simple/Preloader';
 import ScrollToTop from '@simple/ScrollToTop';
 import PageNotFound from '@pages/PageNotFound';
 
-
-const freezeScroll = (e) => {
+const freezeScroll = e => {
   e.preventDefault;
-}
-
+};
 
 class App extends Component {
   state = {
     openMenu: false,
-    preloader: true,
+    preloader: true
   };
 
   componentDidMount() {
@@ -60,12 +58,11 @@ class App extends Component {
     });
 
     document.documentElement.classList.toggle('no-scroll');
-    if(openMenu){
+    if (openMenu) {
       document.body.removeEventListener('touchmove', freezeScroll, false);
-    }else{
+    } else {
       document.body.addEventListener('touchmove', freezeScroll, false);
     }
-    
   };
   handleCloseMenu = e => {
     const { openMenu } = this.state;
@@ -88,11 +85,9 @@ class App extends Component {
         <ScrollToTop>
           <div className='grid'>
             <MediaQuery minDeviceWidth={1081}>
-              {
-                matches => {
-                  return (matches ?  <Cursor /> : null)
-                }
-              }
+              {matches => {
+                return matches ? <Cursor /> : null;
+              }}
             </MediaQuery>
             <Header
               ref={el => {
@@ -107,10 +102,10 @@ class App extends Component {
               <Route path='/works' exact component={Work} />
               <Route path='/contact' exact component={Contacts} />
               <Route path='/services' exact component={Services} />
-              <Route component={PageNotFound}/>
+              <Route component={PageNotFound} />
             </Switch>
-          </div> 
-          </ScrollToTop>
+          </div>
+        </ScrollToTop>
       </Router>
     );
   }
