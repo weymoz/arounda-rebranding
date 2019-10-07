@@ -24,7 +24,10 @@ export default class Services extends Component {
         <ServicesHeader />
         <section className={style.serviceBg}>
           <div className={style.image}>
-            <img src='assets/images/bg.jpg' alt='our team' />
+            <picture>
+              <source srcSet='assets/images/bg.webp'/>
+              <img src='assets/images/bg.jpg' alt='our team' />
+            </picture> 
           </div>
         </section>
         <CapabilitySection />

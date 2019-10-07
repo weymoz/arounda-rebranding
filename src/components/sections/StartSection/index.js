@@ -8,7 +8,7 @@ const StartSection = props => {
       <div className={style.title}>
         Got a project?
         <br />
-        <Link to={'/contact'} className='stopCursor'>Let's start.</Link>
+        <Link to={'/contact/'} className='stopCursor'>Let's start.</Link>
       </div>
     </Fragment>
   );

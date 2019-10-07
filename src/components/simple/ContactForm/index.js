@@ -201,7 +201,7 @@ export default class ContactForm extends Component {
                       return (
                         <li key={i} className={`${style.item}`}>
                           <label htmlFor={el.name}>{el.name}</label>
-                          <input id={el.name} name={el.name} type="checkbox" value={el.value} onChange={this.handleChoose}/>
+                          <input id={el.name} name={el.value} type="checkbox" value={el.value} onChange={this.handleChoose}/>
                         </li>
                       );
                     })}

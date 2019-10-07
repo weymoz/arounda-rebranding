@@ -75,18 +75,22 @@
   @media (max-width: $maxMobile) {
     padding: 0 0 82px;
   }
+  .picture:first-child{
+      position: relative;
+  }
+  .picture{
+    position: absolute;
+    @media (max-width: $maxMobile){
+      top: 25px;
+    }
+  }
   img {
     max-height: 147px;
     transform: translate(6px, 21px);
     opacity: 0;
     transition: all .3s $cubic;
-    position: absolute;
     transform: translateY(20px);
-    &:first-child{
-      position: relative;
-    }
     @media (max-width: $maxMobile){
-      top: 25px;
       max-height: 127px;
     }
     &.active{

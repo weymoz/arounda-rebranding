@@ -8,31 +8,31 @@ const services = [
     {
         id: '01',
         title: 'Strategy',
-        image: 'assets/images/chess.png',
+        image: ['assets/images/chess.png', 'assets/images/chess.webp'],
         desc: 'Defining the initial point of the idea to work out the development plan. Working on the initial idea, testing the hypothesis, researching the target audience. Measuring the value of the product of the initial stages.'
     },
     {
         id: '02',
         title: 'UX Design',
-        image: 'assets/images/lego.png',
+        image: ['assets/images/lego.png', 'assets/images/lego.webp'],
         desc: 'Creating the system of the efficient interaction between the customer and the product. Aiming at providing the conditions for the customer’s intuitive navigation inside the digital product.'
     },
     {
         id: '03',
         title: 'UI Design',
-        image: 'assets/images/icecream.png',
+        image: ['assets/images/icecream.png', 'assets/images/icecream.webp'],
         desc: 'Process of developing of the user interface. Working on the content, setting the elements and placing the accents. Creating the visual atmosphere and the mood to interact with the product.'
     },
     {
         id: '04',
         title: 'Development',
-        image: 'assets/images/dna.png',
+        image: ['assets/images/dna.png', 'assets/images/dna.webp'],
         desc: 'Developing aimed at making the user interface design look lively. Implementing the modern technology into the digital product corresponding to the main product goals and the market demand.'
     },
     {
         id: '05',
         title: 'Branding',
-        image: 'assets/images/gasbottle.png',
+        image: ['assets/images/gasbottle.png', 'assets/images/gasbottle.webp'],
         desc: 'A system of actions aimed at identifying a digital product in a digital environment. Creating a variety of graphic media based on the mental shell of the product.'
     },
 ]
@@ -45,7 +45,7 @@ class HowSection extends PureComponent {
 
     componentDidMount(){
         window.addEventListener('resize', this.handleResize)
-        this.handleResize()
+        window.addEventListener('load', this.handleResize)
     }
 
     componentUnMount() {
@@ -75,8 +75,8 @@ class HowSection extends PureComponent {
         }
     }
     
-   render() {
-       const {currentItem } = this.state;
+    render() {
+        const {currentItem } = this.state;
     return (
         <section className={style.section}>
                     <div className={style.content}>
@@ -93,11 +93,13 @@ class HowSection extends PureComponent {
                     <div className={style.image} ref={(el) => this.image = el }>
                         {services.map((el,i) => {
                                 return (
-                                    <img 
-                                        key={el.id} 
-                                        className={`${currentItem === el.id ? style.active : ''}`}
-                                        src={el.image}  
-                                        alt={el.title}/>
+                                    <picture className={style.picture} key={el.id} >
+                                        <source srcSet={el.image[1]}/>
+                                        <img 
+                                            className={`${currentItem === el.id ? style.active : ''}`}
+                                            src={el.image[0]}  
+                                            alt={el.title}/>
+                                    </picture>
                                 )
                             })}
                         
@@ -119,7 +121,7 @@ class HowSection extends PureComponent {
                         })}
                     </div>
                     <div className={style.more}>
-                        <Link to={'/services'} className={`${style.link} stopCursor`}>
+                        <Link to={'/services/'} className={`${style.link} stopCursor`}>
                             More about expertise
                         </Link>
                     </div>

@@ -1,0 +1,10 @@
+User-agent: *
+
+Allow: /*.js
+Allow: /*.css
+
+Disallow: /wp-admin/
+Disallow: /category/
+Disallow: /legal/
+
+Sitemap: https://arounda.agency/sitemap_index.xml 

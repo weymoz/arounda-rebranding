@@ -32,7 +32,7 @@
     grid-column: var(--tabletWidth);
   }
   @media (max-width: $maxMobile) {
-    grid-column: 4 / -1;
+    grid-column: 4 / -4;
   }
 }
 .titleWrapper {

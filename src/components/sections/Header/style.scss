@@ -26,6 +26,7 @@
   transition: all .3s .3s $cubic;
   @media (max-width: $maxMobile) {
     width: 102px;
+    opacity: 0;
   }
 }
 .scrollLogo{
@@ -34,11 +35,17 @@
   top: 10px;
   opacity: 0;
   transition: all .3s 0s $cubic;
+  z-index: 1;
+  pointer-events: auto;
   svg{
     width: 24px;
+    
   }
   @media (max-width: $maxTablet){
     top: 13px;
+  }
+  @media (max-width: $maxMobile){
+    opacity: 1;
   }
 }
 .fixed{

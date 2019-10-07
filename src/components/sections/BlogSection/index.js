@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './style.scss';
 import TitleSecondary from '@simple/TitleSecondary';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const BlogSection = props => {
   const postsDesktop = [
@@ -45,7 +46,11 @@ const BlogSection = props => {
                   <span>{el.title2}</span>
                 </a>
                 <div className={style.image}>
-                  <img src={el.image} alt={el.title1} />
+                  <LazyLoadImage 
+                      src={el.image}
+                      alt={el.title1}
+                      threshold={100}
+                  />
                 </div>
               </li>
             );

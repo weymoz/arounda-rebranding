@@ -1,9 +1,10 @@
 import React, { Component, Fragment, Suspense } from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { TweenMax, TimelineMax } from 'gsap';
 import { render } from 'react-dom';
 import MediaQuery from 'react-responsive';
+import noScroll from 'no-scroll';
 
 import './style.scss';
 import Cursor from '@simple/Cursor';
@@ -13,16 +14,11 @@ import Main from '@pages/Main';
 import Work from '@pages/Work';
 import Services from '@pages/Services';
 import Contacts from '@pages/Contacts';
-import Footer from '@sections/Footer';
 import Aside from '@sections/Aside';
 import Preloader from '@simple/Preloader';
 import ScrollToTop from '@simple/ScrollToTop';
 import PageNotFound from '@pages/PageNotFound';
 
-
-const freezeScroll = (e) => {
-  e.preventDefault;
-}
 
 
 class App extends Component {
@@ -59,13 +55,7 @@ class App extends Component {
       openMenu: !openMenu
     });
 
-    document.documentElement.classList.toggle('no-scroll');
-    if(openMenu){
-      document.body.removeEventListener('touchmove', freezeScroll, false);
-    }else{
-      document.body.addEventListener('touchmove', freezeScroll, false);
-    }
-    
+    noScroll.toggle()
   };
   handleCloseMenu = e => {
     const { openMenu } = this.state;
@@ -73,8 +63,7 @@ class App extends Component {
       this.setState({
         openMenu: !openMenu
       });
-      document.documentElement.classList.remove('no-scroll');
-      document.body.removeEventListener('touchmove', freezeScroll, false);
+      noScroll.off()
     }
   };
 
@@ -104,9 +93,9 @@ class App extends Component {
             <Aside openMenu={openMenu} handleCloseMenu={this.handleCloseMenu} />
             <Switch>
               <Route path='/' exact component={() => <Main ref={el => (this.main = el)} />} />
-              <Route path='/works' exact component={Work} />
-              <Route path='/contact' exact component={Contacts} />
-              <Route path='/services' exact component={Services} />
+              <Route path='/works/' exact component={Work} />
+              <Route path='/contact/' exact component={Contacts} />
+              <Route path='/services/' exact component={Services} />
               <Route component={PageNotFound}/>
             </Switch>
           </div> 

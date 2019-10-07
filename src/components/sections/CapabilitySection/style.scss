@@ -30,16 +30,16 @@
     grid-column: -19 / span 10;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 52px 18px 0 0;
     position: relative;
     
     img {
       max-height: 130px;
       position: absolute;
-      top: 50%;
-      left: 10%;
       transition: all .3s $cubic;
       opacity: 0;
+      transform: translateY(20px);
       @media (max-width: $maxMobile){
         max-height: 100px;
       }
@@ -48,6 +48,7 @@
       }
       &.active{
         opacity: 1;
+        transform: translateY(0);
       }
     }
     
@@ -82,8 +83,9 @@
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       padding-top: 18px;
     }
-    & > a {
+    & > .link {
       margin: 0 0 30px;
+      transition: all .3s $cubic;
       &:hover {
         transform: translateX(40px);
         .item:before {

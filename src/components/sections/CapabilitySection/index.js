@@ -13,10 +13,10 @@ class CapabilitySection extends PureComponent {
   }
 
   handleChange = (e) => {
-    const currentItem = e.target.getAttribute('href').substr(12,5);
+    const id = e.target.getAttribute('href').substr(12,5);
   
     this.setState({
-      current: currentItem
+      current: id
     })
   }
 
@@ -52,7 +52,7 @@ class CapabilitySection extends PureComponent {
                 <Link
                   to={`/services/#${el.id}`} key={el.id}
                   scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                  className='stopCursor'
+                  className={`${style.link} stopCursor`}
                   onMouseEnter={this.handleChange}
                 >
                   <span className={style.item} tabIndex='-1'>{el.title}</span>

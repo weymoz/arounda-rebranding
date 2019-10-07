@@ -1,9 +1,8 @@
 import React from 'react';
 import TitleSecondary from '@simple/TitleSecondary';
-import Subtitle from '@simple/Subtitle';
 import Description from '@simple/Description';
 import style from './style.scss';
-import LineSvg from '@assets/svg/line.svg';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const WhoSection = ({title, titleThink, subtitle, desc, dark}) => {
     return (
@@ -20,7 +19,12 @@ const WhoSection = ({title, titleThink, subtitle, desc, dark}) => {
                         </div>   
                     </div>
                     <div className={style.image}>
-                        <img src="assets/images/who.jpg" alt="our team"/>
+                        <LazyLoadImage 
+                            src={"assets/images/who.jpg"}
+                            alt={"our team"}
+                            effect='blur'
+                            threshold={100}
+                        />
                     </div>
         </section>
     )

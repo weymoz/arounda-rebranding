@@ -2,12 +2,18 @@ import React from 'react';
 import style from './style.scss';
 import TitleSecondary from '@simple/TitleSecondary';
 import Description from '@simple/Description';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const WhySection = (props) => {
     return (
         <section className={style.section}>
             <div className={style.image}>
-                <img src="assets/images/why.jpg" alt="our team" />
+                <LazyLoadImage 
+                    src={"assets/images/why.jpg"}
+                    alt={"our team"}
+                    effect='blur'
+                    threshold={100}
+                />
             </div>
             <div className={style.content}>
                 <div className={style.titleWrapper}>

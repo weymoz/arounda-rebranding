@@ -17,6 +17,15 @@
     padding-top: 57%;
     position: relative;
     overflow: hidden;
+    img{
+        object-fit: cover;
+        transition: transform .3s $cubic;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
     video{
         position: absolute;
         width: 100%;
@@ -27,6 +36,9 @@
     }
     &:hover{
         video{
+            transform: scale(1.05);
+        }
+        img{
             transform: scale(1.05);
         }
     }

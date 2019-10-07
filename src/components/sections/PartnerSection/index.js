@@ -1,5 +1,4 @@
 import React from 'react';
-import TitleSecondary from '@simple/TitleSecondary';
 import s from './style.scss';
 
 const PartnerSection = props => {

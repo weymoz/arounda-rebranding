@@ -4,7 +4,6 @@ import data from '@/data/ServiceSlide';
 import ContentServiceTablet from '@simple/ContentServiceTablet';
 
 const ServiceSlideSectionTablet = (props) => {
-    console.log(data)
     return (
         <section className={s.section}>
             {
