@@ -19,13 +19,6 @@ import Preloader from '@simple/Preloader';
 import ScrollToTop from '@simple/ScrollToTop';
 import PageNotFound from '@pages/PageNotFound';
 
-<<<<<<< HEAD
-
-=======
-const freezeScroll = e => {
-  e.preventDefault;
-};
->>>>>>> f2f7275fefb87e4a56d6923e92f6fd096f7803aa
 
 class App extends Component {
   state = {
@@ -61,16 +54,7 @@ class App extends Component {
       openMenu: !openMenu
     });
 
-<<<<<<< HEAD
     noScroll.toggle()
-=======
-    document.documentElement.classList.toggle('no-scroll');
-    if (openMenu) {
-      document.body.removeEventListener('touchmove', freezeScroll, false);
-    } else {
-      document.body.addEventListener('touchmove', freezeScroll, false);
-    }
->>>>>>> f2f7275fefb87e4a56d6923e92f6fd096f7803aa
   };
   handleCloseMenu = e => {
     const { openMenu } = this.state;
@@ -106,17 +90,10 @@ class App extends Component {
             <Aside openMenu={openMenu} handleCloseMenu={this.handleCloseMenu} />
             <Switch>
               <Route path='/' exact component={() => <Main ref={el => (this.main = el)} />} />
-<<<<<<< HEAD
               <Route path='/works/' exact component={Work} />
               <Route path='/contact/' exact component={Contacts} />
               <Route path='/services/' exact component={Services} />
               <Route component={PageNotFound}/>
-=======
-              <Route path='/works' exact component={Work} />
-              <Route path='/contact' exact component={Contacts} />
-              <Route path='/services' exact component={Services} />
-              <Route component={PageNotFound} />
->>>>>>> f2f7275fefb87e4a56d6923e92f6fd096f7803aa
             </Switch>
           </div>
         </ScrollToTop>
