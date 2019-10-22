@@ -20,7 +20,9 @@ module.exports = {
       '@sections': path.join(__dirname, 'src/components/sections'),
       '@assets': path.join(__dirname, 'src/assets/'),
       '@simple': path.join(__dirname, 'src/components/simple'),
-      '@pages': path.join(__dirname, 'src/components/pages')
+      '@pages': path.join(__dirname, 'src/components/pages'),
+      '@landing': path.join(__dirname, 'src/components/landing'),
+
     }
   },
   mode: NODE_ENV,

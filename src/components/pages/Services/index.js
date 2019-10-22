@@ -25,7 +25,7 @@ export default class Services extends Component {
         <section className={style.serviceBg}>
           <div className={style.image}>
             <picture>
-              <source srcSet='assets/images/bg.webp'/>
+              <source srcSet='assets/images/bg.webp' type="image/webp"/>
               <img src='assets/images/bg.jpg' alt='our team' />
             </picture> 
           </div>

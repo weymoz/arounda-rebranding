@@ -105,6 +105,7 @@
   padding: 36px 0 0;
   span {
     position: relative;
+    white-space: nowrap;
     &:before {
       content: '';
       bottom: 0;

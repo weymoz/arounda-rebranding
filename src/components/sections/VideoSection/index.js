@@ -28,7 +28,7 @@ class VideoSection extends Component {
             <section className={s.section}>
                 <div ref={el => this.video = el} className={s.videoWrapper}>
                     <picture>
-                        <source srcSet='assets/images/mainVideo.webp'/>
+                        <source srcSet='assets/images/mainVideo.webp' type="image/webp"/>
                         <img src="assets/images/mainVideo.jpg" alt="velonto" />
                     </picture>
                 </div>

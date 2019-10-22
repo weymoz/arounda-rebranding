@@ -94,7 +94,7 @@ class HowSection extends PureComponent {
                         {services.map((el,i) => {
                                 return (
                                     <picture className={style.picture} key={el.id} >
-                                        <source srcSet={el.image[1]}/>
+                                        <source srcSet={el.image[1]} type="image/webp"/>
                                         <img 
                                             className={`${currentItem === el.id ? style.active : ''}`}
                                             src={el.image[0]}  
@@ -121,7 +121,7 @@ class HowSection extends PureComponent {
                         })}
                     </div>
                     <div className={style.more}>
-                        <Link to={'/services/'} className={`${style.link} stopCursor`}>
+                        <Link to={'/services'} className={`${style.link} stopCursor`}>
                             More about expertise
                         </Link>
                     </div>

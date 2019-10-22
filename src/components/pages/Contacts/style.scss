@@ -7,6 +7,7 @@
   grid-template-columns: inherit;
   grid-column: 1 / -1;
   grid-auto-rows: min-content;
+  position: relative;
   @media (max-width: $maxTablet){
     padding: 144px 0; 
   }
