@@ -1,0 +1,29 @@
+@import '../../../scss/variables.scss'; 
+
+.link {
+    font-weight: bold;
+    font-family: 'PT Sans', sans-serif;
+    position: relative;
+
+    &:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: $lightGreen;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        transition: all .3s $cubic;
+        z-index: 1;
+    }
+    span{
+        position: relative;
+        z-index: 2;
+    }
+    &:hover:after {
+        height: 56%;
+    }
+    &.large{
+        font-size: 19px;
+    }
+}

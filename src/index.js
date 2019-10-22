@@ -1,5 +1,5 @@
 import React, { Component, Fragment, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { TweenMax, TimelineMax } from 'gsap';
 import { render } from 'react-dom';
@@ -18,6 +18,7 @@ import Aside from '@sections/Aside';
 import Preloader from '@simple/Preloader';
 import ScrollToTop from '@simple/ScrollToTop';
 import PageNotFound from '@pages/PageNotFound';
+import Velonto from '@landing/Velonto';
 
 
 class App extends Component {
@@ -27,13 +28,9 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.setState({
-      preloader: !this.state.preloader
-    });
-
     setTimeout(() => {
       this.tl();
-    }, 100);
+    }, 300)
   }
 
   tl = () => {
@@ -69,9 +66,7 @@ class App extends Component {
   render() {
     const { openMenu, preloader } = this.state;
 
-    return preloader ? (
-      <Preloader />
-    ) : (
+    return (
       <Router>
         <ScrollToTop>
           <div className='grid'>
@@ -90,9 +85,10 @@ class App extends Component {
             <Aside openMenu={openMenu} handleCloseMenu={this.handleCloseMenu} />
             <Switch>
               <Route path='/' exact component={() => <Main ref={el => (this.main = el)} />} />
-              <Route path='/works/' exact component={Work} />
-              <Route path='/contact/' exact component={Contacts} />
-              <Route path='/services/' exact component={Services} />
+              <Route path='/works' exact component={Work} />
+              <Route path='/contact' exact component={Contacts} />
+              <Route path='/services' exact component={Services} />
+              <Route path="/velonto" exact component={Velonto}/>
               <Route component={PageNotFound}/>
             </Switch>
           </div>

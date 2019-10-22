@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TweenMax } from 'gsap';
+import { TweenMax, TimelineMax } from 'gsap';
 import style from './style.scss';
 
 
@@ -12,8 +12,12 @@ export default class Cursor extends Component {
 
     componentDidMount() {   
         document.addEventListener('mousemove', this.cursorMove)
-    }
 
+        const tl = new TimelineMax();
+
+        tl
+            .to(this.cursor, .6, {autoAlpha: 1, ease: Power4.easeInOut}, '+=1')
+    }
     componentWillUnmount() {
         document.removeEventListener('mousemove', this.cursorMove)
     }
