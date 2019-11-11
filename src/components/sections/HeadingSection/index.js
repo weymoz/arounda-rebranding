@@ -18,8 +18,9 @@ export default class HeadingSection extends Component {
     }
 
     render() {
+        const { showContent } = this.props;
         return (
-            <div className={style.section}>
+            <div className={`${style.section} ${showContent ? style.show : null}`}>
                 <div className={style.container}>
                         <div  className={style.titleWrapper}>
                             <h1 ref={el => this.heading = el} className={style.title}>

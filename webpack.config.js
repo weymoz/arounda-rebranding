@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const isDev = NODE_ENV === 'development';
@@ -13,6 +14,15 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  optimization: {
+    minimizer: [
+      new OptimizeCssAssetsPlugin({
+        cssProcessorOptions: {
+          zindex: false,
+        },
+      }),
+    ],
+  },
   resolve: {
     modules: ['node_modules', path.resolve(__dirname, 'src')],
     alias: {
@@ -22,12 +32,27 @@ module.exports = {
       '@simple': path.join(__dirname, 'src/components/simple'),
       '@pages': path.join(__dirname, 'src/components/pages'),
       '@landing': path.join(__dirname, 'src/components/landing'),
+      '@case': path.join(__dirname, 'src/components/case'),
 
     }
   },
   mode: NODE_ENV,
   watch: isDev,
   devtool: isDev && 'source-map',
+  devServer: {
+    port: 9090,
+    historyApiFallback: true,
+    open: true,
+    hot: true,
+    publicPath: '/',
+    stats: {
+        colors: true,
+    },
+    overlay: {
+        warnings: false,
+        errors: true,
+    },
+},
   module: {
     rules: [
       {

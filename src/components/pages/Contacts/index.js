@@ -13,7 +13,7 @@ const Contacts = (props) => {
                 
                     <div className={style.grid}>
                         <div className={style.titleWrapper}>
-                            <TitleSecondary text={'Hey, let`s talk!'}/>
+                            <TitleSecondary text={'Contact us'}/>
                             <p>Fill in the form, or if you prefer <a className='stopCursor' href="mailto:info@arounda.agency">send us an email</a></p>
                         </div>
                     </div>

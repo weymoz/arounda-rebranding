@@ -1,0 +1,304 @@
+@import '../../../scss/variables.scss';
+
+
+.sectionHead {
+    padding: 262px 0 100px;
+    display: inherit;
+    grid-template-columns: inherit;
+    grid-column: 1 / -1;
+
+    .container {
+        grid-column: var(--desktopWidth);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contentWrapper {
+        max-width: 670px;
+    }
+
+    .titleWrapper {
+        margin: 0 0 24px;
+        max-width: 500px;
+    }
+
+    .linkWrapper {
+        padding: 16px 0 0;
+        font-size: 19px;
+    }
+}
+
+.sectionBg {
+    grid-column: 1 / -1;
+    height: 100vh;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.sectionServices {
+    grid-column: 1 / -1;
+    display: inherit;
+    grid-template-columns: inherit;
+    padding: 113px 0 205px;
+
+    .contentWrapper {
+        grid-column: 8 / 29;
+        padding-top: 48px;
+
+        .titleWrapper {
+            margin: 0 0 10px;
+            position: relative;
+            &:before {
+                content: attr(data-number);
+                position: absolute;
+                left: -54px;
+                top: 50%;
+                color: $gray;
+                opacity: .5;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    .list {
+        li {
+            margin: 0 0 64px;
+            padding-left: 54px;
+            position: relative;
+            max-width: 740px;
+
+            
+        }
+    }
+
+    .panel {
+        grid-column: 33 / -1;
+        background-color: #FBFBFB;
+        padding: 202px 105px;
+
+        .panelTitle {
+            color: $gray;
+            font-size: 28px;
+            margin: 0 0 22px;
+        }
+
+        .panelList {
+            li {
+                margin: 0 0 18px;
+                font-size: 21px;
+                color: #393939;
+                font-family: "PT Sans", sans-serif;
+            }
+        }
+    }
+}
+
+.sectionBgSecond {
+    grid-column: 1 / -8;
+    height: 715px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.sectionWhat {
+    display: inherit;
+    grid-template-columns: inherit;
+    grid-column: 1 / -1;
+    padding: 260px 0 387px;
+
+    .infoWrapper {
+        grid-column: 10 / span 8;
+
+        .infoList {
+            padding: 20px 0 0;
+
+            li {
+                margin: 0 0 73px;
+            }
+
+            .infoLabel {
+                color: $gray;
+                font-size: 13px;
+                text-transform: upperCase;
+                font-size: 13px;
+                letter-spacing: 1.5px;
+                margin: 0 0 16px;
+            }
+
+            .infoText {
+                letter-spacing: 0.8px;
+                font-weight: 500;
+                font-size: 28px;
+            }
+        }
+    }
+
+    .contentWrapper {
+        grid-column: 23 / -7;
+
+        .titleWrapper {
+            margin: 0 0 18px;
+        }
+
+        .descWrapper {
+            margin: 0 0 90px;
+        }
+        .linkWrapper{
+            font-size: 19px;
+        }
+    }
+}
+
+.sectionComment {
+    display: inherit;
+    grid-template-columns: inherit;
+    grid-column: 1 / -1;
+    padding: 156px 0;
+    background-color: #F99F5F;
+    color: #fff;
+
+    .container {
+        grid-column: 3 / -3;
+    }
+
+    blockquote {
+        max-width: 730px;
+        margin: auto;
+    }
+
+    q {
+        font-size: 28px;
+        color: inherit;
+        
+
+        &:before {
+            content: '«'
+        }
+
+        &:after {
+            content: '»'
+        }
+    }
+
+    .author {
+        margin-top: 35px;
+        display: flex;
+        align-items: center;
+        color: inherit;
+
+        .image {
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            margin-right: 22px;
+            width: 66px;
+            height: 66px;
+        }
+
+        .name {
+            font-weight: 500;
+            line-height: 1.7;
+            div{
+                color: rgba(255,255,255,0.8);
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.sectionChallenge{
+    padding: 165px 0;
+    display: inherit;
+    grid-template-columns: inherit;
+    grid-column: 1 / -1;
+    .container{
+        grid-column: var(--desktopWidth);
+    }
+    .contentWrapper{
+        margin: 0 0 70px;
+    }
+    .titleWrapper{
+        margin: 0 0 10px;
+    }
+    .row{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .item{
+        padding: 76px 15px 55px 49px;
+        transition: all .3s $cubic;
+        cursor: pointer;
+        &:hover{
+            background-color: #4562C9;
+            color: #fff;
+        }
+    }
+    .itemIcon{
+        margin: 0 0 30px;
+        svg{
+            fill: currentColor;
+        }
+    }
+    .itemTitle{
+        font-size: 21px;
+        margin: 0 0 18px;
+        color: inherit;
+    }
+    .itemList{
+        li{
+            margin: 0 0 10px;
+            position: relative;
+            padding-left: 21px;
+            &:before{
+                content: '';
+                position: absolute;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background-color: currentColor;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+.sectionCheck{
+    padding: 170px 0;
+    background-image: url(../../../static/assets/images/bold/boldCheck-bg.jpg);
+    background-size: cover;
+    display: inherit;
+    grid-template-columns: inherit;
+    grid-column: 1 / -1;
+    background-position: right;
+    .container{
+        grid-column: 7 / -7;
+    }
+    .title{
+        font-size: 50px;
+        color: #fff;
+        span{
+            font-weight: 300;
+        }
+    }
+}
+
+.sectionMobile{
+    padding: 180px 0 240px;
+    grid-column: 1 / -1;
+    grid-template-columns: inherit;
+    display: inherit;
+    .contentWrapper{
+        grid-column: 26 / -7;
+    }
+}
+
+

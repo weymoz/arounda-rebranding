@@ -6,6 +6,7 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import TitleSecondary from '@simple/TitleSecondary';
 import Description from '@simple/Description';
+import { config } from '@/functions/firebase';
 import {Link} from 'react-router-dom';
 
 const budgets = [
@@ -17,18 +18,14 @@ const budgets = [
 ];
 
 const projects = [
-  { value: 'complex services', label: 'Complex services', name: 'project' },
-  { value: 'custom services', label: 'Custom services', name: 'project' }
+  { value: 'Platform', label: 'Platform', name: 'project' },
+  { value: 'Mobile App', label: 'Mobile App', name: 'project' },
+  { value: 'Web App', label: 'Web App', name: 'project' },
+  { value: 'Corporate website', label: 'Corporate website', name: 'project' },
+  { value: 'Landing page', label: 'Landing page', name: 'project' },
 ];
 
-const config = {
-  apiKey: "AIzaSyDC-QY7OWoSkuySZ96JSE2nPORTx6e42G8",
-  authDomain: "arounda-agency.firebaseapp.com",
-  databaseURL: "https://arounda-agency.firebaseio.com",
-  projectId: "arounda-agency",
-  storageBucket: "arounda-agency.appspot.com",
-  messagingSenderId: "836805559698"
-};
+
 
 
 const DropdownIndicator = props => {
@@ -59,48 +56,26 @@ export default class ContactForm extends Component {
     project: '',
     idea: '',
     include: {
-      'custom services': [
+      'services': [
         {
-          name: 'Discovery',
-          value: 'Discovery'
+          name: 'Strategy',
+          value: 'Strategy'
         },
         {
           name: 'UX/UI Design',
-          value: 'Design'
-        },
-        {
-          name: 'Brand Identity',
-          value: 'Brand Identity'
-        },
-        {
-          name: 'Graphic design',
-          value: 'Graphic design'
+          value: 'UX/UI Design'
         },
         {
           name: 'Development',
           value: 'Development'
-        }
-      ],
-      'complex services': [
-        {
-          name: 'Platform',
-          value: 'Platform'
         },
         {
-          name: 'Mobile App',
-          value: 'Mobile App'
+          name: 'Branding',
+          value: 'Branding'
         },
         {
-          name: 'Web App',
-          value: 'Web App'
-        },
-        {
-          name: 'Corporate website',
-          value: 'Corporate website'
-        },
-        {
-          name: 'Landing page',
-          value: 'Landing page'
+          name: 'Graphic design',
+          value: 'Graphic design'
         }
       ]
     },
@@ -159,7 +134,6 @@ export default class ContactForm extends Component {
 
   handleChoose = e => {
     const parent = e.target.parentElement;
-    console.log(e.target)
     if (!parent.classList.contains(style.active)) {
       this.setState({
         includeList: [...this.state.includeList, e.target.value]
@@ -177,7 +151,7 @@ export default class ContactForm extends Component {
   handlerSubmit = e => {
     const { name, email, budget, project, idea, includeList, disable, successSend } = this.state;
     e.preventDefault();
-    if (name && email && budget && project) {
+    if (name && email && budget && project && idea && includeList.length > 0) {
       const generateId = () => ('_' + Math.random().toString(36).substr(2, 9))
       const date = Date.now();
       const messagesRef = firebase.database().ref('requests');
@@ -246,32 +220,27 @@ export default class ContactForm extends Component {
             options={projects}
             onChange={this.handleChange}
             components={{ DropdownIndicator }}
-            placeholder={'Project type'}
+            placeholder={`Project's type`}
             name='project'
             isSearchable={false}
             ref={c => (this.select = c)}
           />
           <label className={`${project ? style.active : ''}`}>Project’s type</label>
         </div>
-        {
-          project ?
-            (<div className={style.textareaWrapper}>
-              <Textarea
-                className={style.textarea}
-                style={{ height: '41px' }}
-                placeholder={'Tell us more about your idea'}
-                name='idea'
-                onChange={this.handleInput}
-              />
-              <label>Your message</label>
-            </div>) : null
-        }
-        {
-          project ?
-            (<div className={style.includeWrapper}>
-              <label>What to include?</label>
+        <div className={style.textareaWrapper}>
+            <Textarea
+              className={style.textarea}
+              style={{ height: '41px' }}
+              placeholder={'Tell us more about your idea'}
+              name='idea'
+              onChange={this.handleInput}
+            />
+            <label>Your message</label>
+        </div>
+        <div className={style.includeWrapper}>
+              <label>Services</label>
               <ul className={style.list}>
-                {include[project].map((el, i) => {
+                {include['services'].map((el, i) => {
                   return (
                     <li key={i} className={`${style.item}`}>
                       <label htmlFor={el.name}>{el.name}</label>
@@ -280,8 +249,7 @@ export default class ContactForm extends Component {
                   );
                 })}
               </ul>
-            </div>) : null
-        }
+        </div>
         {
           emptyValue ? 
           <div className={style.emptyValue}>
@@ -292,17 +260,11 @@ export default class ContactForm extends Component {
           <button
             name='source'
             onSubmit={this.handlerSubmit}
-            value='Website'
             className={`${style.btn} stopCursor ${disable ? style.disable : ''}`}
             tabIndex='-1'>
             Send a request
             </button>
         </div>
-        {/* <input type='hidden' name='utm_source' value='utm_source' />
-        <input type='hidden' name='utm_medium' value='utm_medium' />
-        <input type='hidden' name='utm_campaign' value='utm_campaign' />
-        <input type='hidden' name='utm_content' value='utm_content' />
-        <input type='hidden' name='utm_term' value='utm_term' /> */}
       </form>
       {
         successSend ? 

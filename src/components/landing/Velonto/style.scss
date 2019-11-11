@@ -199,6 +199,111 @@
     }
 }
 
+.sectionSupport{
+    padding: 191px 0 113px;
+    display: inherit;
+    grid-template-columns: inherit;
+    grid-auto-rows: min-content;
+    grid-column: 1 / -1;
+    --heightSlide: 647px;
+    @media (max-width: $maxTablet){
+        --heightSlide: 577px;
+        padding: 191px 0 126px;
+    }
+    @media (max-width: $maxMobile){
+        --heightSlide: 379px;
+        padding: 150px 0 100px;
+    }
+    .contentWrapper{
+        grid-column: var(--desktopWidth);
+        margin: 0 0 70px;
+        @media (max-width: $maxLaptop){
+            grid-column: 4 / -4;
+        }
+    }
+    .titleWrapper{
+        max-width: 620px;
+        margin: 0 0 16px;
+    }
+    .descWrapper{
+        max-width: 490px;
+    }
+    .scrollWrapper{
+        grid-column: 5 / -1;
+        min-height: var(--heightSlide);
+        position: relative;
+        overflow: hidden;
+        padding-top: 30px;
+        @media(max-width: $maxLaptop){
+            grid-column: 4 / -1;
+        }
+    }
+    .horizontalScrollWrapper{
+        position: absolute;
+        width: var(--heightSlide);
+        height: calc(var(--cellSize) * 45);
+        transform: rotate(270deg) translateX(calc(var(--heightSlide) * -1));
+        transform-origin: left top;
+        overflow-x: hidden;
+        overflow-y: auto;
+        top: -30px;
+        @media(max-width: $maxLaptop){
+            height: calc(var(--cellSize) * 46);
+        }
+    }
+    .horizontalScroll{
+        display: flex;
+        transform: rotate(90deg) translateY(calc(var(--heightSlide) * -1));
+        transform-origin: left top;
+    }
+    .slide{
+        margin-right: 35px; 
+        @media (max-width: $maxMobile){
+            margin-right: 20px;
+        }
+    }
+    .image{
+        width: 840px;
+        height: 550px;
+        margin: 0 0 30px;
+        @media (max-width: $maxLaptop){
+            width: 808px;
+        }
+        @media (max-width: $maxTablet){
+            width: 660px;
+            height: 480px;
+        }
+        @media (max-width: $maxMobile){
+            width: 336px;
+            height: 270px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .slideDesc{
+        padding-left: 35px;
+        @media (max-width: $maxMobile){
+            padding-left: 22px;
+        }
+    }
+    .title{
+        font-family: "PT Sans", sans-serif;
+        font-size: 28px;
+        margin: 0 0 6px;
+        @media (max-width: $maxMobile){
+            font-size: 21px;
+        }
+    }
+    .categories{
+        color: $gray;
+        letter-spacing: 0.46px;
+    }
+}
+
 .sectionSlider {
     padding: 151px 0 191px;
     display: inherit;
@@ -334,12 +439,15 @@
                 width: 100%;
                 height: 100%;
                 min-height: 535px;
+                max-height: 535px;
                 object-fit: cover;
                 @media (max-width: $maxTablet){
                     min-height: 451px;
+                    max-height: 451px;
                 }
                 @media (max-width: $maxMobile){
                     min-height: 535px;
+                    max-height: 535px;
                 }
             }
             @media (max-width: $maxMobile){
@@ -458,6 +566,11 @@
         background-color: #FBFBFB;
         padding: 70px 35px 50px 56px;
         margin: 0 0 35px;
+        transition: all .3s $cubic;
+        cursor: pointer;
+        &:hover{
+            background-color: $lightGreen;
+        }
         @media (max-width: $maxTablet){
             padding: 70px 15px 56px 27px;
         }
@@ -527,6 +640,7 @@
     .image {
         grid-column: 1 / 23;
         min-height: 100vh;
+        max-height: 100vh;
         position: relative;
 
         img {
@@ -544,15 +658,20 @@
             grid-column: 1 / -1;
             grid-row: 2 /3;
             min-height: 700px;
+            max-height: 700px;
         }
         @media (max-width: $maxMobile){
             min-height: 80vh;
+            max-height: 80vh;
         }
     }
 
     .content {
         grid-column: 27 / -6;
-        padding-top: 130px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 30px;
         @media (max-width: $maxLaptop){
             grid-column: 28 / -4;
         }
@@ -666,6 +785,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: var(--cellSize);
+        align-items: center;
         @media (max-width: $maxTablet){
             grid-template-columns: 1fr;
             grid-column-gap: none;
@@ -680,6 +800,21 @@
         padding: 72px 35px 50px;
         margin-bottom: 52px;
         background-color: #FBFBFB;
+        transition: all .3s $cubic;
+        &:hover{
+            min-height: 655px;
+            background-color: $black;
+            .title{
+                color: #fff;
+            }
+            .desc{
+                color: #fff;
+                opacity: .9;
+            }
+            .number{
+                color: #fff;
+            }
+        }
         @media (max-width: $maxTablet){
             margin-bottom: 34px;
             padding: 72px 32px 40px;
@@ -695,6 +830,7 @@
             color: #000;
             margin: 0 0 30px;
             max-width: 370px;
+            transition: all .3s $cubic;
             @media (max-width: $maxMobile){
                 font-size: 21px;
             }
@@ -704,15 +840,19 @@
             font-size: 19px;
             color: #888;
             max-width: 440px;
+            line-height: 32px;
+            transition: all .3s $cubic;
             @media (max-width: $maxTablet){
                 max-width: 580px;
             }
             @media (max-width: $maxMobile){
                 font-size: 16px;
+                line-height: inherit;
             }
         }
         .number{
             font-size: 28px;
+            transition: all .3s $cubic;
         }
     }
 }
@@ -787,12 +927,15 @@
     display: inherit;
     grid-template-columns: inherit;
     min-height: 750px;
+    max-height: 750px;
     position: relative;
     @media (max-width: $maxTablet){
         min-height: 700px;
+        max-height: 700px;
     }
     @media (max-width: $maxMobile){
         min-height: 80vh;
+        max-height: 80vh;
     }
 
     img {
@@ -822,6 +965,7 @@
 
     .titleWrapper {
         margin: 0 0 120px;
+        max-width: 550px;
         @media (max-width: $maxMobile){
             margin: 0 0 70px;
         }

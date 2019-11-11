@@ -8,7 +8,7 @@ const CustomLink = ({button, text, href, large}) => {
                 <span>{text}</span>
             </button>) : 
             (
-                <a className={`${s.link} ${large ? s.large : ''}`} href={href}>{text}</a>
+                <a className={`${s.link} ${large ? s.large : ''}`} href={href}><span>{text}</span></a>
             )
     )
 };
