@@ -11,22 +11,20 @@
   }
   .image {
     display: flex;
-    max-height: 700px;
+    height: 700px;
     @media (max-width: $maxLaptop) {
-      min-height: 640px;
-      max-height: 640px;
+      height: 640px;
     }
     @media (max-width: $maxTablet){
-      min-height: 500px;
-      max-height: 500px;
+      height: 500px
     }
     @media (max-width: $maxMobile){
-      min-height: 270px;
-      max-height: 270px;
+      height: 270px;
     }
   }
   img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 }

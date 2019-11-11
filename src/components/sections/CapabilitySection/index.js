@@ -13,7 +13,7 @@ class CapabilitySection extends PureComponent {
   }
 
   handleChange = (e) => {
-    const id = e.target.getAttribute('href').substr(12,5);
+    const id = e.target.getAttribute('href').substr(11,5);
   
     this.setState({
       current: id

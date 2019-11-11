@@ -37,9 +37,6 @@
         grid-column: var(--tabletWidth);
         padding: 0 0 148px;
     }
-    @media (max-width: $maxMobile){
-        padding: 0 0 218px;
-    }
     .item{
         padding: 160px calc(var(--cellSize)  * 2) 60px;
         transition: all .3s ease-in-out;
