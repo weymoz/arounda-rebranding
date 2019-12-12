@@ -61,9 +61,11 @@ const SearchTags = props => {
             <li key={tag.id}>{tag.name}</li>
           ))}
         </ul>
+        {/*}
         <div className={style.searchIcon} onClick={() => props.setSearch(true)}>
           <Search />
         </div>
+          {*/}
       </div>
     </div>
   );

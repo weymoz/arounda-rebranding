@@ -13,7 +13,9 @@ const Blog = props => {
   const [search, setSearch] = useState(false);
   return (
     <section className={style.Blog}>
+      {}
       <PopupSearch search={search} setSearch={setSearch} />
+      {}
       <SearchTags setSearch={setSearch} />
       <ListWorks list={blogs} />
       <Hungry />

@@ -21,6 +21,7 @@ import ScrollToTop from '@simple/ScrollToTop';
 import PageNotFound from '@pages/PageNotFound';
 import Velonto from '@landing/Velonto';
 import BoldCase from '@case/Bold';
+import Blog from '@pages/Blog';
 
 
 class App extends Component {
@@ -101,6 +102,7 @@ class App extends Component {
                   <Route path='/services' exact component={Services} />
                   <Route path="/velonto" exact component={Velonto}/>
                   <Route path="/boldCase" exact component={BoldCase}/>
+                  <Route path="/blog" exact component={Blog}/>
                   <Route component={PageNotFound}/>
                 </Switch>
               </div>
