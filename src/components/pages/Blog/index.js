@@ -9,8 +9,16 @@ import Hungry from '@sections/Hungry';
 import MoreInteresting from '@sections/MoreInteresting';
 import PopupSearch from '@sections/PopupSearch';
 
+import { client } from 'contentful'
+
 const Blog = props => {
   const [search, setSearch] = useState(false);
+
+
+
+
+
+
   return (
     <section className={style.Blog}>
       {}
