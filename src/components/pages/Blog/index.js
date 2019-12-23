@@ -9,14 +9,19 @@ import Hungry from '@sections/Hungry';
 import MoreInteresting from '@sections/MoreInteresting';
 import PopupSearch from '@sections/PopupSearch';
 
-import { client } from 'contentful'
+import { createClient } from 'contentful'
+import config from "../../../../config.json"
+
+console.log(config)
+
+// Instantiate the app client
+const client = createClient({
+  space: config.space,
+  accessToken: config.accessToken
+});
 
 const Blog = props => {
   const [search, setSearch] = useState(false);
-
-
-
-
 
 
   return (
