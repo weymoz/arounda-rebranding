@@ -15,11 +15,19 @@ const ListWorks = ({ list, posts }) => {
               className={style.item}
             >
 
-              <img src={post.image} className={style.img} />
+              <div style={{
+                height: 300,
+                width: '100%',
+                backgroundImage: `url(${post.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }} >
+              </div>
 
               <p className={style.tag}>{post.category}</p>
               <h2 className={style.title}>{post.title}</h2>
-              <p className={style.public}>{`By ${post.author}, ${post.date}`}</p>
+              <p className={style.public}>{`${post.date} by ${post.author}`}</p>
             </Link>
           </div>
       ))} 

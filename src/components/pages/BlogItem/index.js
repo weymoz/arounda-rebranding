@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import style from "./style.scss";
 import contentfulClient from "../../../functions/contentful-client";
@@ -10,16 +10,19 @@ import StartSection from "@sections/StartSection";
 import MoreInteresting from "@sections/MoreInteresting";
 import slugify from "slugify";
 import { composeDate } from '../../../functions/lib'
+import { Link as LocalLink } from 'react-scroll'
 
+const localLinkName = name => slugify(name).toLocaleLowerCase();
 
 const Paragraph = (props) => (
-  <p className={style.whatText}>{props.children}</p>
+  <p className={style.regularText}>{props.children}</p>
 );
 
 
 const ContentImage = ({url}) => (
+
     <img
-      className={style.whatImg}
+      className={style.contentImage}
       src={url}
     />
 );
@@ -27,10 +30,8 @@ const ContentImage = ({url}) => (
 
 const UnorderedList = props => {
   return (
-    <ul>
-      {props.items.content.map((item, i) => {
-        return <li key={i}>{item.content[0].content[0].value}</li>;
-      })}
+    <ul className={style.list}>
+      {props.children}
     </ul>
   );
 };
@@ -38,7 +39,7 @@ const UnorderedList = props => {
 
 const Quote = props => {
   return (
-    <div className={style.caseText1}>{props.text}</div>
+    <div className={style.quotedText}>{props.text}</div>
   )
 }
 
@@ -46,17 +47,56 @@ const options = {
 
   renderNode: {
 
+    [INLINES.HYPERLINK]: (node, children) => {
+
+      const url = node.data.uri;
+      let href;
+      let isUrl;
+
+      const firstElem = url.split('//');
+      isUrl = firstElem.includes("https:") || firstElem.includes("http:")
+     
+      if(isUrl) {
+        href = url;
+        return <a href={href} className={style.link}>{children}</a>
+      } else {
+        href = localLinkName(url)
+        return <LocalLink to={href} smooth="easeOutQuad" duration={800} className={style.link}>{children}</LocalLink>
+      }
+    },
+
+    [BLOCKS.HEADING_2]: (node, children) => {
+      return <h2 name={localLinkName(children[0])} className={style.h2Heading}>{children[0]}</h2>
+    },
+
+    [BLOCKS.HEADING_3]: (node, children) => {
+      return <h3 className={style.h3Heading}>{children}</h3>
+    },
+
+    [BLOCKS.HEADING_6]: (node, children) => {
+      return <h6 className={style.h6Heading}>{children}</h6>
+    },
+
     [BLOCKS.EMBEDDED_ASSET]: node => {
       const url = `https:${node.data.target.fields.file.url}`;
       return <ContentImage url={url} />;
     },
 
     [BLOCKS.PARAGRAPH]: (node, children) => {
+      if(children[0] === '[SUBSCRIBE]') {
+        return (
+            <Hungry />  
+        )
+      }
       return <Paragraph>{children}</Paragraph>; 
     },
 
-    [BLOCKS.UL_LIST]: node => {
-      return <UnorderedList items={node} />; 
+    [BLOCKS.UL_LIST]: (node, children) => {
+      return <UnorderedList items={node}>{children}</UnorderedList>
+    },
+
+    [BLOCKS.LIST_ITEM]: (node, children) => {
+      return <li className={style.listItem}>{children}</li> 
     },
 
     [BLOCKS.QUOTE]: node => {
@@ -80,10 +120,17 @@ const BlogItem = props => {
       })
       .then(res => {
 
-        //console.log(res);
+        console.log(res);
 
-        const {title, content, date, category, author} = res.items[0].fields;
+        const {title, content, date, category} = res.items[0].fields;
         const imageUrl = `https:${res.items[0].fields.image.fields.file.url}`;
+
+        let author = res.items[0].fields.author
+        author = {
+          name: author.fields.name,
+          description: author.fields.description,
+          imgUrl: `https:${author.fields.image.fields.file.url}`
+        }
 
         setPost({
           title,
@@ -112,10 +159,22 @@ const BlogItem = props => {
           <div className={style.wrapTitle}>
             <Link to="/blog">Back to blog</Link>
             <h1>{post.title}</h1>
-            <p>{`${post.author}`}</p>
+            <div className={style.author}>
+              <img className={style.authorImage} src={post.author.imgUrl} />
+              <p className={style.authorName} >{post.author.name}</p>    
+              <p className={style.authorDescription} >{post.author.description}</p>    
+            </div>
           </div>
         </div>
-          <div className={style.body}>{post.content}</div>
+        <p className={style.postDate}>
+          {post.date}
+        </p>
+          {post.content}
+          <div className={style.stickyAside}>
+            <p className={style.title}>Newsletter</p>
+            <p className={style.text}>Get stories to your email every Tuesday!</p>
+            <button className={style.subscribeButton}>Subscribe</button>
+          </div>
       </div>
       {/* {blogs.map(blog =>
         blog.id == props.match.params.id ? (
@@ -171,7 +230,7 @@ const BlogItem = props => {
           </div>
         ) : null
       )} */}
-      <Hungry />
+      <Hungry blue />
       <MoreInteresting />
       <div className={style.wrapStartSection}>
         <StartSection />

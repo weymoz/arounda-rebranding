@@ -1,5 +1,5 @@
-@import '../../../scss/variables.scss';
-@import '../../../scss/mixins.scss';
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
 
 .SearchTags {
   padding: 0 0 70px;
@@ -19,7 +19,8 @@
 .list {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 
   @media (max-width: $maxTablet) {
     flex-flow: row wrap;
@@ -45,11 +46,11 @@
 .mobileList {
   display: none;
   position: relative;
-  
+
   @media (max-width: $maxMobile) {
     display: block;
   }
-  
+
   p {
     color: #111212;
     font-size: 16px;
@@ -86,6 +87,23 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
+
+  // ============================== SUBSCRIBE BUTTON ==============================
+
+  .indexPageSubscribeButton {
+    width: 144px;
+    height: 54px;
+    margin-left: 20px;
+
+    @media (max-width: 450px) {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
 }
 .searchIcon {
   cursor: pointer;

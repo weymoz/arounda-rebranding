@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import style from './style.scss';
 import Search from '@/assets/svg/search.svg';
+import SubscribeButton from '@simple/SubscribeButton'
 
 const SearchTags = props => {
   const [tags, setTags] = useState([
@@ -35,6 +36,7 @@ const SearchTags = props => {
   ]);
   const [isMobileList, setIsMobileList] = useState(false);
   const [textMobileEl, setTextMobileEl] = useState('All topics');
+
   return (
     <div className={style.SearchTags}>
       <div className={style.content}>
@@ -61,6 +63,7 @@ const SearchTags = props => {
             <li key={tag.id}>{tag.name}</li>
           ))}
         </ul>
+        <SubscribeButton className={style.indexPageSubscribeButton} text="Subscribe" />
         {/*}
         <div className={style.searchIcon} onClick={() => props.setSearch(true)}>
           <Search />

@@ -1,6 +1,9 @@
 import React, { Component, Fragment, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
 import { TweenMax, TimelineMax } from 'gsap';
 import { render } from 'react-dom';
 import MediaQuery from 'react-responsive';
@@ -24,6 +27,7 @@ import BoldCase from '@case/Bold';
 import Blog from '@pages/Blog';
 import BlogItem from '@pages/BlogItem';
 
+import store, { toggleMenu } from '../src/data/app/store'
 
 class App extends Component {
   state = {
@@ -75,13 +79,17 @@ class App extends Component {
     }
   };
 
+  handleClick() {
+    store.dispatch(toggleMenu())
+  }
+
   render() {
     const { openMenu, preloader, activeStyle, showContent } = this.state;
 
     return (
         <Router>
             <ScrollToTop>
-              <div className='grid'>
+              <div className='grid' onClick={this.handleClick}>
                 <MediaQuery minDeviceWidth={1081}>
                   {matches => {
                     return matches ? <Cursor /> : null;
@@ -113,5 +121,6 @@ class App extends Component {
     );
   }
 }
+
 
 render(<App />, document.querySelector('#app'));

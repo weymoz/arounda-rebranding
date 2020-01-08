@@ -1,29 +1,46 @@
-@import '../../../scss/variables.scss';
-@import '../../../scss/mixins.scss';
+@import "../../../scss/variables.scss";
+@import "../../../scss/mixins.scss";
 
 .Hungry {
   display: inherit;
+  //height: 420px;
   grid-column: 1 / -1;
   grid-template-columns: inherit;
-  padding: 145px 0 152px;
+  padding: 100px 0 80px 0;
   background-color: #fbfbfb;
+  z-index: 100;
 
   @media (max-width: $maxMobile) {
-    padding: 154px 0 171px;
+    padding: 100px 0 100px 0;
   }
 }
 
 .wrap {
-  grid-column: 14 / -14;
+  grid-column: 7 / -7;
+  display: flex;
 
   @media (max-width: $maxLaptop) {
-    grid-column: 11 / -10;
+    grid-column: 4 / -4;
   }
   @media (max-width: $maxTablet) {
-    grid-column: 7 / -6;
+    grid-column: 7 / -7;
+    flex-direction: column;
   }
   @media (max-width: $maxMobile) {
-    grid-column: 4 / -4;
+    grid-column: 7 / -7;
+  }
+}
+
+.ctaContainer {
+  width: 60%;
+  @media (max-width: $maxTablet) {
+    width: 100%;
+  }
+}
+.form {
+  width: 40%;
+  @media (max-width: $maxTablet) {
+    width: 100%;
   }
 }
 
@@ -35,19 +52,20 @@
   line-height: 49px;
 
   @media (max-width: $maxTablet) {
-    font-size: 30px;
+    font-size: 38px;
   }
 }
 
 .description {
   margin-bottom: 95px;
-  padding-right: calc(var(--cellSize) * 5);
+  padding-right: calc(var(--cellSize) * 2);
   color: #797d7e;
   font-size: 19px;
   line-height: 32px;
 
   @media (max-width: $maxTablet) {
     font-size: 16px;
+    margin-bottom: 45px
   }
   @media (max-width: $maxMobile) {
     padding-right: calc(var(--cellSize) * 3);
@@ -59,8 +77,8 @@
   margin-bottom: 63px;
   p {
     margin-bottom: 15px;
-    color: #020202;
-    font-family: 'PT Sans';
+    color: #9D9D9D;
+    font-family: "PT Sans";
     font-size: 14px;
     letter-spacing: 0.46px;
     line-height: 33px;
@@ -72,7 +90,7 @@
     font-size: 21px;
     width: 100%;
     background: transparent;
-    border-bottom: 2px solid #111212;
+    border-bottom: 2px solid #9D9D9D;
     transition: all 0.3s ease-in-out;
     &:focus {
       border-color: #54ffd7;
@@ -81,12 +99,58 @@
 }
 
 .submit {
+  background-color: #30fddc;
+  color: #393939;
+  border-bottom: none;
   display: block;
+  height: 54px;
+  width: 144px;
   margin-left: auto;
-  border-bottom: solid #30fddc 2px;
-  color: #111212;
-  font-family: 'PT Sans';
+  font-family: "PT Sans";
   font-size: 16px;
   font-weight: bold;
   line-height: 22px;
+}
+
+.Hungry {
+  &.HungryBlue {
+    background-color: #5bc7ff;
+    color: #fff;
+
+    & .title,
+    & .description {
+      color: #fff;
+    }
+
+    & .email {
+      p {
+        color: #fff;
+      }
+
+      input {
+        border-bottom: 2px solid #fff;
+        caret-color: #fff;
+      }
+      input:focus {
+        border-color: #fff;
+      }
+      input::placeholder {
+        color: #fff;
+      }
+    }
+
+    .submit {
+      background-color: rgb(220, 225, 230);
+      color: #393939;
+      border-bottom: none;
+      display: block;
+      height: 54px;
+      width: 144px;
+      margin-left: auto;
+      font-family: "PT Sans";
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 22px;
+    }
+  }
 }
