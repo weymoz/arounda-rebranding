@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
+import { Provider, connect } from 'react-redux'
+import { store } from '../../../functions/store'
+
 import blogs from '@/data/BlogItems'
 import style from './style.scss';
 import StartSection from '@sections/StartSection';
@@ -39,8 +42,6 @@ const Blog = props => {
     });
 
   }, []);
-
-  console.log(posts)
 
   return (
     <section className={style.Blog}>

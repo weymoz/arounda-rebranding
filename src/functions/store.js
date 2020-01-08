@@ -1,25 +1,22 @@
 import { createStore, combineReducers } from 'redux'
 
-const ADD_POST = 'ADD_POST'
-export const addPostAction = post => ({
-    type: ADD_POST,
-    title: post.title
+const ADD_TAGS = 'ADD_TAGS'
+export const addTagsAction = tags => ({
+    type: ADD_TAGS,
+    tags
 })
 
-const posts = (state = [], action) => {
+const tags = (state = [], action) => {
     switch (action.type) {
-        case ADD_POST:
-            return [
-                ...state,
-                {
-                    title: action.title
-                }
-            ]
+        case ADD_TAGS:
+            return [...action.tags]
+        default:
+            return state;
     }
 }
 
 const rootReducer = combineReducers({
-    posts
+    tags
 })
 
 export const store = createStore(rootReducer)
