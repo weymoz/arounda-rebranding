@@ -1,7 +1,8 @@
 import { createStore, combineReducers } from 'redux'
 
 const ADD_TAGS = 'ADD_TAGS'
-export const addTagsAction = tags => ({
+
+const addTagsAction = tags => ({
     type: ADD_TAGS,
     tags
 })
@@ -19,5 +20,10 @@ const rootReducer = combineReducers({
     tags
 })
 
-export const store = createStore(rootReducer)
 
+const sampleTags = ["Tag 1", "Tag 2", "Tag 3", "Tag 4"]
+
+const store = createStore(rootReducer, {tags: sampleTags})
+console.log(store.getState())
+
+export { store, addTagsAction };

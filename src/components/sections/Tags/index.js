@@ -1,10 +1,18 @@
 import React from 'react'
 import s from './style.scss'
+import { connect } from 'react-redux'
 
-const Tags  = () => {
+const mapStateToProps = state => ({
+    tags: state.tags
+})
+
+let Tags  = ({ tags }) => {
     return (
-        <h2 className={s.tags}>TAGS</h2>
+        <ul className={s.tags}>
+            {tags.map((tag, i) => (<li key={i}>{tag}</li>) )}
+        </ul>
     )
 }
 
+Tags = connect(mapStateToProps)(Tags)
 export default Tags
