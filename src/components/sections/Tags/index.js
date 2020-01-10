@@ -1,18 +1,27 @@
-import React from 'react'
-import s from './style.scss'
-import { connect } from 'react-redux'
+import React, { useEffect } from "react";
+import s from "./style.scss";
+import { connect } from "react-redux";
+import { fetchTags } from "../../../functions/actions";
+import TagLink from "@sections/TagLink";
 
-const mapStateToProps = state => ({
-    tags: state.tags
-})
+const mapStateToProps = ({ tags }) => ({ tags });
 
-let Tags  = ({ tags }) => {
-    return (
-        <ul className={s.tags}>
-            {tags.map((tag, i) => (<li key={i}>{tag}</li>) )}
-        </ul>
-    )
-}
+let Tags = ({ fetchTags, tags }) => {
+  const { allTags, tagIds } = tags;
 
-Tags = connect(mapStateToProps)(Tags)
-export default Tags
+  useEffect(fetchTags, []);
+
+  return (
+    <ul className={s.tags}>
+      {tagIds &&
+        tagIds.map(id => (
+          <li key={id}>
+            <TagLink tagName={allTags[id].value} />
+          </li>
+        ))}
+    </ul>
+  );
+};
+
+Tags = connect(mapStateToProps, { fetchTags })(Tags);
+export default Tags;

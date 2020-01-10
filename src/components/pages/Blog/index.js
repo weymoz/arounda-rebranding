@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "../../../functions/store";
+import store from "../../../functions/store";
 
 import blogs from "@/data/BlogItems";
 import style from "./style.scss";
@@ -23,6 +23,7 @@ const Blog = props => {
   const [posts, setPosts] = useState();
 
   useEffect(() => {
+
     contentfulClient
       .getAllPosts()
       .then(res => {
@@ -36,9 +37,6 @@ const Blog = props => {
         setPosts(posts);
       });
 
-    contentfulClient
-      .getTags()
-      .then(data => console.log(data))
   }, []);
 
   return (

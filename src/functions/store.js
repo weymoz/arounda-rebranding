@@ -1,29 +1,29 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import { ADD_TAGS } from "./actions";
 
-const ADD_TAGS = 'ADD_TAGS'
+const tags = (state = {}, action) => {
+  switch (action.type) {
+    case ADD_TAGS:
+      let allTags = action.payload.reduce(
+        (acc, val) => ({ ...acc, [val.id]: val }),
+        {}
+      );
+      const tagIds = Object.keys(allTags);
+      return {
+        allTags,
+        tagIds
+      };
 
-const addTagsAction = tags => ({
-    type: ADD_TAGS,
-    tags
-})
+    default:
+      return state;
+  }
+};
 
-const tags = (state = [], action) => {
-    switch (action.type) {
-        case ADD_TAGS:
-            return [...action.tags]
-        default:
-            return state;
-    }
-}
+const reducer = combineReducers({
+  tags
+});
 
-const rootReducer = combineReducers({
-    tags
-})
+const store = createStore(reducer, applyMiddleware(thunk));
 
-
-const sampleTags = ["Tag 1", "Tag 2", "Tag 3", "Tag 4"]
-
-const store = createStore(rootReducer, {tags: sampleTags})
-console.log(store.getState())
-
-export { store, addTagsAction };
+export default store;
