@@ -7,16 +7,16 @@ import TagLink from "@sections/TagLink";
 const mapStateToProps = ({ tags }) => ({ tags });
 
 let Tags = ({ fetchTags, tags }) => {
-  const { allTags, tagIds } = tags;
+  const { allItems, itemIds } = tags;
 
   useEffect(fetchTags, []);
 
   return (
     <ul className={s.tags}>
-      {tagIds &&
-        tagIds.map(id => (
+      {itemIds &&
+       itemIds.map(id => (
           <li key={id}>
-            <TagLink tagName={allTags[id].value} />
+            <TagLink tagName={allItems[id].value} />
           </li>
         ))}
     </ul>

@@ -8,7 +8,8 @@ import style from "./style.scss";
 import StartSection from "@sections/StartSection";
 import SearchTags from "@sections/SearchTags";
 import Tags from "@sections/Tags";
-import ListWorks from "@sections/ListWorks";
+// import ListWorks from "@sections/ListWorks";
+import ListWorksVisible from "@sections/ListWorksVisible";
 import Hungry from "@sections/Hungry";
 import slugify from "slugify";
 import contentfulClient from "../../../functions/contentful-client";
@@ -18,26 +19,26 @@ import { composeDate } from "../../../functions/lib";
 import SubscribeButton from "@simple/SubscribeButton";
 
 const Blog = props => {
-  //
+
   const [search, setSearch] = useState(false);
-  const [posts, setPosts] = useState();
+  // const [posts, setPosts] = useState();
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    contentfulClient
-      .getAllPosts()
-      .then(res => {
-        const posts = res.items.map(item => ({
-          ...item.fields,
-          author: item.fields.author.fields.name,
-          image: `https:${item.fields.image.fields.file.url}`,
-          date: composeDate(item.fields.date)
-        }));
+  //   contentfulClient
+  //     .getAllPosts()
+  //     .then(res => {
+  //       const posts = res.items.map(item => ({
+  //         ...item.fields,
+  //         author: item.fields.author.fields.name,
+  //         image: `https:${item.fields.image.fields.file.url}`,
+  //         date: composeDate(item.fields.date)
+  //       }));
 
-        setPosts(posts);
-      });
+  //       setPosts(posts);
+  //     });
 
-  }, []);
+  // }, []);
 
   return (
     <Provider store={store}>
@@ -45,7 +46,8 @@ const Blog = props => {
         <PopupSearch search={search} setSearch={setSearch} />
         {/* <SearchTags setSearch={setSearch} /> */}
         <Tags />
-        <ListWorks list={blogs} posts={posts} />
+        {/* <ListWorks list={blogs} posts={posts} /> */}
+        <ListWorksVisible />
         <Hungry />
         <MoreInteresting />
         <div className={style.wrapStartSection}>

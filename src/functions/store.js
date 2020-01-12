@@ -1,29 +1,51 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { ADD_TAGS } from "./actions";
+import { ADD_TAGS, ADD_POSTS } from "./actions";
+
+const normalizePayload = payload => {
+  let allItems = payload.reduce(
+    (acc, val) => ({ ...acc, [val.id]: val }),
+    {}
+  );
+  const itemIds = Object.keys(allItems);
+  return {
+    allItems,
+    itemIds
+  };
+};
 
 const tags = (state = {}, action) => {
   switch (action.type) {
     case ADD_TAGS:
-      let allTags = action.payload.reduce(
-        (acc, val) => ({ ...acc, [val.id]: val }),
-        {}
-      );
-      const tagIds = Object.keys(allTags);
-      return {
-        allTags,
-        tagIds
-      };
+      return normalizePayload(action.payload)
+    default:
+      return state;
+  }
+};
 
+const posts = (state = [], action) => {
+  switch (action.type) {
+    case ADD_POSTS:
+      return normalizePayload(action.payload)
     default:
       return state;
   }
 };
 
 const reducer = combineReducers({
-  tags
+  tags,
+  posts
 });
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const logger = store => next => action => {
+  console.group(action.type)
+  console.info('dispatching', action)
+  let result = next(action)
+  console.log('next state', store.getState())
+  console.groupEnd()
+  return result
+}
+
+const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 export default store;
